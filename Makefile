@@ -372,13 +372,13 @@ gennrdotcol: $(BUILDER)
 	./internal/buildscripts/ocb-add-replaces.sh nrdotcol
 	$(BUILDER) --skip-compilation --config cmd/nrdotcol/builder-config-replaced.yaml
 
-# Build the Collector executable.
+# Build the Collector executable (default, no Oracle support, no CGO).
 .PHONY: nrdotcol
 nrdotcol: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \
 		-tags $(GO_BUILD_TAGS) .
 
-# Build the Collector executable without the symbol table, debug information, and the DWARF symbol table.
+# Build the Collector executable without the symbol table, debug information, and the DWARF symbol table (default, no Oracle).
 .PHONY: nrdotcollite
 nrdotcollite: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \

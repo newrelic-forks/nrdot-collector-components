@@ -1,7 +1,7 @@
 # NOTE:
-# This builder configuration is used to build the New Relic Dot Collector
-# for testing custom nrdot components. Only includes core collector components
-# and nrdot-specific components.
+# This is the DEFAULT builder configuration for the New Relic Dot Collector.
+# It does NOT include the Oracle receiver (no CGO required).
+# For Oracle support, use builder-config-with-oracle.yaml
 
 dist:
   module: github.com/newrelic/nrdot-collector-components/cmd/nrdotcol
@@ -26,7 +26,9 @@ processors:
 
 receivers:
   - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.142.0
-  - gomod: github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver v0.142.1
+  # Oracle receiver excluded from default build (requires CGO)
+  # For Oracle support, use builder-config-with-oracle.yaml
+  # - gomod: github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver v0.142.1
   - gomod: github.com/newrelic/nrdot-collector-components/receiver/nopreceiver v0.142.1
 
 connectors:
