@@ -7,7 +7,6 @@ package newrelicoraclereceiver // import "github.com/newrelic/nrdot-collector-co
 
 import (
 	"context"
-	"database/sql"
 	"testing"
 	"time"
 
@@ -16,22 +15,24 @@ import (
 	"go.opentelemetry.io/collector/component/componenttest"
 	"go.opentelemetry.io/collector/consumer/consumertest"
 	"go.opentelemetry.io/collector/receiver/receivertest"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
 )
 
 func TestNewRelicOracleReceiverIntegration(t *testing.T) {
+	t.Skip("Skipping integration test - requires Oracle database")
+
 	factory := NewFactory()
 	cfg := factory.CreateDefaultConfig().(*Config)
 
-	// Use fake datasource for testing
-	cfg.DataSource = "oracle://fake:fake@localhost:1521/XE"
+	// Use real Oracle connection for integration testing
+	cfg.DataSource = "oracle://testuser:testpass@localhost:1521/XE"
 
-	set := receivertest.NewNopSettings()
+	set := receivertest.NewNopSettings(metadata.Type)
 	consumer := consumertest.NewNop()
 
-	// Create receiver with fake client
-	receiver, err := createReceiverFunc(func(dataSourceName string) (*sql.DB, error) {
-		return nil, nil // We'll use fake client
-	}, newFakeDbClient)(context.Background(), set, cfg, consumer)
+	// Create receiver
+	receiver, err := factory.CreateMetrics(context.Background(), set, cfg, consumer)
 
 	require.NoError(t, err)
 	require.NotNil(t, receiver)

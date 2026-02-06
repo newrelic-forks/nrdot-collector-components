@@ -106,7 +106,6 @@ func (s *ExecutionPlanScraper) ScrapeExecutionPlans(ctx context.Context, sqlIden
 			lastScraped: now,
 		}
 		s.cacheMutex.Unlock()
-
 	}
 	s.logger.Debug("Scraped execution plan",
 		zap.Int("scraped_plans", len(planHashIdentifier)),

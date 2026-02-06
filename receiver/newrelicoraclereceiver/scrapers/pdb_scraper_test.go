@@ -4,7 +4,6 @@
 package scrapers
 
 import (
-	"context"
 	"errors"
 	"testing"
 
@@ -237,7 +236,7 @@ func TestScrapePdbMetrics_CDBNotSupported(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	errs := scraper.ScrapePdbMetrics(ctx)
 
 	assert.Nil(t, errs)
@@ -258,7 +257,7 @@ func TestScrapePdbMetrics_CDBSupported_Success(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	errs := scraper.ScrapePdbMetrics(ctx)
 
 	assert.Nil(t, errs)
@@ -274,7 +273,7 @@ func TestScrapePdbMetrics_CDBCapabilityCheckError(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	errs := scraper.ScrapePdbMetrics(ctx)
 
 	assert.NotNil(t, errs)
@@ -292,7 +291,7 @@ func TestScrapePdbMetrics_QueryMetricsError(t *testing.T) {
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
 	// First call succeeds for CDB capability check
-	ctx := context.Background()
+	ctx := t.Context()
 	_ = scraper.ScrapePdbMetrics(ctx)
 
 	// Set error for metrics query
@@ -324,7 +323,7 @@ func TestScrapePdbMetrics_MultipleMetrics(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	errs := scraper.ScrapePdbMetrics(ctx)
 
 	assert.Nil(t, errs)
@@ -341,7 +340,7 @@ func TestScrapePdbMetrics_EmptyMetricsList(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	errs := scraper.ScrapePdbMetrics(ctx)
 
 	assert.Nil(t, errs)
@@ -362,7 +361,7 @@ func TestScrapePDBSysMetrics_Success(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.Timestamp(0)
 	errs := scraper.scrapePDBSysMetrics(ctx, now)
 
@@ -378,7 +377,7 @@ func TestScrapePDBSysMetrics_QueryError(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.Timestamp(0)
 	errs := scraper.scrapePDBSysMetrics(ctx, now)
 
@@ -400,7 +399,7 @@ func TestScrapePDBSysMetrics_UnknownMetrics(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.Timestamp(0)
 	errs := scraper.scrapePDBSysMetrics(ctx, now)
 
@@ -440,7 +439,7 @@ func TestCheckCDBCapability_FirstCall_Success(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	err := scraper.checkCDBCapability(ctx)
 
 	assert.Nil(t, err)
@@ -458,7 +457,7 @@ func TestCheckCDBCapability_FirstCall_NotCDB(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	err := scraper.checkCDBCapability(ctx)
 
 	assert.Nil(t, err)
@@ -476,7 +475,7 @@ func TestCheckCDBCapability_QueryError(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 	err := scraper.checkCDBCapability(ctx)
 
 	assert.NotNil(t, err)
@@ -494,7 +493,7 @@ func TestCheckCDBCapability_AlreadyChecked(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewPdbScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx := context.Background()
+	ctx := t.Context()
 
 	// First check
 	err1 := scraper.checkCDBCapability(ctx)

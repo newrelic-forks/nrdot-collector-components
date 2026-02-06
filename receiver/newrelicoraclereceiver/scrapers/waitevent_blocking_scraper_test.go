@@ -4,7 +4,6 @@
 package scrapers
 
 import (
-	"context"
 	"database/sql"
 	"errors"
 	"testing"
@@ -97,7 +96,7 @@ func TestFetchWaitEvents_Success(t *testing.T) {
 
 	scraper, _ := NewWaitEventBlockingScraper(mockClient, mb, logger, config, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	slowQuerySQLIDs := []string{"sql1", "sql2"}
 
 	waitEvents, err := scraper.fetchWaitEvents(ctx, slowQuerySQLIDs)
@@ -118,7 +117,7 @@ func TestFetchWaitEvents_QueryError(t *testing.T) {
 
 	scraper, _ := NewWaitEventBlockingScraper(mockClient, mb, logger, config, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	slowQuerySQLIDs := []string{"sql1"}
 
 	waitEvents, err := scraper.fetchWaitEvents(ctx, slowQuerySQLIDs)
@@ -158,7 +157,7 @@ func TestScrapeWaitEventsAndBlocking_Success(t *testing.T) {
 
 	scraper, _ := NewWaitEventBlockingScraper(mockClient, mb, logger, config, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	slowQueryIdentifiers := []models.SQLIdentifier{{SQLID: "sql1", ChildNumber: 0, Timestamp: time.Now()}}
 
 	sqlIdentifiers, errs := scraper.ScrapeWaitEventsAndBlocking(ctx, slowQueryIdentifiers)
@@ -178,7 +177,7 @@ func TestScrapeWaitEventsAndBlocking_FetchError(t *testing.T) {
 
 	scraper, _ := NewWaitEventBlockingScraper(mockClient, mb, logger, config, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	slowQueryIdentifiers := []models.SQLIdentifier{{SQLID: "sql1", ChildNumber: 0, Timestamp: time.Now()}}
 
 	sqlIdentifiers, errs := scraper.ScrapeWaitEventsAndBlocking(ctx, slowQueryIdentifiers)
@@ -199,7 +198,7 @@ func TestScrapeWaitEventsAndBlocking_EmptyResults(t *testing.T) {
 
 	scraper, _ := NewWaitEventBlockingScraper(mockClient, mb, logger, config, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	slowQueryIdentifiers := []models.SQLIdentifier{}
 
 	sqlIdentifiers, errs := scraper.ScrapeWaitEventsAndBlocking(ctx, slowQueryIdentifiers)
