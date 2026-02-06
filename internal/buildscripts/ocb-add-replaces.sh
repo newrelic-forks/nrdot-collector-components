@@ -10,8 +10,9 @@
 set -e
 
 DIR="$1"
-CONFIG_IN="cmd/$DIR/builder-config.yaml"
-CONFIG_OUT="cmd/$DIR/builder-config-replaced.yaml"
+CONFIG_FILE="${2:-builder-config.yaml}"  # Default to builder-config.yaml if not provided
+CONFIG_IN="cmd/$DIR/$CONFIG_FILE"
+CONFIG_OUT="cmd/$DIR/${CONFIG_FILE%.yaml}-replaced.yaml"
 
 cp "$CONFIG_IN" "$CONFIG_OUT"
 
