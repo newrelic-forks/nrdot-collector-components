@@ -464,6 +464,33 @@ jobs:
           name: collector-binaries-${{ matrix.os }}-${{ matrix.arch }}
           path: ./bin/*
 
+  build-oracle:
+    runs-on: ubuntu-24.04
+    needs: [setup-environment]
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+      - run: ./.github/workflows/scripts/free-disk-space.sh
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6
+        id: go-setup
+        with:
+          go-version: oldstable
+          cache-dependency-path: "**/*.sum"
+      - name: Install dependencies
+        if: steps.go-setup.outputs.cache-hit != 'true'
+        run: make -j2 gomoddownload
+      - name: Install Tools
+        if: steps.go-setup.outputs.cache-hit != 'true'
+        run: make install-tools
+      - name: Generate collector files with Oracle
+        run: make gennrdotcol-with-oracle
+      - name: Build Collector with Oracle (Linux AMD64)
+        run: make GOOS=linux GOARCH=amd64 nrdotcol-with-oracle
+      - name: Upload Oracle Collector Binary
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+        with:
+          name: collector-oracle-linux-amd64
+          path: ./bin/*
+
   publish-check:
     runs-on: ubuntu-24.04
     needs: [lint, unittest, integration-tests]
