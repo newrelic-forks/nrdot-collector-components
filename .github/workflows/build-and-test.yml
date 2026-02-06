@@ -241,9 +241,6 @@ jobs:
         id: tests
         if: github.ref != 'refs/heads/main' || !startsWith( matrix.go-version, 'oldstable' )
         run: make gotest GROUP=${{ matrix.group }}
-        env:
-          # Enable CGO only for receiver group (Oracle receiver requires it for tests)
-          CGO_ENABLED: ${{ matrix.group == 'receiver' && '1' || '0' }}
 
       # JUnit tests are super long, so we only run them for one go version.
       # This is used for automation that automatically creates issues for flaky tests that are
@@ -253,9 +250,6 @@ jobs:
         if: startsWith( matrix.go-version, 'oldstable' ) && github.ref == 'refs/heads/main' && github.event_name == 'push'
         continue-on-error: true # Allow uploading artifacts even if the test fails
         run: make gotest-with-junit-and-cover GROUP=${{ matrix.group }}
-        env:
-          # Enable CGO only for receiver group (Oracle receiver requires it for tests)
-          CGO_ENABLED: ${{ matrix.group == 'receiver' && '1' || '0' }}
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         if: startsWith( matrix.go-version, 'oldstable' ) && github.ref == 'refs/heads/main' && github.event_name == 'push'
         with:
@@ -339,9 +333,6 @@ jobs:
           key: docker-${{ matrix.group }}
       - name: Run Integration Tests
         run: make gointegration-test GROUP=${{ matrix.group }}
-        env:
-          # Enable CGO only for receiver group (Oracle receiver requires it for tests)
-          CGO_ENABLED: ${{ matrix.group == 'receiver' && '1' || '0' }}
 
   integration-tests:
     if: ${{ github.actor != 'dependabot[bot]' && always() }}
