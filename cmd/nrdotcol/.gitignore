@@ -1,4 +1,5 @@
 *
 !builder-config.yaml
+!builder-config-with-oracle.yaml
 !Dockerfile
 !metadata.yaml
