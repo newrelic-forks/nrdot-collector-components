@@ -598,13 +598,17 @@ check-builder-integration:
 		component_path=$$(echo $$component_dir | sed 's|^\./||'); \
 		component_module="github.com/newrelic/nrdot-collector-components/$$component_path"; \
 		echo "Checking $$component_path..."; \
-		for config in cmd/nrdotcol/builder-config.yaml cmd/oteltestbedcol/builder-config.yaml; do \
-			if ! grep -q "$$component_module" "$$config"; then \
-				echo "✗ Missing from $$config. Add entry: - gomod: $$component_module v0.142.1"; \
-				exit 1; \
+		found=false; \
+		for config in cmd/nrdotcol/builder-config.yaml cmd/nrdotcol/builder-config-cgo-enabled.yaml cmd/oteltestbedcol/builder-config.yaml; do \
+			if grep -q "$$component_module" "$$config"; then \
+				echo "  $$config: ✓"; \
+				found=true; \
 			fi; \
-			echo "  $$config: ✓"; \
 		done; \
+		if [ "$$found" = false ]; then \
+			echo "✗ Missing from all builder configs. Add to either cmd/nrdotcol/builder-config.yaml or cmd/nrdotcol/builder-config-cgo-enabled.yaml (for CGO components)"; \
+			exit 1; \
+		fi; \
 	done
 
 .PHONY: checkapi
