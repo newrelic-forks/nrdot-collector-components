@@ -5,6 +5,7 @@ package errors
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 	"time"
 )
@@ -38,8 +39,15 @@ func (e *ScraperError) Error() string {
 	}
 
 	if len(e.Context) > 0 {
-		for k, v := range e.Context {
-			parts = append(parts, fmt.Sprintf("%s=%v", k, v))
+		// Sort context keys for consistent output
+		keys := make([]string, 0, len(e.Context))
+		for k := range e.Context {
+			keys = append(keys, k)
+		}
+		sort.Strings(keys)
+
+		for _, k := range keys {
+			parts = append(parts, fmt.Sprintf("%s=%v", k, e.Context[k]))
 		}
 	}
 

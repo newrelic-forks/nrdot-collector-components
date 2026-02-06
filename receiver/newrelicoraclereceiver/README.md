@@ -94,7 +94,7 @@ receivers:
 
 **Note**: The receiver supports two connection methods:
 1. **Individual parameters** (recommended): `endpoint`, `username`, `password`, `service`
-2. **Connection string**: `datasource` with oracle:// URL format
+2. **Connection string**: `datasource` with `oracle://` URL format
 
 You must provide either `datasource` OR all individual parameters.
 
@@ -105,7 +105,7 @@ You must provide either `datasource` OR all individual parameters.
 | `username` | Oracle database username | No* | |
 | `password` | Oracle database password (supports ${env:VAR} syntax) | No* | |
 | `service` | Oracle service name or SID | No* | |
-| `datasource` | Alternative: Complete connection string (oracle://user:pass@host:port/service) | No* | |
+| `datasource` | Alternative: Complete connection string (`oracle://user:pass@host:port/service`) | No* | |
 
 *Either all of `endpoint`, `username`, `password`, `service` OR `datasource` must be provided.
 

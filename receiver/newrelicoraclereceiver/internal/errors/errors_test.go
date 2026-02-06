@@ -29,7 +29,7 @@ func TestScraperError_Error(t *testing.T) {
 					"host":     "db.example.com",
 				},
 			},
-			expectedOutput: "oracle scraper error: connection timeout [operation=session_count, query=SELECT COUNT(*) FROM v$session WHERE status = 'ACTIVE', instance=PROD01, host=db.example.com]",
+			expectedOutput: "oracle scraper error: connection timeout [operation=session_count, query=SELECT COUNT(*) FROM v$session WHERE status = 'ACTIVE', host=db.example.com, instance=PROD01]",
 		},
 		{
 			name: "error with long query (truncated)",
