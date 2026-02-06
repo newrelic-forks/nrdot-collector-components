@@ -384,6 +384,24 @@ nrdotcollite: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \
 		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
 
+# Generate code for CGO-enabled collector build
+.PHONY: gennrdotcol-cgo
+gennrdotcol-cgo: $(BUILDER)
+	./internal/buildscripts/ocb-add-replaces.sh nrdotcol-cgo
+	$(BUILDER) --skip-compilation --config cmd/nrdotcol/builder-config-cgo-enabled-replaced.yaml
+
+# Build the Collector executable with CGO-enabled components (like newrelicoraclereceiver).
+.PHONY: nrdotcol-cgo
+nrdotcol-cgo: gennrdotcol-cgo
+	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
+		-tags $(GO_BUILD_TAGS) .
+
+# Build the CGO-enabled Collector executable without the symbol table, debug information, and the DWARF symbol table.
+.PHONY: nrdotcol-cgolite
+nrdotcol-cgolite: gennrdotcol-cgo
+	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
+		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
+
 .PHONY: genoteltestbedcol
 genoteltestbedcol: $(BUILDER)
 	./internal/buildscripts/ocb-add-replaces.sh oteltestbedcol

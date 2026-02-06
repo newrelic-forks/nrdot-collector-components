@@ -449,6 +449,10 @@ jobs:
         run: make gennrdotcol
       - name: Build Collector ${{ matrix.os }} ${{ matrix.arch }} ${{ matrix.arm }}
         run: make GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} GOARM=${{ matrix.arm }} nrdotcol
+      - name: Generate CGO-enabled collector files
+        run: make gennrdotcol-cgo
+      - name: Build CGO-enabled Collector ${{ matrix.os }} ${{ matrix.arch }} ${{ matrix.arm }}
+        run: make GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} GOARM=${{ matrix.arm }} nrdotcol-cgo
       - name: Upload Collector Binaries
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
