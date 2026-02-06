@@ -384,6 +384,18 @@ nrdotcollite: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \
 		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
 
+# Generate nrdotcol source with Oracle receiver support (requires CGO)
+.PHONY: gennrdotcol-with-oracle
+gennrdotcol-with-oracle: $(BUILDER)
+	./internal/buildscripts/ocb-add-replaces.sh nrdotcol builder-config-with-oracle.yaml
+	$(BUILDER) --skip-compilation --config cmd/nrdotcol/builder-config-with-oracle-replaced.yaml
+
+# Build the Collector executable with Oracle receiver support (requires CGO).
+.PHONY: nrdotcol-with-oracle
+nrdotcol-with-oracle: gennrdotcol-with-oracle
+	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-oracle_$(GOOS)_$(GOARCH)$(EXTENSION) \
+		-tags $(GO_BUILD_TAGS) .
+
 .PHONY: genoteltestbedcol
 genoteltestbedcol: $(BUILDER)
 	./internal/buildscripts/ocb-add-replaces.sh oteltestbedcol
