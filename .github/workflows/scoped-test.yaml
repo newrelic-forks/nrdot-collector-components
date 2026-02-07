@@ -93,6 +93,15 @@ jobs:
         env:
           CHANGED_GOLANG_TESTS: ${{ needs.changedfiles.outputs.go_tests }}
         run: |
+          # Filter out Oracle receiver tests if CGO is disabled (it requires CGO to build)
+          if [ "$CGO_ENABLED" = "0" ]; then
+            filtered_tests=$(echo "$CHANGED_GOLANG_TESTS" | grep -v "receiver/newrelicoraclereceiver" || true)
+            if [ -z "$filtered_tests" ]; then
+              echo "All changed tests require CGO, skipping"
+              exit 0
+            fi
+            export CHANGED_GOLANG_TESTS="$filtered_tests"
+          fi
           make run-changed-tests
 
       - name: Run tests on dependent components
