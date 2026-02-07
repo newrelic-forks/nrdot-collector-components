@@ -90,6 +90,7 @@ jobs:
 
       - name: Run changed tests
         if: needs.changedfiles.outputs.go_tests
+        shell: bash
         env:
           CHANGED_GOLANG_TESTS: ${{ needs.changedfiles.outputs.go_tests }}
         run: |
@@ -106,6 +107,7 @@ jobs:
 
       - name: Run tests on dependent components
         if: needs.changedfiles.outputs.go_sources
+        shell: bash
         env:
           CHANGED_GOLANG_SOURCES: ${{ needs.changedfiles.outputs.go_sources }}
         run: |
