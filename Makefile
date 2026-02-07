@@ -27,6 +27,11 @@ EX_CMD=-not -path "./cmd/*"
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
 RECEIVER_MODS := $(shell find ./receiver/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
+# Receivers that require CGO (exclude from standard builds/lint)
+CGO_RECEIVER_MODS := ./receiver/newrelicoraclereceiver
+# Non-CGO receivers for standard builds/lint
+NON_CGO_RECEIVER_MODS := $(filter-out $(CGO_RECEIVER_MODS),$(RECEIVER_MODS))
+
 PROCESSOR_MODS := $(shell find ./processor/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXPORTER_MODS := $(shell find ./exporter/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXTENSION_MODS := $(shell find ./extension/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
@@ -56,6 +61,8 @@ all-modules:
 
 all-groups:
 	@echo -e "receiver: $(RECEIVER_MODS)"
+	@echo -e "  - CGO receivers: $(CGO_RECEIVER_MODS)"
+	@echo -e "  - Non-CGO receivers: $(NON_CGO_RECEIVER_MODS)"
 	@echo -e "\nprocessor: $(PROCESSOR_MODS)"
 	@echo -e "\nexporter: $(EXPORTER_MODS)"
 	@echo -e "\nextension: $(EXTENSION_MODS)"
@@ -239,6 +246,10 @@ for-all-target: $(ALL_MODS)
 
 .PHONY: for-receiver-target
 for-receiver-target: $(RECEIVER_MODS)
+
+# Target for non-CGO receivers only (for standard lint/test without CGO)
+.PHONY: for-non-cgo-receiver-target
+for-non-cgo-receiver-target: $(NON_CGO_RECEIVER_MODS)
 
 .PHONY: for-processor-target
 for-processor-target: $(PROCESSOR_MODS)
