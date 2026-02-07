@@ -34,7 +34,7 @@
 // Scrape 5: 180 execs, 21,100ms total → interval avg = 20,000/20 = 1,000ms → SLOW! (immediate detection)
 // Scrape 7: 220 execs, 43,100ms total → interval avg = 2,000/20 = 100ms → at threshold
 // Scrape 9: 241 execs, 45,600ms total → interval avg = 500/1 = 500ms → SLOW! (outlier detected)
-package scrapers
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"sync"
@@ -490,11 +490,11 @@ func (oic *OracleIntervalCalculator) CleanupStaleEntries(now time.Time) {
 }
 
 // GetCacheStats returns cache statistics
-func (oic *OracleIntervalCalculator) GetCacheStats() map[string]interface{} {
+func (oic *OracleIntervalCalculator) GetCacheStats() map[string]any {
 	oic.stateCacheMutex.RLock()
 	defer oic.stateCacheMutex.RUnlock()
 
-	return map[string]interface{}{
+	return map[string]any{
 		"total_queries_tracked": len(oic.stateCache),
 		"cache_ttl_minutes":     oic.cacheTTL.Minutes(),
 	}

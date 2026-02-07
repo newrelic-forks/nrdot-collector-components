@@ -4,7 +4,6 @@
 package scrapers
 
 import (
-	"context"
 	"errors"
 	"testing"
 	"time"
@@ -31,7 +30,7 @@ func TestScrapeLockedAccountsMetrics_Disabled(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLockedAccountsMetrics(ctx, now)
@@ -60,7 +59,7 @@ func TestScrapeLockedAccountsMetrics_Success(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLockedAccountsMetrics(ctx, now)
@@ -80,7 +79,7 @@ func TestScrapeLockedAccountsMetrics_QueryError(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLockedAccountsMetrics(ctx, now)
@@ -102,7 +101,7 @@ func TestScrapeLockedAccountsMetrics_EmptyResult(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLockedAccountsMetrics(ctx, now)
@@ -127,7 +126,7 @@ func TestScrapeLockedAccountsMetrics_ZeroAccounts(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLockedAccountsMetrics(ctx, now)
@@ -156,7 +155,7 @@ func TestScrapeGlobalNameInstanceMetrics_Success(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeGlobalNameInstanceMetrics(ctx, now)
@@ -175,7 +174,7 @@ func TestScrapeGlobalNameInstanceMetrics_QueryError(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeGlobalNameInstanceMetrics(ctx, now)
@@ -196,7 +195,7 @@ func TestScrapeGlobalNameInstanceMetrics_EmptyResult(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeGlobalNameInstanceMetrics(ctx, now)
@@ -220,7 +219,7 @@ func TestScrapeGlobalNameInstanceMetrics_StringInstanceID(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeGlobalNameInstanceMetrics(ctx, now)
@@ -249,7 +248,7 @@ func TestScrapeDBIDInstanceMetrics_Success(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeDBIDInstanceMetrics(ctx, now)
@@ -268,7 +267,7 @@ func TestScrapeDBIDInstanceMetrics_QueryError(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeDBIDInstanceMetrics(ctx, now)
@@ -289,7 +288,7 @@ func TestScrapeDBIDInstanceMetrics_EmptyResult(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeDBIDInstanceMetrics(ctx, now)
@@ -313,7 +312,7 @@ func TestScrapeDBIDInstanceMetrics_NilInstanceID(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeDBIDInstanceMetrics(ctx, now)
@@ -342,7 +341,7 @@ func TestScrapeLongRunningQueriesMetrics_Success(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)
@@ -361,7 +360,7 @@ func TestScrapeLongRunningQueriesMetrics_QueryError(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)
@@ -382,7 +381,7 @@ func TestScrapeLongRunningQueriesMetrics_EmptyResult(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)
@@ -406,7 +405,7 @@ func TestScrapeLongRunningQueriesMetrics_ZeroQueries(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)
@@ -430,7 +429,7 @@ func TestScrapeLongRunningQueriesMetrics_LargeValue(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)
@@ -462,7 +461,7 @@ func TestScrapeLongRunningQueriesMetrics_MultipleInstances(t *testing.T) {
 	scraper, err := NewCoreScraper(mockClient, mb, zap.NewNop(), config)
 	require.NoError(t, err)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	now := pcommon.NewTimestampFromTime(time.Now())
 
 	errors := scraper.scrapeLongRunningQueriesMetrics(ctx, now)

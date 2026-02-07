@@ -4,7 +4,6 @@
 package scrapers
 
 import (
-	"context"
 	"database/sql"
 	"errors"
 	"testing"
@@ -82,7 +81,7 @@ func TestSlowQueriesScraper_ScrapeWithValidData(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(config, settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), config, 1000, 100, 15, false, 10)
 
-	queryIDs, errs := scraper.ScrapeSlowQueries(context.Background())
+	queryIDs, errs := scraper.ScrapeSlowQueries(t.Context())
 
 	assert.Empty(t, errs)
 	assert.Len(t, queryIDs, 2)
@@ -99,7 +98,7 @@ func TestSlowQueriesScraper_ScrapeWithEmptyResults(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	queryIDs, errs := scraper.ScrapeSlowQueries(context.Background())
+	queryIDs, errs := scraper.ScrapeSlowQueries(t.Context())
 
 	assert.Empty(t, errs)
 	assert.Empty(t, queryIDs)
@@ -113,7 +112,7 @@ func TestSlowQueriesScraper_ScrapeWithQueryError(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	queryIDs, errs := scraper.ScrapeSlowQueries(context.Background())
+	queryIDs, errs := scraper.ScrapeSlowQueries(t.Context())
 
 	assert.Len(t, errs, 1)
 	assert.Contains(t, errs[0].Error(), "database connection failed")
@@ -142,7 +141,7 @@ func TestSlowQueriesScraper_ScrapeWithInvalidData(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	queryIDs, errs := scraper.ScrapeSlowQueries(context.Background())
+	queryIDs, errs := scraper.ScrapeSlowQueries(t.Context())
 
 	assert.Empty(t, errs)
 	assert.Len(t, queryIDs, 1)
@@ -174,13 +173,13 @@ func TestSlowQueriesScraper_RecordMetrics(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(config, settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), config, 1000, 100, 15, false, 10)
 
-	queryIDs, errs := scraper.ScrapeSlowQueries(context.Background())
+	queryIDs, errs := scraper.ScrapeSlowQueries(t.Context())
 
 	assert.Empty(t, errs)
 	assert.Len(t, queryIDs, 1)
 
 	metrics := mb.Emit()
-	require.Greater(t, metrics.ResourceMetrics().Len(), 0)
+	require.Positive(t, metrics.ResourceMetrics().Len())
 }
 
 // Tests for ScrapeSlowQueries with interval calculator
@@ -202,7 +201,7 @@ func TestScrapeSlowQueries_WithIntervalCalculator(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, true, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.ScrapeSlowQueries(ctx)
 
 	assert.Empty(t, errs)
@@ -225,7 +224,7 @@ func TestScrapeSlowQueries_IntervalCalculatorFiltersThreshold(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, true, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.ScrapeSlowQueries(ctx)
 
 	assert.Empty(t, errs)
@@ -257,7 +256,7 @@ func TestScrapeSlowQueries_IntervalCalculatorTopN(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 1, 15, true, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.ScrapeSlowQueries(ctx)
 
 	assert.Empty(t, errs)
@@ -281,7 +280,7 @@ func TestScrapeSlowQueries_NilIntervalCalculator(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.ScrapeSlowQueries(ctx)
 
 	assert.Empty(t, errs)
@@ -298,7 +297,7 @@ func TestRecordMetrics_NilSlowQuery(t *testing.T) {
 
 	err := scraper.recordMetrics(0, nil, "timestamp", "db", "qid", "qtext", "user", "schema", "lastactive", "hash123", "")
 
-	assert.NotNil(t, err)
+	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "slow query is nil")
 }
 
@@ -320,7 +319,7 @@ func TestRecordMetrics_AllFieldsValid(t *testing.T) {
 
 	err := scraper.recordMetrics(0, slowQuery, "timestamp", "db", "qid", "qtext", "user", "schema", "lastactive", "hash123", "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ")
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 }
 
 func TestRecordMetrics_IntervalMetrics(t *testing.T) {
@@ -340,7 +339,7 @@ func TestRecordMetrics_IntervalMetrics(t *testing.T) {
 
 	err := scraper.recordMetrics(0, slowQuery, "timestamp", "db", "qid", "qtext", "user", "schema", "lastactive", "hash123", "")
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 }
 
 func TestRecordMetrics_PartialFields(t *testing.T) {
@@ -360,7 +359,7 @@ func TestRecordMetrics_PartialFields(t *testing.T) {
 
 	err := scraper.recordMetrics(0, slowQuery, "timestamp", "db", "qid", "qtext", "user", "schema", "lastactive", "hash123", "")
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 }
 
 // Tests for GetSlowQueryIDs
@@ -386,7 +385,7 @@ func TestGetSlowQueryIDs_Success(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.GetSlowQueryIDs(ctx)
 
 	assert.Empty(t, errs)
@@ -403,7 +402,7 @@ func TestGetSlowQueryIDs_QueryError(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.GetSlowQueryIDs(ctx)
 
 	assert.Len(t, errs, 1)
@@ -419,7 +418,7 @@ func TestGetSlowQueryIDs_EmptyResults(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.GetSlowQueryIDs(ctx)
 
 	assert.Empty(t, errs)
@@ -446,7 +445,7 @@ func TestGetSlowQueryIDs_InvalidData(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.GetSlowQueryIDs(ctx)
 
 	assert.Empty(t, errs)
@@ -469,7 +468,7 @@ func TestGetSlowQueryIDs_InvalidQueryID(t *testing.T) {
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
 	scraper := NewSlowQueriesScraper(mockClient, mb, zap.NewNop(), metadata.DefaultMetricsBuilderConfig(), 1000, 100, 15, false, 10)
 
-	ctx := context.Background()
+	ctx := t.Context()
 	queryIDs, errs := scraper.GetSlowQueryIDs(ctx)
 
 	assert.Empty(t, errs)
