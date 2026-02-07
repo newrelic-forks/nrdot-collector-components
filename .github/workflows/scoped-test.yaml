@@ -100,6 +100,15 @@ jobs:
         env:
           CHANGED_GOLANG_SOURCES: ${{ needs.changedfiles.outputs.go_sources }}
         run: |
+          # Filter out Oracle receiver if CGO is disabled (it requires CGO to build)
+          if [ "$CGO_ENABLED" = "0" ]; then
+            filtered_sources=$(echo "$CHANGED_GOLANG_SOURCES" | grep -v "receiver/newrelicoraclereceiver" || true)
+            if [ -z "$filtered_sources" ]; then
+              echo "All changed sources require CGO, skipping tests"
+              exit 0
+            fi
+            export CHANGED_GOLANG_SOURCES="$filtered_sources"
+          fi
           make for-affected-components CMD="make lint test-twice"
 
   scoped-tests:
