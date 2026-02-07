@@ -308,12 +308,11 @@ func skipStringLiteral(state *sqlNormalizerState) {
 		switch c {
 		case '\'':
 			// Check for escaped quote ''
-			//nolint:revive // early-return pattern is more readable here
 			if state.hasNext() && state.peek() == '\'' {
 				state.advanceBy(2) // Skip both quotes
 			} else {
 				state.advance() // Skip closing quote
-				break
+				return
 			}
 		case '\\':
 			// Handle backslash escaping (MySQL, PostgreSQL)
