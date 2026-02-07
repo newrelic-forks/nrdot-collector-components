@@ -7,7 +7,7 @@ import "database/sql"
 
 // SysstatMetric represents system statistics from gv$sysstat
 type SysstatMetric struct {
-	InstID interface{}
+	InstID any
 	Name   string
 	Value  sql.NullInt64
 }
@@ -17,12 +17,12 @@ type RollbackSegmentsMetric struct {
 	Gets   sql.NullInt64
 	Waits  sql.NullInt64
 	Ratio  sql.NullFloat64
-	InstID interface{}
+	InstID any
 }
 
 // RedoLogWaitsMetric represents redo log wait events
 type RedoLogWaitsMetric struct {
 	TotalWaits sql.NullInt64
-	InstID     interface{}
+	InstID     any
 	Event      string
 }

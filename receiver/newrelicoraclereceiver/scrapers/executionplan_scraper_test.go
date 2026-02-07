@@ -133,7 +133,7 @@ func TestScrapeExecutionPlans_ContextTimeout(t *testing.T) {
 	scraper := NewExecutionPlanScraper(mockClient, mb, logger, config)
 
 	// Create already-cancelled context
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(t.Context())
 	cancel()
 
 	identifiers := []models.SQLIdentifier{

@@ -6,7 +6,6 @@
 package newrelicoraclereceiver // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver"
 
 import (
-	"context"
 	"testing"
 	"time"
 
@@ -32,18 +31,18 @@ func TestNewRelicOracleReceiverIntegration(t *testing.T) {
 	consumer := consumertest.NewNop()
 
 	// Create receiver
-	receiver, err := factory.CreateMetrics(context.Background(), set, cfg, consumer)
+	receiver, err := factory.CreateMetrics(t.Context(), set, cfg, consumer)
 
 	require.NoError(t, err)
 	require.NotNil(t, receiver)
 
 	// Test start and shutdown
-	err = receiver.Start(context.Background(), componenttest.NewNopHost())
+	err = receiver.Start(t.Context(), componenttest.NewNopHost())
 	assert.NoError(t, err)
 
 	// Let it run briefly
 	time.Sleep(100 * time.Millisecond)
 
-	err = receiver.Shutdown(context.Background())
+	err = receiver.Shutdown(t.Context())
 	assert.NoError(t, err)
 }

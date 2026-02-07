@@ -490,11 +490,11 @@ func (oic *OracleIntervalCalculator) CleanupStaleEntries(now time.Time) {
 }
 
 // GetCacheStats returns cache statistics
-func (oic *OracleIntervalCalculator) GetCacheStats() map[string]interface{} {
+func (oic *OracleIntervalCalculator) GetCacheStats() map[string]any {
 	oic.stateCacheMutex.RLock()
 	defer oic.stateCacheMutex.RUnlock()
 
-	return map[string]interface{}{
+	return map[string]any{
 		"total_queries_tracked": len(oic.stateCache),
 		"cache_ttl_minutes":     oic.cacheTTL.Minutes(),
 	}

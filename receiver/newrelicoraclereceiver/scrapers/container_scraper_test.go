@@ -1312,7 +1312,7 @@ func TestCheckCurrentContext_EdgeCases(t *testing.T) {
 		err = scraper.checkCurrentContext(ctx)
 
 		assert.NoError(t, err) // Should handle gracefully
-		assert.Equal(t, "", scraper.currentContainer)
+		assert.Empty(t, scraper.currentContainer)
 	})
 
 	t.Run("InvalidContainerID", func(t *testing.T) {
@@ -1334,6 +1334,6 @@ func TestCheckCurrentContext_EdgeCases(t *testing.T) {
 		err = scraper.checkCurrentContext(ctx)
 
 		assert.NoError(t, err) // Should handle gracefully
-		assert.Equal(t, "", scraper.currentContainerID)
+		assert.Empty(t, scraper.currentContainerID)
 	})
 }

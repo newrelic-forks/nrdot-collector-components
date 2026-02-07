@@ -45,7 +45,7 @@ func TestNullStringToString_Valid(t *testing.T) {
 func TestNullStringToString_Invalid(t *testing.T) {
 	ns := sql.NullString{String: "", Valid: false}
 	result := nullStringToString(ns)
-	assert.Equal(t, "", result)
+	assert.Empty(t, result)
 }
 
 func TestStringStatusToBinary_Match(t *testing.T) {
@@ -142,7 +142,7 @@ func TestRacScraper_MultipleScraper(t *testing.T) {
 	assert.NotEqual(t, scraper1.mb, scraper2.mb)
 }
 
-func TestRacScraper_ConcurrentAccess(t *testing.T) {
+func TestRacScraper_ConcurrentAccess(_ *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(metadata.DefaultMetricsBuilderConfig(), settings)
@@ -209,7 +209,7 @@ func TestIsRacEnabled_FirstCall_Enabled(t *testing.T) {
 	ctx := t.Context()
 	enabled, err := scraper.isRacEnabled(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.True(t, enabled)
 	assert.NotNil(t, scraper.isRacMode)
 	assert.True(t, *scraper.isRacMode)
@@ -229,7 +229,7 @@ func TestIsRacEnabled_FirstCall_Disabled(t *testing.T) {
 	ctx := t.Context()
 	enabled, err := scraper.isRacEnabled(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.False(t, enabled)
 	assert.NotNil(t, scraper.isRacMode)
 	assert.False(t, *scraper.isRacMode)
@@ -249,7 +249,7 @@ func TestIsRacEnabled_InvalidClusterDB(t *testing.T) {
 	ctx := t.Context()
 	enabled, err := scraper.isRacEnabled(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.False(t, enabled)
 }
 
@@ -265,7 +265,7 @@ func TestIsRacEnabled_QueryError(t *testing.T) {
 	ctx := t.Context()
 	enabled, err := scraper.isRacEnabled(ctx)
 
-	assert.NotNil(t, err)
+	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "database connection failed")
 	assert.False(t, enabled)
 }
@@ -285,7 +285,7 @@ func TestIsRacEnabled_CachedValue(t *testing.T) {
 
 	// First call
 	enabled1, err1 := scraper.isRacEnabled(ctx)
-	assert.Nil(t, err1)
+	assert.NoError(t, err1)
 	assert.True(t, enabled1)
 
 	// Set error to verify cache is used
@@ -293,7 +293,7 @@ func TestIsRacEnabled_CachedValue(t *testing.T) {
 
 	// Second call should use cached value
 	enabled2, err2 := scraper.isRacEnabled(ctx)
-	assert.Nil(t, err2)
+	assert.NoError(t, err2)
 	assert.True(t, enabled2)
 }
 
@@ -311,7 +311,7 @@ func TestIsRacEnabled_CaseInsensitive(t *testing.T) {
 	ctx := t.Context()
 	enabled, err := scraper.isRacEnabled(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.True(t, enabled)
 }
 
@@ -329,7 +329,7 @@ func TestIsASMAvailable_Available(t *testing.T) {
 	ctx := t.Context()
 	available, err := scraper.isASMAvailable(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.True(t, available)
 }
 
@@ -345,7 +345,7 @@ func TestIsASMAvailable_NotAvailable(t *testing.T) {
 	ctx := t.Context()
 	available, err := scraper.isASMAvailable(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.False(t, available)
 }
 
@@ -361,7 +361,7 @@ func TestIsASMAvailable_QueryError(t *testing.T) {
 	ctx := t.Context()
 	available, err := scraper.isASMAvailable(ctx)
 
-	assert.Nil(t, err)
+	assert.NoError(t, err)
 	assert.False(t, available)
 }
 
@@ -454,7 +454,7 @@ func TestScrapeRacMetrics_ContextCanceled(t *testing.T) {
 	logger := zap.NewNop()
 	scraper := NewRacScraper(mockClient, mb, logger, metadata.DefaultMetricsBuilderConfig())
 
-	ctx, cancel := context.WithCancel(context.Background())
+	ctx, cancel := context.WithCancel(t.Context())
 	cancel()
 
 	errs := scraper.ScrapeRacMetrics(ctx)

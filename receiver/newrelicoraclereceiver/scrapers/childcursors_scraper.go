@@ -34,7 +34,7 @@ func NewChildCursorsScraper(oracleClient client.OracleClient, mb *metadata.Metri
 	}
 }
 
-func (s *ChildCursorsScraper) ScrapeChildCursorsForIdentifiers(ctx context.Context, identifiers []models.SQLIdentifier, childLimit int) ([]models.SQLIdentifier, []error) {
+func (s *ChildCursorsScraper) ScrapeChildCursorsForIdentifiers(ctx context.Context, identifiers []models.SQLIdentifier, _ int) ([]models.SQLIdentifier, []error) {
 	var errs []error
 	s.logger.Debug("Starting child cursors scrape")
 	now := pcommon.NewTimestampFromTime(time.Now())

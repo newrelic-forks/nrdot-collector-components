@@ -5,16 +5,15 @@ package scrapers // import "github.com/newrelic/nrdot-collector-components/recei
 
 import (
 	"context"
-	"fmt"
+	"errors"
 	"sort"
 	"time"
 
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
 
-	commonutils "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
-
 	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	commonutils "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
 	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
 	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
@@ -77,8 +76,9 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 		queriesToProcess = make([]models.SlowQuery, 0, len(slowQueries))
 
 		// Calculate interval metrics for each query
-		for _, slowQuery := range slowQueries {
-			metrics := s.intervalCalculator.CalculateMetrics(&slowQuery, now)
+		for i := range slowQueries {
+			slowQuery := &slowQueries[i]
+			metrics := s.intervalCalculator.CalculateMetrics(slowQuery, now)
 
 			if metrics == nil {
 				s.logger.Debug("Skipping query with nil metrics")
@@ -120,7 +120,7 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 			slowQuery.IntervalBufferGets = &metrics.IntervalBufferGets
 			slowQuery.IntervalRowsProcessed = &metrics.IntervalRowsProcessed
 
-			queriesToProcess = append(queriesToProcess, slowQuery)
+			queriesToProcess = append(queriesToProcess, *slowQuery)
 		}
 
 		// Cleanup stale entries periodically (TTL-based only)
@@ -158,7 +158,8 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 
 	now := pcommon.NewTimestampFromTime(time.Now())
 
-	for _, slowQuery := range queriesToProcess {
+	for i := range queriesToProcess {
+		slowQuery := &queriesToProcess[i]
 		if !slowQuery.IsValidForMetrics() {
 			continue
 		}
@@ -172,18 +173,18 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 
 		// Generate normalised SQL hash from sql_fulltext using New Relic Java agent normalization logic
 		// The anonymized query text is derived from the normalized SQL (for attribute display)
-		var queryHash, qText, nrServiceGuid string
+		var queryHash, qText, nrServiceGUID string
 		if slowQuery.QueryText.Valid && slowQuery.QueryText.String != "" {
-			// Extract nr_service_guid from query comment
-			nrServiceGuid = commonutils.ExtractNewRelicMetadata(slowQuery.QueryText.String)
+			// Extract nrServiceGUID from query comment
+			nrServiceGUID = commonutils.ExtractNewRelicMetadata(slowQuery.QueryText.String)
 
 			// Generate normalized SQL and hash
-			normalizedSQL, hash := commonutils.NormalizeSqlAndHash(slowQuery.QueryText.String)
+			normalizedSQL, hash := commonutils.NormalizeSQLAndHash(slowQuery.QueryText.String)
 			queryHash = hash
 			qText = normalizedSQL
 		}
 
-		if err := s.recordMetrics(now, &slowQuery, collectionTimestamp, dbName, qID, qText, userName, schName, lastActiveTime, queryHash, nrServiceGuid); err != nil {
+		if err := s.recordMetrics(now, slowQuery, collectionTimestamp, dbName, qID, qText, userName, schName, lastActiveTime, queryHash, nrServiceGUID); err != nil {
 			s.logger.Warn("Failed to record metrics for slow query",
 				zap.String("sql_id", qID),
 				zap.Error(err))
@@ -196,7 +197,7 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 				SQLID:             slowQuery.QueryID.String,
 				ChildNumber:       0, // Will be populated later by child cursors scraper
 				Timestamp:         time.Now(),
-				NRServiceGuid:     nrServiceGuid,
+				NRServiceGUID:     nrServiceGUID,
 				NormalisedSQLHash: queryHash, // Empty string if no query text
 			})
 		}
@@ -208,10 +209,10 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 	return sqlIdentifiers, scrapeErrors
 }
 
-func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *models.SlowQuery, collectionTimestamp, dbName, qID, qText, userName, schName, lastActiveTime, queryHash, nrServiceGuid string) error {
+func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *models.SlowQuery, collectionTimestamp, dbName, qID, qText, userName, schName, lastActiveTime, queryHash, nrServiceGUID string) error {
 	if slowQuery == nil {
 		s.logger.Warn("Attempted to record metrics for nil slow query")
-		return fmt.Errorf("slow query is nil")
+		return errors.New("slow query is nil")
 	}
 	if slowQuery.ExecutionCount.Valid {
 		s.mb.RecordNewrelicoracledbSlowQueriesExecutionCountDataPoint(
@@ -222,7 +223,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -236,7 +237,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -250,7 +251,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -264,7 +265,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -278,7 +279,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -292,7 +293,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -306,7 +307,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -320,7 +321,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -334,7 +335,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -348,7 +349,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -362,7 +363,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -376,7 +377,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -390,7 +391,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -404,7 +405,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -418,7 +419,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -431,7 +432,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -444,7 +445,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -457,7 +458,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -470,7 +471,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -483,7 +484,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -496,7 +497,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -510,7 +511,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 			qID,
 			userName,
 			queryHash,
-			nrServiceGuid,
+			nrServiceGUID,
 		)
 	}
 
@@ -526,7 +527,7 @@ func (s *SlowQueriesScraper) recordMetrics(now pcommon.Timestamp, slowQuery *mod
 		userName,
 		lastActiveTime,
 		queryHash,
-		nrServiceGuid,
+		nrServiceGUID,
 		"", // normalised_blocking_sql_hash - not applicable for slow queries
 		"", // nr_blocking_service_guid - not applicable for slow queries
 	)
@@ -545,7 +546,8 @@ func (s *SlowQueriesScraper) GetSlowQueryIDs(ctx context.Context) ([]string, []e
 		return nil, []error{err}
 	}
 
-	for _, slowQuery := range slowQueries {
+	for i := range slowQueries {
+		slowQuery := &slowQueries[i]
 		if !slowQuery.IsValidForMetrics() {
 			continue
 		}

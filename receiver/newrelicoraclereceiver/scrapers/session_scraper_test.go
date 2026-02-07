@@ -165,7 +165,7 @@ func TestScrapeSessionCount_Success(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_MetricDisabled(t *testing.T) {
@@ -181,7 +181,7 @@ func TestScrapeSessionCount_MetricDisabled(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_NoRows(t *testing.T) {
@@ -197,7 +197,7 @@ func TestScrapeSessionCount_NoRows(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_QueryError(t *testing.T) {
@@ -230,7 +230,7 @@ func TestScrapeSessionCount_ZeroCount(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_LargeCount(t *testing.T) {
@@ -246,7 +246,7 @@ func TestScrapeSessionCount_LargeCount(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_NilCount(t *testing.T) {
@@ -262,7 +262,7 @@ func TestScrapeSessionCount_NilCount(t *testing.T) {
 	errs := scraper.ScrapeSessionCount(ctx)
 
 	assert.Nil(t, errs)
-	assert.Len(t, errs, 0)
+	assert.Empty(t, errs)
 }
 
 func TestScrapeSessionCount_ContextCanceled(t *testing.T) {

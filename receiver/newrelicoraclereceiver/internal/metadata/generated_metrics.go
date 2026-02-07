@@ -1545,7 +1545,7 @@ func (m *metricNewrelicoracledbBlockingQueriesWaitTimeMs) recordDataPoint(start 
 	dp.Attributes().PutStr("final_blocker_serial", finalBlockerSerialAttributeValue)
 	dp.Attributes().PutStr("final_blocker_query_id", finalBlockerQueryIDAttributeValue)
 	dp.Attributes().PutStr("final_blocker_query_text", finalBlockerQueryTextAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
 	dp.Attributes().PutStr("nr_blocking_service_guid", nrBlockingServiceGUIDAttributeValue)
 	dp.Attributes().PutStr("normalised_blocking_sql_hash", normalisedBlockingSQLHashAttributeValue)
@@ -9233,7 +9233,7 @@ func (m *metricNewrelicoracledbSlowQueriesExecutionCount) recordDataPoint(start 
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9289,7 +9289,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgBufferGets) recordDataPoint
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9345,7 +9345,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgCPUTime) recordDataPoint(st
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9401,7 +9401,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgDiskReads) recordDataPoint(
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9457,7 +9457,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgDiskWrites) recordDataPoint
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9513,7 +9513,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgElapsedTime) recordDataPoin
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9569,7 +9569,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgRowsProcessed) recordDataPo
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9625,7 +9625,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgWaitTime) recordDataPoint(s
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9681,7 +9681,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalBufferGets) recordDataPoint(st
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9737,7 +9737,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalCPUTime) recordDataPoint(start
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9793,7 +9793,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalDiskReads) recordDataPoint(sta
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9849,7 +9849,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalDiskWrites) recordDataPoint(st
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9905,7 +9905,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalElapsedTime) recordDataPoint(s
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -9961,7 +9961,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalExecutionCount) recordDataPoin
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10017,7 +10017,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalRowsProcessed) recordDataPoint
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10073,7 +10073,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalWaitTime) recordDataPoint(star
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10133,7 +10133,7 @@ func (m *metricNewrelicoracledbSlowQueriesQueryDetails) recordDataPoint(start pc
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("last_active_time", lastActiveTimeAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 	dp.Attributes().PutStr("normalised_blocking_sql_hash", normalisedBlockingSQLHashAttributeValue)
 	dp.Attributes().PutStr("nr_blocking_service_guid", nrBlockingServiceGUIDAttributeValue)
 }
@@ -10191,7 +10191,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalCPUTime) recordDataPoint(start pc
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10247,7 +10247,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalDiskReads) recordDataPoint(start 
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10303,7 +10303,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalDiskWrites) recordDataPoint(start
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10359,7 +10359,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalElapsedTime) recordDataPoint(star
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10415,7 +10415,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalRowsExamined) recordDataPoint(sta
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10471,7 +10471,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalRowsReturned) recordDataPoint(sta
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -10527,7 +10527,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalWaitTime) recordDataPoint(start p
 	dp.Attributes().PutStr("query_id", queryIDAttributeValue)
 	dp.Attributes().PutStr("user_name", userNameAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 }
 
 // updateCapacity saves max length of data point slices that will be used for the slice capacity.
@@ -18509,7 +18509,7 @@ func (m *metricNewrelicoracledbWaitEventsCurrentWaitTimeMs) recordDataPoint(star
 	dp.Attributes().PutStr("row_wait_obj_id", rowWaitObjIDAttributeValue)
 	dp.Attributes().PutStr("row_wait_file_id", rowWaitFileIDAttributeValue)
 	dp.Attributes().PutStr("row_wait_block_id", rowWaitBlockIDAttributeValue)
-	dp.Attributes().PutStr("nr_service_guid", nrServiceGUIDAttributeValue)
+	dp.Attributes().PutStr("nrServiceGUID", nrServiceGUIDAttributeValue)
 	dp.Attributes().PutStr("normalised_sql_hash", normalisedSQLHashAttributeValue)
 }
 

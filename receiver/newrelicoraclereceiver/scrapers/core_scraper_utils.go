@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func getInstanceIDString(instID interface{}) string {
+func getInstanceIDString(instID any) string {
 	if instID == nil {
 		return "unknown"
 	}

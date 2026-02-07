@@ -412,8 +412,8 @@ func TestCheckCurrentContext_InvalidContainer(t *testing.T) {
 	err := scraper.checkCurrentContext(ctx)
 
 	assert.NoError(t, err)
-	assert.Equal(t, "", scraper.currentContainer)
-	assert.Equal(t, "", scraper.currentContainerID)
+	assert.Empty(t, scraper.currentContainer)
+	assert.Empty(t, scraper.currentContainerID)
 	assert.False(t, scraper.isConnectedToCDBRoot())
 	assert.False(t, scraper.isConnectedToPDB())
 }
