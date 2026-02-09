@@ -1,6 +1,8 @@
 module github.com/newrelic/nrdot-collector-components/receiver/nopreceiver
 
-go 1.23
+go 1.24.0
+
+toolchain go1.24.13
 
 require (
 	github.com/stretchr/testify v1.11.1
