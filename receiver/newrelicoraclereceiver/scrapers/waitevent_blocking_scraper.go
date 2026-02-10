@@ -17,6 +17,7 @@ import (
 	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
+
 // WaitEventBlockingScraper collects both Oracle wait events and blocking query metrics
 type WaitEventBlockingScraper struct {
 	client                        client.OracleClient
@@ -255,7 +256,7 @@ func (s *WaitEventBlockingScraper) recordBlockingMetrics(now pcommon.Timestamp, 
 	finalBlockerSerial := commonutils.FormatInt64(event.GetFinalBlockerSerial())
 	finalBlockerUser := event.GetFinalBlockerUser()
 	finalBlockerQueryID := event.GetFinalBlockerQueryID()
-	finalBlockerQueryText := commonutils.AnonymizeAndNormalize(event.GetFinalBlockerQueryText())
+	finalBlockerQueryText := commonutils.NormalizeSQL(event.GetFinalBlockerQueryText())
 
 	// Get nrServiceGUID and normalised_sql_hash from sqlIDMap for the blocked query
 	// These will be empty strings if not present in the map or if the metadata values were empty
@@ -321,8 +322,8 @@ func (s *WaitEventBlockingScraper) recordBlockingMetrics(now pcommon.Timestamp, 
 			"",                        // schema_name
 			"",                        // user_name
 			"",                        // last_active_time
-			nrServiceGUID,             // normalised_sql_hash
-			normalisedSQLHash,         // nrServiceGUID
+			normalisedSQLHash,         // normalised_sql_hash
+			nrServiceGUID,             // nr_service_guid
 			normalisedBlockingSQLHash, // normalised_blocking_sql_hash (same - this IS the blocking query)
 			nrBlockingServiceGUID,     // nr_blocking_service_guid (same - this IS the blocking query)
 		)
