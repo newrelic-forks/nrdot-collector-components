@@ -5,7 +5,6 @@ package scrapers // import "github.com/newrelic/nrdot-collector-components/recei
 
 import (
 	"context"
-	"database/sql"
 	"errors"
 	"strconv"
 	"time"
@@ -285,20 +284,4 @@ func (s *ConnectionScraper) scrapeConnectionQuality(ctx context.Context, timesta
 	}
 
 	return errors
-}
-
-// formatInt64 converts sql.NullInt64 to string
-func (*ConnectionScraper) formatInt64(val sql.NullInt64) string {
-	if val.Valid {
-		return strconv.FormatInt(val.Int64, 10)
-	}
-	return ""
-}
-
-// formatString converts sql.NullString to string
-func (*ConnectionScraper) formatString(val sql.NullString) string {
-	if val.Valid {
-		return val.String
-	}
-	return ""
 }

@@ -299,7 +299,7 @@ func (s *newRelicOracleScraper) executeQPMScrapers(ctx context.Context, errChan 
 
 	if len(waitEventSQLIdentifiers) > 0 {
 		// First scrape child cursors to get plan hash values
-		updatedIdentifiers, childCursorErrs := s.childCursorsScraper.ScrapeChildCursorsForIdentifiers(ctx, waitEventSQLIdentifiers, s.config.ChildCursorsPerSQLID)
+		updatedIdentifiers, childCursorErrs := s.childCursorsScraper.ScrapeChildCursorsForIdentifiers(ctx, waitEventSQLIdentifiers)
 		s.sendErrorsToChannel(errChan, childCursorErrs, "child cursors")
 
 		// Then scrape execution plans using the plan hash values for caching

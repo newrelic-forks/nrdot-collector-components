@@ -569,37 +569,6 @@ func TestConnectionScraper_ConnectionQuality(t *testing.T) {
 	})
 }
 
-func TestConnectionScraper_HelperFunctions(t *testing.T) {
-	mockClient := client.NewMockClient()
-	config := metadata.DefaultMetricsBuilderConfig()
-	settings := receivertest.NewNopSettings(metadata.Type)
-	mb := metadata.NewMetricsBuilder(config, settings)
-	logger := zap.NewNop()
-
-	scraper, err := NewConnectionScraper(mockClient, mb, logger, config)
-	require.NoError(t, err)
-
-	t.Run("formatInt64 with valid value", func(t *testing.T) {
-		result := scraper.formatInt64(sql.NullInt64{Int64: 12345, Valid: true})
-		assert.Equal(t, "12345", result)
-	})
-
-	t.Run("formatInt64 with invalid value", func(t *testing.T) {
-		result := scraper.formatInt64(sql.NullInt64{Valid: false})
-		assert.Empty(t, result)
-	})
-
-	t.Run("formatString with valid value", func(t *testing.T) {
-		result := scraper.formatString(sql.NullString{String: "test-string", Valid: true})
-		assert.Equal(t, "test-string", result)
-	})
-
-	t.Run("formatString with invalid value", func(t *testing.T) {
-		result := scraper.formatString(sql.NullString{Valid: false})
-		assert.Empty(t, result)
-	})
-}
-
 func TestConnectionScraper_IntegrationWithMultipleErrors(t *testing.T) {
 	mockClient := client.NewMockClient()
 	mockClient.QueryErr = errors.New("database error")
