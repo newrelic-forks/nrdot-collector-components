@@ -536,7 +536,6 @@ Oracle SQL execution plan details including operation costs, cardinality, and re
 | bytes | Estimated number of bytes the operation will return | Any Int | Recommended |
 | cpu_cost | Estimated CPU cost of the operation | Any Int | Recommended |
 | io_cost | Estimated I/O cost of the operation | Any Int | Recommended |
-| timestamp | Timestamp when the query was captured/observed (from wait event or slow query) | Any Str | Recommended |
 | plan_generated_timestamp | Timestamp when the execution plan was created by Oracle (from V$SQL_PLAN.TIMESTAMP) | Any Str | Recommended |
 | temp_space | Estimated temporary space required for the operation (in bytes) | Any Int | Recommended |
 | access_predicates | Access predicates used to locate rows in an access structure | Any Str | Recommended |

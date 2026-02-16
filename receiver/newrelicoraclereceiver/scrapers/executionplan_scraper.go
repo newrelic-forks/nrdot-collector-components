@@ -209,9 +209,6 @@ func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPl
 		planGeneratedTimestamp = row.PlanGeneratedTimestamp.String
 	}
 
-	// Convert queryTimestamp to string for the timestamp attribute
-	queryTimestampStr := queryTimestamp.Format(time.RFC3339)
-
 	tempSpace := int64(-1)
 	if row.TempSpace.Valid && row.TempSpace.String != "" {
 		tempSpace = s.parseIntSafe(row.TempSpace.String)
@@ -257,7 +254,6 @@ func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPl
 		bytes,
 		cpuCost,
 		ioCost,
-		queryTimestampStr,
 		planGeneratedTimestamp,
 		tempSpace,
 		accessPredicates,

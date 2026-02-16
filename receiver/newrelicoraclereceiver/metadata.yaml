@@ -320,9 +320,6 @@ attributes:
   time:
     description: Estimated elapsed time for the operation (in seconds)
     type: int
-  timestamp:
-    description: Timestamp when the query was captured/observed (from wait event or slow query)
-    type: string
   user_name:
     description: Oracle username for slow queries
     type: string
@@ -942,7 +939,6 @@ metrics:
       - bytes
       - cpu_cost
       - io_cost
-      - timestamp
       - plan_generated_timestamp
       - temp_space
       - access_predicates
