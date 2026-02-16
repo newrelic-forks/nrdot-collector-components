@@ -87,7 +87,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		return
 	}
 
-	collectionTimestamp := commonutils.FormatTimestamp(event.GetCollectionTimestamp())
+	collectionTimestamp := event.GetCollectionTimestamp()
 	dbName := event.GetDatabaseName()
 	username := event.GetUsername()
 	sid := commonutils.FormatInt64(event.GetSID())
@@ -103,7 +103,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 	waitObjectOwner := event.GetObjectOwner()
 	waitObjectName := event.GetObjectNameWaitedOn()
 	waitObjectType := event.GetObjectTypeWaitedOn()
-	sqlExecStart := commonutils.FormatTimestamp(event.GetSQLExecStart())
+	sqlExecStart := event.GetSQLExecStart()
 	sqlExecID := event.GetSQLExecID()
 	rowWaitObjID := commonutils.FormatInt64(event.GetLockedObjectID())
 	rowWaitFileID := commonutils.FormatInt64(event.GetLockedFileID())
@@ -221,10 +221,7 @@ func (s *WaitEventBlockingScraper) extractSQLIdentifiers(
 		key := commonutils.GenerateSQLIdentifierKey(sqlID, childNumber)
 
 		if _, exists := identifiersMap[key]; !exists {
-			timestamp := event.GetCollectionTimestamp()
-			if timestamp.IsZero() {
-				timestamp = time.Now()
-			}
+			timestamp := time.Now()
 
 			// Get metadata from slow queries if available
 			// These will be empty strings if not present
@@ -263,7 +260,7 @@ func (s *WaitEventBlockingScraper) recordFinalBlockerQueryDetails(now pcommon.Ti
 		return
 	}
 
-	collectionTimestamp := commonutils.FormatTimestamp(event.GetCollectionTimestamp())
+	collectionTimestamp := event.GetCollectionTimestamp()
 	dbName := event.GetDatabaseName()
 	queryID := event.GetQueryID()
 
