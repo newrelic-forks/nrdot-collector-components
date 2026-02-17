@@ -125,7 +125,6 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 	finalBlockerSID := commonutils.FormatInt64(event.GetFinalBlockerSID())
 	finalBlockerSerial := commonutils.FormatInt64(event.GetFinalBlockerSerial())
 	finalBlockerQueryID := event.GetFinalBlockerQueryID()
-	finalBlockerQueryText := commonutils.NormalizeSQL(event.GetFinalBlockerQueryText())
 
 	// Extract metadata from final blocker query text (if blocked)
 	var nrBlockingServiceGUID, normalisedBlockingSQLHash string
@@ -166,7 +165,6 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		finalBlockerSID,
 		finalBlockerSerial,
 		finalBlockerQueryID,
-		finalBlockerQueryText,
 		nrServiceGUID,
 		normalisedSQLHash,
 		nrBlockingServiceGUID,
