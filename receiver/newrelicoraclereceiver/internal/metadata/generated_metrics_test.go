@@ -1380,7 +1380,7 @@ func TestMetricsBuilder(t *testing.T) {
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbWaitEventsCurrentWaitTimeMsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "user_name-val", "session_id-val", 14, "session_status-val", "session_state-val", "query_id-val", 16, "wait_event_name-val", "wait_category-val", "session_program-val", "session_machine-val", "wait_object_owner-val", "wait_object_name-val", "wait_object_type-val", "sql_exec_start-val", 11, "row_wait_obj_id-val", "row_wait_file_id-val", "row_wait_block_id-val", "blocking_session_status-val", "immediate_blocker_sid-val", "final_blocking_session_status-val", "final_blocker_user-val", "final_blocker_sid-val", "final_blocker_serial-val", "final_blocker_query_id-val", "final_blocker_query_text-val", "nr_service_guid-val", "normalised_sql_hash-val", "nr_blocking_service_guid-val", "normalised_blocking_sql_hash-val")
+			mb.RecordNewrelicoracledbWaitEventsCurrentWaitTimeMsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "user_name-val", "session_id-val", 14, "session_status-val", "session_state-val", "query_id-val", 16, "wait_event_name-val", "wait_category-val", "session_program-val", "session_machine-val", "wait_object_owner-val", "wait_object_name-val", "wait_object_type-val", "sql_exec_start-val", 11, "row_wait_obj_id-val", "row_wait_file_id-val", "row_wait_block_id-val", "blocking_session_status-val", "immediate_blocker_sid-val", "final_blocking_session_status-val", "final_blocker_user-val", "final_blocker_sid-val", "final_blocker_serial-val", "final_blocker_query_id-val", "nr_service_guid-val", "normalised_sql_hash-val", "nr_blocking_service_guid-val", "normalised_blocking_sql_hash-val")
 
 			rb := mb.NewResourceBuilder()
 			rb.SetHostAddress("host.address-val")
@@ -7240,9 +7240,6 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("final_blocker_query_id")
 					assert.True(t, ok)
 					assert.Equal(t, "final_blocker_query_id-val", attrVal.Str())
-					attrVal, ok = dp.Attributes().Get("final_blocker_query_text")
-					assert.True(t, ok)
-					assert.Equal(t, "final_blocker_query_text-val", attrVal.Str())
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
