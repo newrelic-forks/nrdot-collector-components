@@ -12,9 +12,9 @@ import (
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
 
-	"github.com/newrelic/nrdot-collector-components/receiver/newrelicsqlserverreceiver/helpers"
-	"github.com/newrelic/nrdot-collector-components/receiver/newrelicsqlserverreceiver/models"
-	"github.com/newrelic/nrdot-collector-components/receiver/newrelicsqlserverreceiver/queries"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicsqlserverreceiver/helpers"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicsqlserverreceiver/models"
+	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicsqlserverreceiver/queries"
 )
 
 // ScrapeActiveRunningQueriesMetrics fetches active running queries from SQL Server
@@ -450,7 +450,8 @@ func (s *QueryPerformanceScraper) EmitBlockingQueriesAsCustomEvents(activeQuerie
 		// Skip if required victim identifiers are missing
 		if activeQuery.CurrentSessionID == nil ||
 			activeQuery.RequestID == nil ||
-			activeQuery.RequestStartTime == nil {
+			activeQuery.RequestStartTime == nil ||
+			activeQuery.QueryID == nil || activeQuery.QueryID.IsEmpty() {
 			continue
 		}
 
@@ -477,6 +478,7 @@ func (s *QueryPerformanceScraper) EmitBlockingQueriesAsCustomEvents(activeQuerie
 				SessionID:                 *activeQuery.CurrentSessionID,
 				RequestID:                 *activeQuery.RequestID,
 				RequestStartTime:          *activeQuery.RequestStartTime,
+				QueryID:                   activeQuery.QueryID.String(), // Victim's query_id for NRQL filtering
 				BlockingSessionID:         *activeQuery.BlockingSessionID,
 				BlockingQueryText:         *activeQuery.BlockingQueryStatementText, // Full text, no truncation
 				BlockingNrServiceGuid:     blockingNrServiceGuid,                   // APM service GUID from blocking query
@@ -504,11 +506,12 @@ func (s *QueryPerformanceScraper) EmitBlockingQueriesAsCustomEvents(activeQuerie
 			event.SessionID,
 			event.RequestID,
 			event.RequestStartTime,
+			event.QueryID, // Victim's query_id for NRQL filtering
 			event.BlockingSessionID,
 			anonymizedText,
 			event.BlockingNrServiceGuid,     // APM service GUID for correlation
 			event.BlockingNormalisedSqlHash, // Normalized SQL hash for cross-language correlation
-			"SqlServerQueryDetails",     // event.name for New Relic custom events
+			"SqlServerQueryDetails",         // event.name for New Relic custom events
 		)
 		emittedCount++
 	}
