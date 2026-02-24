@@ -269,34 +269,49 @@ func TestExtractNewRelicMetadata(t *testing.T) {
 			expectedGUID: "",
 		},
 		{
-			name:         "Quoted GUID (basic)",
-			input:        "/*nrServiceGUID=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\"*/ SELECT * FROM pets",
+			name:         "GUID (basic)",
+			input:        "/*nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\"*/ SELECT * FROM pets",
 			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ",
 		},
 		{
-			name:         "Quoted GUID with spaces in comment",
-			input:        "/* nrServiceGUID=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ SELECT * FROM pets",
+			name:         "GUID with spaces in comment",
+			input:        "/* nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ SELECT * FROM pets",
+			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ",
+		},
+		{
+			name:         "GUID with spaces around equals",
+			input:        "/* nr_service_guid = \"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ SELECT * FROM pets",
 			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ",
 		},
 		{
 			name:         "GUID with different base64 value",
-			input:        "/* nrServiceGUID=\"ABC123XYZ789==\",other=\"value\" */ SELECT * FROM users",
+			input:        "/* nr_service_guid=\"ABC123XYZ789==\",other=\"value\" */ SELECT * FROM users",
 			expectedGUID: "ABC123XYZ789==",
 		},
 		{
 			name:         "Empty quoted GUID",
-			input:        "/* nrServiceGUID=\"\" */ SELECT * FROM users",
+			input:        "/* nr_service_guid=\"\" */ SELECT * FROM users",
 			expectedGUID: "",
 		},
 		{
 			name:         "GUID in middle of query",
-			input:        "SELECT /* nrServiceGUID=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ * FROM users",
+			input:        "SELECT /* nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ * FROM users",
 			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ",
 		},
 		{
-			name:         "Real-world GUID with UPDATE statement",
-			input:        "/* nrServiceGUID=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ UPDATE payments SET status = ?",
+			name:         "GUID with UPDATE statement",
+			input:        "/* nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ\" */ UPDATE payments SET status = ?",
 			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI4MzA5MDIxMQ",
+		},
+		{
+			name:         "Real-world NR Java agent format (no spaces)",
+			input:        "/*nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI5Njk5MDEzOA\"*/SELECT * FROM employees",
+			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI5Njk5MDEzOA",
+		},
+		{
+			name:         "Real-world NR Java agent format (with spaces)",
+			input:        "/* nr_service_guid=\"MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI5Njk5MDEzOA\" */ UPDATE employees SET salary = ?",
+			expectedGUID: "MTE2MDAzMTl8QVBNfEFQUExJQ0FUSU9OfDI5Njk5MDEzOA",
 		},
 	}
 

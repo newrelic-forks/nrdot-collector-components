@@ -47,12 +47,12 @@ func GenerateMD5Hash(normalizedSQL string) string {
 	return hex.EncodeToString(hash[:])
 }
 
-// ExtractNewRelicMetadata extracts nrServiceGUID from New Relic query comments
-// Only supports quoted format: /* nrServiceGUID="VALUE" */
-// Returns: nrServiceGUID value or empty string if not found
+// ExtractNewRelicMetadata extracts nr_service_guid from New Relic query comments
+// Supports format: /* nr_service_guid="VALUE" */ (injected by NR Java agent)
+// Returns: nr_service_guid value or empty string if not found
 func ExtractNewRelicMetadata(sql string) string {
-	quotedGUIDRegex := regexp.MustCompile(`nrServiceGUID="([^"]*)"`)
-	if match := quotedGUIDRegex.FindStringSubmatch(sql); len(match) > 1 {
+	serviceGuidRegex := regexp.MustCompile(`nr_service_guid\s*=\s*"([^"]+)"`)
+	if match := serviceGuidRegex.FindStringSubmatch(sql); len(match) > 1 {
 		return match[1]
 	}
 	return ""
