@@ -134,16 +134,29 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		normalisedQueryText, queryHash = commonutils.NormalizeSQLAndHash(rawQueryText)
 	}
 
+	s.logger.Debug("Wait event raw query text",
+		zap.String("query_id", queryID),
+		zap.String("raw_query_text", rawQueryText),
+	)
+
 	// Prefer metadata propagated from Phase 1 (slow queries).
 	// For sessions not in Phase 1, derive metadata from the event's own query text.
 	var nrServiceGUID, normalisedSQLHash string
-	if md, exists := sqlIDMap[queryID]; exists {
-		nrServiceGUID = md.NRServiceGUID
-		normalisedSQLHash = md.NormalisedSQLHash
+	_, fromSlowQueryMap := sqlIDMap[queryID]
+	if fromSlowQueryMap {
+		nrServiceGUID = sqlIDMap[queryID].NRServiceGUID
+		normalisedSQLHash = sqlIDMap[queryID].NormalisedSQLHash
 	} else if rawQueryText != "" {
 		nrServiceGUID = commonutils.ExtractNewRelicMetadata(rawQueryText)
 		normalisedSQLHash = queryHash
 	}
+
+	s.logger.Debug("Wait event metadata resolved",
+		zap.String("query_id", queryID),
+		zap.String("nr_service_guid", nrServiceGUID),
+		zap.String("normalised_sql_hash", normalisedSQLHash),
+		zap.Bool("from_slow_query_map", fromSlowQueryMap),
+	)
 
 	// Get blocking attributes (will be empty strings for non-blocked sessions)
 	blockingSessionStatus := event.GetBlockingSessionStatus()
