@@ -134,7 +134,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		normalisedQueryText, queryHash = commonutils.NormalizeSQLAndHash(rawQueryText)
 	}
 
-	s.logger.Debug("Wait event raw query text",
+	s.logger.Info("Wait event raw query text",
 		zap.String("query_id", queryID),
 		zap.String("raw_query_text", rawQueryText),
 	)
@@ -151,7 +151,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		normalisedSQLHash = queryHash
 	}
 
-	s.logger.Debug("Wait event metadata resolved",
+	s.logger.Info("Wait event metadata resolved",
 		zap.String("query_id", queryID),
 		zap.String("nr_service_guid", nrServiceGUID),
 		zap.String("normalised_sql_hash", normalisedSQLHash),

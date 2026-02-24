@@ -174,7 +174,7 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 		// The anonymized query text is derived from the normalized SQL (for attribute display)
 		var queryHash, qText, nrServiceGUID string
 		if slowQuery.QueryText.Valid && slowQuery.QueryText.String != "" {
-			s.logger.Debug("Slow query raw text",
+			s.logger.Info("Slow query raw text",
 				zap.String("sql_id", qID),
 				zap.String("raw_query_text", slowQuery.QueryText.String),
 			)
@@ -187,7 +187,7 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 			queryHash = hash
 			qText = normalizedSQL
 
-			s.logger.Debug("Slow query metadata resolved",
+			s.logger.Info("Slow query metadata resolved",
 				zap.String("sql_id", qID),
 				zap.String("nr_service_guid", nrServiceGUID),
 				zap.String("normalised_sql_hash", queryHash),
