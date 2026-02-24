@@ -220,7 +220,7 @@ func (s *newRelicOracleScraper) initializeQPMScrapers() error {
 	var err error
 	s.waitEventBlockingScraper, err = scrapers.NewWaitEventBlockingScraper(
 		s.client, s.mb, s.logger, s.metricsBuilderConfig,
-		s.config.WaitEventCountThreshold,
+		s.config.QueryMonitoringCountThreshold,
 	)
 	if err != nil {
 		return fmt.Errorf("failed to create wait event blocking scraper: %w", err)

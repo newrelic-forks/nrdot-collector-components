@@ -7,15 +7,10 @@ package queries // import "github.com/open-telemetry/opentelemetry-collector-con
 const (
 	// Default values used when configuration is not specified
 	DefaultQueryMonitoringResponseTimeThreshold = 100 // milliseconds
-	DefaultQueryMonitoringCountThreshold        = 20
+	DefaultQueryMonitoringCountThreshold        = 30
 
 	// Validation ranges for configuration values
 	MinQueryMonitoringResponseTimeThreshold = 0
 	MinQueryMonitoringCountThreshold        = 20
 	MaxQueryMonitoringCountThreshold        = 50
-
-	// WaitEventCountThreshold controls the FETCH FIRST N limit for the active-session query.
-	DefaultWaitEventCountThreshold = 50
-	MinWaitEventCountThreshold     = 10
-	MaxWaitEventCountThreshold     = 50
 )
