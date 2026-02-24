@@ -174,11 +174,11 @@ func isPrecededByIn(result *strings.Builder) bool {
 
 // isIdentifierChar checks if a character is valid in an identifier
 func isIdentifierChar(c rune) bool {
-	// Added backtick (`) to match isNumericLiteral logic
-	return unicode.IsLetter(c) || unicode.IsDigit(c) || c == '_' || c == '`'
+	return unicode.IsLetter(c) || unicode.IsDigit(c) || c == '_'
 }
 
 // isPlaceholder checks if current position is a parameter placeholder
+// Supports Oracle-specific placeholders: ?, :name, :1
 func isPlaceholder(state *sqlNormalizerState) bool {
 	c := state.current()
 
@@ -361,6 +361,10 @@ func tryNormalizeInClause(state *sqlNormalizerState) string {
 			// Not a list, bail
 			allParametersOrLiterals = false
 		}
+
+		if !allParametersOrLiterals {
+			break
+		}
 	}
 
 	// Check if we found a closing paren and have multiple items
@@ -390,16 +394,10 @@ func removeCommentsAndNormalizeWhitespace(sql string) string {
 			processStringLiteral(&result, state)
 		case isMultilineCommentStart(state):
 			processMultilineComment(state)
-			result.WriteByte('?')
-			state.lastWasWhitespace = false
 		case isSingleLineCommentStart(state):
 			processSingleLineComment(state)
-			result.WriteByte('?')
-			state.lastWasWhitespace = false
 		case current == '#':
 			processHashComment(state)
-			result.WriteByte('?')
-			state.lastWasWhitespace = false
 		case unicode.IsSpace(rune(current)):
 			processWhitespace(&result, state)
 		default:
