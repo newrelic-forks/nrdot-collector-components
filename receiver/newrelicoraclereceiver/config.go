@@ -37,6 +37,7 @@ const (
 	// in SetDefaults() to ensure it's always >= collection_interval
 
 	// Feature-level scraper defaults (all disabled by default)
+	// Note: UI-critical metrics always emit regardless of these flags
 	defaultEnableSessionScraper      = false
 	defaultEnableTablespaceScraper   = false
 	defaultEnableCoreScraper         = false
