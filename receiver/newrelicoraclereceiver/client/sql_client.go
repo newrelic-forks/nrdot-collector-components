@@ -188,18 +188,6 @@ func (c *SQLClient) QuerySpecificChildCursor(ctx context.Context, sqlID string, 
 	return nil, nil
 }
 
-// execKey uniquely identifies a specific SQL execution across both sequential DB calls.
-// Oracle sets (SQL_ID, SQL_EXEC_ID, SQL_EXEC_START) atomically when a session begins
-// executing a statement; all three remain stable for the lifetime of that execution.
-// If the same execution is returned by both Call 1 (slow-query sessions) and Call 2
-// (general top-N), the identical tuple acts as the dedup key so the record is only
-// added once.  Sessions without an active SQL (all fields at their zero/sentinel values)
-// form a shared key {"", -1, ""} but are typically filtered out upstream by the query.
-type execKey struct {
-	sqlID        string
-	sqlExecID    int64
-	sqlExecStart string
-}
 
 // scanWaitEvents executes the given SQL and scans each row into a WaitEventWithBlocking.
 // It is the shared scan helper used by both sequential calls inside QueryWaitEventsWithBlocking.
@@ -257,57 +245,34 @@ func (c *SQLClient) scanWaitEvents(ctx context.Context, query string) ([]models.
 
 	return results, rows.Err()
 }
-
-// QueryWaitEventsWithBlocking uses two sequential DB calls to maximize active-session coverage:
-//
-//  1. Slow-query call (when slowQueryIDs is non-empty):
-//     Fetches sessions specifically running the sql_ids identified as slow in Phase 1.
-//     These sessions are guaranteed to appear regardless of their wait time relative to
-//     other sessions, because the query filters to exactly those sql_ids.
-//
-//  2. General call:
-//     Fetches the top-N active sessions ordered by descending wait/CPU time, giving a
-//     broad view of what is happening on the database right now.
-//
-// Duplicates (executions that appear in both calls) are removed in Go using
-// (SQL_ID, SQL_EXEC_ID, SQL_EXEC_START) as the composite key.  Oracle sets this
-// triple atomically when a session begins executing a statement; it stays stable
-// for the full lifetime of that execution.  Sessions from call 1 are always kept;
-// call 2 only adds executions not already seen.
-//
-// Metadata (nrServiceGUID, normalisedSQLHash) is attached in Go from the slow-query sqlIDMap
-// by the caller (WaitEventBlockingScraper).
 func (c *SQLClient) QueryWaitEventsWithBlocking(ctx context.Context, countThreshold int, slowQueryIDs []string) ([]models.WaitEventWithBlocking, error) {
-	seen := make(map[execKey]struct{})
 	var results []models.WaitEventWithBlocking
+	var capturedSQLIDs []string
 
-	// ── Call 1: sessions running Phase 1 slow-query sql_ids ──────────────────
-	if slowQuerySQL := queries.GetSlowQuerySessionsSQL(slowQueryIDs); slowQuerySQL != "" {
+	if slowQuerySQL := queries.GetActiveSessionsForMonitoredQueriesSQL(slowQueryIDs); slowQuerySQL != "" {
 		slowSessions, err := c.scanWaitEvents(ctx, slowQuerySQL)
 		if err != nil {
 			return nil, err
 		}
+		results = append(results, slowSessions...)
+
+		// Extract unique sql_ids from Call 1 results to exclude from Call 2
+		sqlIDSet := make(map[string]struct{})
 		for i := range slowSessions {
-			key := execKey{slowSessions[i].GetQueryID(), slowSessions[i].GetSQLExecID(), slowSessions[i].GetSQLExecStart()}
-			if _, dup := seen[key]; !dup {
-				seen[key] = struct{}{}
-				results = append(results, slowSessions[i])
+			if sqlID := slowSessions[i].GetQueryID(); sqlID != "" {
+				sqlIDSet[sqlID] = struct{}{}
 			}
+		}
+		for sqlID := range sqlIDSet {
+			capturedSQLIDs = append(capturedSQLIDs, sqlID)
 		}
 	}
 
-	// ── Call 2: top-N general active sessions ─────────────────────────────────
-	generalSessions, err := c.scanWaitEvents(ctx, queries.GetWaitEventsAndBlockingSQL(countThreshold))
+	generalSessions, err := c.scanWaitEvents(ctx, queries.GetWaitEventsAndBlockingSQL(countThreshold, capturedSQLIDs))
 	if err != nil {
 		return nil, err
 	}
-	for i := range generalSessions {
-		key := execKey{generalSessions[i].GetQueryID(), generalSessions[i].GetSQLExecID(), generalSessions[i].GetSQLExecStart()}
-		if _, dup := seen[key]; !dup {
-			seen[key] = struct{}{}
-			results = append(results, generalSessions[i])
-		}
-	}
+	results = append(results, generalSessions...)
 
 	return results, nil
 }

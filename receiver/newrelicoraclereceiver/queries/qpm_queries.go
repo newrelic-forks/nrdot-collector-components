@@ -64,20 +64,17 @@ func GetSlowQueriesSQL(intervalSeconds int) string {
 			sa.elapsed_time DESC`, intervalSeconds)
 }
 
-// GetWaitEventsAndBlockingSQL returns SQL for active session wait events with blocking information.
-// This combines both wait events and blocking queries into a single query to reduce overhead.
-// High cardinality mitigation:
-// - FETCH FIRST limits total rows returned to configured rowLimit
-// - Filters active sessions capturing both CPU activity and actual waits (status='ACTIVE', excludes Idle waits and BACKGROUND processes)
-// - Orders by time in state (CPU or wait time) to get most impactful sessions first
-//
-// Key notes:
-// - Captures CPU activity (state != 'WAITING') in addition to wait events
-// - Correctly labels activity as 'ON CPU' or actual wait event name
-// - Uses proper timer: wait_time_micro for WAITING state, time_since_last_wait_micro for CPU
-// - Excludes background processes to match ASH behavior
-// - Metadata (nrServiceGUID, normalisedSQLHash) is attached in Go using the slow-query sqlIDMap
-func GetWaitEventsAndBlockingSQL(rowLimit int) string {
+func GetWaitEventsAndBlockingSQL(rowLimit int, excludeSQLIDs []string) string {
+	// Build the exclusion list - if empty, use a dummy value that won't match any real sql_id
+	exclusionList := "'__DUMMY__'"
+	if len(excludeSQLIDs) > 0 {
+		quoted := make([]string, len(excludeSQLIDs))
+		for i, id := range excludeSQLIDs {
+			quoted[i] = "'" + id + "'"
+		}
+		exclusionList = strings.Join(quoted, ", ")
+	}
+
 	return fmt.Sprintf(`
 		SELECT
 			TO_CHAR(SYSTIMESTAMP, 'YYYY-MM-DD HH24:MI:SS') AS COLLECTION_TIMESTAMP,
@@ -140,6 +137,7 @@ func GetWaitEventsAndBlockingSQL(rowLimit int) string {
 			s.status = 'ACTIVE'
 			AND s.type != 'BACKGROUND'
 			AND s.sql_id IS NOT NULL
+			AND s.sql_id NOT IN (%s)
 			AND (
 				s.state != 'WAITING'
 				OR s.wait_class <> 'Idle'
@@ -149,20 +147,10 @@ func GetWaitEventsAndBlockingSQL(rowLimit int) string {
 				WHEN s.state = 'WAITING' THEN s.WAIT_TIME_MICRO
 				ELSE s.TIME_SINCE_LAST_WAIT_MICRO
 			END DESC
-		FETCH FIRST %d ROWS ONLY`, rowLimit)
+		FETCH FIRST %d ROWS ONLY`, exclusionList, rowLimit)
 }
 
-// GetSlowQuerySessionsSQL returns SQL for active sessions that are specifically running one
-// of the given slow-query sql_ids (Phase 1 output). This is used as Call 1 in the two-call
-// active-session strategy, ensuring every session for a monitored query is captured regardless
-// of its wait time relative to unmonitored sessions.
-//
-// No FETCH FIRST limit is applied: the result set is already bounded by the number of
-// active sessions running the (at most MaxQueryMonitoringCountThreshold) monitored sql_ids,
-// and a row cap would defeat the guarantee that all such sessions are captured.
-//
-// Returns empty string when slowQueryIDs is empty (caller must skip the DB call).
-func GetSlowQuerySessionsSQL(slowQueryIDs []string) string {
+func GetActiveSessionsForMonitoredQueriesSQL(slowQueryIDs []string) string {
 	if len(slowQueryIDs) == 0 {
 		return ""
 	}
