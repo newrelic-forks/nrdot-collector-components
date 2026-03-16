@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -9,10 +9,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
 )
 
 // ConnectionScraper contains the scraper for Oracle connection statistics
@@ -267,8 +268,7 @@ func (s *ConnectionScraper) scrapeConnectionQuality(ctx context.Context, timesta
 			continue
 		}
 
-		switch metric.Name.String {
-		case "execute count":
+		if metric.Name.String == "execute count" {
 			s.mb.RecordNewrelicoracledbConnectionExecuteCountDataPoint(timestamp, metric.Value.Float64)
 		}
 

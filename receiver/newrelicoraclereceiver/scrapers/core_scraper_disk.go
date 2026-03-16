@@ -1,15 +1,16 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // diskIOMetricRecorder defines a metric recorder for disk I/O metrics

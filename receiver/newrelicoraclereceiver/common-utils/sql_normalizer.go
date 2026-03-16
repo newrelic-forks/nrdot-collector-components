@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package commonutils // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/common-utils"
+package commonutils // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
 
 import (
 	"crypto/md5" // #nosec G501 - MD5 is used for SQL fingerprinting, not cryptographic security
@@ -51,8 +51,8 @@ func GenerateMD5Hash(normalizedSQL string) string {
 // Supports format: /* nr_service_guid="VALUE" */ (injected by NR Java agent)
 // Returns: nr_service_guid value or empty string if not found
 func ExtractNewRelicMetadata(sql string) string {
-	serviceGuidRegex := regexp.MustCompile(`nr_service_guid\s*=\s*"([^"]+)"`)
-	if match := serviceGuidRegex.FindStringSubmatch(sql); len(match) > 1 {
+	serviceGUIDRegex := regexp.MustCompile(`nr_service_guid\s*=\s*"([^"]+)"`)
+	if match := serviceGUIDRegex.FindStringSubmatch(sql); len(match) > 1 {
 		return match[1]
 	}
 	return ""
