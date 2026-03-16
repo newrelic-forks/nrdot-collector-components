@@ -3,7 +3,7 @@
 
 module-sets:
   beta:
-    version: v0.142.1
+    version: v0.142.2
     modules:
       - github.com/newrelic/nrdot-collector-components
       - github.com/newrelic/nrdot-collector-components/cmd/codecovgen
@@ -12,6 +12,7 @@ module-sets:
       - github.com/newrelic/nrdot-collector-components/internal/common
       - github.com/newrelic/nrdot-collector-components/internal/coreinternal
       - github.com/newrelic/nrdot-collector-components/processor/adaptivetelemetryprocessor
+      - github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver
       - github.com/newrelic/nrdot-collector-components/receiver/nopreceiver
       - github.com/newrelic/nrdot-collector-components/testbed
 
