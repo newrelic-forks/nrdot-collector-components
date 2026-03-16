@@ -125,10 +125,18 @@ func getDataSource(cfg Config) string {
 
 	// Build go-ora connection string format
 	// Format: oracle://user:password@host:port/service_name
+	// Use url.URL to properly encode credentials
 	host, portStr, _ := net.SplitHostPort(cfg.Endpoint)
 	port, _ := strconv.ParseInt(portStr, 10, 32)
 
-	return fmt.Sprintf("oracle://%s:%s@%s:%d/%s", cfg.Username, cfg.Password, host, port, cfg.Service)
+	u := &url.URL{
+		Scheme: "oracle",
+		User:   url.UserPassword(cfg.Username, cfg.Password),
+		Host:   fmt.Sprintf("%s:%d", host, port),
+		Path:   "/" + cfg.Service,
+	}
+
+	return u.String()
 }
 
 func getHostAndPort(datasource string) (string, int64, error) {
@@ -213,10 +221,18 @@ func getDataSourceWithService(cfg Config, serviceName string) string {
 
 	// Build go-ora connection string format with specified service
 	// Format: oracle://user:password@host:port/service_name
+	// Use url.URL to properly encode credentials
 	host, portStr, _ := net.SplitHostPort(cfg.Endpoint)
 	port, _ := strconv.ParseInt(portStr, 10, 32)
 
-	return fmt.Sprintf("oracle://%s:%s@%s:%d/%s", cfg.Username, cfg.Password, host, port, serviceName)
+	u := &url.URL{
+		Scheme: "oracle",
+		User:   url.UserPassword(cfg.Username, cfg.Password),
+		Host:   fmt.Sprintf("%s:%d", host, port),
+		Path:   "/" + serviceName,
+	}
+
+	return u.String()
 }
 
 // determineMonitoredServices determines which services to monitor based on pdb_services configuration
