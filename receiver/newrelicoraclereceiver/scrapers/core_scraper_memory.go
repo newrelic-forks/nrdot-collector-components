@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
-
 import (
 	"context"
 
