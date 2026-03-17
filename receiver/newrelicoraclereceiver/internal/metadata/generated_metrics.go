@@ -1386,6 +1386,7 @@ func (m *metricNewrelicoracledbAsmDiskgroupFreeMb) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbAsmDiskgroupFreeMb(cfg MetricConfig) metricNewrelicoracledbAsmDiskgroupFreeMb {
 	m := metricNewrelicoracledbAsmDiskgroupFreeMb{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1437,6 +1438,7 @@ func (m *metricNewrelicoracledbAsmDiskgroupOfflineDisks) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbAsmDiskgroupOfflineDisks(cfg MetricConfig) metricNewrelicoracledbAsmDiskgroupOfflineDisks {
 	m := metricNewrelicoracledbAsmDiskgroupOfflineDisks{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1488,6 +1490,7 @@ func (m *metricNewrelicoracledbAsmDiskgroupTotalMb) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbAsmDiskgroupTotalMb(cfg MetricConfig) metricNewrelicoracledbAsmDiskgroupTotalMb {
 	m := metricNewrelicoracledbAsmDiskgroupTotalMb{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1543,6 +1546,7 @@ func (m *metricNewrelicoracledbChildCursorsBufferGets) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbChildCursorsBufferGets(cfg MetricConfig) metricNewrelicoracledbChildCursorsBufferGets {
 	m := metricNewrelicoracledbChildCursorsBufferGets{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1598,6 +1602,7 @@ func (m *metricNewrelicoracledbChildCursorsCPUTime) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbChildCursorsCPUTime(cfg MetricConfig) metricNewrelicoracledbChildCursorsCPUTime {
 	m := metricNewrelicoracledbChildCursorsCPUTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1655,6 +1660,7 @@ func (m *metricNewrelicoracledbChildCursorsDetails) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbChildCursorsDetails(cfg MetricConfig) metricNewrelicoracledbChildCursorsDetails {
 	m := metricNewrelicoracledbChildCursorsDetails{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1710,6 +1716,7 @@ func (m *metricNewrelicoracledbChildCursorsDiskReads) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbChildCursorsDiskReads(cfg MetricConfig) metricNewrelicoracledbChildCursorsDiskReads {
 	m := metricNewrelicoracledbChildCursorsDiskReads{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1765,6 +1772,7 @@ func (m *metricNewrelicoracledbChildCursorsElapsedTime) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbChildCursorsElapsedTime(cfg MetricConfig) metricNewrelicoracledbChildCursorsElapsedTime {
 	m := metricNewrelicoracledbChildCursorsElapsedTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1820,6 +1828,7 @@ func (m *metricNewrelicoracledbChildCursorsExecutions) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbChildCursorsExecutions(cfg MetricConfig) metricNewrelicoracledbChildCursorsExecutions {
 	m := metricNewrelicoracledbChildCursorsExecutions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1875,6 +1884,7 @@ func (m *metricNewrelicoracledbChildCursorsInvalidations) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbChildCursorsInvalidations(cfg MetricConfig) metricNewrelicoracledbChildCursorsInvalidations {
 	m := metricNewrelicoracledbChildCursorsInvalidations{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1930,6 +1940,7 @@ func (m *metricNewrelicoracledbChildCursorsUserIoWaitTime) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbChildCursorsUserIoWaitTime(cfg MetricConfig) metricNewrelicoracledbChildCursorsUserIoWaitTime {
 	m := metricNewrelicoracledbChildCursorsUserIoWaitTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -1979,6 +1990,7 @@ func (m *metricNewrelicoracledbConnectionActiveSessions) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbConnectionActiveSessions(cfg MetricConfig) metricNewrelicoracledbConnectionActiveSessions {
 	m := metricNewrelicoracledbConnectionActiveSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2030,6 +2042,7 @@ func (m *metricNewrelicoracledbConnectionBytesReceived) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionBytesReceived(cfg MetricConfig) metricNewrelicoracledbConnectionBytesReceived {
 	m := metricNewrelicoracledbConnectionBytesReceived{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2081,6 +2094,7 @@ func (m *metricNewrelicoracledbConnectionBytesSent) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbConnectionBytesSent(cfg MetricConfig) metricNewrelicoracledbConnectionBytesSent {
 	m := metricNewrelicoracledbConnectionBytesSent{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2130,6 +2144,7 @@ func (m *metricNewrelicoracledbConnectionCircuits) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbConnectionCircuits(cfg MetricConfig) metricNewrelicoracledbConnectionCircuits {
 	m := metricNewrelicoracledbConnectionCircuits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2179,6 +2194,7 @@ func (m *metricNewrelicoracledbConnectionDispatchers) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbConnectionDispatchers(cfg MetricConfig) metricNewrelicoracledbConnectionDispatchers {
 	m := metricNewrelicoracledbConnectionDispatchers{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2230,6 +2246,7 @@ func (m *metricNewrelicoracledbConnectionExecuteCount) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbConnectionExecuteCount(cfg MetricConfig) metricNewrelicoracledbConnectionExecuteCount {
 	m := metricNewrelicoracledbConnectionExecuteCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2279,6 +2296,7 @@ func (m *metricNewrelicoracledbConnectionInactiveSessions) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbConnectionInactiveSessions(cfg MetricConfig) metricNewrelicoracledbConnectionInactiveSessions {
 	m := metricNewrelicoracledbConnectionInactiveSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2330,6 +2348,7 @@ func (m *metricNewrelicoracledbConnectionLogonsCumulative) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbConnectionLogonsCumulative(cfg MetricConfig) metricNewrelicoracledbConnectionLogonsCumulative {
 	m := metricNewrelicoracledbConnectionLogonsCumulative{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2379,6 +2398,7 @@ func (m *metricNewrelicoracledbConnectionLogonsCurrent) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionLogonsCurrent(cfg MetricConfig) metricNewrelicoracledbConnectionLogonsCurrent {
 	m := metricNewrelicoracledbConnectionLogonsCurrent{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2430,6 +2450,7 @@ func (m *metricNewrelicoracledbConnectionParseCountHard) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbConnectionParseCountHard(cfg MetricConfig) metricNewrelicoracledbConnectionParseCountHard {
 	m := metricNewrelicoracledbConnectionParseCountHard{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2481,6 +2502,7 @@ func (m *metricNewrelicoracledbConnectionParseCountTotal) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbConnectionParseCountTotal(cfg MetricConfig) metricNewrelicoracledbConnectionParseCountTotal {
 	m := metricNewrelicoracledbConnectionParseCountTotal{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2532,6 +2554,7 @@ func (m *metricNewrelicoracledbConnectionResourceCurrentUtilization) emit(metric
 
 func newMetricNewrelicoracledbConnectionResourceCurrentUtilization(cfg MetricConfig) metricNewrelicoracledbConnectionResourceCurrentUtilization {
 	m := metricNewrelicoracledbConnectionResourceCurrentUtilization{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2583,6 +2606,7 @@ func (m *metricNewrelicoracledbConnectionResourceLimit) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionResourceLimit(cfg MetricConfig) metricNewrelicoracledbConnectionResourceLimit {
 	m := metricNewrelicoracledbConnectionResourceLimit{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2634,6 +2658,7 @@ func (m *metricNewrelicoracledbConnectionResourceMaxUtilization) emit(metrics pm
 
 func newMetricNewrelicoracledbConnectionResourceMaxUtilization(cfg MetricConfig) metricNewrelicoracledbConnectionResourceMaxUtilization {
 	m := metricNewrelicoracledbConnectionResourceMaxUtilization{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2685,6 +2710,7 @@ func (m *metricNewrelicoracledbConnectionSessionsByStatus) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbConnectionSessionsByStatus(cfg MetricConfig) metricNewrelicoracledbConnectionSessionsByStatus {
 	m := metricNewrelicoracledbConnectionSessionsByStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2736,6 +2762,7 @@ func (m *metricNewrelicoracledbConnectionSessionsByType) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbConnectionSessionsByType(cfg MetricConfig) metricNewrelicoracledbConnectionSessionsByType {
 	m := metricNewrelicoracledbConnectionSessionsByType{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2785,6 +2812,7 @@ func (m *metricNewrelicoracledbConnectionSharedServers) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionSharedServers(cfg MetricConfig) metricNewrelicoracledbConnectionSharedServers {
 	m := metricNewrelicoracledbConnectionSharedServers{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2836,6 +2864,7 @@ func (m *metricNewrelicoracledbConnectionSqlnetRoundtrips) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbConnectionSqlnetRoundtrips(cfg MetricConfig) metricNewrelicoracledbConnectionSqlnetRoundtrips {
 	m := metricNewrelicoracledbConnectionSqlnetRoundtrips{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2885,6 +2914,7 @@ func (m *metricNewrelicoracledbConnectionTotalSessions) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionTotalSessions(cfg MetricConfig) metricNewrelicoracledbConnectionTotalSessions {
 	m := metricNewrelicoracledbConnectionTotalSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2936,6 +2966,7 @@ func (m *metricNewrelicoracledbConnectionUserCommits) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbConnectionUserCommits(cfg MetricConfig) metricNewrelicoracledbConnectionUserCommits {
 	m := metricNewrelicoracledbConnectionUserCommits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -2987,6 +3018,7 @@ func (m *metricNewrelicoracledbConnectionUserRollbacks) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbConnectionUserRollbacks(cfg MetricConfig) metricNewrelicoracledbConnectionUserRollbacks {
 	m := metricNewrelicoracledbConnectionUserRollbacks{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3040,6 +3072,7 @@ func (m *metricNewrelicoracledbContainerRestricted) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbContainerRestricted(cfg MetricConfig) metricNewrelicoracledbContainerRestricted {
 	m := metricNewrelicoracledbContainerRestricted{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3093,6 +3126,7 @@ func (m *metricNewrelicoracledbContainerStatus) emit(metrics pmetric.MetricSlice
 
 func newMetricNewrelicoracledbContainerStatus(cfg MetricConfig) metricNewrelicoracledbContainerStatus {
 	m := metricNewrelicoracledbContainerStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3147,6 +3181,7 @@ func (m *metricNewrelicoracledbDatabaseInfo) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbDatabaseInfo(cfg MetricConfig) metricNewrelicoracledbDatabaseInfo {
 	m := metricNewrelicoracledbDatabaseInfo{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3201,6 +3236,7 @@ func (m *metricNewrelicoracledbDatabaseRole) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbDatabaseRole(cfg MetricConfig) metricNewrelicoracledbDatabaseRole {
 	m := metricNewrelicoracledbDatabaseRole{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3255,6 +3291,7 @@ func (m *metricNewrelicoracledbDatafileAutoextensible) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbDatafileAutoextensible(cfg MetricConfig) metricNewrelicoracledbDatafileAutoextensible {
 	m := metricNewrelicoracledbDatafileAutoextensible{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3308,6 +3345,7 @@ func (m *metricNewrelicoracledbDatafileSizeBytes) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbDatafileSizeBytes(cfg MetricConfig) metricNewrelicoracledbDatafileSizeBytes {
 	m := metricNewrelicoracledbDatafileSizeBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3361,6 +3399,7 @@ func (m *metricNewrelicoracledbDatafileUsedBytes) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbDatafileUsedBytes(cfg MetricConfig) metricNewrelicoracledbDatafileUsedBytes {
 	m := metricNewrelicoracledbDatafileUsedBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3412,6 +3451,7 @@ func (m *metricNewrelicoracledbDbID) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbDbID(cfg MetricConfig) metricNewrelicoracledbDbID {
 	m := metricNewrelicoracledbDbID{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3463,6 +3503,7 @@ func (m *metricNewrelicoracledbDiskBlocksRead) emit(metrics pmetric.MetricSlice)
 
 func newMetricNewrelicoracledbDiskBlocksRead(cfg MetricConfig) metricNewrelicoracledbDiskBlocksRead {
 	m := metricNewrelicoracledbDiskBlocksRead{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3514,6 +3555,7 @@ func (m *metricNewrelicoracledbDiskBlocksWritten) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbDiskBlocksWritten(cfg MetricConfig) metricNewrelicoracledbDiskBlocksWritten {
 	m := metricNewrelicoracledbDiskBlocksWritten{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3565,6 +3607,7 @@ func (m *metricNewrelicoracledbDiskReadTimeMilliseconds) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbDiskReadTimeMilliseconds(cfg MetricConfig) metricNewrelicoracledbDiskReadTimeMilliseconds {
 	m := metricNewrelicoracledbDiskReadTimeMilliseconds{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3616,6 +3659,7 @@ func (m *metricNewrelicoracledbDiskReads) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbDiskReads(cfg MetricConfig) metricNewrelicoracledbDiskReads {
 	m := metricNewrelicoracledbDiskReads{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3667,6 +3711,7 @@ func (m *metricNewrelicoracledbDiskWriteTimeMilliseconds) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbDiskWriteTimeMilliseconds(cfg MetricConfig) metricNewrelicoracledbDiskWriteTimeMilliseconds {
 	m := metricNewrelicoracledbDiskWriteTimeMilliseconds{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3718,6 +3763,7 @@ func (m *metricNewrelicoracledbDiskWrites) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbDiskWrites(cfg MetricConfig) metricNewrelicoracledbDiskWrites {
 	m := metricNewrelicoracledbDiskWrites{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3791,6 +3837,7 @@ func (m *metricNewrelicoracledbExecutionPlan) emit(metrics pmetric.MetricSlice) 
 
 func newMetricNewrelicoracledbExecutionPlan(cfg MetricConfig) metricNewrelicoracledbExecutionPlan {
 	m := metricNewrelicoracledbExecutionPlan{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3842,6 +3889,7 @@ func (m *metricNewrelicoracledbGlobalName) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbGlobalName(cfg MetricConfig) metricNewrelicoracledbGlobalName {
 	m := metricNewrelicoracledbGlobalName{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3894,6 +3942,7 @@ func (m *metricNewrelicoracledbHostingInfo) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbHostingInfo(cfg MetricConfig) metricNewrelicoracledbHostingInfo {
 	m := metricNewrelicoracledbHostingInfo{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3945,6 +3994,7 @@ func (m *metricNewrelicoracledbLockedAccounts) emit(metrics pmetric.MetricSlice)
 
 func newMetricNewrelicoracledbLockedAccounts(cfg MetricConfig) metricNewrelicoracledbLockedAccounts {
 	m := metricNewrelicoracledbLockedAccounts{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -3996,6 +4046,7 @@ func (m *metricNewrelicoracledbLongRunningQueries) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbLongRunningQueries(cfg MetricConfig) metricNewrelicoracledbLongRunningQueries {
 	m := metricNewrelicoracledbLongRunningQueries{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4047,6 +4098,7 @@ func (m *metricNewrelicoracledbMemoryPgaAllocatedBytes) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbMemoryPgaAllocatedBytes(cfg MetricConfig) metricNewrelicoracledbMemoryPgaAllocatedBytes {
 	m := metricNewrelicoracledbMemoryPgaAllocatedBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4098,6 +4150,7 @@ func (m *metricNewrelicoracledbMemoryPgaFreeableBytes) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbMemoryPgaFreeableBytes(cfg MetricConfig) metricNewrelicoracledbMemoryPgaFreeableBytes {
 	m := metricNewrelicoracledbMemoryPgaFreeableBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4149,6 +4202,7 @@ func (m *metricNewrelicoracledbMemoryPgaInUseBytes) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbMemoryPgaInUseBytes(cfg MetricConfig) metricNewrelicoracledbMemoryPgaInUseBytes {
 	m := metricNewrelicoracledbMemoryPgaInUseBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4200,6 +4254,7 @@ func (m *metricNewrelicoracledbMemoryPgaMaxSizeBytes) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbMemoryPgaMaxSizeBytes(cfg MetricConfig) metricNewrelicoracledbMemoryPgaMaxSizeBytes {
 	m := metricNewrelicoracledbMemoryPgaMaxSizeBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4251,6 +4306,7 @@ func (m *metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes) emi
 
 func newMetricNewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes(cfg MetricConfig) metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes {
 	m := metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4302,6 +4358,7 @@ func (m *metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes) emit(me
 
 func newMetricNewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes(cfg MetricConfig) metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes {
 	m := metricNewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4353,6 +4410,7 @@ func (m *metricNewrelicoracledbMemorySgaUgaTotalBytes) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbMemorySgaUgaTotalBytes(cfg MetricConfig) metricNewrelicoracledbMemorySgaUgaTotalBytes {
 	m := metricNewrelicoracledbMemorySgaUgaTotalBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4405,6 +4463,7 @@ func (m *metricNewrelicoracledbPdbActiveParallelSessions) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbPdbActiveParallelSessions(cfg MetricConfig) metricNewrelicoracledbPdbActiveParallelSessions {
 	m := metricNewrelicoracledbPdbActiveParallelSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4457,6 +4516,7 @@ func (m *metricNewrelicoracledbPdbActiveSerialSessions) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbPdbActiveSerialSessions(cfg MetricConfig) metricNewrelicoracledbPdbActiveSerialSessions {
 	m := metricNewrelicoracledbPdbActiveSerialSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4509,6 +4569,7 @@ func (m *metricNewrelicoracledbPdbAverageActiveSessions) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbPdbAverageActiveSessions(cfg MetricConfig) metricNewrelicoracledbPdbAverageActiveSessions {
 	m := metricNewrelicoracledbPdbAverageActiveSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4561,6 +4622,7 @@ func (m *metricNewrelicoracledbPdbBackgroundCPUUsagePerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbPdbBackgroundCPUUsagePerSecond(cfg MetricConfig) metricNewrelicoracledbPdbBackgroundCPUUsagePerSecond {
 	m := metricNewrelicoracledbPdbBackgroundCPUUsagePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4613,6 +4675,7 @@ func (m *metricNewrelicoracledbPdbBackgroundTimePerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbPdbBackgroundTimePerSecond(cfg MetricConfig) metricNewrelicoracledbPdbBackgroundTimePerSecond {
 	m := metricNewrelicoracledbPdbBackgroundTimePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4665,6 +4728,7 @@ func (m *metricNewrelicoracledbPdbBlockChangesPerSecond) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbPdbBlockChangesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbBlockChangesPerSecond {
 	m := metricNewrelicoracledbPdbBlockChangesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4717,6 +4781,7 @@ func (m *metricNewrelicoracledbPdbBlockChangesPerTransaction) emit(metrics pmetr
 
 func newMetricNewrelicoracledbPdbBlockChangesPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbBlockChangesPerTransaction {
 	m := metricNewrelicoracledbPdbBlockChangesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4769,6 +4834,7 @@ func (m *metricNewrelicoracledbPdbCPUTimeRatio) emit(metrics pmetric.MetricSlice
 
 func newMetricNewrelicoracledbPdbCPUTimeRatio(cfg MetricConfig) metricNewrelicoracledbPdbCPUTimeRatio {
 	m := metricNewrelicoracledbPdbCPUTimeRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4821,6 +4887,7 @@ func (m *metricNewrelicoracledbPdbCPUUsagePerSecond) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbPdbCPUUsagePerSecond(cfg MetricConfig) metricNewrelicoracledbPdbCPUUsagePerSecond {
 	m := metricNewrelicoracledbPdbCPUUsagePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4873,6 +4940,7 @@ func (m *metricNewrelicoracledbPdbCPUUsagePerTransaction) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbPdbCPUUsagePerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbCPUUsagePerTransaction {
 	m := metricNewrelicoracledbPdbCPUUsagePerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4925,6 +4993,7 @@ func (m *metricNewrelicoracledbPdbCurrentLogons) emit(metrics pmetric.MetricSlic
 
 func newMetricNewrelicoracledbPdbCurrentLogons(cfg MetricConfig) metricNewrelicoracledbPdbCurrentLogons {
 	m := metricNewrelicoracledbPdbCurrentLogons{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -4977,6 +5046,7 @@ func (m *metricNewrelicoracledbPdbCurrentOpenCursors) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbPdbCurrentOpenCursors(cfg MetricConfig) metricNewrelicoracledbPdbCurrentOpenCursors {
 	m := metricNewrelicoracledbPdbCurrentOpenCursors{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5029,6 +5099,7 @@ func (m *metricNewrelicoracledbPdbDbPhysicalReadBytesPerSecond) emit(metrics pme
 
 func newMetricNewrelicoracledbPdbDbPhysicalReadBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbDbPhysicalReadBytesPerSecond {
 	m := metricNewrelicoracledbPdbDbPhysicalReadBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5081,6 +5152,7 @@ func (m *metricNewrelicoracledbPdbDbPhysicalReadsPerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbPdbDbPhysicalReadsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbDbPhysicalReadsPerSecond {
 	m := metricNewrelicoracledbPdbDbPhysicalReadsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5133,6 +5205,7 @@ func (m *metricNewrelicoracledbPdbDbPhysicalWriteBytesPerSecond) emit(metrics pm
 
 func newMetricNewrelicoracledbPdbDbPhysicalWriteBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbDbPhysicalWriteBytesPerSecond {
 	m := metricNewrelicoracledbPdbDbPhysicalWriteBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5185,6 +5258,7 @@ func (m *metricNewrelicoracledbPdbDbPhysicalWritesPerSecond) emit(metrics pmetri
 
 func newMetricNewrelicoracledbPdbDbPhysicalWritesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbDbPhysicalWritesPerSecond {
 	m := metricNewrelicoracledbPdbDbPhysicalWritesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5237,6 +5311,7 @@ func (m *metricNewrelicoracledbPdbExecuteWithoutParseRatio) emit(metrics pmetric
 
 func newMetricNewrelicoracledbPdbExecuteWithoutParseRatio(cfg MetricConfig) metricNewrelicoracledbPdbExecuteWithoutParseRatio {
 	m := metricNewrelicoracledbPdbExecuteWithoutParseRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5289,6 +5364,7 @@ func (m *metricNewrelicoracledbPdbExecutionsPerSecond) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbPdbExecutionsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbExecutionsPerSecond {
 	m := metricNewrelicoracledbPdbExecutionsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5341,6 +5417,7 @@ func (m *metricNewrelicoracledbPdbExecutionsPerTransaction) emit(metrics pmetric
 
 func newMetricNewrelicoracledbPdbExecutionsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbExecutionsPerTransaction {
 	m := metricNewrelicoracledbPdbExecutionsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5393,6 +5470,7 @@ func (m *metricNewrelicoracledbPdbHardParseCountPerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbPdbHardParseCountPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbHardParseCountPerSecond {
 	m := metricNewrelicoracledbPdbHardParseCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5445,6 +5523,7 @@ func (m *metricNewrelicoracledbPdbHardParseCountPerTransaction) emit(metrics pme
 
 func newMetricNewrelicoracledbPdbHardParseCountPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbHardParseCountPerTransaction {
 	m := metricNewrelicoracledbPdbHardParseCountPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5497,6 +5576,7 @@ func (m *metricNewrelicoracledbPdbLogicalReadsPerSecond) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbPdbLogicalReadsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbLogicalReadsPerSecond {
 	m := metricNewrelicoracledbPdbLogicalReadsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5549,6 +5629,7 @@ func (m *metricNewrelicoracledbPdbLogicalReadsPerTransaction) emit(metrics pmetr
 
 func newMetricNewrelicoracledbPdbLogicalReadsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbLogicalReadsPerTransaction {
 	m := metricNewrelicoracledbPdbLogicalReadsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5601,6 +5682,7 @@ func (m *metricNewrelicoracledbPdbLogonsPerSecond) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbPdbLogonsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbLogonsPerSecond {
 	m := metricNewrelicoracledbPdbLogonsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5653,6 +5735,7 @@ func (m *metricNewrelicoracledbPdbLogonsPerTransaction) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbPdbLogonsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbLogonsPerTransaction {
 	m := metricNewrelicoracledbPdbLogonsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5705,6 +5788,7 @@ func (m *metricNewrelicoracledbPdbNetworkTrafficBytePerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbPdbNetworkTrafficBytePerSecond(cfg MetricConfig) metricNewrelicoracledbPdbNetworkTrafficBytePerSecond {
 	m := metricNewrelicoracledbPdbNetworkTrafficBytePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5757,6 +5841,7 @@ func (m *metricNewrelicoracledbPdbOpenCursorsPerSecond) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbPdbOpenCursorsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbOpenCursorsPerSecond {
 	m := metricNewrelicoracledbPdbOpenCursorsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5809,6 +5894,7 @@ func (m *metricNewrelicoracledbPdbOpenCursorsPerTransaction) emit(metrics pmetri
 
 func newMetricNewrelicoracledbPdbOpenCursorsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbOpenCursorsPerTransaction {
 	m := metricNewrelicoracledbPdbOpenCursorsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5862,6 +5948,7 @@ func (m *metricNewrelicoracledbPdbOpenMode) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbPdbOpenMode(cfg MetricConfig) metricNewrelicoracledbPdbOpenMode {
 	m := metricNewrelicoracledbPdbOpenMode{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5914,6 +6001,7 @@ func (m *metricNewrelicoracledbPdbParseFailureCountPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbPdbParseFailureCountPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbParseFailureCountPerSecond {
 	m := metricNewrelicoracledbPdbParseFailureCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -5966,6 +6054,7 @@ func (m *metricNewrelicoracledbPdbPhysicalReadBytesPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbPdbPhysicalReadBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbPhysicalReadBytesPerSecond {
 	m := metricNewrelicoracledbPdbPhysicalReadBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6018,6 +6107,7 @@ func (m *metricNewrelicoracledbPdbPhysicalReadsPerTransaction) emit(metrics pmet
 
 func newMetricNewrelicoracledbPdbPhysicalReadsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbPhysicalReadsPerTransaction {
 	m := metricNewrelicoracledbPdbPhysicalReadsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6070,6 +6160,7 @@ func (m *metricNewrelicoracledbPdbPhysicalWriteBytesPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbPdbPhysicalWriteBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbPhysicalWriteBytesPerSecond {
 	m := metricNewrelicoracledbPdbPhysicalWriteBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6122,6 +6213,7 @@ func (m *metricNewrelicoracledbPdbPhysicalWritesPerTransaction) emit(metrics pme
 
 func newMetricNewrelicoracledbPdbPhysicalWritesPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbPhysicalWritesPerTransaction {
 	m := metricNewrelicoracledbPdbPhysicalWritesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6174,6 +6266,7 @@ func (m *metricNewrelicoracledbPdbRedoGeneratedBytesPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbPdbRedoGeneratedBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbRedoGeneratedBytesPerSecond {
 	m := metricNewrelicoracledbPdbRedoGeneratedBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6226,6 +6319,7 @@ func (m *metricNewrelicoracledbPdbRedoGeneratedBytesPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbPdbRedoGeneratedBytesPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbRedoGeneratedBytesPerTransaction {
 	m := metricNewrelicoracledbPdbRedoGeneratedBytesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6278,6 +6372,7 @@ func (m *metricNewrelicoracledbPdbResponseTimePerTransaction) emit(metrics pmetr
 
 func newMetricNewrelicoracledbPdbResponseTimePerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbResponseTimePerTransaction {
 	m := metricNewrelicoracledbPdbResponseTimePerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6330,6 +6425,7 @@ func (m *metricNewrelicoracledbPdbSessionCount) emit(metrics pmetric.MetricSlice
 
 func newMetricNewrelicoracledbPdbSessionCount(cfg MetricConfig) metricNewrelicoracledbPdbSessionCount {
 	m := metricNewrelicoracledbPdbSessionCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6382,6 +6478,7 @@ func (m *metricNewrelicoracledbPdbSoftParseRatio) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbPdbSoftParseRatio(cfg MetricConfig) metricNewrelicoracledbPdbSoftParseRatio {
 	m := metricNewrelicoracledbPdbSoftParseRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6434,6 +6531,7 @@ func (m *metricNewrelicoracledbPdbSQLServiceResponseTime) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbPdbSQLServiceResponseTime(cfg MetricConfig) metricNewrelicoracledbPdbSQLServiceResponseTime {
 	m := metricNewrelicoracledbPdbSQLServiceResponseTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6486,6 +6584,7 @@ func (m *metricNewrelicoracledbPdbTotalParseCountPerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbPdbTotalParseCountPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbTotalParseCountPerSecond {
 	m := metricNewrelicoracledbPdbTotalParseCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6538,6 +6637,7 @@ func (m *metricNewrelicoracledbPdbTotalParseCountPerTransaction) emit(metrics pm
 
 func newMetricNewrelicoracledbPdbTotalParseCountPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbTotalParseCountPerTransaction {
 	m := metricNewrelicoracledbPdbTotalParseCountPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6590,6 +6690,7 @@ func (m *metricNewrelicoracledbPdbTotalSizeBytes) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbPdbTotalSizeBytes(cfg MetricConfig) metricNewrelicoracledbPdbTotalSizeBytes {
 	m := metricNewrelicoracledbPdbTotalSizeBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6642,6 +6743,7 @@ func (m *metricNewrelicoracledbPdbTransactionsPerSecond) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbPdbTransactionsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbTransactionsPerSecond {
 	m := metricNewrelicoracledbPdbTransactionsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6694,6 +6796,7 @@ func (m *metricNewrelicoracledbPdbUserCallsPerSecond) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbPdbUserCallsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbUserCallsPerSecond {
 	m := metricNewrelicoracledbPdbUserCallsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6746,6 +6849,7 @@ func (m *metricNewrelicoracledbPdbUserCallsPerTransaction) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbPdbUserCallsPerTransaction(cfg MetricConfig) metricNewrelicoracledbPdbUserCallsPerTransaction {
 	m := metricNewrelicoracledbPdbUserCallsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6798,6 +6902,7 @@ func (m *metricNewrelicoracledbPdbUserCommitsPerSecond) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbPdbUserCommitsPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbUserCommitsPerSecond {
 	m := metricNewrelicoracledbPdbUserCommitsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6850,6 +6955,7 @@ func (m *metricNewrelicoracledbPdbUserCommitsPercentage) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbPdbUserCommitsPercentage(cfg MetricConfig) metricNewrelicoracledbPdbUserCommitsPercentage {
 	m := metricNewrelicoracledbPdbUserCommitsPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6902,6 +7008,7 @@ func (m *metricNewrelicoracledbPdbUserRollbacksPerSecond) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbPdbUserRollbacksPerSecond(cfg MetricConfig) metricNewrelicoracledbPdbUserRollbacksPerSecond {
 	m := metricNewrelicoracledbPdbUserRollbacksPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -6954,6 +7061,7 @@ func (m *metricNewrelicoracledbPdbUserRollbacksPercentage) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbPdbUserRollbacksPercentage(cfg MetricConfig) metricNewrelicoracledbPdbUserRollbacksPercentage {
 	m := metricNewrelicoracledbPdbUserRollbacksPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7006,6 +7114,7 @@ func (m *metricNewrelicoracledbPdbWaitTimeRatio) emit(metrics pmetric.MetricSlic
 
 func newMetricNewrelicoracledbPdbWaitTimeRatio(cfg MetricConfig) metricNewrelicoracledbPdbWaitTimeRatio {
 	m := metricNewrelicoracledbPdbWaitTimeRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7060,6 +7169,7 @@ func (m *metricNewrelicoracledbRacInstanceActiveState) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbRacInstanceActiveState(cfg MetricConfig) metricNewrelicoracledbRacInstanceActiveState {
 	m := metricNewrelicoracledbRacInstanceActiveState{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7114,6 +7224,7 @@ func (m *metricNewrelicoracledbRacInstanceArchiverStarted) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbRacInstanceArchiverStarted(cfg MetricConfig) metricNewrelicoracledbRacInstanceArchiverStarted {
 	m := metricNewrelicoracledbRacInstanceArchiverStarted{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7168,6 +7279,7 @@ func (m *metricNewrelicoracledbRacInstanceDatabaseStatus) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbRacInstanceDatabaseStatus(cfg MetricConfig) metricNewrelicoracledbRacInstanceDatabaseStatus {
 	m := metricNewrelicoracledbRacInstanceDatabaseStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7222,6 +7334,7 @@ func (m *metricNewrelicoracledbRacInstanceLoginsAllowed) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbRacInstanceLoginsAllowed(cfg MetricConfig) metricNewrelicoracledbRacInstanceLoginsAllowed {
 	m := metricNewrelicoracledbRacInstanceLoginsAllowed{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7276,6 +7389,7 @@ func (m *metricNewrelicoracledbRacInstanceStatus) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbRacInstanceStatus(cfg MetricConfig) metricNewrelicoracledbRacInstanceStatus {
 	m := metricNewrelicoracledbRacInstanceStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7329,6 +7443,7 @@ func (m *metricNewrelicoracledbRacInstanceUptimeSeconds) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbRacInstanceUptimeSeconds(cfg MetricConfig) metricNewrelicoracledbRacInstanceUptimeSeconds {
 	m := metricNewrelicoracledbRacInstanceUptimeSeconds{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7382,6 +7497,7 @@ func (m *metricNewrelicoracledbRacInstanceVersionInfo) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbRacInstanceVersionInfo(cfg MetricConfig) metricNewrelicoracledbRacInstanceVersionInfo {
 	m := metricNewrelicoracledbRacInstanceVersionInfo{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7433,6 +7549,7 @@ func (m *metricNewrelicoracledbRacServiceBlockedStatus) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbRacServiceBlockedStatus(cfg MetricConfig) metricNewrelicoracledbRacServiceBlockedStatus {
 	m := metricNewrelicoracledbRacServiceBlockedStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7484,6 +7601,7 @@ func (m *metricNewrelicoracledbRacServiceClbConfig) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbRacServiceClbConfig(cfg MetricConfig) metricNewrelicoracledbRacServiceClbConfig {
 	m := metricNewrelicoracledbRacServiceClbConfig{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7535,6 +7653,7 @@ func (m *metricNewrelicoracledbRacServiceDrainTimeoutSeconds) emit(metrics pmetr
 
 func newMetricNewrelicoracledbRacServiceDrainTimeoutSeconds(cfg MetricConfig) metricNewrelicoracledbRacServiceDrainTimeoutSeconds {
 	m := metricNewrelicoracledbRacServiceDrainTimeoutSeconds{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7586,6 +7705,7 @@ func (m *metricNewrelicoracledbRacServiceFanEnabled) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbRacServiceFanEnabled(cfg MetricConfig) metricNewrelicoracledbRacServiceFanEnabled {
 	m := metricNewrelicoracledbRacServiceFanEnabled{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7637,6 +7757,7 @@ func (m *metricNewrelicoracledbRacServiceGoalConfig) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbRacServiceGoalConfig(cfg MetricConfig) metricNewrelicoracledbRacServiceGoalConfig {
 	m := metricNewrelicoracledbRacServiceGoalConfig{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7688,6 +7809,7 @@ func (m *metricNewrelicoracledbRacServiceInstanceID) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbRacServiceInstanceID(cfg MetricConfig) metricNewrelicoracledbRacServiceInstanceID {
 	m := metricNewrelicoracledbRacServiceInstanceID{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7739,6 +7861,7 @@ func (m *metricNewrelicoracledbRacServiceNetworkConfig) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbRacServiceNetworkConfig(cfg MetricConfig) metricNewrelicoracledbRacServiceNetworkConfig {
 	m := metricNewrelicoracledbRacServiceNetworkConfig{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7790,6 +7913,7 @@ func (m *metricNewrelicoracledbRacServiceReplayTimeoutSeconds) emit(metrics pmet
 
 func newMetricNewrelicoracledbRacServiceReplayTimeoutSeconds(cfg MetricConfig) metricNewrelicoracledbRacServiceReplayTimeoutSeconds {
 	m := metricNewrelicoracledbRacServiceReplayTimeoutSeconds{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7841,6 +7965,7 @@ func (m *metricNewrelicoracledbRacServiceTransactionGuardEnabled) emit(metrics p
 
 func newMetricNewrelicoracledbRacServiceTransactionGuardEnabled(cfg MetricConfig) metricNewrelicoracledbRacServiceTransactionGuardEnabled {
 	m := metricNewrelicoracledbRacServiceTransactionGuardEnabled{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7893,6 +8018,7 @@ func (m *metricNewrelicoracledbRacTotalWaits) emit(metrics pmetric.MetricSlice) 
 
 func newMetricNewrelicoracledbRacTotalWaits(cfg MetricConfig) metricNewrelicoracledbRacTotalWaits {
 	m := metricNewrelicoracledbRacTotalWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7945,6 +8071,7 @@ func (m *metricNewrelicoracledbRacWaitTime) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbRacWaitTime(cfg MetricConfig) metricNewrelicoracledbRacWaitTime {
 	m := metricNewrelicoracledbRacWaitTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -7996,6 +8123,7 @@ func (m *metricNewrelicoracledbRedoLogParallelWriteWaits) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbRedoLogParallelWriteWaits(cfg MetricConfig) metricNewrelicoracledbRedoLogParallelWriteWaits {
 	m := metricNewrelicoracledbRedoLogParallelWriteWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8047,6 +8175,7 @@ func (m *metricNewrelicoracledbRedoLogSwitchArchivingNeededWaits) emit(metrics p
 
 func newMetricNewrelicoracledbRedoLogSwitchArchivingNeededWaits(cfg MetricConfig) metricNewrelicoracledbRedoLogSwitchArchivingNeededWaits {
 	m := metricNewrelicoracledbRedoLogSwitchArchivingNeededWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8098,6 +8227,7 @@ func (m *metricNewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits) emit(metr
 
 func newMetricNewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits(cfg MetricConfig) metricNewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits {
 	m := metricNewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8149,6 +8279,7 @@ func (m *metricNewrelicoracledbRedoLogSwitchCompletionWaits) emit(metrics pmetri
 
 func newMetricNewrelicoracledbRedoLogSwitchCompletionWaits(cfg MetricConfig) metricNewrelicoracledbRedoLogSwitchCompletionWaits {
 	m := metricNewrelicoracledbRedoLogSwitchCompletionWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8200,6 +8331,7 @@ func (m *metricNewrelicoracledbRollbackSegmentsGets) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbRollbackSegmentsGets(cfg MetricConfig) metricNewrelicoracledbRollbackSegmentsGets {
 	m := metricNewrelicoracledbRollbackSegmentsGets{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8251,6 +8383,7 @@ func (m *metricNewrelicoracledbRollbackSegmentsWaitRatio) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbRollbackSegmentsWaitRatio(cfg MetricConfig) metricNewrelicoracledbRollbackSegmentsWaitRatio {
 	m := metricNewrelicoracledbRollbackSegmentsWaitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8302,6 +8435,7 @@ func (m *metricNewrelicoracledbRollbackSegmentsWaits) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbRollbackSegmentsWaits(cfg MetricConfig) metricNewrelicoracledbRollbackSegmentsWaits {
 	m := metricNewrelicoracledbRollbackSegmentsWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8353,6 +8487,7 @@ func (m *metricNewrelicoracledbServiceCount) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbServiceCount(cfg MetricConfig) metricNewrelicoracledbServiceCount {
 	m := metricNewrelicoracledbServiceCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8404,6 +8539,7 @@ func (m *metricNewrelicoracledbServiceStatus) emit(metrics pmetric.MetricSlice) 
 
 func newMetricNewrelicoracledbServiceStatus(cfg MetricConfig) metricNewrelicoracledbServiceStatus {
 	m := metricNewrelicoracledbServiceStatus{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8453,6 +8589,7 @@ func (m *metricNewrelicoracledbSessionsCount) emit(metrics pmetric.MetricSlice) 
 
 func newMetricNewrelicoracledbSessionsCount(cfg MetricConfig) metricNewrelicoracledbSessionsCount {
 	m := metricNewrelicoracledbSessionsCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8504,6 +8641,7 @@ func (m *metricNewrelicoracledbSgaBufferBusyWaits) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbSgaBufferBusyWaits(cfg MetricConfig) metricNewrelicoracledbSgaBufferBusyWaits {
 	m := metricNewrelicoracledbSgaBufferBusyWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8555,6 +8693,7 @@ func (m *metricNewrelicoracledbSgaFixedSizeBytes) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbSgaFixedSizeBytes(cfg MetricConfig) metricNewrelicoracledbSgaFixedSizeBytes {
 	m := metricNewrelicoracledbSgaFixedSizeBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8606,6 +8745,7 @@ func (m *metricNewrelicoracledbSgaFreeBufferInspectedWaits) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSgaFreeBufferInspectedWaits(cfg MetricConfig) metricNewrelicoracledbSgaFreeBufferInspectedWaits {
 	m := metricNewrelicoracledbSgaFreeBufferInspectedWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8657,6 +8797,7 @@ func (m *metricNewrelicoracledbSgaFreeBufferWaits) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbSgaFreeBufferWaits(cfg MetricConfig) metricNewrelicoracledbSgaFreeBufferWaits {
 	m := metricNewrelicoracledbSgaFreeBufferWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8708,6 +8849,7 @@ func (m *metricNewrelicoracledbSgaHitRatio) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbSgaHitRatio(cfg MetricConfig) metricNewrelicoracledbSgaHitRatio {
 	m := metricNewrelicoracledbSgaHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8759,6 +8901,7 @@ func (m *metricNewrelicoracledbSgaLogAllocationRetriesRatio) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSgaLogAllocationRetriesRatio(cfg MetricConfig) metricNewrelicoracledbSgaLogAllocationRetriesRatio {
 	m := metricNewrelicoracledbSgaLogAllocationRetriesRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8810,6 +8953,7 @@ func (m *metricNewrelicoracledbSgaLogBufferRedoAllocationRetries) emit(metrics p
 
 func newMetricNewrelicoracledbSgaLogBufferRedoAllocationRetries(cfg MetricConfig) metricNewrelicoracledbSgaLogBufferRedoAllocationRetries {
 	m := metricNewrelicoracledbSgaLogBufferRedoAllocationRetries{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8861,6 +9005,7 @@ func (m *metricNewrelicoracledbSgaLogBufferRedoEntries) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSgaLogBufferRedoEntries(cfg MetricConfig) metricNewrelicoracledbSgaLogBufferRedoEntries {
 	m := metricNewrelicoracledbSgaLogBufferRedoEntries{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8912,6 +9057,7 @@ func (m *metricNewrelicoracledbSgaLogBufferSpaceWaits) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbSgaLogBufferSpaceWaits(cfg MetricConfig) metricNewrelicoracledbSgaLogBufferSpaceWaits {
 	m := metricNewrelicoracledbSgaLogBufferSpaceWaits{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -8963,6 +9109,7 @@ func (m *metricNewrelicoracledbSgaRedoBuffersBytes) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbSgaRedoBuffersBytes(cfg MetricConfig) metricNewrelicoracledbSgaRedoBuffersBytes {
 	m := metricNewrelicoracledbSgaRedoBuffersBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9014,6 +9161,7 @@ func (m *metricNewrelicoracledbSgaSharedPoolDictCacheMissRatio) emit(metrics pme
 
 func newMetricNewrelicoracledbSgaSharedPoolDictCacheMissRatio(cfg MetricConfig) metricNewrelicoracledbSgaSharedPoolDictCacheMissRatio {
 	m := metricNewrelicoracledbSgaSharedPoolDictCacheMissRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9065,6 +9213,7 @@ func (m *metricNewrelicoracledbSgaSharedPoolLibraryCacheHitRatio) emit(metrics p
 
 func newMetricNewrelicoracledbSgaSharedPoolLibraryCacheHitRatio(cfg MetricConfig) metricNewrelicoracledbSgaSharedPoolLibraryCacheHitRatio {
 	m := metricNewrelicoracledbSgaSharedPoolLibraryCacheHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9116,6 +9265,7 @@ func (m *metricNewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio) emit(metric
 
 func newMetricNewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio(cfg MetricConfig) metricNewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio {
 	m := metricNewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9172,6 +9322,7 @@ func (m *metricNewrelicoracledbSlowQueriesExecutionCount) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSlowQueriesExecutionCount(cfg MetricConfig) metricNewrelicoracledbSlowQueriesExecutionCount {
 	m := metricNewrelicoracledbSlowQueriesExecutionCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9228,6 +9379,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgBufferGets) emit(metrics pm
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgBufferGets(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgBufferGets {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgBufferGets{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9284,6 +9436,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgCPUTime) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgCPUTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgCPUTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgCPUTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9340,6 +9493,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgDiskReads) emit(metrics pme
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgDiskReads(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgDiskReads {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgDiskReads{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9396,6 +9550,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgDiskWrites) emit(metrics pm
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgDiskWrites(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgDiskWrites {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgDiskWrites{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9452,6 +9607,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgElapsedTime) emit(metrics p
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgElapsedTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgElapsedTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgElapsedTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9508,6 +9664,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgRowsProcessed) emit(metrics
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgRowsProcessed(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgRowsProcessed {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgRowsProcessed{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9564,6 +9721,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalAvgWaitTime) emit(metrics pmet
 
 func newMetricNewrelicoracledbSlowQueriesIntervalAvgWaitTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalAvgWaitTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalAvgWaitTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9620,6 +9778,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalBufferGets) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSlowQueriesIntervalBufferGets(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalBufferGets {
 	m := metricNewrelicoracledbSlowQueriesIntervalBufferGets{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9676,6 +9835,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalCPUTime) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSlowQueriesIntervalCPUTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalCPUTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalCPUTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9732,6 +9892,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalDiskReads) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSlowQueriesIntervalDiskReads(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalDiskReads {
 	m := metricNewrelicoracledbSlowQueriesIntervalDiskReads{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9788,6 +9949,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalDiskWrites) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSlowQueriesIntervalDiskWrites(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalDiskWrites {
 	m := metricNewrelicoracledbSlowQueriesIntervalDiskWrites{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9844,6 +10006,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalElapsedTime) emit(metrics pmet
 
 func newMetricNewrelicoracledbSlowQueriesIntervalElapsedTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalElapsedTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalElapsedTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9900,6 +10063,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalExecutionCount) emit(metrics p
 
 func newMetricNewrelicoracledbSlowQueriesIntervalExecutionCount(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalExecutionCount {
 	m := metricNewrelicoracledbSlowQueriesIntervalExecutionCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -9956,6 +10120,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalRowsProcessed) emit(metrics pm
 
 func newMetricNewrelicoracledbSlowQueriesIntervalRowsProcessed(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalRowsProcessed {
 	m := metricNewrelicoracledbSlowQueriesIntervalRowsProcessed{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10012,6 +10177,7 @@ func (m *metricNewrelicoracledbSlowQueriesIntervalWaitTime) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSlowQueriesIntervalWaitTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesIntervalWaitTime {
 	m := metricNewrelicoracledbSlowQueriesIntervalWaitTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10074,6 +10240,7 @@ func (m *metricNewrelicoracledbSlowQueriesQueryDetails) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSlowQueriesQueryDetails(cfg MetricConfig) metricNewrelicoracledbSlowQueriesQueryDetails {
 	m := metricNewrelicoracledbSlowQueriesQueryDetails{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10130,6 +10297,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalCPUTime) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSlowQueriesTotalCPUTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalCPUTime {
 	m := metricNewrelicoracledbSlowQueriesTotalCPUTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10186,6 +10354,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalDiskReads) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSlowQueriesTotalDiskReads(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalDiskReads {
 	m := metricNewrelicoracledbSlowQueriesTotalDiskReads{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10242,6 +10411,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalDiskWrites) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSlowQueriesTotalDiskWrites(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalDiskWrites {
 	m := metricNewrelicoracledbSlowQueriesTotalDiskWrites{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10298,6 +10468,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalElapsedTime) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSlowQueriesTotalElapsedTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalElapsedTime {
 	m := metricNewrelicoracledbSlowQueriesTotalElapsedTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10354,6 +10525,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalRowsExamined) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSlowQueriesTotalRowsExamined(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalRowsExamined {
 	m := metricNewrelicoracledbSlowQueriesTotalRowsExamined{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10410,6 +10582,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalRowsReturned) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSlowQueriesTotalRowsReturned(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalRowsReturned {
 	m := metricNewrelicoracledbSlowQueriesTotalRowsReturned{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10466,6 +10639,7 @@ func (m *metricNewrelicoracledbSlowQueriesTotalWaitTime) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbSlowQueriesTotalWaitTime(cfg MetricConfig) metricNewrelicoracledbSlowQueriesTotalWaitTime {
 	m := metricNewrelicoracledbSlowQueriesTotalWaitTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10517,6 +10691,7 @@ func (m *metricNewrelicoracledbSortsDisk) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbSortsDisk(cfg MetricConfig) metricNewrelicoracledbSortsDisk {
 	m := metricNewrelicoracledbSortsDisk{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10568,6 +10743,7 @@ func (m *metricNewrelicoracledbSortsMemory) emit(metrics pmetric.MetricSlice) {
 
 func newMetricNewrelicoracledbSortsMemory(cfg MetricConfig) metricNewrelicoracledbSortsMemory {
 	m := metricNewrelicoracledbSortsMemory{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10619,6 +10795,7 @@ func (m *metricNewrelicoracledbSystemActiveParallelSessions) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemActiveParallelSessions(cfg MetricConfig) metricNewrelicoracledbSystemActiveParallelSessions {
 	m := metricNewrelicoracledbSystemActiveParallelSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10670,6 +10847,7 @@ func (m *metricNewrelicoracledbSystemActiveSerialSessions) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemActiveSerialSessions(cfg MetricConfig) metricNewrelicoracledbSystemActiveSerialSessions {
 	m := metricNewrelicoracledbSystemActiveSerialSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10721,6 +10899,7 @@ func (m *metricNewrelicoracledbSystemAverageActiveSessions) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemAverageActiveSessions(cfg MetricConfig) metricNewrelicoracledbSystemAverageActiveSessions {
 	m := metricNewrelicoracledbSystemAverageActiveSessions{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10772,6 +10951,7 @@ func (m *metricNewrelicoracledbSystemBackgroundCheckpointsPerSecond) emit(metric
 
 func newMetricNewrelicoracledbSystemBackgroundCheckpointsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemBackgroundCheckpointsPerSecond {
 	m := metricNewrelicoracledbSystemBackgroundCheckpointsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10823,6 +11003,7 @@ func (m *metricNewrelicoracledbSystemBackgroundCPUUsagePerSecond) emit(metrics p
 
 func newMetricNewrelicoracledbSystemBackgroundCPUUsagePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemBackgroundCPUUsagePerSecond {
 	m := metricNewrelicoracledbSystemBackgroundCPUUsagePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10874,6 +11055,7 @@ func (m *metricNewrelicoracledbSystemBackgroundTimePerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemBackgroundTimePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemBackgroundTimePerSecond {
 	m := metricNewrelicoracledbSystemBackgroundTimePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10925,6 +11107,7 @@ func (m *metricNewrelicoracledbSystemBranchNodeSplitsPerSecond) emit(metrics pme
 
 func newMetricNewrelicoracledbSystemBranchNodeSplitsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemBranchNodeSplitsPerSecond {
 	m := metricNewrelicoracledbSystemBranchNodeSplitsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -10976,6 +11159,7 @@ func (m *metricNewrelicoracledbSystemBranchNodeSplitsPerTransaction) emit(metric
 
 func newMetricNewrelicoracledbSystemBranchNodeSplitsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemBranchNodeSplitsPerTransaction {
 	m := metricNewrelicoracledbSystemBranchNodeSplitsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11027,6 +11211,7 @@ func (m *metricNewrelicoracledbSystemBufferCacheHitRatio) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemBufferCacheHitRatio(cfg MetricConfig) metricNewrelicoracledbSystemBufferCacheHitRatio {
 	m := metricNewrelicoracledbSystemBufferCacheHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11078,6 +11263,7 @@ func (m *metricNewrelicoracledbSystemCapturedUserCalls) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSystemCapturedUserCalls(cfg MetricConfig) metricNewrelicoracledbSystemCapturedUserCalls {
 	m := metricNewrelicoracledbSystemCapturedUserCalls{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11129,6 +11315,7 @@ func (m *metricNewrelicoracledbSystemConsistentReadChangesPerSecond) emit(metric
 
 func newMetricNewrelicoracledbSystemConsistentReadChangesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemConsistentReadChangesPerSecond {
 	m := metricNewrelicoracledbSystemConsistentReadChangesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11180,6 +11367,7 @@ func (m *metricNewrelicoracledbSystemConsistentReadChangesPerTransaction) emit(m
 
 func newMetricNewrelicoracledbSystemConsistentReadChangesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemConsistentReadChangesPerTransaction {
 	m := metricNewrelicoracledbSystemConsistentReadChangesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11231,6 +11419,7 @@ func (m *metricNewrelicoracledbSystemConsistentReadGetsPerSecond) emit(metrics p
 
 func newMetricNewrelicoracledbSystemConsistentReadGetsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemConsistentReadGetsPerSecond {
 	m := metricNewrelicoracledbSystemConsistentReadGetsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11282,6 +11471,7 @@ func (m *metricNewrelicoracledbSystemConsistentReadGetsPerTransaction) emit(metr
 
 func newMetricNewrelicoracledbSystemConsistentReadGetsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemConsistentReadGetsPerTransaction {
 	m := metricNewrelicoracledbSystemConsistentReadGetsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11333,6 +11523,7 @@ func (m *metricNewrelicoracledbSystemCPUUsagePerSecond) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSystemCPUUsagePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemCPUUsagePerSecond {
 	m := metricNewrelicoracledbSystemCPUUsagePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11384,6 +11575,7 @@ func (m *metricNewrelicoracledbSystemCPUUsagePerTransaction) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemCPUUsagePerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemCPUUsagePerTransaction {
 	m := metricNewrelicoracledbSystemCPUUsagePerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11435,6 +11627,7 @@ func (m *metricNewrelicoracledbSystemCrBlocksCreatedPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemCrBlocksCreatedPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemCrBlocksCreatedPerSecond {
 	m := metricNewrelicoracledbSystemCrBlocksCreatedPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11486,6 +11679,7 @@ func (m *metricNewrelicoracledbSystemCrBlocksCreatedPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemCrBlocksCreatedPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemCrBlocksCreatedPerTransaction {
 	m := metricNewrelicoracledbSystemCrBlocksCreatedPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11537,6 +11731,7 @@ func (m *metricNewrelicoracledbSystemCrUndoRecordsAppliedPerSecond) emit(metrics
 
 func newMetricNewrelicoracledbSystemCrUndoRecordsAppliedPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemCrUndoRecordsAppliedPerSecond {
 	m := metricNewrelicoracledbSystemCrUndoRecordsAppliedPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11588,6 +11783,7 @@ func (m *metricNewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction) emit(me
 
 func newMetricNewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction {
 	m := metricNewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11639,6 +11835,7 @@ func (m *metricNewrelicoracledbSystemCurrentLogonsCount) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbSystemCurrentLogonsCount(cfg MetricConfig) metricNewrelicoracledbSystemCurrentLogonsCount {
 	m := metricNewrelicoracledbSystemCurrentLogonsCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11690,6 +11887,7 @@ func (m *metricNewrelicoracledbSystemCurrentOpenCursorsCount) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemCurrentOpenCursorsCount(cfg MetricConfig) metricNewrelicoracledbSystemCurrentOpenCursorsCount {
 	m := metricNewrelicoracledbSystemCurrentOpenCursorsCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11741,6 +11939,7 @@ func (m *metricNewrelicoracledbSystemCurrentOsLoad) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbSystemCurrentOsLoad(cfg MetricConfig) metricNewrelicoracledbSystemCurrentOsLoad {
 	m := metricNewrelicoracledbSystemCurrentOsLoad{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11792,6 +11991,7 @@ func (m *metricNewrelicoracledbSystemCursorCacheHitRatio) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemCursorCacheHitRatio(cfg MetricConfig) metricNewrelicoracledbSystemCursorCacheHitRatio {
 	m := metricNewrelicoracledbSystemCursorCacheHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11843,6 +12043,7 @@ func (m *metricNewrelicoracledbSystemDatabaseCPUTimeRatio) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemDatabaseCPUTimeRatio(cfg MetricConfig) metricNewrelicoracledbSystemDatabaseCPUTimeRatio {
 	m := metricNewrelicoracledbSystemDatabaseCPUTimeRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11894,6 +12095,7 @@ func (m *metricNewrelicoracledbSystemDatabaseTimePerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemDatabaseTimePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemDatabaseTimePerSecond {
 	m := metricNewrelicoracledbSystemDatabaseTimePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11945,6 +12147,7 @@ func (m *metricNewrelicoracledbSystemDatabaseWaitTimeRatio) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemDatabaseWaitTimeRatio(cfg MetricConfig) metricNewrelicoracledbSystemDatabaseWaitTimeRatio {
 	m := metricNewrelicoracledbSystemDatabaseWaitTimeRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -11996,6 +12199,7 @@ func (m *metricNewrelicoracledbSystemDbBlockChangesPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemDbBlockChangesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockChangesPerSecond {
 	m := metricNewrelicoracledbSystemDbBlockChangesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12047,6 +12251,7 @@ func (m *metricNewrelicoracledbSystemDbBlockChangesPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemDbBlockChangesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockChangesPerTransaction {
 	m := metricNewrelicoracledbSystemDbBlockChangesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12098,6 +12303,7 @@ func (m *metricNewrelicoracledbSystemDbBlockChangesPerUserCall) emit(metrics pme
 
 func newMetricNewrelicoracledbSystemDbBlockChangesPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockChangesPerUserCall {
 	m := metricNewrelicoracledbSystemDbBlockChangesPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12149,6 +12355,7 @@ func (m *metricNewrelicoracledbSystemDbBlockGetsPerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemDbBlockGetsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockGetsPerSecond {
 	m := metricNewrelicoracledbSystemDbBlockGetsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12200,6 +12407,7 @@ func (m *metricNewrelicoracledbSystemDbBlockGetsPerTransaction) emit(metrics pme
 
 func newMetricNewrelicoracledbSystemDbBlockGetsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockGetsPerTransaction {
 	m := metricNewrelicoracledbSystemDbBlockGetsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12251,6 +12459,7 @@ func (m *metricNewrelicoracledbSystemDbBlockGetsPerUserCall) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemDbBlockGetsPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemDbBlockGetsPerUserCall {
 	m := metricNewrelicoracledbSystemDbBlockGetsPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12302,6 +12511,7 @@ func (m *metricNewrelicoracledbSystemDbwrCheckpointsPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemDbwrCheckpointsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemDbwrCheckpointsPerSecond {
 	m := metricNewrelicoracledbSystemDbwrCheckpointsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12353,6 +12563,7 @@ func (m *metricNewrelicoracledbSystemDiskSortPerSecond) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSystemDiskSortPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemDiskSortPerSecond {
 	m := metricNewrelicoracledbSystemDiskSortPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12404,6 +12615,7 @@ func (m *metricNewrelicoracledbSystemDiskSortPerTransaction) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemDiskSortPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemDiskSortPerTransaction {
 	m := metricNewrelicoracledbSystemDiskSortPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12455,6 +12667,7 @@ func (m *metricNewrelicoracledbSystemEnqueueDeadlocksPerSecond) emit(metrics pme
 
 func newMetricNewrelicoracledbSystemEnqueueDeadlocksPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueDeadlocksPerSecond {
 	m := metricNewrelicoracledbSystemEnqueueDeadlocksPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12506,6 +12719,7 @@ func (m *metricNewrelicoracledbSystemEnqueueDeadlocksPerTransaction) emit(metric
 
 func newMetricNewrelicoracledbSystemEnqueueDeadlocksPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueDeadlocksPerTransaction {
 	m := metricNewrelicoracledbSystemEnqueueDeadlocksPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12557,6 +12771,7 @@ func (m *metricNewrelicoracledbSystemEnqueueRequestsPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemEnqueueRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueRequestsPerSecond {
 	m := metricNewrelicoracledbSystemEnqueueRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12608,6 +12823,7 @@ func (m *metricNewrelicoracledbSystemEnqueueRequestsPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemEnqueueRequestsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueRequestsPerTransaction {
 	m := metricNewrelicoracledbSystemEnqueueRequestsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12659,6 +12875,7 @@ func (m *metricNewrelicoracledbSystemEnqueueTimeoutsPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemEnqueueTimeoutsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueTimeoutsPerSecond {
 	m := metricNewrelicoracledbSystemEnqueueTimeoutsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12710,6 +12927,7 @@ func (m *metricNewrelicoracledbSystemEnqueueTimeoutsPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemEnqueueTimeoutsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueTimeoutsPerTransaction {
 	m := metricNewrelicoracledbSystemEnqueueTimeoutsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12761,6 +12979,7 @@ func (m *metricNewrelicoracledbSystemEnqueueWaitsPerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemEnqueueWaitsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueWaitsPerSecond {
 	m := metricNewrelicoracledbSystemEnqueueWaitsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12812,6 +13031,7 @@ func (m *metricNewrelicoracledbSystemEnqueueWaitsPerTransaction) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemEnqueueWaitsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemEnqueueWaitsPerTransaction {
 	m := metricNewrelicoracledbSystemEnqueueWaitsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12863,6 +13083,7 @@ func (m *metricNewrelicoracledbSystemExecuteWithoutParseRatio) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemExecuteWithoutParseRatio(cfg MetricConfig) metricNewrelicoracledbSystemExecuteWithoutParseRatio {
 	m := metricNewrelicoracledbSystemExecuteWithoutParseRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12914,6 +13135,7 @@ func (m *metricNewrelicoracledbSystemExecutionsPerSecond) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemExecutionsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemExecutionsPerSecond {
 	m := metricNewrelicoracledbSystemExecutionsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -12965,6 +13187,7 @@ func (m *metricNewrelicoracledbSystemExecutionsPerTransaction) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemExecutionsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemExecutionsPerTransaction {
 	m := metricNewrelicoracledbSystemExecutionsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13016,6 +13239,7 @@ func (m *metricNewrelicoracledbSystemExecutionsPerUserCall) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemExecutionsPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemExecutionsPerUserCall {
 	m := metricNewrelicoracledbSystemExecutionsPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13067,6 +13291,7 @@ func (m *metricNewrelicoracledbSystemFullIndexScansPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemFullIndexScansPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemFullIndexScansPerSecond {
 	m := metricNewrelicoracledbSystemFullIndexScansPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13118,6 +13343,7 @@ func (m *metricNewrelicoracledbSystemFullIndexScansPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemFullIndexScansPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemFullIndexScansPerTransaction {
 	m := metricNewrelicoracledbSystemFullIndexScansPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13169,6 +13395,7 @@ func (m *metricNewrelicoracledbSystemGcCrBlockReceivedPerSecond) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemGcCrBlockReceivedPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemGcCrBlockReceivedPerSecond {
 	m := metricNewrelicoracledbSystemGcCrBlockReceivedPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13220,6 +13447,7 @@ func (m *metricNewrelicoracledbSystemGcCrBlockReceivedPerTransaction) emit(metri
 
 func newMetricNewrelicoracledbSystemGcCrBlockReceivedPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemGcCrBlockReceivedPerTransaction {
 	m := metricNewrelicoracledbSystemGcCrBlockReceivedPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13271,6 +13499,7 @@ func (m *metricNewrelicoracledbSystemGcCurrentBlockReceivedPerSecond) emit(metri
 
 func newMetricNewrelicoracledbSystemGcCurrentBlockReceivedPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemGcCurrentBlockReceivedPerSecond {
 	m := metricNewrelicoracledbSystemGcCurrentBlockReceivedPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13322,6 +13551,7 @@ func (m *metricNewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction) emit(
 
 func newMetricNewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction {
 	m := metricNewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13373,6 +13603,7 @@ func (m *metricNewrelicoracledbSystemGlobalCacheAverageCrGetTime) emit(metrics p
 
 func newMetricNewrelicoracledbSystemGlobalCacheAverageCrGetTime(cfg MetricConfig) metricNewrelicoracledbSystemGlobalCacheAverageCrGetTime {
 	m := metricNewrelicoracledbSystemGlobalCacheAverageCrGetTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13424,6 +13655,7 @@ func (m *metricNewrelicoracledbSystemGlobalCacheAverageCurrentGetTime) emit(metr
 
 func newMetricNewrelicoracledbSystemGlobalCacheAverageCurrentGetTime(cfg MetricConfig) metricNewrelicoracledbSystemGlobalCacheAverageCurrentGetTime {
 	m := metricNewrelicoracledbSystemGlobalCacheAverageCurrentGetTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13475,6 +13707,7 @@ func (m *metricNewrelicoracledbSystemGlobalCacheBlocksCorrupted) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemGlobalCacheBlocksCorrupted(cfg MetricConfig) metricNewrelicoracledbSystemGlobalCacheBlocksCorrupted {
 	m := metricNewrelicoracledbSystemGlobalCacheBlocksCorrupted{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13526,6 +13759,7 @@ func (m *metricNewrelicoracledbSystemGlobalCacheBlocksLost) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemGlobalCacheBlocksLost(cfg MetricConfig) metricNewrelicoracledbSystemGlobalCacheBlocksLost {
 	m := metricNewrelicoracledbSystemGlobalCacheBlocksLost{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13577,6 +13811,7 @@ func (m *metricNewrelicoracledbSystemHardParseCountPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemHardParseCountPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemHardParseCountPerSecond {
 	m := metricNewrelicoracledbSystemHardParseCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13628,6 +13863,7 @@ func (m *metricNewrelicoracledbSystemHardParseCountPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemHardParseCountPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemHardParseCountPerTransaction {
 	m := metricNewrelicoracledbSystemHardParseCountPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13679,6 +13915,7 @@ func (m *metricNewrelicoracledbSystemHostCPUUsagePerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemHostCPUUsagePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemHostCPUUsagePerSecond {
 	m := metricNewrelicoracledbSystemHostCPUUsagePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13730,6 +13967,7 @@ func (m *metricNewrelicoracledbSystemHostCPUUtilization) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbSystemHostCPUUtilization(cfg MetricConfig) metricNewrelicoracledbSystemHostCPUUtilization {
 	m := metricNewrelicoracledbSystemHostCPUUtilization{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13781,6 +14019,7 @@ func (m *metricNewrelicoracledbSystemIoMegabytesPerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemIoMegabytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemIoMegabytesPerSecond {
 	m := metricNewrelicoracledbSystemIoMegabytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13832,6 +14071,7 @@ func (m *metricNewrelicoracledbSystemIoRequestsPerSecond) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemIoRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemIoRequestsPerSecond {
 	m := metricNewrelicoracledbSystemIoRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13883,6 +14123,7 @@ func (m *metricNewrelicoracledbSystemLeafNodeSplitsPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemLeafNodeSplitsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemLeafNodeSplitsPerSecond {
 	m := metricNewrelicoracledbSystemLeafNodeSplitsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13934,6 +14175,7 @@ func (m *metricNewrelicoracledbSystemLeafNodeSplitsPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemLeafNodeSplitsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemLeafNodeSplitsPerTransaction {
 	m := metricNewrelicoracledbSystemLeafNodeSplitsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -13985,6 +14227,7 @@ func (m *metricNewrelicoracledbSystemLibraryCacheHitRatio) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemLibraryCacheHitRatio(cfg MetricConfig) metricNewrelicoracledbSystemLibraryCacheHitRatio {
 	m := metricNewrelicoracledbSystemLibraryCacheHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14036,6 +14279,7 @@ func (m *metricNewrelicoracledbSystemLibraryCacheMissRatio) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemLibraryCacheMissRatio(cfg MetricConfig) metricNewrelicoracledbSystemLibraryCacheMissRatio {
 	m := metricNewrelicoracledbSystemLibraryCacheMissRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14087,6 +14331,7 @@ func (m *metricNewrelicoracledbSystemLogicalReadsPerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemLogicalReadsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemLogicalReadsPerSecond {
 	m := metricNewrelicoracledbSystemLogicalReadsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14138,6 +14383,7 @@ func (m *metricNewrelicoracledbSystemLogicalReadsPerTransaction) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemLogicalReadsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemLogicalReadsPerTransaction {
 	m := metricNewrelicoracledbSystemLogicalReadsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14189,6 +14435,7 @@ func (m *metricNewrelicoracledbSystemLogicalReadsPerUserCall) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemLogicalReadsPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemLogicalReadsPerUserCall {
 	m := metricNewrelicoracledbSystemLogicalReadsPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14240,6 +14487,7 @@ func (m *metricNewrelicoracledbSystemLogonsPerSecond) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbSystemLogonsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemLogonsPerSecond {
 	m := metricNewrelicoracledbSystemLogonsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14291,6 +14539,7 @@ func (m *metricNewrelicoracledbSystemLogonsPerTransaction) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemLogonsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemLogonsPerTransaction {
 	m := metricNewrelicoracledbSystemLogonsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14342,6 +14591,7 @@ func (m *metricNewrelicoracledbSystemLongTableScansPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemLongTableScansPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemLongTableScansPerSecond {
 	m := metricNewrelicoracledbSystemLongTableScansPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14393,6 +14643,7 @@ func (m *metricNewrelicoracledbSystemLongTableScansPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemLongTableScansPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemLongTableScansPerTransaction {
 	m := metricNewrelicoracledbSystemLongTableScansPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14444,6 +14695,7 @@ func (m *metricNewrelicoracledbSystemMemorySortsRatio) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbSystemMemorySortsRatio(cfg MetricConfig) metricNewrelicoracledbSystemMemorySortsRatio {
 	m := metricNewrelicoracledbSystemMemorySortsRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14495,6 +14747,7 @@ func (m *metricNewrelicoracledbSystemNetworkTrafficVolumePerSecond) emit(metrics
 
 func newMetricNewrelicoracledbSystemNetworkTrafficVolumePerSecond(cfg MetricConfig) metricNewrelicoracledbSystemNetworkTrafficVolumePerSecond {
 	m := metricNewrelicoracledbSystemNetworkTrafficVolumePerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14546,6 +14799,7 @@ func (m *metricNewrelicoracledbSystemOpenCursorsPerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemOpenCursorsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemOpenCursorsPerSecond {
 	m := metricNewrelicoracledbSystemOpenCursorsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14597,6 +14851,7 @@ func (m *metricNewrelicoracledbSystemOpenCursorsPerTransaction) emit(metrics pme
 
 func newMetricNewrelicoracledbSystemOpenCursorsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemOpenCursorsPerTransaction {
 	m := metricNewrelicoracledbSystemOpenCursorsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14648,6 +14903,7 @@ func (m *metricNewrelicoracledbSystemParseFailureCountPerSecond) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemParseFailureCountPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemParseFailureCountPerSecond {
 	m := metricNewrelicoracledbSystemParseFailureCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14699,6 +14955,7 @@ func (m *metricNewrelicoracledbSystemParseFailureCountPerTransaction) emit(metri
 
 func newMetricNewrelicoracledbSystemParseFailureCountPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemParseFailureCountPerTransaction {
 	m := metricNewrelicoracledbSystemParseFailureCountPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14750,6 +15007,7 @@ func (m *metricNewrelicoracledbSystemPgaCacheHitPercentage) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemPgaCacheHitPercentage(cfg MetricConfig) metricNewrelicoracledbSystemPgaCacheHitPercentage {
 	m := metricNewrelicoracledbSystemPgaCacheHitPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14801,6 +15059,7 @@ func (m *metricNewrelicoracledbSystemPhysicalLobsReadsPerSecond) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemPhysicalLobsReadsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalLobsReadsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalLobsReadsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14852,6 +15111,7 @@ func (m *metricNewrelicoracledbSystemPhysicalLobsReadsPerTransaction) emit(metri
 
 func newMetricNewrelicoracledbSystemPhysicalLobsReadsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalLobsReadsPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalLobsReadsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14903,6 +15163,7 @@ func (m *metricNewrelicoracledbSystemPhysicalLobsWritesPerSecond) emit(metrics p
 
 func newMetricNewrelicoracledbSystemPhysicalLobsWritesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalLobsWritesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalLobsWritesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -14954,6 +15215,7 @@ func (m *metricNewrelicoracledbSystemPhysicalLobsWritesPerTransaction) emit(metr
 
 func newMetricNewrelicoracledbSystemPhysicalLobsWritesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalLobsWritesPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalLobsWritesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15005,6 +15267,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadBytesPerSecond) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemPhysicalReadBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadBytesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15056,6 +15319,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadIoRequestsPerSecond) emit(metri
 
 func newMetricNewrelicoracledbSystemPhysicalReadIoRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadIoRequestsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadIoRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15107,6 +15371,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadTotalBytesPerSecond) emit(metri
 
 func newMetricNewrelicoracledbSystemPhysicalReadTotalBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadTotalBytesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadTotalBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15158,6 +15423,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond) emit(
 
 func newMetricNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15209,6 +15475,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadsDirectPerSecond) emit(metrics 
 
 func newMetricNewrelicoracledbSystemPhysicalReadsDirectPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadsDirectPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadsDirectPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15260,6 +15527,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadsDirectPerTransaction) emit(met
 
 func newMetricNewrelicoracledbSystemPhysicalReadsDirectPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadsDirectPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalReadsDirectPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15311,6 +15579,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadsPerSecond) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemPhysicalReadsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalReadsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15362,6 +15631,7 @@ func (m *metricNewrelicoracledbSystemPhysicalReadsPerTransaction) emit(metrics p
 
 func newMetricNewrelicoracledbSystemPhysicalReadsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalReadsPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalReadsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15413,6 +15683,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWriteBytesPerSecond) emit(metrics p
 
 func newMetricNewrelicoracledbSystemPhysicalWriteBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWriteBytesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWriteBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15464,6 +15735,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond) emit(metr
 
 func newMetricNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15515,6 +15787,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond) emit(metr
 
 func newMetricNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15566,6 +15839,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond) emit
 
 func newMetricNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15617,6 +15891,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWritesDirectPerSecond) emit(metrics
 
 func newMetricNewrelicoracledbSystemPhysicalWritesDirectPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWritesDirectPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWritesDirectPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15668,6 +15943,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWritesDirectPerTransaction) emit(me
 
 func newMetricNewrelicoracledbSystemPhysicalWritesDirectPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWritesDirectPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalWritesDirectPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15719,6 +15995,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWritesPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemPhysicalWritesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWritesPerSecond {
 	m := metricNewrelicoracledbSystemPhysicalWritesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15770,6 +16047,7 @@ func (m *metricNewrelicoracledbSystemPhysicalWritesPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemPhysicalWritesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemPhysicalWritesPerTransaction {
 	m := metricNewrelicoracledbSystemPhysicalWritesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15821,6 +16099,7 @@ func (m *metricNewrelicoracledbSystemProcessLimitPercentage) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemProcessLimitPercentage(cfg MetricConfig) metricNewrelicoracledbSystemProcessLimitPercentage {
 	m := metricNewrelicoracledbSystemProcessLimitPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15872,6 +16151,7 @@ func (m *metricNewrelicoracledbSystemRecursiveCallsPerSecond) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemRecursiveCallsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemRecursiveCallsPerSecond {
 	m := metricNewrelicoracledbSystemRecursiveCallsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15923,6 +16203,7 @@ func (m *metricNewrelicoracledbSystemRecursiveCallsPerTransaction) emit(metrics 
 
 func newMetricNewrelicoracledbSystemRecursiveCallsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemRecursiveCallsPerTransaction {
 	m := metricNewrelicoracledbSystemRecursiveCallsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -15974,6 +16255,7 @@ func (m *metricNewrelicoracledbSystemRedoAllocationHitRatio) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemRedoAllocationHitRatio(cfg MetricConfig) metricNewrelicoracledbSystemRedoAllocationHitRatio {
 	m := metricNewrelicoracledbSystemRedoAllocationHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16025,6 +16307,7 @@ func (m *metricNewrelicoracledbSystemRedoGeneratedBytesPerSecond) emit(metrics p
 
 func newMetricNewrelicoracledbSystemRedoGeneratedBytesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemRedoGeneratedBytesPerSecond {
 	m := metricNewrelicoracledbSystemRedoGeneratedBytesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16076,6 +16359,7 @@ func (m *metricNewrelicoracledbSystemRedoGeneratedBytesPerTransaction) emit(metr
 
 func newMetricNewrelicoracledbSystemRedoGeneratedBytesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemRedoGeneratedBytesPerTransaction {
 	m := metricNewrelicoracledbSystemRedoGeneratedBytesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16127,6 +16411,7 @@ func (m *metricNewrelicoracledbSystemRedoWritesPerSecond) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemRedoWritesPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemRedoWritesPerSecond {
 	m := metricNewrelicoracledbSystemRedoWritesPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16178,6 +16463,7 @@ func (m *metricNewrelicoracledbSystemRedoWritesPerTransaction) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemRedoWritesPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemRedoWritesPerTransaction {
 	m := metricNewrelicoracledbSystemRedoWritesPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16229,6 +16515,7 @@ func (m *metricNewrelicoracledbSystemResponseTimePerTransaction) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemResponseTimePerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemResponseTimePerTransaction {
 	m := metricNewrelicoracledbSystemResponseTimePerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16280,6 +16567,7 @@ func (m *metricNewrelicoracledbSystemRowCacheHitRatio) emit(metrics pmetric.Metr
 
 func newMetricNewrelicoracledbSystemRowCacheHitRatio(cfg MetricConfig) metricNewrelicoracledbSystemRowCacheHitRatio {
 	m := metricNewrelicoracledbSystemRowCacheHitRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16331,6 +16619,7 @@ func (m *metricNewrelicoracledbSystemRowCacheMissRatio) emit(metrics pmetric.Met
 
 func newMetricNewrelicoracledbSystemRowCacheMissRatio(cfg MetricConfig) metricNewrelicoracledbSystemRowCacheMissRatio {
 	m := metricNewrelicoracledbSystemRowCacheMissRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16382,6 +16671,7 @@ func (m *metricNewrelicoracledbSystemRowsPerSort) emit(metrics pmetric.MetricSli
 
 func newMetricNewrelicoracledbSystemRowsPerSort(cfg MetricConfig) metricNewrelicoracledbSystemRowsPerSort {
 	m := metricNewrelicoracledbSystemRowsPerSort{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16433,6 +16723,7 @@ func (m *metricNewrelicoracledbSystemSessionCount) emit(metrics pmetric.MetricSl
 
 func newMetricNewrelicoracledbSystemSessionCount(cfg MetricConfig) metricNewrelicoracledbSystemSessionCount {
 	m := metricNewrelicoracledbSystemSessionCount{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16484,6 +16775,7 @@ func (m *metricNewrelicoracledbSystemSessionLimitPercentage) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemSessionLimitPercentage(cfg MetricConfig) metricNewrelicoracledbSystemSessionLimitPercentage {
 	m := metricNewrelicoracledbSystemSessionLimitPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16535,6 +16827,7 @@ func (m *metricNewrelicoracledbSystemSharedPoolFreePercentage) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemSharedPoolFreePercentage(cfg MetricConfig) metricNewrelicoracledbSystemSharedPoolFreePercentage {
 	m := metricNewrelicoracledbSystemSharedPoolFreePercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16586,6 +16879,7 @@ func (m *metricNewrelicoracledbSystemSoftParseRatio) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbSystemSoftParseRatio(cfg MetricConfig) metricNewrelicoracledbSystemSoftParseRatio {
 	m := metricNewrelicoracledbSystemSoftParseRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16637,6 +16931,7 @@ func (m *metricNewrelicoracledbSystemSQLServiceResponseTime) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemSQLServiceResponseTime(cfg MetricConfig) metricNewrelicoracledbSystemSQLServiceResponseTime {
 	m := metricNewrelicoracledbSystemSQLServiceResponseTime{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16688,6 +16983,7 @@ func (m *metricNewrelicoracledbSystemStreamsPoolUsagePercentage) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemStreamsPoolUsagePercentage(cfg MetricConfig) metricNewrelicoracledbSystemStreamsPoolUsagePercentage {
 	m := metricNewrelicoracledbSystemStreamsPoolUsagePercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16739,6 +17035,7 @@ func (m *metricNewrelicoracledbSystemTempSpaceUsed) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbSystemTempSpaceUsed(cfg MetricConfig) metricNewrelicoracledbSystemTempSpaceUsed {
 	m := metricNewrelicoracledbSystemTempSpaceUsed{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16790,6 +17087,7 @@ func (m *metricNewrelicoracledbSystemTotalIndexScansPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemTotalIndexScansPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemTotalIndexScansPerSecond {
 	m := metricNewrelicoracledbSystemTotalIndexScansPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16841,6 +17139,7 @@ func (m *metricNewrelicoracledbSystemTotalIndexScansPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemTotalIndexScansPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemTotalIndexScansPerTransaction {
 	m := metricNewrelicoracledbSystemTotalIndexScansPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16892,6 +17191,7 @@ func (m *metricNewrelicoracledbSystemTotalParseCountPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemTotalParseCountPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemTotalParseCountPerSecond {
 	m := metricNewrelicoracledbSystemTotalParseCountPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16943,6 +17243,7 @@ func (m *metricNewrelicoracledbSystemTotalParseCountPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemTotalParseCountPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemTotalParseCountPerTransaction {
 	m := metricNewrelicoracledbSystemTotalParseCountPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -16994,6 +17295,7 @@ func (m *metricNewrelicoracledbSystemTotalSortsPerUserCall) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemTotalSortsPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemTotalSortsPerUserCall {
 	m := metricNewrelicoracledbSystemTotalSortsPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17045,6 +17347,7 @@ func (m *metricNewrelicoracledbSystemTotalTableScansPerSecond) emit(metrics pmet
 
 func newMetricNewrelicoracledbSystemTotalTableScansPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemTotalTableScansPerSecond {
 	m := metricNewrelicoracledbSystemTotalTableScansPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17096,6 +17399,7 @@ func (m *metricNewrelicoracledbSystemTotalTableScansPerTransaction) emit(metrics
 
 func newMetricNewrelicoracledbSystemTotalTableScansPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemTotalTableScansPerTransaction {
 	m := metricNewrelicoracledbSystemTotalTableScansPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17147,6 +17451,7 @@ func (m *metricNewrelicoracledbSystemTotalTableScansPerUserCall) emit(metrics pm
 
 func newMetricNewrelicoracledbSystemTotalTableScansPerUserCall(cfg MetricConfig) metricNewrelicoracledbSystemTotalTableScansPerUserCall {
 	m := metricNewrelicoracledbSystemTotalTableScansPerUserCall{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17198,6 +17503,7 @@ func (m *metricNewrelicoracledbSystemTransactionsPerLogon) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemTransactionsPerLogon(cfg MetricConfig) metricNewrelicoracledbSystemTransactionsPerLogon {
 	m := metricNewrelicoracledbSystemTransactionsPerLogon{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17249,6 +17555,7 @@ func (m *metricNewrelicoracledbSystemTransactionsPerSecond) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemTransactionsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemTransactionsPerSecond {
 	m := metricNewrelicoracledbSystemTransactionsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17300,6 +17607,7 @@ func (m *metricNewrelicoracledbSystemUserCallsPerSecond) emit(metrics pmetric.Me
 
 func newMetricNewrelicoracledbSystemUserCallsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemUserCallsPerSecond {
 	m := metricNewrelicoracledbSystemUserCallsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17351,6 +17659,7 @@ func (m *metricNewrelicoracledbSystemUserCallsPerTransaction) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemUserCallsPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemUserCallsPerTransaction {
 	m := metricNewrelicoracledbSystemUserCallsPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17402,6 +17711,7 @@ func (m *metricNewrelicoracledbSystemUserCallsRatio) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbSystemUserCallsRatio(cfg MetricConfig) metricNewrelicoracledbSystemUserCallsRatio {
 	m := metricNewrelicoracledbSystemUserCallsRatio{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17453,6 +17763,7 @@ func (m *metricNewrelicoracledbSystemUserCommitsPerSecond) emit(metrics pmetric.
 
 func newMetricNewrelicoracledbSystemUserCommitsPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemUserCommitsPerSecond {
 	m := metricNewrelicoracledbSystemUserCommitsPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17504,6 +17815,7 @@ func (m *metricNewrelicoracledbSystemUserCommitsPercentage) emit(metrics pmetric
 
 func newMetricNewrelicoracledbSystemUserCommitsPercentage(cfg MetricConfig) metricNewrelicoracledbSystemUserCommitsPercentage {
 	m := metricNewrelicoracledbSystemUserCommitsPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17555,6 +17867,7 @@ func (m *metricNewrelicoracledbSystemUserLimitPercentage) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbSystemUserLimitPercentage(cfg MetricConfig) metricNewrelicoracledbSystemUserLimitPercentage {
 	m := metricNewrelicoracledbSystemUserLimitPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17606,6 +17919,7 @@ func (m *metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond) em
 
 func newMetricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond {
 	m := metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17657,6 +17971,7 @@ func (m *metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransactio
 
 func newMetricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransaction(cfg MetricConfig) metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransaction {
 	m := metricNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransaction{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17708,6 +18023,7 @@ func (m *metricNewrelicoracledbSystemUserRollbacksPerSecond) emit(metrics pmetri
 
 func newMetricNewrelicoracledbSystemUserRollbacksPerSecond(cfg MetricConfig) metricNewrelicoracledbSystemUserRollbacksPerSecond {
 	m := metricNewrelicoracledbSystemUserRollbacksPerSecond{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17759,6 +18075,7 @@ func (m *metricNewrelicoracledbSystemUserRollbacksPercentage) emit(metrics pmetr
 
 func newMetricNewrelicoracledbSystemUserRollbacksPercentage(cfg MetricConfig) metricNewrelicoracledbSystemUserRollbacksPercentage {
 	m := metricNewrelicoracledbSystemUserRollbacksPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17811,6 +18128,7 @@ func (m *metricNewrelicoracledbTablespaceDbID) emit(metrics pmetric.MetricSlice)
 
 func newMetricNewrelicoracledbTablespaceDbID(cfg MetricConfig) metricNewrelicoracledbTablespaceDbID {
 	m := metricNewrelicoracledbTablespaceDbID{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17863,6 +18181,7 @@ func (m *metricNewrelicoracledbTablespaceGlobalName) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbTablespaceGlobalName(cfg MetricConfig) metricNewrelicoracledbTablespaceGlobalName {
 	m := metricNewrelicoracledbTablespaceGlobalName{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17914,6 +18233,7 @@ func (m *metricNewrelicoracledbTablespaceIsOffline) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbTablespaceIsOffline(cfg MetricConfig) metricNewrelicoracledbTablespaceIsOffline {
 	m := metricNewrelicoracledbTablespaceIsOffline{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -17965,6 +18285,7 @@ func (m *metricNewrelicoracledbTablespaceOfflineCdbDatafiles) emit(metrics pmetr
 
 func newMetricNewrelicoracledbTablespaceOfflineCdbDatafiles(cfg MetricConfig) metricNewrelicoracledbTablespaceOfflineCdbDatafiles {
 	m := metricNewrelicoracledbTablespaceOfflineCdbDatafiles{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18016,6 +18337,7 @@ func (m *metricNewrelicoracledbTablespaceOfflinePdbDatafiles) emit(metrics pmetr
 
 func newMetricNewrelicoracledbTablespaceOfflinePdbDatafiles(cfg MetricConfig) metricNewrelicoracledbTablespaceOfflinePdbDatafiles {
 	m := metricNewrelicoracledbTablespaceOfflinePdbDatafiles{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18067,6 +18389,7 @@ func (m *metricNewrelicoracledbTablespacePdbNonWriteMode) emit(metrics pmetric.M
 
 func newMetricNewrelicoracledbTablespacePdbNonWriteMode(cfg MetricConfig) metricNewrelicoracledbTablespacePdbNonWriteMode {
 	m := metricNewrelicoracledbTablespacePdbNonWriteMode{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18118,6 +18441,7 @@ func (m *metricNewrelicoracledbTablespaceSpaceConsumedBytes) emit(metrics pmetri
 
 func newMetricNewrelicoracledbTablespaceSpaceConsumedBytes(cfg MetricConfig) metricNewrelicoracledbTablespaceSpaceConsumedBytes {
 	m := metricNewrelicoracledbTablespaceSpaceConsumedBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18169,6 +18493,7 @@ func (m *metricNewrelicoracledbTablespaceSpaceReservedBytes) emit(metrics pmetri
 
 func newMetricNewrelicoracledbTablespaceSpaceReservedBytes(cfg MetricConfig) metricNewrelicoracledbTablespaceSpaceReservedBytes {
 	m := metricNewrelicoracledbTablespaceSpaceReservedBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18220,6 +18545,7 @@ func (m *metricNewrelicoracledbTablespaceSpaceUsedPercentage) emit(metrics pmetr
 
 func newMetricNewrelicoracledbTablespaceSpaceUsedPercentage(cfg MetricConfig) metricNewrelicoracledbTablespaceSpaceUsedPercentage {
 	m := metricNewrelicoracledbTablespaceSpaceUsedPercentage{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18272,6 +18598,7 @@ func (m *metricNewrelicoracledbTablespaceTotalBytes) emit(metrics pmetric.Metric
 
 func newMetricNewrelicoracledbTablespaceTotalBytes(cfg MetricConfig) metricNewrelicoracledbTablespaceTotalBytes {
 	m := metricNewrelicoracledbTablespaceTotalBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18324,6 +18651,7 @@ func (m *metricNewrelicoracledbTablespaceUsedBytes) emit(metrics pmetric.MetricS
 
 func newMetricNewrelicoracledbTablespaceUsedBytes(cfg MetricConfig) metricNewrelicoracledbTablespaceUsedBytes {
 	m := metricNewrelicoracledbTablespaceUsedBytes{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18376,6 +18704,7 @@ func (m *metricNewrelicoracledbTablespaceUsedPercent) emit(metrics pmetric.Metri
 
 func newMetricNewrelicoracledbTablespaceUsedPercent(cfg MetricConfig) metricNewrelicoracledbTablespaceUsedPercent {
 	m := metricNewrelicoracledbTablespaceUsedPercent{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()
@@ -18458,6 +18787,7 @@ func (m *metricNewrelicoracledbWaitEventsCurrentWaitTimeMs) emit(metrics pmetric
 
 func newMetricNewrelicoracledbWaitEventsCurrentWaitTimeMs(cfg MetricConfig) metricNewrelicoracledbWaitEventsCurrentWaitTimeMs {
 	m := metricNewrelicoracledbWaitEventsCurrentWaitTimeMs{config: cfg}
+
 	if cfg.Enabled {
 		m.data = pmetric.NewMetric()
 		m.init()

@@ -244,6 +244,7 @@ func (c *SQLClient) scanWaitEvents(ctx context.Context, query string) ([]models.
 
 	return results, rows.Err()
 }
+
 func (c *SQLClient) QueryWaitEventsWithBlocking(ctx context.Context, countThreshold int, slowQueryIDs []string) ([]models.WaitEventWithBlocking, error) {
 	var results []models.WaitEventWithBlocking
 	var capturedSQLIDs []string
