@@ -37,6 +37,8 @@ CMD_MODS := $(shell find ./cmd/* $(FIND_MOD_ARGS) -not -path "./cmd/*col*" -exec
 OTHER_MODS := $(shell find . $(EX_COMPONENTS) $(EX_INTERNAL) $(EX_PKG) $(EX_CMD) $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 export ALL_MODS := $(RECEIVER_MODS) $(PROCESSOR_MODS) $(EXPORTER_MODS) $(EXTENSION_MODS) $(CONNECTOR_MODS) $(INTERNAL_MODS) $(PKG_MODS) $(CMD_MODS) $(OTHER_MODS)
 
+CGO_MODS :=
+
 FIND_INTEGRATION_TEST_MODS={ find . -type f -name "*integration_test.go" & find . -type f -name "*e2e_test.go" -not -path "./testbed/*"; }
 INTEGRATION_MODS := $(shell $(FIND_INTEGRATION_TEST_MODS) | xargs $(TO_MOD_DIR) | uniq)
 
@@ -63,6 +65,7 @@ all-groups:
 	@echo -e "\ncmd: $(CMD_MODS)"
 	@echo -e "\nother: $(OTHER_MODS)"
 	@echo -e "\nintegration: $(INTEGRATION_MODS)"
+	@echo -e "\ncgo: $(CGO_MODS)"
 	@echo -e "\ngenerated: $(GENERATED_MODS)"
 
 .PHONY: all
@@ -263,6 +266,9 @@ for-other-target: $(OTHER_MODS)
 
 .PHONY: for-integration-target
 for-integration-target: $(INTEGRATION_MODS)
+
+.PHONY: for-cgo-target
+for-cgo-target: $(CGO_MODS)
 
 # Debugging target, which helps to quickly determine whether for-all-target is working or not.
 .PHONY: all-pwd
@@ -587,17 +593,13 @@ check-builder-integration:
 		component_path=$$(echo $$component_dir | sed 's|^\./||'); \
 		component_module="github.com/newrelic/nrdot-collector-components/$$component_path"; \
 		echo "Checking $$component_path..."; \
-		found=false; \
 		for config in cmd/nrdotcol/builder-config.yaml cmd/oteltestbedcol/builder-config.yaml; do \
-			if grep -q "$$component_module" "$$config"; then \
-				echo "  $$config: ✓"; \
-				found=true; \
+			if ! grep -q "$$component_module" "$$config"; then \
+				echo "✗ Missing from $$config. Add entry: - gomod: $$component_module v0.142.1"; \
+				exit 1; \
 			fi; \
+			echo "  $$config: ✓"; \
 		done; \
-		if [ "$$found" = false ]; then \
-			echo "✗ Missing from all builder configs. Add to cmd/nrdotcol/builder-config.yaml"; \
-			exit 1; \
-		fi; \
 	done
 
 .PHONY: checkapi
