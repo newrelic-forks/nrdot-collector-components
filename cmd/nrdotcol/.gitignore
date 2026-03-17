@@ -1,5 +1,4 @@
 *
 !builder-config.yaml
-!builder-config-cgo-enabled.yaml
 !Dockerfile
 !metadata.yaml

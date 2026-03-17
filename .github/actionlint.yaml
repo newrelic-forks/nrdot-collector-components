@@ -1,3 +1,7 @@
+self-hosted-runner:
+  labels:
+    - oracle-bare-metal-64cpu-512gb-x86-64
+
 config-variables: null
 
 paths:

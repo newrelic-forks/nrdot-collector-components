@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -9,12 +9,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	commonutils "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/common-utils"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	commonutils "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // SlowQueriesScraper contains the scraper for slow queries metrics
@@ -176,7 +177,6 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 		// The anonymized query text is derived from the normalized SQL (for attribute display)
 		var queryHash, qText, nrServiceGUID string
 		if slowQuery.QueryText.Valid && slowQuery.QueryText.String != "" {
-
 			// Extract nrServiceGUID from query comment
 			nrServiceGUID = commonutils.ExtractNewRelicMetadata(slowQuery.QueryText.String)
 

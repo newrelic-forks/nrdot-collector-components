@@ -8,12 +8,13 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewSystemScraper(t *testing.T) {

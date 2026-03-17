@@ -27,11 +27,6 @@ EX_CMD=-not -path "./cmd/*"
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
 RECEIVER_MODS := $(shell find ./receiver/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
-# Receivers that require CGO (exclude from standard builds/lint)
-CGO_RECEIVER_MODS := ./receiver/newrelicoraclereceiver
-# Non-CGO receivers for standard builds/lint
-NON_CGO_RECEIVER_MODS := $(filter-out $(CGO_RECEIVER_MODS),$(RECEIVER_MODS))
-
 PROCESSOR_MODS := $(shell find ./processor/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXPORTER_MODS := $(shell find ./exporter/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXTENSION_MODS := $(shell find ./extension/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
@@ -61,8 +56,6 @@ all-modules:
 
 all-groups:
 	@echo -e "receiver: $(RECEIVER_MODS)"
-	@echo -e "  - CGO receivers: $(CGO_RECEIVER_MODS)"
-	@echo -e "  - Non-CGO receivers: $(NON_CGO_RECEIVER_MODS)"
 	@echo -e "\nprocessor: $(PROCESSOR_MODS)"
 	@echo -e "\nexporter: $(EXPORTER_MODS)"
 	@echo -e "\nextension: $(EXTENSION_MODS)"
@@ -247,10 +240,6 @@ for-all-target: $(ALL_MODS)
 .PHONY: for-receiver-target
 for-receiver-target: $(RECEIVER_MODS)
 
-# Target for non-CGO receivers only (for standard lint/test without CGO)
-.PHONY: for-non-cgo-receiver-target
-for-non-cgo-receiver-target: $(NON_CGO_RECEIVER_MODS)
-
 .PHONY: for-processor-target
 for-processor-target: $(PROCESSOR_MODS)
 
@@ -395,24 +384,6 @@ nrdotcollite: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \
 		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
 
-# Generate code for CGO-enabled collector build
-.PHONY: gennrdotcol-cgo
-gennrdotcol-cgo: $(BUILDER)
-	./internal/buildscripts/ocb-add-replaces.sh nrdotcol-cgo
-	$(BUILDER) --skip-compilation --config cmd/nrdotcol/builder-config-cgo-enabled-replaced.yaml
-
-# Build the Collector executable with CGO-enabled components (like newrelicoraclereceiver).
-.PHONY: nrdotcol-cgo
-nrdotcol-cgo: gennrdotcol-cgo
-	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
-		-tags $(GO_BUILD_TAGS) .
-
-# Build the CGO-enabled Collector executable without the symbol table, debug information, and the DWARF symbol table.
-.PHONY: nrdotcol-cgolite
-nrdotcol-cgolite: gennrdotcol-cgo
-	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
-		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
-
 .PHONY: genoteltestbedcol
 genoteltestbedcol: $(BUILDER)
 	./internal/buildscripts/ocb-add-replaces.sh oteltestbedcol
@@ -472,11 +443,24 @@ define updatehelper
 	done
 endef
 
+.PHONY: update-golang
+update-golang:
+ifndef VERSION
+	$(error VERSION is required. Usage: make update-golang VERSION=1.24.11)
+endif
+	@./.github/workflows/scripts/update-golang.sh -v $(VERSION)
+
 .PHONY: update-otel
 update-otel:$(MULTIMOD)
 	# Make sure cmd/nrdotcol/go.mod and cmd/oteltestbedcol/go.mod are present
 	$(MAKE) gennrdotcol
 	$(MAKE) genoteltestbedcol
+	# Update Go version if provided
+ifdef GO_VERSION
+	@echo "Updating Go version to $(GO_VERSION)..."
+	$(MAKE) update-golang VERSION=$(GO_VERSION)
+	git add . && git commit -s -m "[chore] update golang to $(GO_VERSION)" --allow-empty || true
+endif
 	$(MULTIMOD) sync -s=true -o ../opentelemetry-collector -m stable --commit-hash "$(OTEL_STABLE_VERSION)"
 	git add . && git commit -s -m "[chore] multimod update stable modules" || true
 	$(MULTIMOD) sync -s=true -o ../opentelemetry-collector -m beta --commit-hash "$(OTEL_VERSION)"
@@ -609,17 +593,13 @@ check-builder-integration:
 		component_path=$$(echo $$component_dir | sed 's|^\./||'); \
 		component_module="github.com/newrelic/nrdot-collector-components/$$component_path"; \
 		echo "Checking $$component_path..."; \
-		found=false; \
-		for config in cmd/nrdotcol/builder-config.yaml cmd/nrdotcol/builder-config-cgo-enabled.yaml cmd/oteltestbedcol/builder-config.yaml; do \
-			if grep -q "$$component_module" "$$config"; then \
-				echo "  $$config: ✓"; \
-				found=true; \
+		for config in cmd/nrdotcol/builder-config.yaml cmd/oteltestbedcol/builder-config.yaml; do \
+			if ! grep -q "$$component_module" "$$config"; then \
+				echo "✗ Missing from $$config. Add entry: - gomod: $$component_module v0.142.1"; \
+				exit 1; \
 			fi; \
+			echo "  $$config: ✓"; \
 		done; \
-		if [ "$$found" = false ]; then \
-			echo "✗ Missing from all builder configs. Add to either cmd/nrdotcol/builder-config.yaml or cmd/nrdotcol/builder-config-cgo-enabled.yaml (for CGO components)"; \
-			exit 1; \
-		fi; \
 	done
 
 .PHONY: checkapi

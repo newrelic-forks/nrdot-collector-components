@@ -12,19 +12,19 @@ can be found at https://github.com/newrelic/nrdot-collector-components.
 
 
 
-## [github.com/godror/godror](https://github.com/godror/godror)
-
-Distributed under the following license(s):
-
-* MIT
-
-
-
 ## [github.com/google/go-cmp](https://github.com/google/go-cmp)
 
 Distributed under the following license(s):
 
 * BSD-3-Clause
+
+
+
+## [github.com/sijms/go-ora/v2](https://github.com/sijms/go-ora)
+
+Distributed under the following license(s):
+
+* MIT
 
 
 
