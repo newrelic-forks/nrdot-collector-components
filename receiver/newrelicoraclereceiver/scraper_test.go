@@ -26,20 +26,15 @@ func TestScraperShutdown_NilDB(t *testing.T) {
 
 func TestConcurrentProcessingTimeout(t *testing.T) {
 	// Test that context timeout is properly handled
-	ctx, cancel := context.WithTimeout(t.Context(), 1*time.Millisecond)
+	ctx, cancel := context.WithTimeout(t.Context(), 10*time.Millisecond)
 	defer cancel()
 
-	// Let the context timeout
-	time.Sleep(5 * time.Millisecond)
+	// Wait for the context to timeout
+	<-ctx.Done()
 
-	// Verify context is cancelled
-	select {
-	case <-ctx.Done():
-		assert.Error(t, ctx.Err())
-		assert.Contains(t, ctx.Err().Error(), "deadline exceeded")
-	default:
-		t.Fatal("Expected context to be cancelled")
-	}
+	// Verify context error indicates timeout
+	assert.Error(t, ctx.Err())
+	assert.Contains(t, ctx.Err().Error(), "deadline exceeded")
 }
 
 func TestScraperFuncSignature(t *testing.T) {

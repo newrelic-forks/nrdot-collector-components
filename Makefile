@@ -27,11 +27,6 @@ EX_CMD=-not -path "./cmd/*"
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
 RECEIVER_MODS := $(shell find ./receiver/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
-# Receivers that require CGO (exclude from standard builds/lint)
-CGO_RECEIVER_MODS := ./receiver/newrelicoraclereceiver
-# Non-CGO receivers for standard builds/lint
-NON_CGO_RECEIVER_MODS := $(filter-out $(CGO_RECEIVER_MODS),$(RECEIVER_MODS))
-
 PROCESSOR_MODS := $(shell find ./processor/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXPORTER_MODS := $(shell find ./exporter/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 EXTENSION_MODS := $(shell find ./extension/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
@@ -41,8 +36,6 @@ PKG_MODS := $(shell find ./pkg/* $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 CMD_MODS := $(shell find ./cmd/* $(FIND_MOD_ARGS) -not -path "./cmd/*col*" -exec $(TO_MOD_DIR) )
 OTHER_MODS := $(shell find . $(EX_COMPONENTS) $(EX_INTERNAL) $(EX_PKG) $(EX_CMD) $(FIND_MOD_ARGS) -exec $(TO_MOD_DIR) )
 export ALL_MODS := $(RECEIVER_MODS) $(PROCESSOR_MODS) $(EXPORTER_MODS) $(EXTENSION_MODS) $(CONNECTOR_MODS) $(INTERNAL_MODS) $(PKG_MODS) $(CMD_MODS) $(OTHER_MODS)
-
-CGO_MODS :=
 
 FIND_INTEGRATION_TEST_MODS={ find . -type f -name "*integration_test.go" & find . -type f -name "*e2e_test.go" -not -path "./testbed/*"; }
 INTEGRATION_MODS := $(shell $(FIND_INTEGRATION_TEST_MODS) | xargs $(TO_MOD_DIR) | uniq)
@@ -61,8 +54,6 @@ all-modules:
 
 all-groups:
 	@echo -e "receiver: $(RECEIVER_MODS)"
-	@echo -e "  - CGO receivers: $(CGO_RECEIVER_MODS)"
-	@echo -e "  - Non-CGO receivers: $(NON_CGO_RECEIVER_MODS)"
 	@echo -e "\nprocessor: $(PROCESSOR_MODS)"
 	@echo -e "\nexporter: $(EXPORTER_MODS)"
 	@echo -e "\nextension: $(EXTENSION_MODS)"
@@ -72,7 +63,6 @@ all-groups:
 	@echo -e "\ncmd: $(CMD_MODS)"
 	@echo -e "\nother: $(OTHER_MODS)"
 	@echo -e "\nintegration: $(INTEGRATION_MODS)"
-	@echo -e "\ncgo: $(CGO_MODS)"
 	@echo -e "\ngenerated: $(GENERATED_MODS)"
 
 .PHONY: all
@@ -247,10 +237,6 @@ for-all-target: $(ALL_MODS)
 .PHONY: for-receiver-target
 for-receiver-target: $(RECEIVER_MODS)
 
-# Target for non-CGO receivers only (for standard lint/test without CGO)
-.PHONY: for-non-cgo-receiver-target
-for-non-cgo-receiver-target: $(NON_CGO_RECEIVER_MODS)
-
 .PHONY: for-processor-target
 for-processor-target: $(PROCESSOR_MODS)
 
@@ -277,9 +263,6 @@ for-other-target: $(OTHER_MODS)
 
 .PHONY: for-integration-target
 for-integration-target: $(INTEGRATION_MODS)
-
-.PHONY: for-cgo-target
-for-cgo-target: $(CGO_MODS)
 
 # Debugging target, which helps to quickly determine whether for-all-target is working or not.
 .PHONY: all-pwd
@@ -393,24 +376,6 @@ nrdotcol: gennrdotcol
 .PHONY: nrdotcollite
 nrdotcollite: gennrdotcol
 	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=0 $(GOCMD) build -trimpath -o ../../bin/nrdotcol_$(GOOS)_$(GOARCH)$(EXTENSION) \
-		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
-
-# Generate code for CGO-enabled collector build
-.PHONY: gennrdotcol-cgo
-gennrdotcol-cgo: $(BUILDER)
-	./internal/buildscripts/ocb-add-replaces.sh nrdotcol-cgo
-	$(BUILDER) --skip-compilation --config cmd/nrdotcol/builder-config-cgo-enabled-replaced.yaml
-
-# Build the Collector executable with CGO-enabled components (like newrelicoraclereceiver).
-.PHONY: nrdotcol-cgo
-nrdotcol-cgo: gennrdotcol-cgo
-	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
-		-tags $(GO_BUILD_TAGS) .
-
-# Build the CGO-enabled Collector executable without the symbol table, debug information, and the DWARF symbol table.
-.PHONY: nrdotcol-cgolite
-nrdotcol-cgolite: gennrdotcol-cgo
-	cd ./cmd/nrdotcol && GO111MODULE=on CGO_ENABLED=1 $(GOCMD) build -trimpath -o ../../bin/nrdotcol-cgo_$(GOOS)_$(GOARCH)$(EXTENSION) \
 		-tags $(GO_BUILD_TAGS) -ldflags $(GO_BUILD_LDFLAGS) .
 
 .PHONY: genoteltestbedcol
@@ -610,14 +575,14 @@ check-builder-integration:
 		component_module="github.com/newrelic/nrdot-collector-components/$$component_path"; \
 		echo "Checking $$component_path..."; \
 		found=false; \
-		for config in cmd/nrdotcol/builder-config.yaml cmd/nrdotcol/builder-config-cgo-enabled.yaml cmd/oteltestbedcol/builder-config.yaml; do \
+		for config in cmd/nrdotcol/builder-config.yaml cmd/oteltestbedcol/builder-config.yaml; do \
 			if grep -q "$$component_module" "$$config"; then \
 				echo "  $$config: ✓"; \
 				found=true; \
 			fi; \
 		done; \
 		if [ "$$found" = false ]; then \
-			echo "✗ Missing from all builder configs. Add to either cmd/nrdotcol/builder-config.yaml or cmd/nrdotcol/builder-config-cgo-enabled.yaml (for CGO components)"; \
+			echo "✗ Missing from all builder configs. Add to cmd/nrdotcol/builder-config.yaml"; \
 			exit 1; \
 		fi; \
 	done
