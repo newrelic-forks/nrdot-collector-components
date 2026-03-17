@@ -1,7 +1,7 @@
 # NOTE:
 # This builder configuration is used to build the New Relic Dot Collector
-# for testing custom nrdot components. Includes core collector components
-# and all nrdot-specific components.
+# for testing custom nrdot components. Only includes core collector components
+# and nrdot-specific components.
 
 dist:
   module: github.com/newrelic/nrdot-collector-components/cmd/nrdotcol
