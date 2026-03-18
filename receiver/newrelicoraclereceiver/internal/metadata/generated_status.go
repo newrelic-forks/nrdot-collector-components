@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	Type      = component.MustNewType("newrelicoracledb")
+	Type      = component.MustNewType("oracledb")
 	ScopeName = "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver"
 )
 

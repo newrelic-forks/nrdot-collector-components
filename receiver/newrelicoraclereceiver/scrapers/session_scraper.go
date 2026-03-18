@@ -36,7 +36,7 @@ func NewSessionScraper(c client.OracleClient, mb *metadata.MetricsBuilder, logge
 func (s *SessionScraper) ScrapeSessionCount(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbSessionsCount.Enabled {
+	if !s.config.Metrics.OracledbSessionsCount.Enabled {
 		return errs
 	}
 
@@ -63,7 +63,7 @@ func (s *SessionScraper) ScrapeSessionCount(ctx context.Context) []error {
 	}
 
 	if count != nil {
-		s.mb.RecordNewrelicoracledbSessionsCountDataPoint(now, count.Count)
+		s.mb.RecordOracledbSessionsCountDataPoint(now, count.Count)
 
 		s.logger.Debug("Session count scrape completed")
 	}

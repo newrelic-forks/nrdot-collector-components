@@ -78,7 +78,7 @@ func (s *ConnectionScraper) scrapeCoreConnectionCounts(ctx context.Context, time
 		s.logger.Debug("Failed to query total sessions", zap.Error(err))
 		errors = append(errors, err)
 	} else {
-		s.mb.RecordNewrelicoracledbConnectionTotalSessionsDataPoint(timestamp, float64(totalSessions))
+		s.mb.RecordOracledbConnectionTotalSessionsDataPoint(timestamp, float64(totalSessions))
 	}
 
 	activeSessions, err := s.client.QueryActiveSessions(ctx)
@@ -86,7 +86,7 @@ func (s *ConnectionScraper) scrapeCoreConnectionCounts(ctx context.Context, time
 		s.logger.Debug("Failed to query active sessions", zap.Error(err))
 		errors = append(errors, err)
 	} else {
-		s.mb.RecordNewrelicoracledbConnectionActiveSessionsDataPoint(timestamp, float64(activeSessions))
+		s.mb.RecordOracledbConnectionActiveSessionsDataPoint(timestamp, float64(activeSessions))
 	}
 
 	inactiveSessions, err := s.client.QueryInactiveSessions(ctx)
@@ -94,7 +94,7 @@ func (s *ConnectionScraper) scrapeCoreConnectionCounts(ctx context.Context, time
 		s.logger.Debug("Failed to query inactive sessions", zap.Error(err))
 		errors = append(errors, err)
 	} else {
-		s.mb.RecordNewrelicoracledbConnectionInactiveSessionsDataPoint(timestamp, float64(inactiveSessions))
+		s.mb.RecordOracledbConnectionInactiveSessionsDataPoint(timestamp, float64(inactiveSessions))
 	}
 
 	return errors
@@ -111,7 +111,7 @@ func (s *ConnectionScraper) scrapeSessionBreakdown(ctx context.Context, timestam
 	} else {
 		for _, status := range sessionStatuses {
 			if status.Status.Valid && status.Count.Valid {
-				s.mb.RecordNewrelicoracledbConnectionSessionsByStatusDataPoint(
+				s.mb.RecordOracledbConnectionSessionsByStatusDataPoint(
 					timestamp,
 					float64(status.Count.Int64),
 					status.Status.String,
@@ -127,7 +127,7 @@ func (s *ConnectionScraper) scrapeSessionBreakdown(ctx context.Context, timestam
 	} else {
 		for _, sessionType := range sessionTypes {
 			if sessionType.Type.Valid && sessionType.Count.Valid {
-				s.mb.RecordNewrelicoracledbConnectionSessionsByTypeDataPoint(
+				s.mb.RecordOracledbConnectionSessionsByTypeDataPoint(
 					timestamp,
 					float64(sessionType.Count.Int64),
 					sessionType.Type.String,
@@ -156,12 +156,12 @@ func (s *ConnectionScraper) scrapeLogonStats(ctx context.Context, timestamp pcom
 
 		switch stat.Name.String {
 		case "logons cumulative":
-			s.mb.RecordNewrelicoracledbConnectionLogonsCumulativeDataPoint(
+			s.mb.RecordOracledbConnectionLogonsCumulativeDataPoint(
 				timestamp,
 				stat.Value.Float64,
 			)
 		case "logons current":
-			s.mb.RecordNewrelicoracledbConnectionLogonsCurrentDataPoint(
+			s.mb.RecordOracledbConnectionLogonsCurrentDataPoint(
 				timestamp,
 				stat.Value.Float64,
 			)
@@ -188,17 +188,17 @@ func (s *ConnectionScraper) scrapeConnectionPoolMetrics(ctx context.Context, tim
 
 		switch metric.MetricName.String {
 		case "shared_servers":
-			s.mb.RecordNewrelicoracledbConnectionSharedServersDataPoint(
+			s.mb.RecordOracledbConnectionSharedServersDataPoint(
 				timestamp,
 				float64(metric.Value.Int64),
 			)
 		case "dispatchers":
-			s.mb.RecordNewrelicoracledbConnectionDispatchersDataPoint(
+			s.mb.RecordOracledbConnectionDispatchersDataPoint(
 				timestamp,
 				float64(metric.Value.Int64),
 			)
 		case "circuits":
-			s.mb.RecordNewrelicoracledbConnectionCircuitsDataPoint(
+			s.mb.RecordOracledbConnectionCircuitsDataPoint(
 				timestamp,
 				float64(metric.Value.Int64),
 			)
@@ -225,14 +225,14 @@ func (s *ConnectionScraper) scrapeSessionLimits(ctx context.Context, timestamp p
 
 		resourceStr := limit.ResourceName.String
 
-		s.mb.RecordNewrelicoracledbConnectionResourceCurrentUtilizationDataPoint(
+		s.mb.RecordOracledbConnectionResourceCurrentUtilizationDataPoint(
 			timestamp,
 			float64(limit.CurrentUtilization.Int64),
 			resourceStr,
 		)
 
 		if limit.MaxUtilization.Valid {
-			s.mb.RecordNewrelicoracledbConnectionResourceMaxUtilizationDataPoint(
+			s.mb.RecordOracledbConnectionResourceMaxUtilizationDataPoint(
 				timestamp,
 				float64(limit.MaxUtilization.Int64),
 				resourceStr,
@@ -241,7 +241,7 @@ func (s *ConnectionScraper) scrapeSessionLimits(ctx context.Context, timestamp p
 
 		if limit.LimitValue.Valid && limit.LimitValue.String != "UNLIMITED" {
 			if limitVal, err := strconv.ParseInt(limit.LimitValue.String, 10, 64); err == nil {
-				s.mb.RecordNewrelicoracledbConnectionResourceLimitDataPoint(
+				s.mb.RecordOracledbConnectionResourceLimitDataPoint(
 					timestamp,
 					float64(limitVal),
 					resourceStr,
@@ -269,25 +269,25 @@ func (s *ConnectionScraper) scrapeConnectionQuality(ctx context.Context, timesta
 		}
 
 		if metric.Name.String == "execute count" {
-			s.mb.RecordNewrelicoracledbConnectionExecuteCountDataPoint(timestamp, metric.Value.Float64)
+			s.mb.RecordOracledbConnectionExecuteCountDataPoint(timestamp, metric.Value.Float64)
 		}
 
 		if s.enableAdvancedMetrics {
 			switch metric.Name.String {
 			case "user commits":
-				s.mb.RecordNewrelicoracledbConnectionUserCommitsDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionUserCommitsDataPoint(timestamp, metric.Value.Float64)
 			case "user rollbacks":
-				s.mb.RecordNewrelicoracledbConnectionUserRollbacksDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionUserRollbacksDataPoint(timestamp, metric.Value.Float64)
 			case "parse count (total)":
-				s.mb.RecordNewrelicoracledbConnectionParseCountTotalDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionParseCountTotalDataPoint(timestamp, metric.Value.Float64)
 			case "parse count (hard)":
-				s.mb.RecordNewrelicoracledbConnectionParseCountHardDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionParseCountHardDataPoint(timestamp, metric.Value.Float64)
 			case "SQL*Net roundtrips to/from client":
-				s.mb.RecordNewrelicoracledbConnectionSqlnetRoundtripsDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionSqlnetRoundtripsDataPoint(timestamp, metric.Value.Float64)
 			case "bytes sent via SQL*Net to client":
-				s.mb.RecordNewrelicoracledbConnectionBytesSentDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionBytesSentDataPoint(timestamp, metric.Value.Float64)
 			case "bytes received via SQL*Net from client":
-				s.mb.RecordNewrelicoracledbConnectionBytesReceivedDataPoint(timestamp, metric.Value.Float64)
+				s.mb.RecordOracledbConnectionBytesReceivedDataPoint(timestamp, metric.Value.Float64)
 			}
 		}
 	}

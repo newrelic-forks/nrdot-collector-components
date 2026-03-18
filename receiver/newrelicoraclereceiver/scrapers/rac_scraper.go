@@ -174,9 +174,9 @@ func stringStatusToBinary(status, expectedValue string) int64 {
 }
 
 func (s *RacScraper) scrapeASMDiskGroups(ctx context.Context) []error {
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupTotalMb.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupFreeMb.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupOfflineDisks.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupTotalMb.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupFreeMb.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupOfflineDisks.Enabled {
 		return nil
 	}
 
@@ -194,14 +194,14 @@ func (s *RacScraper) scrapeASMDiskGroups(ctx context.Context) []error {
 
 		now := pcommon.NewTimestampFromTime(time.Now())
 
-		if diskGroup.TotalMB.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupTotalMb.Enabled {
-			s.mb.RecordNewrelicoracledbAsmDiskgroupTotalMbDataPoint(now, diskGroup.TotalMB.Float64, diskGroup.Name.String)
+		if diskGroup.TotalMB.Valid && s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupTotalMb.Enabled {
+			s.mb.RecordOracledbAsmDiskgroupTotalMbDataPoint(now, diskGroup.TotalMB.Float64, diskGroup.Name.String)
 		}
-		if diskGroup.FreeMB.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupFreeMb.Enabled {
-			s.mb.RecordNewrelicoracledbAsmDiskgroupFreeMbDataPoint(now, diskGroup.FreeMB.Float64, diskGroup.Name.String)
+		if diskGroup.FreeMB.Valid && s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupFreeMb.Enabled {
+			s.mb.RecordOracledbAsmDiskgroupFreeMbDataPoint(now, diskGroup.FreeMB.Float64, diskGroup.Name.String)
 		}
-		if diskGroup.OfflineDisks.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupOfflineDisks.Enabled {
-			s.mb.RecordNewrelicoracledbAsmDiskgroupOfflineDisksDataPoint(now, int64(diskGroup.OfflineDisks.Float64), diskGroup.Name.String)
+		if diskGroup.OfflineDisks.Valid && s.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupOfflineDisks.Enabled {
+			s.mb.RecordOracledbAsmDiskgroupOfflineDisksDataPoint(now, int64(diskGroup.OfflineDisks.Float64), diskGroup.Name.String)
 		}
 	}
 
@@ -209,8 +209,8 @@ func (s *RacScraper) scrapeASMDiskGroups(ctx context.Context) []error {
 }
 
 func (s *RacScraper) scrapeClusterWaitEvents(ctx context.Context) []error {
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbRacWaitTime.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacTotalWaits.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbRacWaitTime.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacTotalWaits.Enabled {
 		return nil
 	}
 
@@ -230,11 +230,11 @@ func (s *RacScraper) scrapeClusterWaitEvents(ctx context.Context) []error {
 		instanceIDStr := event.InstID.String
 		eventName := event.Event.String
 
-		if event.TimeWaitedMicro.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbRacWaitTime.Enabled {
-			s.mb.RecordNewrelicoracledbRacWaitTimeDataPoint(now, event.TimeWaitedMicro.Float64, instanceIDStr, eventName)
+		if event.TimeWaitedMicro.Valid && s.metricsBuilderConfig.Metrics.OracledbRacWaitTime.Enabled {
+			s.mb.RecordOracledbRacWaitTimeDataPoint(now, event.TimeWaitedMicro.Float64, instanceIDStr, eventName)
 		}
-		if event.TotalWaits.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbRacTotalWaits.Enabled {
-			s.mb.RecordNewrelicoracledbRacTotalWaitsDataPoint(now, int64(event.TotalWaits.Float64), instanceIDStr, eventName)
+		if event.TotalWaits.Valid && s.metricsBuilderConfig.Metrics.OracledbRacTotalWaits.Enabled {
+			s.mb.RecordOracledbRacTotalWaitsDataPoint(now, int64(event.TotalWaits.Float64), instanceIDStr, eventName)
 		}
 	}
 
@@ -243,13 +243,13 @@ func (s *RacScraper) scrapeClusterWaitEvents(ctx context.Context) []error {
 
 func (s *RacScraper) scrapeInstanceStatus(ctx context.Context) []error {
 	// Check if any instance status metrics are enabled
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceStatus.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceUptimeSeconds.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceDatabaseStatus.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceActiveState.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceLoginsAllowed.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceArchiverStarted.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceVersionInfo.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbRacInstanceStatus.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceUptimeSeconds.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceDatabaseStatus.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceActiveState.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceLoginsAllowed.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceArchiverStarted.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacInstanceVersionInfo.Enabled {
 		return nil
 	}
 
@@ -277,38 +277,38 @@ func (s *RacScraper) scrapeInstanceStatus(ctx context.Context) []error {
 		archiverStr := nullStringToString(instance.Archiver)
 		versionStr := nullStringToString(instance.Version)
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceStatus.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceStatus.Enabled {
 			statusValue := stringStatusToBinary(statusStr, "OPEN")
-			s.mb.RecordNewrelicoracledbRacInstanceStatusDataPoint(now, statusValue, instanceIDStr, instanceNameStr, hostNameStr, statusStr)
+			s.mb.RecordOracledbRacInstanceStatusDataPoint(now, statusValue, instanceIDStr, instanceNameStr, hostNameStr, statusStr)
 		}
 
-		if instance.StartupTime.Valid && s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceUptimeSeconds.Enabled {
+		if instance.StartupTime.Valid && s.metricsBuilderConfig.Metrics.OracledbRacInstanceUptimeSeconds.Enabled {
 			uptime := time.Since(instance.StartupTime.Time).Seconds()
-			s.mb.RecordNewrelicoracledbRacInstanceUptimeSecondsDataPoint(now, int64(uptime), instanceIDStr, instanceNameStr, hostNameStr)
+			s.mb.RecordOracledbRacInstanceUptimeSecondsDataPoint(now, int64(uptime), instanceIDStr, instanceNameStr, hostNameStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceDatabaseStatus.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceDatabaseStatus.Enabled {
 			dbStatusValue := stringStatusToBinary(databaseStatusStr, "ACTIVE")
-			s.mb.RecordNewrelicoracledbRacInstanceDatabaseStatusDataPoint(now, dbStatusValue, instanceIDStr, instanceNameStr, hostNameStr, databaseStatusStr)
+			s.mb.RecordOracledbRacInstanceDatabaseStatusDataPoint(now, dbStatusValue, instanceIDStr, instanceNameStr, hostNameStr, databaseStatusStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceActiveState.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceActiveState.Enabled {
 			activeStateValue := stringStatusToBinary(activeStateStr, "NORMAL")
-			s.mb.RecordNewrelicoracledbRacInstanceActiveStateDataPoint(now, activeStateValue, instanceIDStr, instanceNameStr, hostNameStr, activeStateStr)
+			s.mb.RecordOracledbRacInstanceActiveStateDataPoint(now, activeStateValue, instanceIDStr, instanceNameStr, hostNameStr, activeStateStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceLoginsAllowed.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceLoginsAllowed.Enabled {
 			loginsValue := stringStatusToBinary(loginsStr, "ALLOWED")
-			s.mb.RecordNewrelicoracledbRacInstanceLoginsAllowedDataPoint(now, loginsValue, instanceIDStr, instanceNameStr, hostNameStr, loginsStr)
+			s.mb.RecordOracledbRacInstanceLoginsAllowedDataPoint(now, loginsValue, instanceIDStr, instanceNameStr, hostNameStr, loginsStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceArchiverStarted.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceArchiverStarted.Enabled {
 			archiverValue := stringStatusToBinary(archiverStr, "STARTED")
-			s.mb.RecordNewrelicoracledbRacInstanceArchiverStartedDataPoint(now, archiverValue, instanceIDStr, instanceNameStr, hostNameStr, archiverStr)
+			s.mb.RecordOracledbRacInstanceArchiverStartedDataPoint(now, archiverValue, instanceIDStr, instanceNameStr, hostNameStr, archiverStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacInstanceVersionInfo.Enabled {
-			s.mb.RecordNewrelicoracledbRacInstanceVersionInfoDataPoint(now, 1, instanceNameStr, hostNameStr, versionStr)
+		if s.metricsBuilderConfig.Metrics.OracledbRacInstanceVersionInfo.Enabled {
+			s.mb.RecordOracledbRacInstanceVersionInfoDataPoint(now, 1, instanceNameStr, hostNameStr, versionStr)
 		}
 	}
 
@@ -316,9 +316,9 @@ func (s *RacScraper) scrapeInstanceStatus(ctx context.Context) []error {
 }
 
 func (s *RacScraper) scrapeActiveServices(ctx context.Context) []error {
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceInstanceID.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceNetworkConfig.Enabled &&
-		!s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceClbConfig.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbRacServiceInstanceID.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacServiceNetworkConfig.Enabled &&
+		!s.metricsBuilderConfig.Metrics.OracledbRacServiceClbConfig.Enabled {
 		return nil
 	}
 
@@ -339,44 +339,44 @@ func (s *RacScraper) scrapeActiveServices(ctx context.Context) []error {
 		instanceIDStr := service.InstID.String
 
 		// Record metrics only if enabled
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceInstanceID.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceInstanceID.Enabled {
 			instanceIDInt, _ := strconv.ParseFloat(instanceIDStr, 64)
-			s.mb.RecordNewrelicoracledbRacServiceInstanceIDDataPoint(now, instanceIDInt, instanceIDStr)
+			s.mb.RecordOracledbRacServiceInstanceIDDataPoint(now, instanceIDInt, instanceIDStr)
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceNetworkConfig.Enabled {
-			s.mb.RecordNewrelicoracledbRacServiceNetworkConfigDataPoint(now, 1, nullStringToString(service.NetworkName))
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceNetworkConfig.Enabled {
+			s.mb.RecordOracledbRacServiceNetworkConfigDataPoint(now, 1, nullStringToString(service.NetworkName))
 		}
 
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceClbConfig.Enabled {
-			s.mb.RecordNewrelicoracledbRacServiceClbConfigDataPoint(now, 1, nullStringToString(service.ClbGoal))
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceClbConfig.Enabled {
+			s.mb.RecordOracledbRacServiceClbConfigDataPoint(now, 1, nullStringToString(service.ClbGoal))
 		}
 
 		// Service goal configuration
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceGoalConfig.Enabled {
-			s.mb.RecordNewrelicoracledbRacServiceGoalConfigDataPoint(now, 1, nullStringToString(service.Goal))
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceGoalConfig.Enabled {
+			s.mb.RecordOracledbRacServiceGoalConfigDataPoint(now, 1, nullStringToString(service.Goal))
 		}
 
 		// Service blocked status (1 if blocked, 0 if not)
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceBlockedStatus.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceBlockedStatus.Enabled {
 			blockedValue := stringStatusToBinary(nullStringToString(service.Blocked), "YES")
-			s.mb.RecordNewrelicoracledbRacServiceBlockedStatusDataPoint(now, blockedValue, nullStringToString(service.Blocked))
+			s.mb.RecordOracledbRacServiceBlockedStatusDataPoint(now, blockedValue, nullStringToString(service.Blocked))
 		}
 
 		// Fast Application Notification (FAN) enabled status (1 if enabled, 0 if not)
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceFanEnabled.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceFanEnabled.Enabled {
 			fanValue := stringStatusToBinary(nullStringToString(service.AqHaNotification), "YES")
-			s.mb.RecordNewrelicoracledbRacServiceFanEnabledDataPoint(now, fanValue, nullStringToString(service.AqHaNotification))
+			s.mb.RecordOracledbRacServiceFanEnabledDataPoint(now, fanValue, nullStringToString(service.AqHaNotification))
 		}
 
 		// Transaction Guard enabled status (1 if enabled, 0 if not)
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceTransactionGuardEnabled.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceTransactionGuardEnabled.Enabled {
 			tgValue := stringStatusToBinary(nullStringToString(service.CommitOutcome), "TRUE")
-			s.mb.RecordNewrelicoracledbRacServiceTransactionGuardEnabledDataPoint(now, tgValue, nullStringToString(service.CommitOutcome))
+			s.mb.RecordOracledbRacServiceTransactionGuardEnabledDataPoint(now, tgValue, nullStringToString(service.CommitOutcome))
 		}
 
 		// Session drain timeout in seconds
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceDrainTimeoutSeconds.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceDrainTimeoutSeconds.Enabled {
 			var drainTimeout int64
 			if service.DrainTimeout.Valid {
 				drainTimeout = int64(service.DrainTimeout.Float64)
@@ -385,11 +385,11 @@ func (s *RacScraper) scrapeActiveServices(ctx context.Context) []error {
 			if !service.DrainTimeout.Valid {
 				drainTimeoutStr = "0"
 			}
-			s.mb.RecordNewrelicoracledbRacServiceDrainTimeoutSecondsDataPoint(now, drainTimeout, drainTimeoutStr)
+			s.mb.RecordOracledbRacServiceDrainTimeoutSecondsDataPoint(now, drainTimeout, drainTimeoutStr)
 		}
 
 		// Application Continuity replay initiation timeout in seconds
-		if s.metricsBuilderConfig.Metrics.NewrelicoracledbRacServiceReplayTimeoutSeconds.Enabled {
+		if s.metricsBuilderConfig.Metrics.OracledbRacServiceReplayTimeoutSeconds.Enabled {
 			var replayTimeout int64
 			if service.ReplayInitiationTimeout.Valid {
 				replayTimeout = int64(service.ReplayInitiationTimeout.Float64)
@@ -398,7 +398,7 @@ func (s *RacScraper) scrapeActiveServices(ctx context.Context) []error {
 			if !service.ReplayInitiationTimeout.Valid {
 				replayTimeoutStr = "0"
 			}
-			s.mb.RecordNewrelicoracledbRacServiceReplayTimeoutSecondsDataPoint(now, replayTimeout, replayTimeoutStr)
+			s.mb.RecordOracledbRacServiceReplayTimeoutSecondsDataPoint(now, replayTimeout, replayTimeoutStr)
 		}
 	}
 

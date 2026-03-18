@@ -69,1323 +69,1323 @@ func TestMetricsBuilder(t *testing.T) {
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbAsmDiskgroupFreeMbDataPoint(ts, 1, "diskgroup.name-val")
+			mb.RecordOracledbAsmDiskgroupFreeMbDataPoint(ts, 1, "diskgroup.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbAsmDiskgroupOfflineDisksDataPoint(ts, 1, "diskgroup.name-val")
+			mb.RecordOracledbAsmDiskgroupOfflineDisksDataPoint(ts, 1, "diskgroup.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbAsmDiskgroupTotalMbDataPoint(ts, 1, "diskgroup.name-val")
+			mb.RecordOracledbAsmDiskgroupTotalMbDataPoint(ts, 1, "diskgroup.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsDetailsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val", "first_load_time-val", "last_load_time-val")
+			mb.RecordOracledbChildCursorsDetailsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val", "first_load_time-val", "last_load_time-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsExecutionsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsExecutionsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsInvalidationsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsInvalidationsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbChildCursorsUserIoWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
+			mb.RecordOracledbChildCursorsUserIoWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", 12, "plan_hash_value-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionActiveSessionsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionActiveSessionsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionBytesReceivedDataPoint(ts, 1)
+			mb.RecordOracledbConnectionBytesReceivedDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionBytesSentDataPoint(ts, 1)
+			mb.RecordOracledbConnectionBytesSentDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionCircuitsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionCircuitsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionDispatchersDataPoint(ts, 1)
+			mb.RecordOracledbConnectionDispatchersDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionExecuteCountDataPoint(ts, 1)
+			mb.RecordOracledbConnectionExecuteCountDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionInactiveSessionsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionInactiveSessionsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionLogonsCumulativeDataPoint(ts, 1)
+			mb.RecordOracledbConnectionLogonsCumulativeDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionLogonsCurrentDataPoint(ts, 1)
+			mb.RecordOracledbConnectionLogonsCurrentDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionParseCountHardDataPoint(ts, 1)
+			mb.RecordOracledbConnectionParseCountHardDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionParseCountTotalDataPoint(ts, 1)
+			mb.RecordOracledbConnectionParseCountTotalDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionResourceCurrentUtilizationDataPoint(ts, 1, "resource.name-val")
+			mb.RecordOracledbConnectionResourceCurrentUtilizationDataPoint(ts, 1, "resource.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionResourceLimitDataPoint(ts, 1, "resource.name-val")
+			mb.RecordOracledbConnectionResourceLimitDataPoint(ts, 1, "resource.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionResourceMaxUtilizationDataPoint(ts, 1, "resource.name-val")
+			mb.RecordOracledbConnectionResourceMaxUtilizationDataPoint(ts, 1, "resource.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionSessionsByStatusDataPoint(ts, 1, "session.status-val")
+			mb.RecordOracledbConnectionSessionsByStatusDataPoint(ts, 1, "session.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionSessionsByTypeDataPoint(ts, 1, "session.type-val")
+			mb.RecordOracledbConnectionSessionsByTypeDataPoint(ts, 1, "session.type-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionSharedServersDataPoint(ts, 1)
+			mb.RecordOracledbConnectionSharedServersDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionSqlnetRoundtripsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionSqlnetRoundtripsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionTotalSessionsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionTotalSessionsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionUserCommitsDataPoint(ts, 1)
+			mb.RecordOracledbConnectionUserCommitsDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbConnectionUserRollbacksDataPoint(ts, 1)
+			mb.RecordOracledbConnectionUserRollbacksDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbContainerRestrictedDataPoint(ts, 1, "con.id-val", "container.name-val", "restricted.status-val")
+			mb.RecordOracledbContainerRestrictedDataPoint(ts, 1, "con.id-val", "container.name-val", "restricted.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbContainerStatusDataPoint(ts, 1, "con.id-val", "container.name-val", "open.mode-val")
+			mb.RecordOracledbContainerStatusDataPoint(ts, 1, "con.id-val", "container.name-val", "open.mode-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDatabaseInfoDataPoint(ts, 1, "db.version-val", "db.version.full-val", "db.edition-val", "db.compatible-val")
+			mb.RecordOracledbDatabaseInfoDataPoint(ts, 1, "db.version-val", "db.version.full-val", "db.edition-val", "db.compatible-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDatabaseRoleDataPoint(ts, 1, "db.role-val", "db.open_mode-val", "db.protection_mode-val", "db.protection_level-val")
+			mb.RecordOracledbDatabaseRoleDataPoint(ts, 1, "db.role-val", "db.open_mode-val", "db.protection_mode-val", "db.protection_level-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDatafileAutoextensibleDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val", "container.status-val")
+			mb.RecordOracledbDatafileAutoextensibleDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val", "container.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDatafileSizeBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val")
+			mb.RecordOracledbDatafileSizeBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDatafileUsedBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val")
+			mb.RecordOracledbDatafileUsedBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val", "file.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDbIDDataPoint(ts, 1, "db.id-val")
+			mb.RecordOracledbDbIDDataPoint(ts, 1, "db.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskBlocksReadDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskBlocksReadDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskBlocksWrittenDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskBlocksWrittenDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskReadTimeMillisecondsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskReadTimeMillisecondsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskReadsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskReadsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskWriteTimeMillisecondsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskWriteTimeMillisecondsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbDiskWritesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbDiskWritesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbExecutionPlanDataPoint(ts, 1, "newrelic.event.type-val", "query_id-val", "plan_hash_value-val", 12, 7, 9, 5, "operation-val", "options-val", "object_owner-val", "object_name-val", 8, 4, 11, 5, 8, 7, "plan_generated_timestamp-val", 10, "access_predicates-val", "projection-val", 4, "filter_predicates-val")
+			mb.RecordOracledbExecutionPlanDataPoint(ts, 1, "newrelic.event.type-val", "query_id-val", "plan_hash_value-val", 12, 7, 9, 5, "operation-val", "options-val", "object_owner-val", "object_name-val", 8, 4, 11, 5, 8, 7, "plan_generated_timestamp-val", 10, "access_predicates-val", "projection-val", 4, "filter_predicates-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbGlobalNameDataPoint(ts, 1, "global.name-val")
+			mb.RecordOracledbGlobalNameDataPoint(ts, 1, "global.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbHostingInfoDataPoint(ts, 1, "host.arch-val", "platform.name-val")
+			mb.RecordOracledbHostingInfoDataPoint(ts, 1, "host.arch-val", "platform.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbLockedAccountsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbLockedAccountsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbLongRunningQueriesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbLongRunningQueriesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemoryPgaAllocatedBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemoryPgaAllocatedBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemoryPgaFreeableBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemoryPgaFreeableBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemoryPgaInUseBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemoryPgaInUseBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemoryPgaMaxSizeBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemoryPgaMaxSizeBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemorySgaSharedPoolLibraryCacheSharableBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemorySgaSharedPoolLibraryCacheUserBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbMemorySgaUgaTotalBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbMemorySgaUgaTotalBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbActiveParallelSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbActiveParallelSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbActiveSerialSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbActiveSerialSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbAverageActiveSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbAverageActiveSessionsDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbBackgroundCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbBackgroundCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbBackgroundTimePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbBackgroundTimePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbBlockChangesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbBlockChangesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbBlockChangesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbBlockChangesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbCPUTimeRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbCPUTimeRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbCPUUsagePerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbCPUUsagePerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbCurrentLogonsDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbCurrentLogonsDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbCurrentOpenCursorsDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbCurrentOpenCursorsDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbDbPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbDbPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbDbPhysicalReadsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbDbPhysicalReadsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbDbPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbDbPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbDbPhysicalWritesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbDbPhysicalWritesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbExecuteWithoutParseRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbExecuteWithoutParseRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbExecutionsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbExecutionsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbExecutionsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbExecutionsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbHardParseCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbHardParseCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbHardParseCountPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbHardParseCountPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbLogicalReadsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbLogicalReadsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbLogicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbLogicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbLogonsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbLogonsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbLogonsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbLogonsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbNetworkTrafficBytePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbNetworkTrafficBytePerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbOpenCursorsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbOpenCursorsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbOpenCursorsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbOpenCursorsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbOpenModeDataPoint(ts, 1, "con.id-val", "database_name-val", "open.mode-val")
+			mb.RecordOracledbPdbOpenModeDataPoint(ts, 1, "con.id-val", "database_name-val", "open.mode-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbParseFailureCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbParseFailureCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbPhysicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbPhysicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbPhysicalWritesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbPhysicalWritesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbRedoGeneratedBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbRedoGeneratedBytesPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbRedoGeneratedBytesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbRedoGeneratedBytesPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbResponseTimePerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbResponseTimePerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbSessionCountDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbSessionCountDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbSoftParseRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbSoftParseRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbSQLServiceResponseTimeDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbSQLServiceResponseTimeDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbTotalParseCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbTotalParseCountPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbTotalParseCountPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbTotalParseCountPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbTotalSizeBytesDataPoint(ts, 1, "con.id-val", "database_name-val")
+			mb.RecordOracledbPdbTotalSizeBytesDataPoint(ts, 1, "con.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbTransactionsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbTransactionsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserCallsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserCallsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserCallsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserCallsPerTransactionDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserCommitsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserCommitsPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserCommitsPercentageDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserCommitsPercentageDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserRollbacksPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserRollbacksPerSecondDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbUserRollbacksPercentageDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbUserRollbacksPercentageDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbPdbWaitTimeRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
+			mb.RecordOracledbPdbWaitTimeRatioDataPoint(ts, 1, "instance.id-val", "database_name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceActiveStateDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "active.state-val")
+			mb.RecordOracledbRacInstanceActiveStateDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "active.state-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceArchiverStartedDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "archiver.status-val")
+			mb.RecordOracledbRacInstanceArchiverStartedDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "archiver.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceDatabaseStatusDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "database.status-val")
+			mb.RecordOracledbRacInstanceDatabaseStatusDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "database.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceLoginsAllowedDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "logins.status-val")
+			mb.RecordOracledbRacInstanceLoginsAllowedDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "logins.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceStatusDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "instance.status-val")
+			mb.RecordOracledbRacInstanceStatusDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val", "instance.status-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceUptimeSecondsDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val")
+			mb.RecordOracledbRacInstanceUptimeSecondsDataPoint(ts, 1, "instance.id-val", "rac.instance.name-val", "host.name.rac-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacInstanceVersionInfoDataPoint(ts, 1, "rac.instance.name-val", "host.name.rac-val", "oracle.version-val")
+			mb.RecordOracledbRacInstanceVersionInfoDataPoint(ts, 1, "rac.instance.name-val", "host.name.rac-val", "oracle.version-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceBlockedStatusDataPoint(ts, 1, "service.blocked-val")
+			mb.RecordOracledbRacServiceBlockedStatusDataPoint(ts, 1, "service.blocked-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceClbConfigDataPoint(ts, 1, "clb.goal-val")
+			mb.RecordOracledbRacServiceClbConfigDataPoint(ts, 1, "clb.goal-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceDrainTimeoutSecondsDataPoint(ts, 1, "service.drain_timeout-val")
+			mb.RecordOracledbRacServiceDrainTimeoutSecondsDataPoint(ts, 1, "service.drain_timeout-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceFanEnabledDataPoint(ts, 1, "service.fan_enabled-val")
+			mb.RecordOracledbRacServiceFanEnabledDataPoint(ts, 1, "service.fan_enabled-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceGoalConfigDataPoint(ts, 1, "service.goal-val")
+			mb.RecordOracledbRacServiceGoalConfigDataPoint(ts, 1, "service.goal-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceInstanceIDDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRacServiceInstanceIDDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceNetworkConfigDataPoint(ts, 1, "network.name-val")
+			mb.RecordOracledbRacServiceNetworkConfigDataPoint(ts, 1, "network.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceReplayTimeoutSecondsDataPoint(ts, 1, "service.replay_timeout-val")
+			mb.RecordOracledbRacServiceReplayTimeoutSecondsDataPoint(ts, 1, "service.replay_timeout-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacServiceTransactionGuardEnabledDataPoint(ts, 1, "service.transaction_guard-val")
+			mb.RecordOracledbRacServiceTransactionGuardEnabledDataPoint(ts, 1, "service.transaction_guard-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacTotalWaitsDataPoint(ts, 1, "instance.id-val", "wait.event-val")
+			mb.RecordOracledbRacTotalWaitsDataPoint(ts, 1, "instance.id-val", "wait.event-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRacWaitTimeDataPoint(ts, 1, "instance.id-val", "wait.event-val")
+			mb.RecordOracledbRacWaitTimeDataPoint(ts, 1, "instance.id-val", "wait.event-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRedoLogParallelWriteWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRedoLogParallelWriteWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRedoLogSwitchArchivingNeededWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRedoLogSwitchArchivingNeededWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRedoLogSwitchCheckpointIncompleteWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRedoLogSwitchCheckpointIncompleteWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRedoLogSwitchCompletionWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRedoLogSwitchCompletionWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRollbackSegmentsGetsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRollbackSegmentsGetsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRollbackSegmentsWaitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRollbackSegmentsWaitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbRollbackSegmentsWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbRollbackSegmentsWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbServiceCountDataPoint(ts, 1, "con.id-val")
+			mb.RecordOracledbServiceCountDataPoint(ts, 1, "con.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbServiceStatusDataPoint(ts, 1, "con.id-val")
+			mb.RecordOracledbServiceStatusDataPoint(ts, 1, "con.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSessionsCountDataPoint(ts, 1)
+			mb.RecordOracledbSessionsCountDataPoint(ts, 1)
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaBufferBusyWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaBufferBusyWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaFixedSizeBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaFixedSizeBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaFreeBufferInspectedWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaFreeBufferInspectedWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaFreeBufferWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaFreeBufferWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaLogAllocationRetriesRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaLogAllocationRetriesRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaLogBufferRedoAllocationRetriesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaLogBufferRedoAllocationRetriesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaLogBufferRedoEntriesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaLogBufferRedoEntriesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaLogBufferSpaceWaitsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaLogBufferSpaceWaitsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaRedoBuffersBytesDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaRedoBuffersBytesDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaSharedPoolDictCacheMissRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaSharedPoolDictCacheMissRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaSharedPoolLibraryCacheHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaSharedPoolLibraryCacheHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSgaSharedPoolLibraryCacheReloadRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSgaSharedPoolLibraryCacheReloadRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesExecutionCountDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesExecutionCountDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgRowsProcessedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgRowsProcessedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalAvgWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalAvgWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalBufferGetsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalExecutionCountDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalExecutionCountDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalRowsProcessedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalRowsProcessedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesIntervalWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesIntervalWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesQueryDetailsDataPoint(ts, 1, "newrelic.event.type-val", "collection_timestamp-val", "database_name-val", "query_id-val", "query_text-val", "schema_name-val", "user_name-val", "last_active_time-val", "normalised_sql_hash-val", "nr_service_guid-val", "normalised_blocking_sql_hash-val", "nr_blocking_service_guid-val")
+			mb.RecordOracledbSlowQueriesQueryDetailsDataPoint(ts, 1, "newrelic.event.type-val", "collection_timestamp-val", "database_name-val", "query_id-val", "query_text-val", "schema_name-val", "user_name-val", "last_active_time-val", "normalised_sql_hash-val", "nr_service_guid-val", "normalised_blocking_sql_hash-val", "nr_blocking_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalCPUTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalDiskReadsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalDiskWritesDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalElapsedTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalRowsExaminedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalRowsExaminedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalRowsReturnedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalRowsReturnedDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSlowQueriesTotalWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
+			mb.RecordOracledbSlowQueriesTotalWaitTimeDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "query_id-val", "user_name-val", "normalised_sql_hash-val", "nr_service_guid-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSortsDiskDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSortsDiskDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSortsMemoryDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSortsMemoryDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemActiveParallelSessionsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemActiveParallelSessionsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemActiveSerialSessionsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemActiveSerialSessionsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemAverageActiveSessionsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemAverageActiveSessionsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBackgroundCheckpointsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBackgroundCheckpointsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBackgroundCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBackgroundCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBackgroundTimePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBackgroundTimePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBranchNodeSplitsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBranchNodeSplitsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBranchNodeSplitsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBranchNodeSplitsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemBufferCacheHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemBufferCacheHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCapturedUserCallsDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCapturedUserCallsDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemConsistentReadChangesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemConsistentReadChangesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemConsistentReadChangesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemConsistentReadChangesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemConsistentReadGetsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemConsistentReadGetsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemConsistentReadGetsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemConsistentReadGetsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCPUUsagePerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCPUUsagePerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCrBlocksCreatedPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCrBlocksCreatedPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCrBlocksCreatedPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCrBlocksCreatedPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCrUndoRecordsAppliedPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCrUndoRecordsAppliedPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCrUndoRecordsAppliedPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCrUndoRecordsAppliedPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCurrentLogonsCountDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCurrentLogonsCountDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCurrentOpenCursorsCountDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCurrentOpenCursorsCountDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCurrentOsLoadDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCurrentOsLoadDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemCursorCacheHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemCursorCacheHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDatabaseCPUTimeRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDatabaseCPUTimeRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDatabaseTimePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDatabaseTimePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDatabaseWaitTimeRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDatabaseWaitTimeRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockChangesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockChangesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockChangesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockChangesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockChangesPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockChangesPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockGetsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockGetsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockGetsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockGetsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbBlockGetsPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbBlockGetsPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDbwrCheckpointsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDbwrCheckpointsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDiskSortPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDiskSortPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemDiskSortPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemDiskSortPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueDeadlocksPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueDeadlocksPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueDeadlocksPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueDeadlocksPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueRequestsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueRequestsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueTimeoutsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueTimeoutsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueTimeoutsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueTimeoutsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueWaitsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueWaitsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemEnqueueWaitsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemEnqueueWaitsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemExecuteWithoutParseRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemExecuteWithoutParseRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemExecutionsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemExecutionsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemExecutionsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemExecutionsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemExecutionsPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemExecutionsPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemFullIndexScansPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemFullIndexScansPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemFullIndexScansPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemFullIndexScansPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGcCrBlockReceivedPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGcCrBlockReceivedPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGcCrBlockReceivedPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGcCrBlockReceivedPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGcCurrentBlockReceivedPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGcCurrentBlockReceivedPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGcCurrentBlockReceivedPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGcCurrentBlockReceivedPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGlobalCacheAverageCrGetTimeDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGlobalCacheAverageCrGetTimeDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGlobalCacheAverageCurrentGetTimeDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGlobalCacheAverageCurrentGetTimeDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGlobalCacheBlocksCorruptedDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGlobalCacheBlocksCorruptedDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemGlobalCacheBlocksLostDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemGlobalCacheBlocksLostDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemHardParseCountPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemHardParseCountPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemHardParseCountPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemHardParseCountPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemHostCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemHostCPUUsagePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemHostCPUUtilizationDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemHostCPUUtilizationDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemIoMegabytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemIoMegabytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLeafNodeSplitsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLeafNodeSplitsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLeafNodeSplitsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLeafNodeSplitsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLibraryCacheHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLibraryCacheHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLibraryCacheMissRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLibraryCacheMissRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLogicalReadsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLogicalReadsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLogicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLogicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLogicalReadsPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLogicalReadsPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLogonsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLogonsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLogonsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLogonsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLongTableScansPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLongTableScansPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemLongTableScansPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemLongTableScansPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemMemorySortsRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemMemorySortsRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemNetworkTrafficVolumePerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemNetworkTrafficVolumePerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemOpenCursorsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemOpenCursorsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemOpenCursorsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemOpenCursorsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemParseFailureCountPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemParseFailureCountPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemParseFailureCountPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemParseFailureCountPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPgaCacheHitPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPgaCacheHitPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalLobsReadsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalLobsReadsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalLobsReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalLobsReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalLobsWritesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalLobsWritesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalLobsWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalLobsWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadBytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadTotalBytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadTotalBytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadTotalIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadsDirectPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadsDirectPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadsDirectPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadsDirectPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalReadsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWriteBytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWriteIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWriteTotalBytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWriteTotalIoRequestsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWritesDirectPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWritesDirectPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWritesDirectPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWritesDirectPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWritesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWritesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemPhysicalWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemPhysicalWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemProcessLimitPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemProcessLimitPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRecursiveCallsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRecursiveCallsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRecursiveCallsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRecursiveCallsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRedoAllocationHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRedoAllocationHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRedoGeneratedBytesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRedoGeneratedBytesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRedoGeneratedBytesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRedoGeneratedBytesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRedoWritesPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRedoWritesPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRedoWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRedoWritesPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemResponseTimePerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemResponseTimePerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRowCacheHitRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRowCacheHitRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRowCacheMissRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRowCacheMissRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemRowsPerSortDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemRowsPerSortDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemSessionCountDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemSessionCountDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemSessionLimitPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemSessionLimitPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemSharedPoolFreePercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemSharedPoolFreePercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemSoftParseRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemSoftParseRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemSQLServiceResponseTimeDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemSQLServiceResponseTimeDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemStreamsPoolUsagePercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemStreamsPoolUsagePercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTempSpaceUsedDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTempSpaceUsedDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalIndexScansPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalIndexScansPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalIndexScansPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalIndexScansPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalParseCountPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalParseCountPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalParseCountPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalParseCountPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalSortsPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalSortsPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalTableScansPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalTableScansPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalTableScansPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalTableScansPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTotalTableScansPerUserCallDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTotalTableScansPerUserCallDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTransactionsPerLogonDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTransactionsPerLogonDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemTransactionsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemTransactionsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserCallsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserCallsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserCallsPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserCallsPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserCallsRatioDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserCallsRatioDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserCommitsPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserCommitsPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserCommitsPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserCommitsPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserLimitPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserLimitPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserRollbackUndoRecordsAppliedPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransactionDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserRollbackUndoRecordsAppliedPerTransactionDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserRollbacksPerSecondDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserRollbacksPerSecondDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbSystemUserRollbacksPercentageDataPoint(ts, 1, "instance.id-val")
+			mb.RecordOracledbSystemUserRollbacksPercentageDataPoint(ts, 1, "instance.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceDbIDDataPoint(ts, 1, "tablespace.name-val", "db.id-val")
+			mb.RecordOracledbTablespaceDbIDDataPoint(ts, 1, "tablespace.name-val", "db.id-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceGlobalNameDataPoint(ts, 1, "tablespace.name-val", "global.name-val")
+			mb.RecordOracledbTablespaceGlobalNameDataPoint(ts, 1, "tablespace.name-val", "global.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceIsOfflineDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceIsOfflineDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceOfflineCdbDatafilesDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceOfflineCdbDatafilesDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceOfflinePdbDatafilesDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceOfflinePdbDatafilesDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespacePdbNonWriteModeDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespacePdbNonWriteModeDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceSpaceConsumedBytesDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceSpaceConsumedBytesDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceSpaceReservedBytesDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceSpaceReservedBytesDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceSpaceUsedPercentageDataPoint(ts, 1, "tablespace.name-val")
+			mb.RecordOracledbTablespaceSpaceUsedPercentageDataPoint(ts, 1, "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceTotalBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
+			mb.RecordOracledbTablespaceTotalBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceUsedBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
+			mb.RecordOracledbTablespaceUsedBytesDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbTablespaceUsedPercentDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
+			mb.RecordOracledbTablespaceUsedPercentDataPoint(ts, 1, "con.id-val", "tablespace.name-val")
 
 			defaultMetricsCount++
 			allMetricsCount++
-			mb.RecordNewrelicoracledbWaitEventsCurrentWaitTimeMsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "user_name-val", "session_id-val", 14, "session_status-val", "session_state-val", "query_id-val", 16, "wait_event_name-val", "wait_category-val", "session_program-val", "session_machine-val", "wait_object_owner-val", "wait_object_name-val", "wait_object_type-val", "sql_exec_start-val", 11, "row_wait_obj_id-val", "row_wait_file_id-val", "row_wait_block_id-val", "blocking_session_status-val", "immediate_blocker_sid-val", "final_blocking_session_status-val", "final_blocker_user-val", "final_blocker_sid-val", "final_blocker_serial-val", "final_blocker_query_id-val", "nr_service_guid-val", "normalised_sql_hash-val", "nr_blocking_service_guid-val", "normalised_blocking_sql_hash-val")
+			mb.RecordOracledbWaitEventsCurrentWaitTimeMsDataPoint(ts, 1, "collection_timestamp-val", "database_name-val", "user_name-val", "session_id-val", 14, "session_status-val", "session_state-val", "query_id-val", 16, "wait_event_name-val", "wait_category-val", "session_program-val", "session_machine-val", "wait_object_owner-val", "wait_object_name-val", "wait_object_type-val", "sql_exec_start-val", 11, "row_wait_obj_id-val", "row_wait_file_id-val", "row_wait_block_id-val", "blocking_session_status-val", "immediate_blocker_sid-val", "final_blocking_session_status-val", "final_blocker_user-val", "final_blocker_sid-val", "final_blocker_serial-val", "final_blocker_query_id-val", "nr_service_guid-val", "normalised_sql_hash-val", "nr_blocking_service_guid-val", "normalised_blocking_sql_hash-val")
 
 			rb := mb.NewResourceBuilder()
 			rb.SetHostAddress("host.address-val")
@@ -1413,9 +1413,9 @@ func TestMetricsBuilder(t *testing.T) {
 			validatedMetrics := make(map[string]bool)
 			for i := 0; i < ms.Len(); i++ {
 				switch ms.At(i).Name() {
-				case "newrelicoracledb.asm.diskgroup.free_mb":
-					assert.False(t, validatedMetrics["newrelicoracledb.asm.diskgroup.free_mb"], "Found a duplicate in the metrics slice: newrelicoracledb.asm.diskgroup.free_mb")
-					validatedMetrics["newrelicoracledb.asm.diskgroup.free_mb"] = true
+				case "oracledb.asm.diskgroup.free_mb":
+					assert.False(t, validatedMetrics["oracledb.asm.diskgroup.free_mb"], "Found a duplicate in the metrics slice: oracledb.asm.diskgroup.free_mb")
+					validatedMetrics["oracledb.asm.diskgroup.free_mb"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Available free space in the ASM disk group in MB", ms.At(i).Description())
@@ -1428,9 +1428,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("diskgroup.name")
 					assert.True(t, ok)
 					assert.Equal(t, "diskgroup.name-val", attrVal.Str())
-				case "newrelicoracledb.asm.diskgroup.offline_disks":
-					assert.False(t, validatedMetrics["newrelicoracledb.asm.diskgroup.offline_disks"], "Found a duplicate in the metrics slice: newrelicoracledb.asm.diskgroup.offline_disks")
-					validatedMetrics["newrelicoracledb.asm.diskgroup.offline_disks"] = true
+				case "oracledb.asm.diskgroup.offline_disks":
+					assert.False(t, validatedMetrics["oracledb.asm.diskgroup.offline_disks"], "Found a duplicate in the metrics slice: oracledb.asm.diskgroup.offline_disks")
+					validatedMetrics["oracledb.asm.diskgroup.offline_disks"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of offline disks in the ASM disk group", ms.At(i).Description())
@@ -1443,9 +1443,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("diskgroup.name")
 					assert.True(t, ok)
 					assert.Equal(t, "diskgroup.name-val", attrVal.Str())
-				case "newrelicoracledb.asm.diskgroup.total_mb":
-					assert.False(t, validatedMetrics["newrelicoracledb.asm.diskgroup.total_mb"], "Found a duplicate in the metrics slice: newrelicoracledb.asm.diskgroup.total_mb")
-					validatedMetrics["newrelicoracledb.asm.diskgroup.total_mb"] = true
+				case "oracledb.asm.diskgroup.total_mb":
+					assert.False(t, validatedMetrics["oracledb.asm.diskgroup.total_mb"], "Found a duplicate in the metrics slice: oracledb.asm.diskgroup.total_mb")
+					validatedMetrics["oracledb.asm.diskgroup.total_mb"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total capacity of the ASM disk group in MB", ms.At(i).Description())
@@ -1458,9 +1458,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("diskgroup.name")
 					assert.True(t, ok)
 					assert.Equal(t, "diskgroup.name-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.buffer_gets":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.buffer_gets"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.buffer_gets")
-					validatedMetrics["newrelicoracledb.child_cursors.buffer_gets"] = true
+				case "oracledb.child_cursors.buffer_gets":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.buffer_gets"], "Found a duplicate in the metrics slice: oracledb.child_cursors.buffer_gets")
+					validatedMetrics["oracledb.child_cursors.buffer_gets"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average number of buffer gets per execution for this child cursor", ms.At(i).Description())
@@ -1485,9 +1485,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.cpu_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.cpu_time"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.cpu_time")
-					validatedMetrics["newrelicoracledb.child_cursors.cpu_time"] = true
+				case "oracledb.child_cursors.cpu_time":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.cpu_time"], "Found a duplicate in the metrics slice: oracledb.child_cursors.cpu_time")
+					validatedMetrics["oracledb.child_cursors.cpu_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average CPU time per execution for this child cursor (in milliseconds)", ms.At(i).Description())
@@ -1512,9 +1512,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.details":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.details"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.details")
-					validatedMetrics["newrelicoracledb.child_cursors.details"] = true
+				case "oracledb.child_cursors.details":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.details"], "Found a duplicate in the metrics slice: oracledb.child_cursors.details")
+					validatedMetrics["oracledb.child_cursors.details"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Child cursor details including load times", ms.At(i).Description())
@@ -1545,9 +1545,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("last_load_time")
 					assert.True(t, ok)
 					assert.Equal(t, "last_load_time-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.disk_reads":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.disk_reads"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.disk_reads")
-					validatedMetrics["newrelicoracledb.child_cursors.disk_reads"] = true
+				case "oracledb.child_cursors.disk_reads":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.disk_reads"], "Found a duplicate in the metrics slice: oracledb.child_cursors.disk_reads")
+					validatedMetrics["oracledb.child_cursors.disk_reads"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average number of disk reads per execution for this child cursor", ms.At(i).Description())
@@ -1572,9 +1572,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.elapsed_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.elapsed_time"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.elapsed_time")
-					validatedMetrics["newrelicoracledb.child_cursors.elapsed_time"] = true
+				case "oracledb.child_cursors.elapsed_time":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.elapsed_time"], "Found a duplicate in the metrics slice: oracledb.child_cursors.elapsed_time")
+					validatedMetrics["oracledb.child_cursors.elapsed_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average elapsed time per execution for this child cursor (in milliseconds)", ms.At(i).Description())
@@ -1599,9 +1599,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.executions":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.executions"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.executions")
-					validatedMetrics["newrelicoracledb.child_cursors.executions"] = true
+				case "oracledb.child_cursors.executions":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.executions"], "Found a duplicate in the metrics slice: oracledb.child_cursors.executions")
+					validatedMetrics["oracledb.child_cursors.executions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total number of executions of this child cursor", ms.At(i).Description())
@@ -1626,9 +1626,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.invalidations":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.invalidations"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.invalidations")
-					validatedMetrics["newrelicoracledb.child_cursors.invalidations"] = true
+				case "oracledb.child_cursors.invalidations":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.invalidations"], "Found a duplicate in the metrics slice: oracledb.child_cursors.invalidations")
+					validatedMetrics["oracledb.child_cursors.invalidations"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of times this child cursor was invalidated", ms.At(i).Description())
@@ -1653,9 +1653,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.child_cursors.user_io_wait_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.child_cursors.user_io_wait_time"], "Found a duplicate in the metrics slice: newrelicoracledb.child_cursors.user_io_wait_time")
-					validatedMetrics["newrelicoracledb.child_cursors.user_io_wait_time"] = true
+				case "oracledb.child_cursors.user_io_wait_time":
+					assert.False(t, validatedMetrics["oracledb.child_cursors.user_io_wait_time"], "Found a duplicate in the metrics slice: oracledb.child_cursors.user_io_wait_time")
+					validatedMetrics["oracledb.child_cursors.user_io_wait_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average user I/O wait time per execution for this child cursor (in milliseconds)", ms.At(i).Description())
@@ -1680,9 +1680,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("plan_hash_value")
 					assert.True(t, ok)
 					assert.Equal(t, "plan_hash_value-val", attrVal.Str())
-				case "newrelicoracledb.connection.active_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.active_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.active_sessions")
-					validatedMetrics["newrelicoracledb.connection.active_sessions"] = true
+				case "oracledb.connection.active_sessions":
+					assert.False(t, validatedMetrics["oracledb.connection.active_sessions"], "Found a duplicate in the metrics slice: oracledb.connection.active_sessions")
+					validatedMetrics["oracledb.connection.active_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of active Oracle database sessions", ms.At(i).Description())
@@ -1692,9 +1692,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.bytes_received":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.bytes_received"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.bytes_received")
-					validatedMetrics["newrelicoracledb.connection.bytes_received"] = true
+				case "oracledb.connection.bytes_received":
+					assert.False(t, validatedMetrics["oracledb.connection.bytes_received"], "Found a duplicate in the metrics slice: oracledb.connection.bytes_received")
+					validatedMetrics["oracledb.connection.bytes_received"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Bytes received via SQL*Net from client", ms.At(i).Description())
@@ -1706,9 +1706,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.bytes_sent":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.bytes_sent"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.bytes_sent")
-					validatedMetrics["newrelicoracledb.connection.bytes_sent"] = true
+				case "oracledb.connection.bytes_sent":
+					assert.False(t, validatedMetrics["oracledb.connection.bytes_sent"], "Found a duplicate in the metrics slice: oracledb.connection.bytes_sent")
+					validatedMetrics["oracledb.connection.bytes_sent"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Bytes sent via SQL*Net to client", ms.At(i).Description())
@@ -1720,9 +1720,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.circuits":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.circuits"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.circuits")
-					validatedMetrics["newrelicoracledb.connection.circuits"] = true
+				case "oracledb.connection.circuits":
+					assert.False(t, validatedMetrics["oracledb.connection.circuits"], "Found a duplicate in the metrics slice: oracledb.connection.circuits")
+					validatedMetrics["oracledb.connection.circuits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of active circuits", ms.At(i).Description())
@@ -1732,9 +1732,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.dispatchers":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.dispatchers"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.dispatchers")
-					validatedMetrics["newrelicoracledb.connection.dispatchers"] = true
+				case "oracledb.connection.dispatchers":
+					assert.False(t, validatedMetrics["oracledb.connection.dispatchers"], "Found a duplicate in the metrics slice: oracledb.connection.dispatchers")
+					validatedMetrics["oracledb.connection.dispatchers"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of dispatchers", ms.At(i).Description())
@@ -1744,9 +1744,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.execute_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.execute_count"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.execute_count")
-					validatedMetrics["newrelicoracledb.connection.execute_count"] = true
+				case "oracledb.connection.execute_count":
+					assert.False(t, validatedMetrics["oracledb.connection.execute_count"], "Found a duplicate in the metrics slice: oracledb.connection.execute_count")
+					validatedMetrics["oracledb.connection.execute_count"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Number of SQL executions", ms.At(i).Description())
@@ -1758,9 +1758,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.inactive_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.inactive_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.inactive_sessions")
-					validatedMetrics["newrelicoracledb.connection.inactive_sessions"] = true
+				case "oracledb.connection.inactive_sessions":
+					assert.False(t, validatedMetrics["oracledb.connection.inactive_sessions"], "Found a duplicate in the metrics slice: oracledb.connection.inactive_sessions")
+					validatedMetrics["oracledb.connection.inactive_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of inactive Oracle database sessions", ms.At(i).Description())
@@ -1770,9 +1770,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.logons_cumulative":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.logons_cumulative"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.logons_cumulative")
-					validatedMetrics["newrelicoracledb.connection.logons_cumulative"] = true
+				case "oracledb.connection.logons_cumulative":
+					assert.False(t, validatedMetrics["oracledb.connection.logons_cumulative"], "Found a duplicate in the metrics slice: oracledb.connection.logons_cumulative")
+					validatedMetrics["oracledb.connection.logons_cumulative"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Cumulative number of logons since instance startup", ms.At(i).Description())
@@ -1784,9 +1784,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.logons_current":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.logons_current"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.logons_current")
-					validatedMetrics["newrelicoracledb.connection.logons_current"] = true
+				case "oracledb.connection.logons_current":
+					assert.False(t, validatedMetrics["oracledb.connection.logons_current"], "Found a duplicate in the metrics slice: oracledb.connection.logons_current")
+					validatedMetrics["oracledb.connection.logons_current"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current number of active logons", ms.At(i).Description())
@@ -1796,9 +1796,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.parse_count_hard":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.parse_count_hard"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.parse_count_hard")
-					validatedMetrics["newrelicoracledb.connection.parse_count_hard"] = true
+				case "oracledb.connection.parse_count_hard":
+					assert.False(t, validatedMetrics["oracledb.connection.parse_count_hard"], "Found a duplicate in the metrics slice: oracledb.connection.parse_count_hard")
+					validatedMetrics["oracledb.connection.parse_count_hard"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Number of hard parse calls", ms.At(i).Description())
@@ -1810,9 +1810,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.parse_count_total":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.parse_count_total"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.parse_count_total")
-					validatedMetrics["newrelicoracledb.connection.parse_count_total"] = true
+				case "oracledb.connection.parse_count_total":
+					assert.False(t, validatedMetrics["oracledb.connection.parse_count_total"], "Found a duplicate in the metrics slice: oracledb.connection.parse_count_total")
+					validatedMetrics["oracledb.connection.parse_count_total"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Total number of parse calls", ms.At(i).Description())
@@ -1824,9 +1824,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.resource_current_utilization":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.resource_current_utilization"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.resource_current_utilization")
-					validatedMetrics["newrelicoracledb.connection.resource_current_utilization"] = true
+				case "oracledb.connection.resource_current_utilization":
+					assert.False(t, validatedMetrics["oracledb.connection.resource_current_utilization"], "Found a duplicate in the metrics slice: oracledb.connection.resource_current_utilization")
+					validatedMetrics["oracledb.connection.resource_current_utilization"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current utilization of Oracle resources", ms.At(i).Description())
@@ -1839,9 +1839,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("resource.name")
 					assert.True(t, ok)
 					assert.Equal(t, "resource.name-val", attrVal.Str())
-				case "newrelicoracledb.connection.resource_limit":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.resource_limit"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.resource_limit")
-					validatedMetrics["newrelicoracledb.connection.resource_limit"] = true
+				case "oracledb.connection.resource_limit":
+					assert.False(t, validatedMetrics["oracledb.connection.resource_limit"], "Found a duplicate in the metrics slice: oracledb.connection.resource_limit")
+					validatedMetrics["oracledb.connection.resource_limit"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Limit value for Oracle resources", ms.At(i).Description())
@@ -1854,9 +1854,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("resource.name")
 					assert.True(t, ok)
 					assert.Equal(t, "resource.name-val", attrVal.Str())
-				case "newrelicoracledb.connection.resource_max_utilization":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.resource_max_utilization"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.resource_max_utilization")
-					validatedMetrics["newrelicoracledb.connection.resource_max_utilization"] = true
+				case "oracledb.connection.resource_max_utilization":
+					assert.False(t, validatedMetrics["oracledb.connection.resource_max_utilization"], "Found a duplicate in the metrics slice: oracledb.connection.resource_max_utilization")
+					validatedMetrics["oracledb.connection.resource_max_utilization"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Maximum utilization of Oracle resources since startup", ms.At(i).Description())
@@ -1869,9 +1869,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("resource.name")
 					assert.True(t, ok)
 					assert.Equal(t, "resource.name-val", attrVal.Str())
-				case "newrelicoracledb.connection.sessions_by_status":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.sessions_by_status"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.sessions_by_status")
-					validatedMetrics["newrelicoracledb.connection.sessions_by_status"] = true
+				case "oracledb.connection.sessions_by_status":
+					assert.False(t, validatedMetrics["oracledb.connection.sessions_by_status"], "Found a duplicate in the metrics slice: oracledb.connection.sessions_by_status")
+					validatedMetrics["oracledb.connection.sessions_by_status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of sessions grouped by status", ms.At(i).Description())
@@ -1884,9 +1884,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("session.status")
 					assert.True(t, ok)
 					assert.Equal(t, "session.status-val", attrVal.Str())
-				case "newrelicoracledb.connection.sessions_by_type":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.sessions_by_type"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.sessions_by_type")
-					validatedMetrics["newrelicoracledb.connection.sessions_by_type"] = true
+				case "oracledb.connection.sessions_by_type":
+					assert.False(t, validatedMetrics["oracledb.connection.sessions_by_type"], "Found a duplicate in the metrics slice: oracledb.connection.sessions_by_type")
+					validatedMetrics["oracledb.connection.sessions_by_type"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of sessions grouped by type", ms.At(i).Description())
@@ -1899,9 +1899,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("session.type")
 					assert.True(t, ok)
 					assert.Equal(t, "session.type-val", attrVal.Str())
-				case "newrelicoracledb.connection.shared_servers":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.shared_servers"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.shared_servers")
-					validatedMetrics["newrelicoracledb.connection.shared_servers"] = true
+				case "oracledb.connection.shared_servers":
+					assert.False(t, validatedMetrics["oracledb.connection.shared_servers"], "Found a duplicate in the metrics slice: oracledb.connection.shared_servers")
+					validatedMetrics["oracledb.connection.shared_servers"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of shared servers", ms.At(i).Description())
@@ -1911,9 +1911,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.sqlnet_roundtrips":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.sqlnet_roundtrips"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.sqlnet_roundtrips")
-					validatedMetrics["newrelicoracledb.connection.sqlnet_roundtrips"] = true
+				case "oracledb.connection.sqlnet_roundtrips":
+					assert.False(t, validatedMetrics["oracledb.connection.sqlnet_roundtrips"], "Found a duplicate in the metrics slice: oracledb.connection.sqlnet_roundtrips")
+					validatedMetrics["oracledb.connection.sqlnet_roundtrips"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Number of SQL*Net roundtrips to/from client", ms.At(i).Description())
@@ -1925,9 +1925,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.total_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.total_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.total_sessions")
-					validatedMetrics["newrelicoracledb.connection.total_sessions"] = true
+				case "oracledb.connection.total_sessions":
+					assert.False(t, validatedMetrics["oracledb.connection.total_sessions"], "Found a duplicate in the metrics slice: oracledb.connection.total_sessions")
+					validatedMetrics["oracledb.connection.total_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total number of Oracle database sessions", ms.At(i).Description())
@@ -1937,9 +1937,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.user_commits":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.user_commits"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.user_commits")
-					validatedMetrics["newrelicoracledb.connection.user_commits"] = true
+				case "oracledb.connection.user_commits":
+					assert.False(t, validatedMetrics["oracledb.connection.user_commits"], "Found a duplicate in the metrics slice: oracledb.connection.user_commits")
+					validatedMetrics["oracledb.connection.user_commits"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Number of user commits", ms.At(i).Description())
@@ -1951,9 +1951,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.connection.user_rollbacks":
-					assert.False(t, validatedMetrics["newrelicoracledb.connection.user_rollbacks"], "Found a duplicate in the metrics slice: newrelicoracledb.connection.user_rollbacks")
-					validatedMetrics["newrelicoracledb.connection.user_rollbacks"] = true
+				case "oracledb.connection.user_rollbacks":
+					assert.False(t, validatedMetrics["oracledb.connection.user_rollbacks"], "Found a duplicate in the metrics slice: oracledb.connection.user_rollbacks")
+					validatedMetrics["oracledb.connection.user_rollbacks"] = true
 					assert.Equal(t, pmetric.MetricTypeSum, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Sum().DataPoints().Len())
 					assert.Equal(t, "Number of user rollbacks", ms.At(i).Description())
@@ -1965,9 +1965,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
 					assert.InDelta(t, float64(1), dp.DoubleValue(), 0.01)
-				case "newrelicoracledb.container.restricted":
-					assert.False(t, validatedMetrics["newrelicoracledb.container.restricted"], "Found a duplicate in the metrics slice: newrelicoracledb.container.restricted")
-					validatedMetrics["newrelicoracledb.container.restricted"] = true
+				case "oracledb.container.restricted":
+					assert.False(t, validatedMetrics["oracledb.container.restricted"], "Found a duplicate in the metrics slice: oracledb.container.restricted")
+					validatedMetrics["oracledb.container.restricted"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle container restricted status (1=YES, 0=NO)", ms.At(i).Description())
@@ -1986,9 +1986,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("restricted.status")
 					assert.True(t, ok)
 					assert.Equal(t, "restricted.status-val", attrVal.Str())
-				case "newrelicoracledb.container.status":
-					assert.False(t, validatedMetrics["newrelicoracledb.container.status"], "Found a duplicate in the metrics slice: newrelicoracledb.container.status")
-					validatedMetrics["newrelicoracledb.container.status"] = true
+				case "oracledb.container.status":
+					assert.False(t, validatedMetrics["oracledb.container.status"], "Found a duplicate in the metrics slice: oracledb.container.status")
+					validatedMetrics["oracledb.container.status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle container status (1=READ WRITE, 0=other)", ms.At(i).Description())
@@ -2007,9 +2007,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("open.mode")
 					assert.True(t, ok)
 					assert.Equal(t, "open.mode-val", attrVal.Str())
-				case "newrelicoracledb.database.info":
-					assert.False(t, validatedMetrics["newrelicoracledb.database.info"], "Found a duplicate in the metrics slice: newrelicoracledb.database.info")
-					validatedMetrics["newrelicoracledb.database.info"] = true
+				case "oracledb.database.info":
+					assert.False(t, validatedMetrics["oracledb.database.info"], "Found a duplicate in the metrics slice: oracledb.database.info")
+					validatedMetrics["oracledb.database.info"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database version and configuration information", ms.At(i).Description())
@@ -2031,9 +2031,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("db.compatible")
 					assert.True(t, ok)
 					assert.Equal(t, "db.compatible-val", attrVal.Str())
-				case "newrelicoracledb.database.role":
-					assert.False(t, validatedMetrics["newrelicoracledb.database.role"], "Found a duplicate in the metrics slice: newrelicoracledb.database.role")
-					validatedMetrics["newrelicoracledb.database.role"] = true
+				case "oracledb.database.role":
+					assert.False(t, validatedMetrics["oracledb.database.role"], "Found a duplicate in the metrics slice: oracledb.database.role")
+					validatedMetrics["oracledb.database.role"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database role and Data Guard configuration", ms.At(i).Description())
@@ -2055,9 +2055,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("db.protection_level")
 					assert.True(t, ok)
 					assert.Equal(t, "db.protection_level-val", attrVal.Str())
-				case "newrelicoracledb.datafile.autoextensible":
-					assert.False(t, validatedMetrics["newrelicoracledb.datafile.autoextensible"], "Found a duplicate in the metrics slice: newrelicoracledb.datafile.autoextensible")
-					validatedMetrics["newrelicoracledb.datafile.autoextensible"] = true
+				case "oracledb.datafile.autoextensible":
+					assert.False(t, validatedMetrics["oracledb.datafile.autoextensible"], "Found a duplicate in the metrics slice: oracledb.datafile.autoextensible")
+					validatedMetrics["oracledb.datafile.autoextensible"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Data file autoextensible status (1=YES, 0=NO)", ms.At(i).Description())
@@ -2079,9 +2079,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("container.status")
 					assert.True(t, ok)
 					assert.Equal(t, "container.status-val", attrVal.Str())
-				case "newrelicoracledb.datafile.size_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.datafile.size_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.datafile.size_bytes")
-					validatedMetrics["newrelicoracledb.datafile.size_bytes"] = true
+				case "oracledb.datafile.size_bytes":
+					assert.False(t, validatedMetrics["oracledb.datafile.size_bytes"], "Found a duplicate in the metrics slice: oracledb.datafile.size_bytes")
+					validatedMetrics["oracledb.datafile.size_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Size of data file in bytes", ms.At(i).Description())
@@ -2100,9 +2100,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("file.name")
 					assert.True(t, ok)
 					assert.Equal(t, "file.name-val", attrVal.Str())
-				case "newrelicoracledb.datafile.used_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.datafile.used_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.datafile.used_bytes")
-					validatedMetrics["newrelicoracledb.datafile.used_bytes"] = true
+				case "oracledb.datafile.used_bytes":
+					assert.False(t, validatedMetrics["oracledb.datafile.used_bytes"], "Found a duplicate in the metrics slice: oracledb.datafile.used_bytes")
+					validatedMetrics["oracledb.datafile.used_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Used bytes in data file", ms.At(i).Description())
@@ -2121,9 +2121,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("file.name")
 					assert.True(t, ok)
 					assert.Equal(t, "file.name-val", attrVal.Str())
-				case "newrelicoracledb.db_id":
-					assert.False(t, validatedMetrics["newrelicoracledb.db_id"], "Found a duplicate in the metrics slice: newrelicoracledb.db_id")
-					validatedMetrics["newrelicoracledb.db_id"] = true
+				case "oracledb.db_id":
+					assert.False(t, validatedMetrics["oracledb.db_id"], "Found a duplicate in the metrics slice: oracledb.db_id")
+					validatedMetrics["oracledb.db_id"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle database ID information", ms.At(i).Description())
@@ -2136,9 +2136,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("db.id")
 					assert.True(t, ok)
 					assert.Equal(t, "db.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.blocks_read":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.blocks_read"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.blocks_read")
-					validatedMetrics["newrelicoracledb.disk.blocks_read"] = true
+				case "oracledb.disk.blocks_read":
+					assert.False(t, validatedMetrics["oracledb.disk.blocks_read"], "Found a duplicate in the metrics slice: oracledb.disk.blocks_read")
+					validatedMetrics["oracledb.disk.blocks_read"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of physical blocks read from disk", ms.At(i).Description())
@@ -2151,9 +2151,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.blocks_written":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.blocks_written"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.blocks_written")
-					validatedMetrics["newrelicoracledb.disk.blocks_written"] = true
+				case "oracledb.disk.blocks_written":
+					assert.False(t, validatedMetrics["oracledb.disk.blocks_written"], "Found a duplicate in the metrics slice: oracledb.disk.blocks_written")
+					validatedMetrics["oracledb.disk.blocks_written"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of physical blocks written to disk", ms.At(i).Description())
@@ -2166,9 +2166,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.read_time_milliseconds":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.read_time_milliseconds"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.read_time_milliseconds")
-					validatedMetrics["newrelicoracledb.disk.read_time_milliseconds"] = true
+				case "oracledb.disk.read_time_milliseconds":
+					assert.False(t, validatedMetrics["oracledb.disk.read_time_milliseconds"], "Found a duplicate in the metrics slice: oracledb.disk.read_time_milliseconds")
+					validatedMetrics["oracledb.disk.read_time_milliseconds"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Time spent reading from disk in milliseconds", ms.At(i).Description())
@@ -2181,9 +2181,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.reads":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.reads"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.reads")
-					validatedMetrics["newrelicoracledb.disk.reads"] = true
+				case "oracledb.disk.reads":
+					assert.False(t, validatedMetrics["oracledb.disk.reads"], "Found a duplicate in the metrics slice: oracledb.disk.reads")
+					validatedMetrics["oracledb.disk.reads"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of physical disk reads", ms.At(i).Description())
@@ -2196,9 +2196,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.write_time_milliseconds":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.write_time_milliseconds"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.write_time_milliseconds")
-					validatedMetrics["newrelicoracledb.disk.write_time_milliseconds"] = true
+				case "oracledb.disk.write_time_milliseconds":
+					assert.False(t, validatedMetrics["oracledb.disk.write_time_milliseconds"], "Found a duplicate in the metrics slice: oracledb.disk.write_time_milliseconds")
+					validatedMetrics["oracledb.disk.write_time_milliseconds"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Time spent writing to disk in milliseconds", ms.At(i).Description())
@@ -2211,9 +2211,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.disk.writes":
-					assert.False(t, validatedMetrics["newrelicoracledb.disk.writes"], "Found a duplicate in the metrics slice: newrelicoracledb.disk.writes")
-					validatedMetrics["newrelicoracledb.disk.writes"] = true
+				case "oracledb.disk.writes":
+					assert.False(t, validatedMetrics["oracledb.disk.writes"], "Found a duplicate in the metrics slice: oracledb.disk.writes")
+					validatedMetrics["oracledb.disk.writes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of physical disk writes", ms.At(i).Description())
@@ -2226,9 +2226,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.execution_plan":
-					assert.False(t, validatedMetrics["newrelicoracledb.execution_plan"], "Found a duplicate in the metrics slice: newrelicoracledb.execution_plan")
-					validatedMetrics["newrelicoracledb.execution_plan"] = true
+				case "oracledb.execution_plan":
+					assert.False(t, validatedMetrics["oracledb.execution_plan"], "Found a duplicate in the metrics slice: oracledb.execution_plan")
+					validatedMetrics["oracledb.execution_plan"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle SQL execution plan details including operation costs, cardinality, and resource estimates", ms.At(i).Description())
@@ -2307,9 +2307,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("filter_predicates")
 					assert.True(t, ok)
 					assert.Equal(t, "filter_predicates-val", attrVal.Str())
-				case "newrelicoracledb.global_name":
-					assert.False(t, validatedMetrics["newrelicoracledb.global_name"], "Found a duplicate in the metrics slice: newrelicoracledb.global_name")
-					validatedMetrics["newrelicoracledb.global_name"] = true
+				case "oracledb.global_name":
+					assert.False(t, validatedMetrics["oracledb.global_name"], "Found a duplicate in the metrics slice: oracledb.global_name")
+					validatedMetrics["oracledb.global_name"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle database global name information", ms.At(i).Description())
@@ -2322,9 +2322,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("global.name")
 					assert.True(t, ok)
 					assert.Equal(t, "global.name-val", attrVal.Str())
-				case "newrelicoracledb.hosting.info":
-					assert.False(t, validatedMetrics["newrelicoracledb.hosting.info"], "Found a duplicate in the metrics slice: newrelicoracledb.hosting.info")
-					validatedMetrics["newrelicoracledb.hosting.info"] = true
+				case "oracledb.hosting.info":
+					assert.False(t, validatedMetrics["oracledb.hosting.info"], "Found a duplicate in the metrics slice: oracledb.hosting.info")
+					validatedMetrics["oracledb.hosting.info"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database hosting and platform information", ms.At(i).Description())
@@ -2340,9 +2340,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("platform.name")
 					assert.True(t, ok)
 					assert.Equal(t, "platform.name-val", attrVal.Str())
-				case "newrelicoracledb.locked_accounts":
-					assert.False(t, validatedMetrics["newrelicoracledb.locked_accounts"], "Found a duplicate in the metrics slice: newrelicoracledb.locked_accounts")
-					validatedMetrics["newrelicoracledb.locked_accounts"] = true
+				case "oracledb.locked_accounts":
+					assert.False(t, validatedMetrics["oracledb.locked_accounts"], "Found a duplicate in the metrics slice: oracledb.locked_accounts")
+					validatedMetrics["oracledb.locked_accounts"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Count of locked user accounts in the database", ms.At(i).Description())
@@ -2355,9 +2355,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.long_running_queries":
-					assert.False(t, validatedMetrics["newrelicoracledb.long_running_queries"], "Found a duplicate in the metrics slice: newrelicoracledb.long_running_queries")
-					validatedMetrics["newrelicoracledb.long_running_queries"] = true
+				case "oracledb.long_running_queries":
+					assert.False(t, validatedMetrics["oracledb.long_running_queries"], "Found a duplicate in the metrics slice: oracledb.long_running_queries")
+					validatedMetrics["oracledb.long_running_queries"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of long running queries (active sessions running for more than 60 seconds)", ms.At(i).Description())
@@ -2370,9 +2370,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.pga_allocated_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.pga_allocated_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.pga_allocated_bytes")
-					validatedMetrics["newrelicoracledb.memory.pga_allocated_bytes"] = true
+				case "oracledb.memory.pga_allocated_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.pga_allocated_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.pga_allocated_bytes")
+					validatedMetrics["oracledb.memory.pga_allocated_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total PGA memory allocated in bytes", ms.At(i).Description())
@@ -2385,9 +2385,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.pga_freeable_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.pga_freeable_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.pga_freeable_bytes")
-					validatedMetrics["newrelicoracledb.memory.pga_freeable_bytes"] = true
+				case "oracledb.memory.pga_freeable_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.pga_freeable_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.pga_freeable_bytes")
+					validatedMetrics["oracledb.memory.pga_freeable_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total freeable PGA memory in bytes", ms.At(i).Description())
@@ -2400,9 +2400,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.pga_in_use_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.pga_in_use_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.pga_in_use_bytes")
-					validatedMetrics["newrelicoracledb.memory.pga_in_use_bytes"] = true
+				case "oracledb.memory.pga_in_use_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.pga_in_use_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.pga_in_use_bytes")
+					validatedMetrics["oracledb.memory.pga_in_use_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total PGA memory currently in use in bytes", ms.At(i).Description())
@@ -2415,9 +2415,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.pga_max_size_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.pga_max_size_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.pga_max_size_bytes")
-					validatedMetrics["newrelicoracledb.memory.pga_max_size_bytes"] = true
+				case "oracledb.memory.pga_max_size_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.pga_max_size_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.pga_max_size_bytes")
+					validatedMetrics["oracledb.memory.pga_max_size_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global memory bound for PGA in bytes", ms.At(i).Description())
@@ -2430,9 +2430,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes")
-					validatedMetrics["newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes"] = true
+				case "oracledb.memory.sga_shared_pool_library_cache_sharable_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.sga_shared_pool_library_cache_sharable_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.sga_shared_pool_library_cache_sharable_bytes")
+					validatedMetrics["oracledb.memory.sga_shared_pool_library_cache_sharable_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA shared pool library cache sharable memory in bytes for statements with more than 5 executions", ms.At(i).Description())
@@ -2445,9 +2445,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes")
-					validatedMetrics["newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes"] = true
+				case "oracledb.memory.sga_shared_pool_library_cache_user_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.sga_shared_pool_library_cache_user_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.sga_shared_pool_library_cache_user_bytes")
+					validatedMetrics["oracledb.memory.sga_shared_pool_library_cache_user_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA shared pool library cache shareable memory per user in bytes (250 * users_opening)", ms.At(i).Description())
@@ -2460,9 +2460,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.memory.sga_uga_total_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.memory.sga_uga_total_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.memory.sga_uga_total_bytes")
-					validatedMetrics["newrelicoracledb.memory.sga_uga_total_bytes"] = true
+				case "oracledb.memory.sga_uga_total_bytes":
+					assert.False(t, validatedMetrics["oracledb.memory.sga_uga_total_bytes"], "Found a duplicate in the metrics slice: oracledb.memory.sga_uga_total_bytes")
+					validatedMetrics["oracledb.memory.sga_uga_total_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total SGA UGA memory in bytes (session uga memory max)", ms.At(i).Description())
@@ -2475,9 +2475,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.pdb.active_parallel_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.active_parallel_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.active_parallel_sessions")
-					validatedMetrics["newrelicoracledb.pdb.active_parallel_sessions"] = true
+				case "oracledb.pdb.active_parallel_sessions":
+					assert.False(t, validatedMetrics["oracledb.pdb.active_parallel_sessions"], "Found a duplicate in the metrics slice: oracledb.pdb.active_parallel_sessions")
+					validatedMetrics["oracledb.pdb.active_parallel_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of active parallel sessions in PDB", ms.At(i).Description())
@@ -2493,9 +2493,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.active_serial_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.active_serial_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.active_serial_sessions")
-					validatedMetrics["newrelicoracledb.pdb.active_serial_sessions"] = true
+				case "oracledb.pdb.active_serial_sessions":
+					assert.False(t, validatedMetrics["oracledb.pdb.active_serial_sessions"], "Found a duplicate in the metrics slice: oracledb.pdb.active_serial_sessions")
+					validatedMetrics["oracledb.pdb.active_serial_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of active serial sessions in PDB", ms.At(i).Description())
@@ -2511,9 +2511,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.average_active_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.average_active_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.average_active_sessions")
-					validatedMetrics["newrelicoracledb.pdb.average_active_sessions"] = true
+				case "oracledb.pdb.average_active_sessions":
+					assert.False(t, validatedMetrics["oracledb.pdb.average_active_sessions"], "Found a duplicate in the metrics slice: oracledb.pdb.average_active_sessions")
+					validatedMetrics["oracledb.pdb.average_active_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average number of active sessions in PDB", ms.At(i).Description())
@@ -2529,9 +2529,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.background_cpu_usage_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.background_cpu_usage_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.background_cpu_usage_per_second")
-					validatedMetrics["newrelicoracledb.pdb.background_cpu_usage_per_second"] = true
+				case "oracledb.pdb.background_cpu_usage_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.background_cpu_usage_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.background_cpu_usage_per_second")
+					validatedMetrics["oracledb.pdb.background_cpu_usage_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Background CPU usage per second in PDB", ms.At(i).Description())
@@ -2547,9 +2547,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.background_time_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.background_time_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.background_time_per_second")
-					validatedMetrics["newrelicoracledb.pdb.background_time_per_second"] = true
+				case "oracledb.pdb.background_time_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.background_time_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.background_time_per_second")
+					validatedMetrics["oracledb.pdb.background_time_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Background time per second in PDB", ms.At(i).Description())
@@ -2565,9 +2565,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.block_changes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.block_changes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.block_changes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.block_changes_per_second"] = true
+				case "oracledb.pdb.block_changes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.block_changes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.block_changes_per_second")
+					validatedMetrics["oracledb.pdb.block_changes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB block changes per second in PDB", ms.At(i).Description())
@@ -2583,9 +2583,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.block_changes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.block_changes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.block_changes_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.block_changes_per_transaction"] = true
+				case "oracledb.pdb.block_changes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.block_changes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.block_changes_per_transaction")
+					validatedMetrics["oracledb.pdb.block_changes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB block changes per transaction in PDB", ms.At(i).Description())
@@ -2601,9 +2601,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.cpu_time_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.cpu_time_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.cpu_time_ratio")
-					validatedMetrics["newrelicoracledb.pdb.cpu_time_ratio"] = true
+				case "oracledb.pdb.cpu_time_ratio":
+					assert.False(t, validatedMetrics["oracledb.pdb.cpu_time_ratio"], "Found a duplicate in the metrics slice: oracledb.pdb.cpu_time_ratio")
+					validatedMetrics["oracledb.pdb.cpu_time_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database CPU time ratio in PDB", ms.At(i).Description())
@@ -2619,9 +2619,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.cpu_usage_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.cpu_usage_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.cpu_usage_per_second")
-					validatedMetrics["newrelicoracledb.pdb.cpu_usage_per_second"] = true
+				case "oracledb.pdb.cpu_usage_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.cpu_usage_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.cpu_usage_per_second")
+					validatedMetrics["oracledb.pdb.cpu_usage_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CPU usage per second in PDB", ms.At(i).Description())
@@ -2637,9 +2637,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.cpu_usage_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.cpu_usage_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.cpu_usage_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.cpu_usage_per_transaction"] = true
+				case "oracledb.pdb.cpu_usage_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.cpu_usage_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.cpu_usage_per_transaction")
+					validatedMetrics["oracledb.pdb.cpu_usage_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CPU usage per transaction in PDB", ms.At(i).Description())
@@ -2655,9 +2655,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.current_logons":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.current_logons"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.current_logons")
-					validatedMetrics["newrelicoracledb.pdb.current_logons"] = true
+				case "oracledb.pdb.current_logons":
+					assert.False(t, validatedMetrics["oracledb.pdb.current_logons"], "Found a duplicate in the metrics slice: oracledb.pdb.current_logons")
+					validatedMetrics["oracledb.pdb.current_logons"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current number of logons in PDB", ms.At(i).Description())
@@ -2673,9 +2673,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.current_open_cursors":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.current_open_cursors"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.current_open_cursors")
-					validatedMetrics["newrelicoracledb.pdb.current_open_cursors"] = true
+				case "oracledb.pdb.current_open_cursors":
+					assert.False(t, validatedMetrics["oracledb.pdb.current_open_cursors"], "Found a duplicate in the metrics slice: oracledb.pdb.current_open_cursors")
+					validatedMetrics["oracledb.pdb.current_open_cursors"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current number of open cursors in PDB", ms.At(i).Description())
@@ -2691,9 +2691,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.db_physical_read_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.db_physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.db_physical_read_bytes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.db_physical_read_bytes_per_second"] = true
+				case "oracledb.pdb.db_physical_read_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.db_physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.db_physical_read_bytes_per_second")
+					validatedMetrics["oracledb.pdb.db_physical_read_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical read bytes per second in PDB", ms.At(i).Description())
@@ -2709,9 +2709,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.db_physical_reads_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.db_physical_reads_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.db_physical_reads_per_second")
-					validatedMetrics["newrelicoracledb.pdb.db_physical_reads_per_second"] = true
+				case "oracledb.pdb.db_physical_reads_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.db_physical_reads_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.db_physical_reads_per_second")
+					validatedMetrics["oracledb.pdb.db_physical_reads_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical reads per second in PDB", ms.At(i).Description())
@@ -2727,9 +2727,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.db_physical_write_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.db_physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.db_physical_write_bytes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.db_physical_write_bytes_per_second"] = true
+				case "oracledb.pdb.db_physical_write_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.db_physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.db_physical_write_bytes_per_second")
+					validatedMetrics["oracledb.pdb.db_physical_write_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical write bytes per second in PDB", ms.At(i).Description())
@@ -2745,9 +2745,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.db_physical_writes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.db_physical_writes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.db_physical_writes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.db_physical_writes_per_second"] = true
+				case "oracledb.pdb.db_physical_writes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.db_physical_writes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.db_physical_writes_per_second")
+					validatedMetrics["oracledb.pdb.db_physical_writes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical writes per second in PDB", ms.At(i).Description())
@@ -2763,9 +2763,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.execute_without_parse_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.execute_without_parse_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.execute_without_parse_ratio")
-					validatedMetrics["newrelicoracledb.pdb.execute_without_parse_ratio"] = true
+				case "oracledb.pdb.execute_without_parse_ratio":
+					assert.False(t, validatedMetrics["oracledb.pdb.execute_without_parse_ratio"], "Found a duplicate in the metrics slice: oracledb.pdb.execute_without_parse_ratio")
+					validatedMetrics["oracledb.pdb.execute_without_parse_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Execute without parse ratio in PDB", ms.At(i).Description())
@@ -2781,9 +2781,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.executions_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.executions_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.executions_per_second")
-					validatedMetrics["newrelicoracledb.pdb.executions_per_second"] = true
+				case "oracledb.pdb.executions_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.executions_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.executions_per_second")
+					validatedMetrics["oracledb.pdb.executions_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Executions per second in PDB", ms.At(i).Description())
@@ -2799,9 +2799,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.executions_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.executions_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.executions_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.executions_per_transaction"] = true
+				case "oracledb.pdb.executions_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.executions_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.executions_per_transaction")
+					validatedMetrics["oracledb.pdb.executions_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Executions per transaction in PDB", ms.At(i).Description())
@@ -2817,9 +2817,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.hard_parse_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.hard_parse_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.hard_parse_count_per_second")
-					validatedMetrics["newrelicoracledb.pdb.hard_parse_count_per_second"] = true
+				case "oracledb.pdb.hard_parse_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.hard_parse_count_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.hard_parse_count_per_second")
+					validatedMetrics["oracledb.pdb.hard_parse_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Hard parse count per second in PDB", ms.At(i).Description())
@@ -2835,9 +2835,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.hard_parse_count_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.hard_parse_count_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.hard_parse_count_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.hard_parse_count_per_transaction"] = true
+				case "oracledb.pdb.hard_parse_count_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.hard_parse_count_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.hard_parse_count_per_transaction")
+					validatedMetrics["oracledb.pdb.hard_parse_count_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Hard parse count per transaction in PDB", ms.At(i).Description())
@@ -2853,9 +2853,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.logical_reads_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.logical_reads_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.logical_reads_per_second")
-					validatedMetrics["newrelicoracledb.pdb.logical_reads_per_second"] = true
+				case "oracledb.pdb.logical_reads_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.logical_reads_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.logical_reads_per_second")
+					validatedMetrics["oracledb.pdb.logical_reads_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logical reads per second in PDB", ms.At(i).Description())
@@ -2871,9 +2871,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.logical_reads_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.logical_reads_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.logical_reads_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.logical_reads_per_transaction"] = true
+				case "oracledb.pdb.logical_reads_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.logical_reads_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.logical_reads_per_transaction")
+					validatedMetrics["oracledb.pdb.logical_reads_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logical reads per transaction in PDB", ms.At(i).Description())
@@ -2889,9 +2889,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.logons_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.logons_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.logons_per_second")
-					validatedMetrics["newrelicoracledb.pdb.logons_per_second"] = true
+				case "oracledb.pdb.logons_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.logons_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.logons_per_second")
+					validatedMetrics["oracledb.pdb.logons_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logons per second in PDB", ms.At(i).Description())
@@ -2907,9 +2907,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.logons_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.logons_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.logons_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.logons_per_transaction"] = true
+				case "oracledb.pdb.logons_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.logons_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.logons_per_transaction")
+					validatedMetrics["oracledb.pdb.logons_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logons per transaction in PDB", ms.At(i).Description())
@@ -2925,9 +2925,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.network_traffic_byte_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.network_traffic_byte_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.network_traffic_byte_per_second")
-					validatedMetrics["newrelicoracledb.pdb.network_traffic_byte_per_second"] = true
+				case "oracledb.pdb.network_traffic_byte_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.network_traffic_byte_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.network_traffic_byte_per_second")
+					validatedMetrics["oracledb.pdb.network_traffic_byte_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Network traffic volume per second in bytes in PDB", ms.At(i).Description())
@@ -2943,9 +2943,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.open_cursors_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.open_cursors_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.open_cursors_per_second")
-					validatedMetrics["newrelicoracledb.pdb.open_cursors_per_second"] = true
+				case "oracledb.pdb.open_cursors_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.open_cursors_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.open_cursors_per_second")
+					validatedMetrics["oracledb.pdb.open_cursors_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Open cursors per second in PDB", ms.At(i).Description())
@@ -2961,9 +2961,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.open_cursors_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.open_cursors_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.open_cursors_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.open_cursors_per_transaction"] = true
+				case "oracledb.pdb.open_cursors_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.open_cursors_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.open_cursors_per_transaction")
+					validatedMetrics["oracledb.pdb.open_cursors_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Open cursors per transaction in PDB", ms.At(i).Description())
@@ -2979,9 +2979,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.open_mode":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.open_mode"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.open_mode")
-					validatedMetrics["newrelicoracledb.pdb.open_mode"] = true
+				case "oracledb.pdb.open_mode":
+					assert.False(t, validatedMetrics["oracledb.pdb.open_mode"], "Found a duplicate in the metrics slice: oracledb.pdb.open_mode")
+					validatedMetrics["oracledb.pdb.open_mode"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle PDB open mode (1=READ WRITE, 0=other)", ms.At(i).Description())
@@ -3000,9 +3000,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("open.mode")
 					assert.True(t, ok)
 					assert.Equal(t, "open.mode-val", attrVal.Str())
-				case "newrelicoracledb.pdb.parse_failure_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.parse_failure_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.parse_failure_count_per_second")
-					validatedMetrics["newrelicoracledb.pdb.parse_failure_count_per_second"] = true
+				case "oracledb.pdb.parse_failure_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.parse_failure_count_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.parse_failure_count_per_second")
+					validatedMetrics["oracledb.pdb.parse_failure_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Parse failure count per second in PDB", ms.At(i).Description())
@@ -3018,9 +3018,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.physical_read_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.physical_read_bytes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.physical_read_bytes_per_second"] = true
+				case "oracledb.pdb.physical_read_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.physical_read_bytes_per_second")
+					validatedMetrics["oracledb.pdb.physical_read_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical read total bytes per second in PDB", ms.At(i).Description())
@@ -3036,9 +3036,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.physical_reads_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.physical_reads_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.physical_reads_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.physical_reads_per_transaction"] = true
+				case "oracledb.pdb.physical_reads_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.physical_reads_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.physical_reads_per_transaction")
+					validatedMetrics["oracledb.pdb.physical_reads_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical reads per transaction in PDB", ms.At(i).Description())
@@ -3054,9 +3054,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.physical_write_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.physical_write_bytes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.physical_write_bytes_per_second"] = true
+				case "oracledb.pdb.physical_write_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.physical_write_bytes_per_second")
+					validatedMetrics["oracledb.pdb.physical_write_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical write total bytes per second in PDB", ms.At(i).Description())
@@ -3072,9 +3072,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.physical_writes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.physical_writes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.physical_writes_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.physical_writes_per_transaction"] = true
+				case "oracledb.pdb.physical_writes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.physical_writes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.physical_writes_per_transaction")
+					validatedMetrics["oracledb.pdb.physical_writes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical writes per transaction in PDB", ms.At(i).Description())
@@ -3090,9 +3090,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.redo_generated_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.redo_generated_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.redo_generated_bytes_per_second")
-					validatedMetrics["newrelicoracledb.pdb.redo_generated_bytes_per_second"] = true
+				case "oracledb.pdb.redo_generated_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.redo_generated_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.redo_generated_bytes_per_second")
+					validatedMetrics["oracledb.pdb.redo_generated_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo generated per second in bytes in PDB", ms.At(i).Description())
@@ -3108,9 +3108,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.redo_generated_bytes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.redo_generated_bytes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.redo_generated_bytes_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.redo_generated_bytes_per_transaction"] = true
+				case "oracledb.pdb.redo_generated_bytes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.redo_generated_bytes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.redo_generated_bytes_per_transaction")
+					validatedMetrics["oracledb.pdb.redo_generated_bytes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo generated per transaction in bytes in PDB", ms.At(i).Description())
@@ -3126,9 +3126,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.response_time_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.response_time_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.response_time_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.response_time_per_transaction"] = true
+				case "oracledb.pdb.response_time_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.response_time_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.response_time_per_transaction")
+					validatedMetrics["oracledb.pdb.response_time_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Response time per transaction in PDB", ms.At(i).Description())
@@ -3144,9 +3144,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.session_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.session_count"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.session_count")
-					validatedMetrics["newrelicoracledb.pdb.session_count"] = true
+				case "oracledb.pdb.session_count":
+					assert.False(t, validatedMetrics["oracledb.pdb.session_count"], "Found a duplicate in the metrics slice: oracledb.pdb.session_count")
+					validatedMetrics["oracledb.pdb.session_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Session count in PDB", ms.At(i).Description())
@@ -3162,9 +3162,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.soft_parse_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.soft_parse_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.soft_parse_ratio")
-					validatedMetrics["newrelicoracledb.pdb.soft_parse_ratio"] = true
+				case "oracledb.pdb.soft_parse_ratio":
+					assert.False(t, validatedMetrics["oracledb.pdb.soft_parse_ratio"], "Found a duplicate in the metrics slice: oracledb.pdb.soft_parse_ratio")
+					validatedMetrics["oracledb.pdb.soft_parse_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Soft parse ratio in PDB", ms.At(i).Description())
@@ -3180,9 +3180,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.sql_service_response_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.sql_service_response_time"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.sql_service_response_time")
-					validatedMetrics["newrelicoracledb.pdb.sql_service_response_time"] = true
+				case "oracledb.pdb.sql_service_response_time":
+					assert.False(t, validatedMetrics["oracledb.pdb.sql_service_response_time"], "Found a duplicate in the metrics slice: oracledb.pdb.sql_service_response_time")
+					validatedMetrics["oracledb.pdb.sql_service_response_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SQL service response time in PDB", ms.At(i).Description())
@@ -3198,9 +3198,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.total_parse_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.total_parse_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.total_parse_count_per_second")
-					validatedMetrics["newrelicoracledb.pdb.total_parse_count_per_second"] = true
+				case "oracledb.pdb.total_parse_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.total_parse_count_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.total_parse_count_per_second")
+					validatedMetrics["oracledb.pdb.total_parse_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total parse count per second in PDB", ms.At(i).Description())
@@ -3216,9 +3216,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.total_parse_count_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.total_parse_count_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.total_parse_count_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.total_parse_count_per_transaction"] = true
+				case "oracledb.pdb.total_parse_count_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.total_parse_count_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.total_parse_count_per_transaction")
+					validatedMetrics["oracledb.pdb.total_parse_count_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total parse count per transaction in PDB", ms.At(i).Description())
@@ -3234,9 +3234,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.total_size_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.total_size_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.total_size_bytes")
-					validatedMetrics["newrelicoracledb.pdb.total_size_bytes"] = true
+				case "oracledb.pdb.total_size_bytes":
+					assert.False(t, validatedMetrics["oracledb.pdb.total_size_bytes"], "Found a duplicate in the metrics slice: oracledb.pdb.total_size_bytes")
+					validatedMetrics["oracledb.pdb.total_size_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total size of PDB in bytes", ms.At(i).Description())
@@ -3252,9 +3252,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.transactions_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.transactions_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.transactions_per_second")
-					validatedMetrics["newrelicoracledb.pdb.transactions_per_second"] = true
+				case "oracledb.pdb.transactions_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.transactions_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.transactions_per_second")
+					validatedMetrics["oracledb.pdb.transactions_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User transactions per second in PDB", ms.At(i).Description())
@@ -3270,9 +3270,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_calls_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_calls_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_calls_per_second")
-					validatedMetrics["newrelicoracledb.pdb.user_calls_per_second"] = true
+				case "oracledb.pdb.user_calls_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_calls_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.user_calls_per_second")
+					validatedMetrics["oracledb.pdb.user_calls_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User calls per second in PDB", ms.At(i).Description())
@@ -3288,9 +3288,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_calls_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_calls_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_calls_per_transaction")
-					validatedMetrics["newrelicoracledb.pdb.user_calls_per_transaction"] = true
+				case "oracledb.pdb.user_calls_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_calls_per_transaction"], "Found a duplicate in the metrics slice: oracledb.pdb.user_calls_per_transaction")
+					validatedMetrics["oracledb.pdb.user_calls_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User calls per transaction in PDB", ms.At(i).Description())
@@ -3306,9 +3306,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_commits_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_commits_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_commits_per_second")
-					validatedMetrics["newrelicoracledb.pdb.user_commits_per_second"] = true
+				case "oracledb.pdb.user_commits_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_commits_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.user_commits_per_second")
+					validatedMetrics["oracledb.pdb.user_commits_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User commits per second in PDB", ms.At(i).Description())
@@ -3324,9 +3324,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_commits_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_commits_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_commits_percentage")
-					validatedMetrics["newrelicoracledb.pdb.user_commits_percentage"] = true
+				case "oracledb.pdb.user_commits_percentage":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_commits_percentage"], "Found a duplicate in the metrics slice: oracledb.pdb.user_commits_percentage")
+					validatedMetrics["oracledb.pdb.user_commits_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User commits percentage in PDB", ms.At(i).Description())
@@ -3342,9 +3342,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_rollbacks_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_rollbacks_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_rollbacks_per_second")
-					validatedMetrics["newrelicoracledb.pdb.user_rollbacks_per_second"] = true
+				case "oracledb.pdb.user_rollbacks_per_second":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_rollbacks_per_second"], "Found a duplicate in the metrics slice: oracledb.pdb.user_rollbacks_per_second")
+					validatedMetrics["oracledb.pdb.user_rollbacks_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User rollbacks per second in PDB", ms.At(i).Description())
@@ -3360,9 +3360,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.user_rollbacks_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.user_rollbacks_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.user_rollbacks_percentage")
-					validatedMetrics["newrelicoracledb.pdb.user_rollbacks_percentage"] = true
+				case "oracledb.pdb.user_rollbacks_percentage":
+					assert.False(t, validatedMetrics["oracledb.pdb.user_rollbacks_percentage"], "Found a duplicate in the metrics slice: oracledb.pdb.user_rollbacks_percentage")
+					validatedMetrics["oracledb.pdb.user_rollbacks_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User rollbacks percentage in PDB", ms.At(i).Description())
@@ -3378,9 +3378,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.pdb.wait_time_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.pdb.wait_time_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.pdb.wait_time_ratio")
-					validatedMetrics["newrelicoracledb.pdb.wait_time_ratio"] = true
+				case "oracledb.pdb.wait_time_ratio":
+					assert.False(t, validatedMetrics["oracledb.pdb.wait_time_ratio"], "Found a duplicate in the metrics slice: oracledb.pdb.wait_time_ratio")
+					validatedMetrics["oracledb.pdb.wait_time_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database wait time ratio in PDB", ms.At(i).Description())
@@ -3396,9 +3396,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database_name")
 					assert.True(t, ok)
 					assert.Equal(t, "database_name-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.active_state":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.active_state"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.active_state")
-					validatedMetrics["newrelicoracledb.rac.instance.active_state"] = true
+				case "oracledb.rac.instance.active_state":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.active_state"], "Found a duplicate in the metrics slice: oracledb.rac.instance.active_state")
+					validatedMetrics["oracledb.rac.instance.active_state"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Instance active state indicator (1=NORMAL, 0=other)", ms.At(i).Description())
@@ -3420,9 +3420,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("active.state")
 					assert.True(t, ok)
 					assert.Equal(t, "active.state-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.archiver_started":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.archiver_started"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.archiver_started")
-					validatedMetrics["newrelicoracledb.rac.instance.archiver_started"] = true
+				case "oracledb.rac.instance.archiver_started":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.archiver_started"], "Found a duplicate in the metrics slice: oracledb.rac.instance.archiver_started")
+					validatedMetrics["oracledb.rac.instance.archiver_started"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Archiver status indicator (1=STARTED, 0=STOPPED)", ms.At(i).Description())
@@ -3444,9 +3444,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("archiver.status")
 					assert.True(t, ok)
 					assert.Equal(t, "archiver.status-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.database_status":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.database_status"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.database_status")
-					validatedMetrics["newrelicoracledb.rac.instance.database_status"] = true
+				case "oracledb.rac.instance.database_status":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.database_status"], "Found a duplicate in the metrics slice: oracledb.rac.instance.database_status")
+					validatedMetrics["oracledb.rac.instance.database_status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database status indicator (1=ACTIVE, 0=other)", ms.At(i).Description())
@@ -3468,9 +3468,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("database.status")
 					assert.True(t, ok)
 					assert.Equal(t, "database.status-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.logins_allowed":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.logins_allowed"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.logins_allowed")
-					validatedMetrics["newrelicoracledb.rac.instance.logins_allowed"] = true
+				case "oracledb.rac.instance.logins_allowed":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.logins_allowed"], "Found a duplicate in the metrics slice: oracledb.rac.instance.logins_allowed")
+					validatedMetrics["oracledb.rac.instance.logins_allowed"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Instance login status indicator (1=ALLOWED, 0=RESTRICTED)", ms.At(i).Description())
@@ -3492,9 +3492,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("logins.status")
 					assert.True(t, ok)
 					assert.Equal(t, "logins.status-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.status":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.status"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.status")
-					validatedMetrics["newrelicoracledb.rac.instance.status"] = true
+				case "oracledb.rac.instance.status":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.status"], "Found a duplicate in the metrics slice: oracledb.rac.instance.status")
+					validatedMetrics["oracledb.rac.instance.status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "RAC instance status (1=OPEN, 0=other)", ms.At(i).Description())
@@ -3516,9 +3516,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("instance.status")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.status-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.uptime_seconds":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.uptime_seconds"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.uptime_seconds")
-					validatedMetrics["newrelicoracledb.rac.instance.uptime_seconds"] = true
+				case "oracledb.rac.instance.uptime_seconds":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.uptime_seconds"], "Found a duplicate in the metrics slice: oracledb.rac.instance.uptime_seconds")
+					validatedMetrics["oracledb.rac.instance.uptime_seconds"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Instance uptime in seconds since startup", ms.At(i).Description())
@@ -3537,9 +3537,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("host.name.rac")
 					assert.True(t, ok)
 					assert.Equal(t, "host.name.rac-val", attrVal.Str())
-				case "newrelicoracledb.rac.instance.version_info":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.instance.version_info"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.instance.version_info")
-					validatedMetrics["newrelicoracledb.rac.instance.version_info"] = true
+				case "oracledb.rac.instance.version_info":
+					assert.False(t, validatedMetrics["oracledb.rac.instance.version_info"], "Found a duplicate in the metrics slice: oracledb.rac.instance.version_info")
+					validatedMetrics["oracledb.rac.instance.version_info"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle database version information (always 1, version in attributes)", ms.At(i).Description())
@@ -3558,9 +3558,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("oracle.version")
 					assert.True(t, ok)
 					assert.Equal(t, "oracle.version-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.blocked_status":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.blocked_status"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.blocked_status")
-					validatedMetrics["newrelicoracledb.rac.service.blocked_status"] = true
+				case "oracledb.rac.service.blocked_status":
+					assert.False(t, validatedMetrics["oracledb.rac.service.blocked_status"], "Found a duplicate in the metrics slice: oracledb.rac.service.blocked_status")
+					validatedMetrics["oracledb.rac.service.blocked_status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Service blocked indicator (1=blocked, 0=not blocked)", ms.At(i).Description())
@@ -3573,9 +3573,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.blocked")
 					assert.True(t, ok)
 					assert.Equal(t, "service.blocked-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.clb_config":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.clb_config"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.clb_config")
-					validatedMetrics["newrelicoracledb.rac.service.clb_config"] = true
+				case "oracledb.rac.service.clb_config":
+					assert.False(t, validatedMetrics["oracledb.rac.service.clb_config"], "Found a duplicate in the metrics slice: oracledb.rac.service.clb_config")
+					validatedMetrics["oracledb.rac.service.clb_config"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Connection load balancing configuration (always 1, config in attributes)", ms.At(i).Description())
@@ -3588,9 +3588,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("clb.goal")
 					assert.True(t, ok)
 					assert.Equal(t, "clb.goal-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.drain_timeout_seconds":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.drain_timeout_seconds"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.drain_timeout_seconds")
-					validatedMetrics["newrelicoracledb.rac.service.drain_timeout_seconds"] = true
+				case "oracledb.rac.service.drain_timeout_seconds":
+					assert.False(t, validatedMetrics["oracledb.rac.service.drain_timeout_seconds"], "Found a duplicate in the metrics slice: oracledb.rac.service.drain_timeout_seconds")
+					validatedMetrics["oracledb.rac.service.drain_timeout_seconds"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Session drain timeout in seconds before service stop", ms.At(i).Description())
@@ -3603,9 +3603,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.drain_timeout")
 					assert.True(t, ok)
 					assert.Equal(t, "service.drain_timeout-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.fan_enabled":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.fan_enabled"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.fan_enabled")
-					validatedMetrics["newrelicoracledb.rac.service.fan_enabled"] = true
+				case "oracledb.rac.service.fan_enabled":
+					assert.False(t, validatedMetrics["oracledb.rac.service.fan_enabled"], "Found a duplicate in the metrics slice: oracledb.rac.service.fan_enabled")
+					validatedMetrics["oracledb.rac.service.fan_enabled"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Fast Application Notification (FAN) enabled indicator (1=enabled, 0=disabled)", ms.At(i).Description())
@@ -3618,9 +3618,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.fan_enabled")
 					assert.True(t, ok)
 					assert.Equal(t, "service.fan_enabled-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.goal_config":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.goal_config"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.goal_config")
-					validatedMetrics["newrelicoracledb.rac.service.goal_config"] = true
+				case "oracledb.rac.service.goal_config":
+					assert.False(t, validatedMetrics["oracledb.rac.service.goal_config"], "Found a duplicate in the metrics slice: oracledb.rac.service.goal_config")
+					validatedMetrics["oracledb.rac.service.goal_config"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Service goal configuration (always 1, goal in attributes)", ms.At(i).Description())
@@ -3633,9 +3633,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.goal")
 					assert.True(t, ok)
 					assert.Equal(t, "service.goal-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.instance_id":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.instance_id"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.instance_id")
-					validatedMetrics["newrelicoracledb.rac.service.instance_id"] = true
+				case "oracledb.rac.service.instance_id":
+					assert.False(t, validatedMetrics["oracledb.rac.service.instance_id"], "Found a duplicate in the metrics slice: oracledb.rac.service.instance_id")
+					validatedMetrics["oracledb.rac.service.instance_id"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Instance ID where the service is currently running", ms.At(i).Description())
@@ -3648,9 +3648,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.network_config":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.network_config"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.network_config")
-					validatedMetrics["newrelicoracledb.rac.service.network_config"] = true
+				case "oracledb.rac.service.network_config":
+					assert.False(t, validatedMetrics["oracledb.rac.service.network_config"], "Found a duplicate in the metrics slice: oracledb.rac.service.network_config")
+					validatedMetrics["oracledb.rac.service.network_config"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Service network configuration (always 1, config in attributes)", ms.At(i).Description())
@@ -3663,9 +3663,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("network.name")
 					assert.True(t, ok)
 					assert.Equal(t, "network.name-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.replay_timeout_seconds":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.replay_timeout_seconds"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.replay_timeout_seconds")
-					validatedMetrics["newrelicoracledb.rac.service.replay_timeout_seconds"] = true
+				case "oracledb.rac.service.replay_timeout_seconds":
+					assert.False(t, validatedMetrics["oracledb.rac.service.replay_timeout_seconds"], "Found a duplicate in the metrics slice: oracledb.rac.service.replay_timeout_seconds")
+					validatedMetrics["oracledb.rac.service.replay_timeout_seconds"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Application Continuity replay initiation timeout in seconds", ms.At(i).Description())
@@ -3678,9 +3678,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.replay_timeout")
 					assert.True(t, ok)
 					assert.Equal(t, "service.replay_timeout-val", attrVal.Str())
-				case "newrelicoracledb.rac.service.transaction_guard_enabled":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.service.transaction_guard_enabled"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.service.transaction_guard_enabled")
-					validatedMetrics["newrelicoracledb.rac.service.transaction_guard_enabled"] = true
+				case "oracledb.rac.service.transaction_guard_enabled":
+					assert.False(t, validatedMetrics["oracledb.rac.service.transaction_guard_enabled"], "Found a duplicate in the metrics slice: oracledb.rac.service.transaction_guard_enabled")
+					validatedMetrics["oracledb.rac.service.transaction_guard_enabled"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Transaction Guard enabled indicator (1=enabled, 0=disabled)", ms.At(i).Description())
@@ -3693,9 +3693,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("service.transaction_guard")
 					assert.True(t, ok)
 					assert.Equal(t, "service.transaction_guard-val", attrVal.Str())
-				case "newrelicoracledb.rac.total_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.total_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.total_waits")
-					validatedMetrics["newrelicoracledb.rac.total_waits"] = true
+				case "oracledb.rac.total_waits":
+					assert.False(t, validatedMetrics["oracledb.rac.total_waits"], "Found a duplicate in the metrics slice: oracledb.rac.total_waits")
+					validatedMetrics["oracledb.rac.total_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total number of cluster wait events", ms.At(i).Description())
@@ -3711,9 +3711,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("wait.event")
 					assert.True(t, ok)
 					assert.Equal(t, "wait.event-val", attrVal.Str())
-				case "newrelicoracledb.rac.wait_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.rac.wait_time"], "Found a duplicate in the metrics slice: newrelicoracledb.rac.wait_time")
-					validatedMetrics["newrelicoracledb.rac.wait_time"] = true
+				case "oracledb.rac.wait_time":
+					assert.False(t, validatedMetrics["oracledb.rac.wait_time"], "Found a duplicate in the metrics slice: oracledb.rac.wait_time")
+					validatedMetrics["oracledb.rac.wait_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Rate of cluster wait time in microseconds per second", ms.At(i).Description())
@@ -3729,9 +3729,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("wait.event")
 					assert.True(t, ok)
 					assert.Equal(t, "wait.event-val", attrVal.Str())
-				case "newrelicoracledb.redo_log_parallel_write_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.redo_log_parallel_write_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.redo_log_parallel_write_waits")
-					validatedMetrics["newrelicoracledb.redo_log_parallel_write_waits"] = true
+				case "oracledb.redo_log_parallel_write_waits":
+					assert.False(t, validatedMetrics["oracledb.redo_log_parallel_write_waits"], "Found a duplicate in the metrics slice: oracledb.redo_log_parallel_write_waits")
+					validatedMetrics["oracledb.redo_log_parallel_write_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of waits for log file parallel write events", ms.At(i).Description())
@@ -3744,9 +3744,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.redo_log_switch_archiving_needed_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.redo_log_switch_archiving_needed_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.redo_log_switch_archiving_needed_waits")
-					validatedMetrics["newrelicoracledb.redo_log_switch_archiving_needed_waits"] = true
+				case "oracledb.redo_log_switch_archiving_needed_waits":
+					assert.False(t, validatedMetrics["oracledb.redo_log_switch_archiving_needed_waits"], "Found a duplicate in the metrics slice: oracledb.redo_log_switch_archiving_needed_waits")
+					validatedMetrics["oracledb.redo_log_switch_archiving_needed_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of waits for log file switch (archiving needed) events", ms.At(i).Description())
@@ -3759,9 +3759,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits")
-					validatedMetrics["newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits"] = true
+				case "oracledb.redo_log_switch_checkpoint_incomplete_waits":
+					assert.False(t, validatedMetrics["oracledb.redo_log_switch_checkpoint_incomplete_waits"], "Found a duplicate in the metrics slice: oracledb.redo_log_switch_checkpoint_incomplete_waits")
+					validatedMetrics["oracledb.redo_log_switch_checkpoint_incomplete_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of waits for log file switch (checkpoint incomplete) events", ms.At(i).Description())
@@ -3774,9 +3774,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.redo_log_switch_completion_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.redo_log_switch_completion_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.redo_log_switch_completion_waits")
-					validatedMetrics["newrelicoracledb.redo_log_switch_completion_waits"] = true
+				case "oracledb.redo_log_switch_completion_waits":
+					assert.False(t, validatedMetrics["oracledb.redo_log_switch_completion_waits"], "Found a duplicate in the metrics slice: oracledb.redo_log_switch_completion_waits")
+					validatedMetrics["oracledb.redo_log_switch_completion_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of waits for log file switch completion events", ms.At(i).Description())
@@ -3789,9 +3789,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.rollback_segments_gets":
-					assert.False(t, validatedMetrics["newrelicoracledb.rollback_segments_gets"], "Found a duplicate in the metrics slice: newrelicoracledb.rollback_segments_gets")
-					validatedMetrics["newrelicoracledb.rollback_segments_gets"] = true
+				case "oracledb.rollback_segments_gets":
+					assert.False(t, validatedMetrics["oracledb.rollback_segments_gets"], "Found a duplicate in the metrics slice: oracledb.rollback_segments_gets")
+					validatedMetrics["oracledb.rollback_segments_gets"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of gets on rollback segments", ms.At(i).Description())
@@ -3804,9 +3804,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.rollback_segments_wait_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.rollback_segments_wait_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.rollback_segments_wait_ratio")
-					validatedMetrics["newrelicoracledb.rollback_segments_wait_ratio"] = true
+				case "oracledb.rollback_segments_wait_ratio":
+					assert.False(t, validatedMetrics["oracledb.rollback_segments_wait_ratio"], "Found a duplicate in the metrics slice: oracledb.rollback_segments_wait_ratio")
+					validatedMetrics["oracledb.rollback_segments_wait_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Rollback segments wait ratio (waits/gets)", ms.At(i).Description())
@@ -3819,9 +3819,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.rollback_segments_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.rollback_segments_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.rollback_segments_waits")
-					validatedMetrics["newrelicoracledb.rollback_segments_waits"] = true
+				case "oracledb.rollback_segments_waits":
+					assert.False(t, validatedMetrics["oracledb.rollback_segments_waits"], "Found a duplicate in the metrics slice: oracledb.rollback_segments_waits")
+					validatedMetrics["oracledb.rollback_segments_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of waits on rollback segments", ms.At(i).Description())
@@ -3834,9 +3834,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.service.count":
-					assert.False(t, validatedMetrics["newrelicoracledb.service.count"], "Found a duplicate in the metrics slice: newrelicoracledb.service.count")
-					validatedMetrics["newrelicoracledb.service.count"] = true
+				case "oracledb.service.count":
+					assert.False(t, validatedMetrics["oracledb.service.count"], "Found a duplicate in the metrics slice: oracledb.service.count")
+					validatedMetrics["oracledb.service.count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Count of services per container", ms.At(i).Description())
@@ -3849,9 +3849,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("con.id")
 					assert.True(t, ok)
 					assert.Equal(t, "con.id-val", attrVal.Str())
-				case "newrelicoracledb.service.status":
-					assert.False(t, validatedMetrics["newrelicoracledb.service.status"], "Found a duplicate in the metrics slice: newrelicoracledb.service.status")
-					validatedMetrics["newrelicoracledb.service.status"] = true
+				case "oracledb.service.status":
+					assert.False(t, validatedMetrics["oracledb.service.status"], "Found a duplicate in the metrics slice: oracledb.service.status")
+					validatedMetrics["oracledb.service.status"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Oracle service status (1=active, 0=inactive)", ms.At(i).Description())
@@ -3864,9 +3864,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("con.id")
 					assert.True(t, ok)
 					assert.Equal(t, "con.id-val", attrVal.Str())
-				case "newrelicoracledb.sessions.count":
-					assert.False(t, validatedMetrics["newrelicoracledb.sessions.count"], "Found a duplicate in the metrics slice: newrelicoracledb.sessions.count")
-					validatedMetrics["newrelicoracledb.sessions.count"] = true
+				case "oracledb.sessions.count":
+					assert.False(t, validatedMetrics["oracledb.sessions.count"], "Found a duplicate in the metrics slice: oracledb.sessions.count")
+					validatedMetrics["oracledb.sessions.count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total number of active Oracle database sessions", ms.At(i).Description())
@@ -3876,9 +3876,9 @@ func TestMetricsBuilder(t *testing.T) {
 					assert.Equal(t, ts, dp.Timestamp())
 					assert.Equal(t, pmetric.NumberDataPointValueTypeInt, dp.ValueType())
 					assert.Equal(t, int64(1), dp.IntValue())
-				case "newrelicoracledb.sga_buffer_busy_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_buffer_busy_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_buffer_busy_waits")
-					validatedMetrics["newrelicoracledb.sga_buffer_busy_waits"] = true
+				case "oracledb.sga_buffer_busy_waits":
+					assert.False(t, validatedMetrics["oracledb.sga_buffer_busy_waits"], "Found a duplicate in the metrics slice: oracledb.sga_buffer_busy_waits")
+					validatedMetrics["oracledb.sga_buffer_busy_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of buffer busy waits events", ms.At(i).Description())
@@ -3891,9 +3891,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_fixed_size_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_fixed_size_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_fixed_size_bytes")
-					validatedMetrics["newrelicoracledb.sga_fixed_size_bytes"] = true
+				case "oracledb.sga_fixed_size_bytes":
+					assert.False(t, validatedMetrics["oracledb.sga_fixed_size_bytes"], "Found a duplicate in the metrics slice: oracledb.sga_fixed_size_bytes")
+					validatedMetrics["oracledb.sga_fixed_size_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA fixed size memory in bytes", ms.At(i).Description())
@@ -3906,9 +3906,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_free_buffer_inspected_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_free_buffer_inspected_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_free_buffer_inspected_waits")
-					validatedMetrics["newrelicoracledb.sga_free_buffer_inspected_waits"] = true
+				case "oracledb.sga_free_buffer_inspected_waits":
+					assert.False(t, validatedMetrics["oracledb.sga_free_buffer_inspected_waits"], "Found a duplicate in the metrics slice: oracledb.sga_free_buffer_inspected_waits")
+					validatedMetrics["oracledb.sga_free_buffer_inspected_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of free buffer inspected waits events", ms.At(i).Description())
@@ -3921,9 +3921,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_free_buffer_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_free_buffer_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_free_buffer_waits")
-					validatedMetrics["newrelicoracledb.sga_free_buffer_waits"] = true
+				case "oracledb.sga_free_buffer_waits":
+					assert.False(t, validatedMetrics["oracledb.sga_free_buffer_waits"], "Found a duplicate in the metrics slice: oracledb.sga_free_buffer_waits")
+					validatedMetrics["oracledb.sga_free_buffer_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of free buffer waits events", ms.At(i).Description())
@@ -3936,9 +3936,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_hit_ratio")
-					validatedMetrics["newrelicoracledb.sga_hit_ratio"] = true
+				case "oracledb.sga_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.sga_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.sga_hit_ratio")
+					validatedMetrics["oracledb.sga_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA hit ratio (session logical reads minus physical reads / session logical reads)", ms.At(i).Description())
@@ -3951,9 +3951,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_log_allocation_retries_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_log_allocation_retries_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_log_allocation_retries_ratio")
-					validatedMetrics["newrelicoracledb.sga_log_allocation_retries_ratio"] = true
+				case "oracledb.sga_log_allocation_retries_ratio":
+					assert.False(t, validatedMetrics["oracledb.sga_log_allocation_retries_ratio"], "Found a duplicate in the metrics slice: oracledb.sga_log_allocation_retries_ratio")
+					validatedMetrics["oracledb.sga_log_allocation_retries_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA log allocation retries ratio (redo buffer allocation retries / redo entries)", ms.At(i).Description())
@@ -3966,9 +3966,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_log_buffer_redo_allocation_retries":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_log_buffer_redo_allocation_retries"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_log_buffer_redo_allocation_retries")
-					validatedMetrics["newrelicoracledb.sga_log_buffer_redo_allocation_retries"] = true
+				case "oracledb.sga_log_buffer_redo_allocation_retries":
+					assert.False(t, validatedMetrics["oracledb.sga_log_buffer_redo_allocation_retries"], "Found a duplicate in the metrics slice: oracledb.sga_log_buffer_redo_allocation_retries")
+					validatedMetrics["oracledb.sga_log_buffer_redo_allocation_retries"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of redo buffer allocation retries from sysstat", ms.At(i).Description())
@@ -3981,9 +3981,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_log_buffer_redo_entries":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_log_buffer_redo_entries"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_log_buffer_redo_entries")
-					validatedMetrics["newrelicoracledb.sga_log_buffer_redo_entries"] = true
+				case "oracledb.sga_log_buffer_redo_entries":
+					assert.False(t, validatedMetrics["oracledb.sga_log_buffer_redo_entries"], "Found a duplicate in the metrics slice: oracledb.sga_log_buffer_redo_entries")
+					validatedMetrics["oracledb.sga_log_buffer_redo_entries"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of redo entries from sysstat", ms.At(i).Description())
@@ -3996,9 +3996,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_log_buffer_space_waits":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_log_buffer_space_waits"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_log_buffer_space_waits")
-					validatedMetrics["newrelicoracledb.sga_log_buffer_space_waits"] = true
+				case "oracledb.sga_log_buffer_space_waits":
+					assert.False(t, validatedMetrics["oracledb.sga_log_buffer_space_waits"], "Found a duplicate in the metrics slice: oracledb.sga_log_buffer_space_waits")
+					validatedMetrics["oracledb.sga_log_buffer_space_waits"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of sessions waiting for log buffer space", ms.At(i).Description())
@@ -4011,9 +4011,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_redo_buffers_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_redo_buffers_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_redo_buffers_bytes")
-					validatedMetrics["newrelicoracledb.sga_redo_buffers_bytes"] = true
+				case "oracledb.sga_redo_buffers_bytes":
+					assert.False(t, validatedMetrics["oracledb.sga_redo_buffers_bytes"], "Found a duplicate in the metrics slice: oracledb.sga_redo_buffers_bytes")
+					validatedMetrics["oracledb.sga_redo_buffers_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA redo buffers memory in bytes", ms.At(i).Description())
@@ -4026,9 +4026,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio")
-					validatedMetrics["newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio"] = true
+				case "oracledb.sga_shared_pool_dict_cache_miss_ratio":
+					assert.False(t, validatedMetrics["oracledb.sga_shared_pool_dict_cache_miss_ratio"], "Found a duplicate in the metrics slice: oracledb.sga_shared_pool_dict_cache_miss_ratio")
+					validatedMetrics["oracledb.sga_shared_pool_dict_cache_miss_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA shared pool dictionary cache miss ratio (getmisses/gets)", ms.At(i).Description())
@@ -4041,9 +4041,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_shared_pool_library_cache_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_shared_pool_library_cache_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_shared_pool_library_cache_hit_ratio")
-					validatedMetrics["newrelicoracledb.sga_shared_pool_library_cache_hit_ratio"] = true
+				case "oracledb.sga_shared_pool_library_cache_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.sga_shared_pool_library_cache_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.sga_shared_pool_library_cache_hit_ratio")
+					validatedMetrics["oracledb.sga_shared_pool_library_cache_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA shared pool library cache hit ratio for SQL AREA namespace", ms.At(i).Description())
@@ -4056,9 +4056,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sga_shared_pool_library_cache_reload_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.sga_shared_pool_library_cache_reload_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.sga_shared_pool_library_cache_reload_ratio")
-					validatedMetrics["newrelicoracledb.sga_shared_pool_library_cache_reload_ratio"] = true
+				case "oracledb.sga_shared_pool_library_cache_reload_ratio":
+					assert.False(t, validatedMetrics["oracledb.sga_shared_pool_library_cache_reload_ratio"], "Found a duplicate in the metrics slice: oracledb.sga_shared_pool_library_cache_reload_ratio")
+					validatedMetrics["oracledb.sga_shared_pool_library_cache_reload_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SGA shared pool library cache reload ratio (reloads/pins)", ms.At(i).Description())
@@ -4071,9 +4071,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.execution_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.execution_count"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.execution_count")
-					validatedMetrics["newrelicoracledb.slow_queries.execution_count"] = true
+				case "oracledb.slow_queries.execution_count":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.execution_count"], "Found a duplicate in the metrics slice: oracledb.slow_queries.execution_count")
+					validatedMetrics["oracledb.slow_queries.execution_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of executions for slow queries", ms.At(i).Description())
@@ -4101,9 +4101,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_buffer_gets":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_buffer_gets"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_buffer_gets")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_buffer_gets"] = true
+				case "oracledb.slow_queries.interval_avg_buffer_gets":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_buffer_gets"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_buffer_gets")
+					validatedMetrics["oracledb.slow_queries.interval_avg_buffer_gets"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average buffer gets (logical reads) per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4131,9 +4131,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_cpu_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_cpu_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_cpu_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_cpu_time"] = true
+				case "oracledb.slow_queries.interval_avg_cpu_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_cpu_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_cpu_time")
+					validatedMetrics["oracledb.slow_queries.interval_avg_cpu_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average CPU time per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4161,9 +4161,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_disk_reads":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_disk_reads"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_disk_reads")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_disk_reads"] = true
+				case "oracledb.slow_queries.interval_avg_disk_reads":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_disk_reads"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_disk_reads")
+					validatedMetrics["oracledb.slow_queries.interval_avg_disk_reads"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average disk reads per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4191,9 +4191,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_disk_writes":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_disk_writes"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_disk_writes")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_disk_writes"] = true
+				case "oracledb.slow_queries.interval_avg_disk_writes":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_disk_writes"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_disk_writes")
+					validatedMetrics["oracledb.slow_queries.interval_avg_disk_writes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average direct writes per execution in the last polling interval - writes bypassing buffer cache (delta metric)", ms.At(i).Description())
@@ -4221,9 +4221,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_elapsed_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_elapsed_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_elapsed_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_elapsed_time"] = true
+				case "oracledb.slow_queries.interval_avg_elapsed_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_elapsed_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_elapsed_time")
+					validatedMetrics["oracledb.slow_queries.interval_avg_elapsed_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average elapsed time per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4251,9 +4251,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_rows_processed":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_rows_processed"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_rows_processed")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_rows_processed"] = true
+				case "oracledb.slow_queries.interval_avg_rows_processed":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_rows_processed"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_rows_processed")
+					validatedMetrics["oracledb.slow_queries.interval_avg_rows_processed"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average rows processed (returned) per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4281,9 +4281,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_avg_wait_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_avg_wait_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_avg_wait_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_avg_wait_time"] = true
+				case "oracledb.slow_queries.interval_avg_wait_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_avg_wait_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_avg_wait_time")
+					validatedMetrics["oracledb.slow_queries.interval_avg_wait_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average wait time per execution in the last polling interval (delta metric)", ms.At(i).Description())
@@ -4311,9 +4311,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_buffer_gets":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_buffer_gets"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_buffer_gets")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_buffer_gets"] = true
+				case "oracledb.slow_queries.interval_buffer_gets":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_buffer_gets"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_buffer_gets")
+					validatedMetrics["oracledb.slow_queries.interval_buffer_gets"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total buffer gets (logical reads) in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4341,9 +4341,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_cpu_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_cpu_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_cpu_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_cpu_time"] = true
+				case "oracledb.slow_queries.interval_cpu_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_cpu_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_cpu_time")
+					validatedMetrics["oracledb.slow_queries.interval_cpu_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total CPU time in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4371,9 +4371,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_disk_reads":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_disk_reads"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_disk_reads")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_disk_reads"] = true
+				case "oracledb.slow_queries.interval_disk_reads":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_disk_reads"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_disk_reads")
+					validatedMetrics["oracledb.slow_queries.interval_disk_reads"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total disk reads in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4401,9 +4401,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_disk_writes":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_disk_writes"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_disk_writes")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_disk_writes"] = true
+				case "oracledb.slow_queries.interval_disk_writes":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_disk_writes"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_disk_writes")
+					validatedMetrics["oracledb.slow_queries.interval_disk_writes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total direct writes in the last polling interval - writes bypassing buffer cache (delta metric, not averaged)", ms.At(i).Description())
@@ -4431,9 +4431,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_elapsed_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_elapsed_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_elapsed_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_elapsed_time"] = true
+				case "oracledb.slow_queries.interval_elapsed_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_elapsed_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_elapsed_time")
+					validatedMetrics["oracledb.slow_queries.interval_elapsed_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total elapsed time in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4461,9 +4461,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_execution_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_execution_count"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_execution_count")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_execution_count"] = true
+				case "oracledb.slow_queries.interval_execution_count":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_execution_count"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_execution_count")
+					validatedMetrics["oracledb.slow_queries.interval_execution_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of new executions since last scrape (delta metric). On first scrape or after cache reset, represents all executions since plan cache load.", ms.At(i).Description())
@@ -4491,9 +4491,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_rows_processed":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_rows_processed"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_rows_processed")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_rows_processed"] = true
+				case "oracledb.slow_queries.interval_rows_processed":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_rows_processed"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_rows_processed")
+					validatedMetrics["oracledb.slow_queries.interval_rows_processed"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total rows processed (returned) in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4521,9 +4521,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.interval_wait_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.interval_wait_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.interval_wait_time")
-					validatedMetrics["newrelicoracledb.slow_queries.interval_wait_time"] = true
+				case "oracledb.slow_queries.interval_wait_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.interval_wait_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.interval_wait_time")
+					validatedMetrics["oracledb.slow_queries.interval_wait_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total wait time in the last polling interval (delta metric, not averaged)", ms.At(i).Description())
@@ -4551,9 +4551,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.query_details":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.query_details"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.query_details")
-					validatedMetrics["newrelicoracledb.slow_queries.query_details"] = true
+				case "oracledb.slow_queries.query_details":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.query_details"], "Found a duplicate in the metrics slice: oracledb.slow_queries.query_details")
+					validatedMetrics["oracledb.slow_queries.query_details"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Slow Query Details", ms.At(i).Description())
@@ -4599,9 +4599,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_blocking_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_blocking_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_cpu_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_cpu_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_cpu_time")
-					validatedMetrics["newrelicoracledb.slow_queries.total_cpu_time"] = true
+				case "oracledb.slow_queries.total_cpu_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_cpu_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_cpu_time")
+					validatedMetrics["oracledb.slow_queries.total_cpu_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative CPU time for slow queries (raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4629,9 +4629,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_disk_reads":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_disk_reads"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_disk_reads")
-					validatedMetrics["newrelicoracledb.slow_queries.total_disk_reads"] = true
+				case "oracledb.slow_queries.total_disk_reads":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_disk_reads"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_disk_reads")
+					validatedMetrics["oracledb.slow_queries.total_disk_reads"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative disk reads for slow queries (raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4659,9 +4659,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_disk_writes":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_disk_writes"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_disk_writes")
-					validatedMetrics["newrelicoracledb.slow_queries.total_disk_writes"] = true
+				case "oracledb.slow_queries.total_disk_writes":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_disk_writes"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_disk_writes")
+					validatedMetrics["oracledb.slow_queries.total_disk_writes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative direct writes for slow queries - writes bypassing buffer cache (raw value from V$SQLAREA DIRECT_WRITES)", ms.At(i).Description())
@@ -4689,9 +4689,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_elapsed_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_elapsed_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_elapsed_time")
-					validatedMetrics["newrelicoracledb.slow_queries.total_elapsed_time"] = true
+				case "oracledb.slow_queries.total_elapsed_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_elapsed_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_elapsed_time")
+					validatedMetrics["oracledb.slow_queries.total_elapsed_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative elapsed time for slow queries (raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4719,9 +4719,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_rows_examined":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_rows_examined"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_rows_examined")
-					validatedMetrics["newrelicoracledb.slow_queries.total_rows_examined"] = true
+				case "oracledb.slow_queries.total_rows_examined":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_rows_examined"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_rows_examined")
+					validatedMetrics["oracledb.slow_queries.total_rows_examined"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative rows examined for slow queries (buffer gets/logical reads, raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4749,9 +4749,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_rows_returned":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_rows_returned"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_rows_returned")
-					validatedMetrics["newrelicoracledb.slow_queries.total_rows_returned"] = true
+				case "oracledb.slow_queries.total_rows_returned":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_rows_returned"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_rows_returned")
+					validatedMetrics["oracledb.slow_queries.total_rows_returned"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative rows returned for slow queries (rows processed, raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4779,9 +4779,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.slow_queries.total_wait_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.slow_queries.total_wait_time"], "Found a duplicate in the metrics slice: newrelicoracledb.slow_queries.total_wait_time")
-					validatedMetrics["newrelicoracledb.slow_queries.total_wait_time"] = true
+				case "oracledb.slow_queries.total_wait_time":
+					assert.False(t, validatedMetrics["oracledb.slow_queries.total_wait_time"], "Found a duplicate in the metrics slice: oracledb.slow_queries.total_wait_time")
+					validatedMetrics["oracledb.slow_queries.total_wait_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total cumulative wait time for slow queries (elapsed_time - cpu_time, raw value from V$SQLAREA)", ms.At(i).Description())
@@ -4809,9 +4809,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("nr_service_guid")
 					assert.True(t, ok)
 					assert.Equal(t, "nr_service_guid-val", attrVal.Str())
-				case "newrelicoracledb.sorts_disk":
-					assert.False(t, validatedMetrics["newrelicoracledb.sorts_disk"], "Found a duplicate in the metrics slice: newrelicoracledb.sorts_disk")
-					validatedMetrics["newrelicoracledb.sorts_disk"] = true
+				case "oracledb.sorts_disk":
+					assert.False(t, validatedMetrics["oracledb.sorts_disk"], "Found a duplicate in the metrics slice: oracledb.sorts_disk")
+					validatedMetrics["oracledb.sorts_disk"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of sorts performed on disk from sysstat", ms.At(i).Description())
@@ -4824,9 +4824,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.sorts_memory":
-					assert.False(t, validatedMetrics["newrelicoracledb.sorts_memory"], "Found a duplicate in the metrics slice: newrelicoracledb.sorts_memory")
-					validatedMetrics["newrelicoracledb.sorts_memory"] = true
+				case "oracledb.sorts_memory":
+					assert.False(t, validatedMetrics["oracledb.sorts_memory"], "Found a duplicate in the metrics slice: oracledb.sorts_memory")
+					validatedMetrics["oracledb.sorts_memory"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Number of sorts performed in memory from sysstat", ms.At(i).Description())
@@ -4839,9 +4839,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.active_parallel_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.active_parallel_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.system.active_parallel_sessions")
-					validatedMetrics["newrelicoracledb.system.active_parallel_sessions"] = true
+				case "oracledb.system.active_parallel_sessions":
+					assert.False(t, validatedMetrics["oracledb.system.active_parallel_sessions"], "Found a duplicate in the metrics slice: oracledb.system.active_parallel_sessions")
+					validatedMetrics["oracledb.system.active_parallel_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Active Parallel Sessions", ms.At(i).Description())
@@ -4854,9 +4854,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.active_serial_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.active_serial_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.system.active_serial_sessions")
-					validatedMetrics["newrelicoracledb.system.active_serial_sessions"] = true
+				case "oracledb.system.active_serial_sessions":
+					assert.False(t, validatedMetrics["oracledb.system.active_serial_sessions"], "Found a duplicate in the metrics slice: oracledb.system.active_serial_sessions")
+					validatedMetrics["oracledb.system.active_serial_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Active Serial Sessions", ms.At(i).Description())
@@ -4869,9 +4869,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.average_active_sessions":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.average_active_sessions"], "Found a duplicate in the metrics slice: newrelicoracledb.system.average_active_sessions")
-					validatedMetrics["newrelicoracledb.system.average_active_sessions"] = true
+				case "oracledb.system.average_active_sessions":
+					assert.False(t, validatedMetrics["oracledb.system.average_active_sessions"], "Found a duplicate in the metrics slice: oracledb.system.average_active_sessions")
+					validatedMetrics["oracledb.system.average_active_sessions"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Average Active Sessions", ms.At(i).Description())
@@ -4884,9 +4884,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.background_checkpoints_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.background_checkpoints_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.background_checkpoints_per_second")
-					validatedMetrics["newrelicoracledb.system.background_checkpoints_per_second"] = true
+				case "oracledb.system.background_checkpoints_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.background_checkpoints_per_second"], "Found a duplicate in the metrics slice: oracledb.system.background_checkpoints_per_second")
+					validatedMetrics["oracledb.system.background_checkpoints_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Background Checkpoints Per Sec", ms.At(i).Description())
@@ -4899,9 +4899,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.background_cpu_usage_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.background_cpu_usage_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.background_cpu_usage_per_second")
-					validatedMetrics["newrelicoracledb.system.background_cpu_usage_per_second"] = true
+				case "oracledb.system.background_cpu_usage_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.background_cpu_usage_per_second"], "Found a duplicate in the metrics slice: oracledb.system.background_cpu_usage_per_second")
+					validatedMetrics["oracledb.system.background_cpu_usage_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Background CPU Usage Per Sec", ms.At(i).Description())
@@ -4914,9 +4914,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.background_time_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.background_time_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.background_time_per_second")
-					validatedMetrics["newrelicoracledb.system.background_time_per_second"] = true
+				case "oracledb.system.background_time_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.background_time_per_second"], "Found a duplicate in the metrics slice: oracledb.system.background_time_per_second")
+					validatedMetrics["oracledb.system.background_time_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Background Time Per Sec", ms.At(i).Description())
@@ -4929,9 +4929,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.branch_node_splits_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.branch_node_splits_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.branch_node_splits_per_second")
-					validatedMetrics["newrelicoracledb.system.branch_node_splits_per_second"] = true
+				case "oracledb.system.branch_node_splits_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.branch_node_splits_per_second"], "Found a duplicate in the metrics slice: oracledb.system.branch_node_splits_per_second")
+					validatedMetrics["oracledb.system.branch_node_splits_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Branch Node Splits Per Sec", ms.At(i).Description())
@@ -4944,9 +4944,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.branch_node_splits_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.branch_node_splits_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.branch_node_splits_per_transaction")
-					validatedMetrics["newrelicoracledb.system.branch_node_splits_per_transaction"] = true
+				case "oracledb.system.branch_node_splits_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.branch_node_splits_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.branch_node_splits_per_transaction")
+					validatedMetrics["oracledb.system.branch_node_splits_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Branch Node Splits Per Txn", ms.At(i).Description())
@@ -4959,9 +4959,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.buffer_cache_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.buffer_cache_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.buffer_cache_hit_ratio")
-					validatedMetrics["newrelicoracledb.system.buffer_cache_hit_ratio"] = true
+				case "oracledb.system.buffer_cache_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.buffer_cache_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.system.buffer_cache_hit_ratio")
+					validatedMetrics["oracledb.system.buffer_cache_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Buffer Cache Hit Ratio", ms.At(i).Description())
@@ -4974,9 +4974,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.captured_user_calls":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.captured_user_calls"], "Found a duplicate in the metrics slice: newrelicoracledb.system.captured_user_calls")
-					validatedMetrics["newrelicoracledb.system.captured_user_calls"] = true
+				case "oracledb.system.captured_user_calls":
+					assert.False(t, validatedMetrics["oracledb.system.captured_user_calls"], "Found a duplicate in the metrics slice: oracledb.system.captured_user_calls")
+					validatedMetrics["oracledb.system.captured_user_calls"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Captured user calls", ms.At(i).Description())
@@ -4989,9 +4989,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.consistent_read_changes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.consistent_read_changes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.consistent_read_changes_per_second")
-					validatedMetrics["newrelicoracledb.system.consistent_read_changes_per_second"] = true
+				case "oracledb.system.consistent_read_changes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.consistent_read_changes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.consistent_read_changes_per_second")
+					validatedMetrics["oracledb.system.consistent_read_changes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Consistent Read Changes Per Sec", ms.At(i).Description())
@@ -5004,9 +5004,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.consistent_read_changes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.consistent_read_changes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.consistent_read_changes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.consistent_read_changes_per_transaction"] = true
+				case "oracledb.system.consistent_read_changes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.consistent_read_changes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.consistent_read_changes_per_transaction")
+					validatedMetrics["oracledb.system.consistent_read_changes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Consistent Read Changes Per Txn", ms.At(i).Description())
@@ -5019,9 +5019,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.consistent_read_gets_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.consistent_read_gets_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.consistent_read_gets_per_second")
-					validatedMetrics["newrelicoracledb.system.consistent_read_gets_per_second"] = true
+				case "oracledb.system.consistent_read_gets_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.consistent_read_gets_per_second"], "Found a duplicate in the metrics slice: oracledb.system.consistent_read_gets_per_second")
+					validatedMetrics["oracledb.system.consistent_read_gets_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Consistent Read Gets Per Sec", ms.At(i).Description())
@@ -5034,9 +5034,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.consistent_read_gets_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.consistent_read_gets_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.consistent_read_gets_per_transaction")
-					validatedMetrics["newrelicoracledb.system.consistent_read_gets_per_transaction"] = true
+				case "oracledb.system.consistent_read_gets_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.consistent_read_gets_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.consistent_read_gets_per_transaction")
+					validatedMetrics["oracledb.system.consistent_read_gets_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Consistent Read Gets Per Txn", ms.At(i).Description())
@@ -5049,9 +5049,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cpu_usage_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cpu_usage_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cpu_usage_per_second")
-					validatedMetrics["newrelicoracledb.system.cpu_usage_per_second"] = true
+				case "oracledb.system.cpu_usage_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.cpu_usage_per_second"], "Found a duplicate in the metrics slice: oracledb.system.cpu_usage_per_second")
+					validatedMetrics["oracledb.system.cpu_usage_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CPU Usage Per Sec", ms.At(i).Description())
@@ -5064,9 +5064,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cpu_usage_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cpu_usage_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cpu_usage_per_transaction")
-					validatedMetrics["newrelicoracledb.system.cpu_usage_per_transaction"] = true
+				case "oracledb.system.cpu_usage_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.cpu_usage_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.cpu_usage_per_transaction")
+					validatedMetrics["oracledb.system.cpu_usage_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CPU Usage Per Txn", ms.At(i).Description())
@@ -5079,9 +5079,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cr_blocks_created_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cr_blocks_created_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cr_blocks_created_per_second")
-					validatedMetrics["newrelicoracledb.system.cr_blocks_created_per_second"] = true
+				case "oracledb.system.cr_blocks_created_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.cr_blocks_created_per_second"], "Found a duplicate in the metrics slice: oracledb.system.cr_blocks_created_per_second")
+					validatedMetrics["oracledb.system.cr_blocks_created_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CR Blocks Created Per Sec", ms.At(i).Description())
@@ -5094,9 +5094,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cr_blocks_created_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cr_blocks_created_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cr_blocks_created_per_transaction")
-					validatedMetrics["newrelicoracledb.system.cr_blocks_created_per_transaction"] = true
+				case "oracledb.system.cr_blocks_created_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.cr_blocks_created_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.cr_blocks_created_per_transaction")
+					validatedMetrics["oracledb.system.cr_blocks_created_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CR Blocks Created Per Txn", ms.At(i).Description())
@@ -5109,9 +5109,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cr_undo_records_applied_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cr_undo_records_applied_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cr_undo_records_applied_per_second")
-					validatedMetrics["newrelicoracledb.system.cr_undo_records_applied_per_second"] = true
+				case "oracledb.system.cr_undo_records_applied_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.cr_undo_records_applied_per_second"], "Found a duplicate in the metrics slice: oracledb.system.cr_undo_records_applied_per_second")
+					validatedMetrics["oracledb.system.cr_undo_records_applied_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CR Undo Records Applied Per Sec", ms.At(i).Description())
@@ -5124,9 +5124,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cr_undo_records_applied_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cr_undo_records_applied_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cr_undo_records_applied_per_transaction")
-					validatedMetrics["newrelicoracledb.system.cr_undo_records_applied_per_transaction"] = true
+				case "oracledb.system.cr_undo_records_applied_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.cr_undo_records_applied_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.cr_undo_records_applied_per_transaction")
+					validatedMetrics["oracledb.system.cr_undo_records_applied_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "CR Undo Records Applied Per Txn", ms.At(i).Description())
@@ -5139,9 +5139,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.current_logons_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.current_logons_count"], "Found a duplicate in the metrics slice: newrelicoracledb.system.current_logons_count")
-					validatedMetrics["newrelicoracledb.system.current_logons_count"] = true
+				case "oracledb.system.current_logons_count":
+					assert.False(t, validatedMetrics["oracledb.system.current_logons_count"], "Found a duplicate in the metrics slice: oracledb.system.current_logons_count")
+					validatedMetrics["oracledb.system.current_logons_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current Logons Count", ms.At(i).Description())
@@ -5154,9 +5154,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.current_open_cursors_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.current_open_cursors_count"], "Found a duplicate in the metrics slice: newrelicoracledb.system.current_open_cursors_count")
-					validatedMetrics["newrelicoracledb.system.current_open_cursors_count"] = true
+				case "oracledb.system.current_open_cursors_count":
+					assert.False(t, validatedMetrics["oracledb.system.current_open_cursors_count"], "Found a duplicate in the metrics slice: oracledb.system.current_open_cursors_count")
+					validatedMetrics["oracledb.system.current_open_cursors_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current Open Cursors Count", ms.At(i).Description())
@@ -5169,9 +5169,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.current_os_load":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.current_os_load"], "Found a duplicate in the metrics slice: newrelicoracledb.system.current_os_load")
-					validatedMetrics["newrelicoracledb.system.current_os_load"] = true
+				case "oracledb.system.current_os_load":
+					assert.False(t, validatedMetrics["oracledb.system.current_os_load"], "Found a duplicate in the metrics slice: oracledb.system.current_os_load")
+					validatedMetrics["oracledb.system.current_os_load"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current OS Load", ms.At(i).Description())
@@ -5184,9 +5184,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.cursor_cache_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.cursor_cache_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.cursor_cache_hit_ratio")
-					validatedMetrics["newrelicoracledb.system.cursor_cache_hit_ratio"] = true
+				case "oracledb.system.cursor_cache_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.cursor_cache_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.system.cursor_cache_hit_ratio")
+					validatedMetrics["oracledb.system.cursor_cache_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Cursor Cache Hit Ratio", ms.At(i).Description())
@@ -5199,9 +5199,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.database_cpu_time_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.database_cpu_time_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.database_cpu_time_ratio")
-					validatedMetrics["newrelicoracledb.system.database_cpu_time_ratio"] = true
+				case "oracledb.system.database_cpu_time_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.database_cpu_time_ratio"], "Found a duplicate in the metrics slice: oracledb.system.database_cpu_time_ratio")
+					validatedMetrics["oracledb.system.database_cpu_time_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database CPU Time Ratio", ms.At(i).Description())
@@ -5214,9 +5214,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.database_time_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.database_time_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.database_time_per_second")
-					validatedMetrics["newrelicoracledb.system.database_time_per_second"] = true
+				case "oracledb.system.database_time_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.database_time_per_second"], "Found a duplicate in the metrics slice: oracledb.system.database_time_per_second")
+					validatedMetrics["oracledb.system.database_time_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database Time Per Sec", ms.At(i).Description())
@@ -5229,9 +5229,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.database_wait_time_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.database_wait_time_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.database_wait_time_ratio")
-					validatedMetrics["newrelicoracledb.system.database_wait_time_ratio"] = true
+				case "oracledb.system.database_wait_time_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.database_wait_time_ratio"], "Found a duplicate in the metrics slice: oracledb.system.database_wait_time_ratio")
+					validatedMetrics["oracledb.system.database_wait_time_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database Wait Time Ratio", ms.At(i).Description())
@@ -5244,9 +5244,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_changes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_changes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_changes_per_second")
-					validatedMetrics["newrelicoracledb.system.db_block_changes_per_second"] = true
+				case "oracledb.system.db_block_changes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_changes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.db_block_changes_per_second")
+					validatedMetrics["oracledb.system.db_block_changes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Changes Per Sec", ms.At(i).Description())
@@ -5259,9 +5259,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_changes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_changes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_changes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.db_block_changes_per_transaction"] = true
+				case "oracledb.system.db_block_changes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_changes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.db_block_changes_per_transaction")
+					validatedMetrics["oracledb.system.db_block_changes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Changes Per Txn", ms.At(i).Description())
@@ -5274,9 +5274,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_changes_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_changes_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_changes_per_user_call")
-					validatedMetrics["newrelicoracledb.system.db_block_changes_per_user_call"] = true
+				case "oracledb.system.db_block_changes_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_changes_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.db_block_changes_per_user_call")
+					validatedMetrics["oracledb.system.db_block_changes_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Changes Per User Call", ms.At(i).Description())
@@ -5289,9 +5289,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_gets_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_gets_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_gets_per_second")
-					validatedMetrics["newrelicoracledb.system.db_block_gets_per_second"] = true
+				case "oracledb.system.db_block_gets_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_gets_per_second"], "Found a duplicate in the metrics slice: oracledb.system.db_block_gets_per_second")
+					validatedMetrics["oracledb.system.db_block_gets_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Gets Per Sec", ms.At(i).Description())
@@ -5304,9 +5304,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_gets_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_gets_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_gets_per_transaction")
-					validatedMetrics["newrelicoracledb.system.db_block_gets_per_transaction"] = true
+				case "oracledb.system.db_block_gets_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_gets_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.db_block_gets_per_transaction")
+					validatedMetrics["oracledb.system.db_block_gets_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Gets Per Txn", ms.At(i).Description())
@@ -5319,9 +5319,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.db_block_gets_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.db_block_gets_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.db_block_gets_per_user_call")
-					validatedMetrics["newrelicoracledb.system.db_block_gets_per_user_call"] = true
+				case "oracledb.system.db_block_gets_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.db_block_gets_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.db_block_gets_per_user_call")
+					validatedMetrics["oracledb.system.db_block_gets_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DB Block Gets Per User Call", ms.At(i).Description())
@@ -5334,9 +5334,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.dbwr_checkpoints_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.dbwr_checkpoints_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.dbwr_checkpoints_per_second")
-					validatedMetrics["newrelicoracledb.system.dbwr_checkpoints_per_second"] = true
+				case "oracledb.system.dbwr_checkpoints_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.dbwr_checkpoints_per_second"], "Found a duplicate in the metrics slice: oracledb.system.dbwr_checkpoints_per_second")
+					validatedMetrics["oracledb.system.dbwr_checkpoints_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "DBWR Checkpoints Per Sec", ms.At(i).Description())
@@ -5349,9 +5349,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.disk_sort_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.disk_sort_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.disk_sort_per_second")
-					validatedMetrics["newrelicoracledb.system.disk_sort_per_second"] = true
+				case "oracledb.system.disk_sort_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.disk_sort_per_second"], "Found a duplicate in the metrics slice: oracledb.system.disk_sort_per_second")
+					validatedMetrics["oracledb.system.disk_sort_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Disk Sort Per Sec", ms.At(i).Description())
@@ -5364,9 +5364,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.disk_sort_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.disk_sort_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.disk_sort_per_transaction")
-					validatedMetrics["newrelicoracledb.system.disk_sort_per_transaction"] = true
+				case "oracledb.system.disk_sort_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.disk_sort_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.disk_sort_per_transaction")
+					validatedMetrics["oracledb.system.disk_sort_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Disk Sort Per Txn", ms.At(i).Description())
@@ -5379,9 +5379,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_deadlocks_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_deadlocks_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_deadlocks_per_second")
-					validatedMetrics["newrelicoracledb.system.enqueue_deadlocks_per_second"] = true
+				case "oracledb.system.enqueue_deadlocks_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_deadlocks_per_second"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_deadlocks_per_second")
+					validatedMetrics["oracledb.system.enqueue_deadlocks_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Deadlocks Per Sec", ms.At(i).Description())
@@ -5394,9 +5394,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_deadlocks_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_deadlocks_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_deadlocks_per_transaction")
-					validatedMetrics["newrelicoracledb.system.enqueue_deadlocks_per_transaction"] = true
+				case "oracledb.system.enqueue_deadlocks_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_deadlocks_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_deadlocks_per_transaction")
+					validatedMetrics["oracledb.system.enqueue_deadlocks_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Deadlocks Per Txn", ms.At(i).Description())
@@ -5409,9 +5409,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.enqueue_requests_per_second"] = true
+				case "oracledb.system.enqueue_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_requests_per_second")
+					validatedMetrics["oracledb.system.enqueue_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Requests Per Sec", ms.At(i).Description())
@@ -5424,9 +5424,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_requests_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_requests_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_requests_per_transaction")
-					validatedMetrics["newrelicoracledb.system.enqueue_requests_per_transaction"] = true
+				case "oracledb.system.enqueue_requests_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_requests_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_requests_per_transaction")
+					validatedMetrics["oracledb.system.enqueue_requests_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Requests Per Txn", ms.At(i).Description())
@@ -5439,9 +5439,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_timeouts_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_timeouts_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_timeouts_per_second")
-					validatedMetrics["newrelicoracledb.system.enqueue_timeouts_per_second"] = true
+				case "oracledb.system.enqueue_timeouts_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_timeouts_per_second"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_timeouts_per_second")
+					validatedMetrics["oracledb.system.enqueue_timeouts_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Timeouts Per Sec", ms.At(i).Description())
@@ -5454,9 +5454,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_timeouts_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_timeouts_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_timeouts_per_transaction")
-					validatedMetrics["newrelicoracledb.system.enqueue_timeouts_per_transaction"] = true
+				case "oracledb.system.enqueue_timeouts_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_timeouts_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_timeouts_per_transaction")
+					validatedMetrics["oracledb.system.enqueue_timeouts_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Timeouts Per Txn", ms.At(i).Description())
@@ -5469,9 +5469,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_waits_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_waits_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_waits_per_second")
-					validatedMetrics["newrelicoracledb.system.enqueue_waits_per_second"] = true
+				case "oracledb.system.enqueue_waits_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_waits_per_second"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_waits_per_second")
+					validatedMetrics["oracledb.system.enqueue_waits_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Waits Per Sec", ms.At(i).Description())
@@ -5484,9 +5484,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.enqueue_waits_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.enqueue_waits_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.enqueue_waits_per_transaction")
-					validatedMetrics["newrelicoracledb.system.enqueue_waits_per_transaction"] = true
+				case "oracledb.system.enqueue_waits_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.enqueue_waits_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.enqueue_waits_per_transaction")
+					validatedMetrics["oracledb.system.enqueue_waits_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Enqueue Waits Per Txn", ms.At(i).Description())
@@ -5499,9 +5499,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.execute_without_parse_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.execute_without_parse_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.execute_without_parse_ratio")
-					validatedMetrics["newrelicoracledb.system.execute_without_parse_ratio"] = true
+				case "oracledb.system.execute_without_parse_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.execute_without_parse_ratio"], "Found a duplicate in the metrics slice: oracledb.system.execute_without_parse_ratio")
+					validatedMetrics["oracledb.system.execute_without_parse_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Execute Without Parse Ratio", ms.At(i).Description())
@@ -5514,9 +5514,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.executions_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.executions_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.executions_per_second")
-					validatedMetrics["newrelicoracledb.system.executions_per_second"] = true
+				case "oracledb.system.executions_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.executions_per_second"], "Found a duplicate in the metrics slice: oracledb.system.executions_per_second")
+					validatedMetrics["oracledb.system.executions_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Executions Per Sec", ms.At(i).Description())
@@ -5529,9 +5529,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.executions_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.executions_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.executions_per_transaction")
-					validatedMetrics["newrelicoracledb.system.executions_per_transaction"] = true
+				case "oracledb.system.executions_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.executions_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.executions_per_transaction")
+					validatedMetrics["oracledb.system.executions_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Executions Per Txn", ms.At(i).Description())
@@ -5544,9 +5544,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.executions_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.executions_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.executions_per_user_call")
-					validatedMetrics["newrelicoracledb.system.executions_per_user_call"] = true
+				case "oracledb.system.executions_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.executions_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.executions_per_user_call")
+					validatedMetrics["oracledb.system.executions_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Executions Per User Call", ms.At(i).Description())
@@ -5559,9 +5559,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.full_index_scans_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.full_index_scans_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.full_index_scans_per_second")
-					validatedMetrics["newrelicoracledb.system.full_index_scans_per_second"] = true
+				case "oracledb.system.full_index_scans_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.full_index_scans_per_second"], "Found a duplicate in the metrics slice: oracledb.system.full_index_scans_per_second")
+					validatedMetrics["oracledb.system.full_index_scans_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Full Index Scans Per Sec", ms.At(i).Description())
@@ -5574,9 +5574,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.full_index_scans_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.full_index_scans_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.full_index_scans_per_transaction")
-					validatedMetrics["newrelicoracledb.system.full_index_scans_per_transaction"] = true
+				case "oracledb.system.full_index_scans_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.full_index_scans_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.full_index_scans_per_transaction")
+					validatedMetrics["oracledb.system.full_index_scans_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Full Index Scans Per Txn", ms.At(i).Description())
@@ -5589,9 +5589,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.gc_cr_block_received_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.gc_cr_block_received_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.gc_cr_block_received_per_second")
-					validatedMetrics["newrelicoracledb.system.gc_cr_block_received_per_second"] = true
+				case "oracledb.system.gc_cr_block_received_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.gc_cr_block_received_per_second"], "Found a duplicate in the metrics slice: oracledb.system.gc_cr_block_received_per_second")
+					validatedMetrics["oracledb.system.gc_cr_block_received_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "GC CR Block Received Per Second", ms.At(i).Description())
@@ -5604,9 +5604,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.gc_cr_block_received_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.gc_cr_block_received_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.gc_cr_block_received_per_transaction")
-					validatedMetrics["newrelicoracledb.system.gc_cr_block_received_per_transaction"] = true
+				case "oracledb.system.gc_cr_block_received_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.gc_cr_block_received_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.gc_cr_block_received_per_transaction")
+					validatedMetrics["oracledb.system.gc_cr_block_received_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "GC CR Block Received Per Txn", ms.At(i).Description())
@@ -5619,9 +5619,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.gc_current_block_received_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.gc_current_block_received_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.gc_current_block_received_per_second")
-					validatedMetrics["newrelicoracledb.system.gc_current_block_received_per_second"] = true
+				case "oracledb.system.gc_current_block_received_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.gc_current_block_received_per_second"], "Found a duplicate in the metrics slice: oracledb.system.gc_current_block_received_per_second")
+					validatedMetrics["oracledb.system.gc_current_block_received_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "GC Current Block Received Per Second", ms.At(i).Description())
@@ -5634,9 +5634,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.gc_current_block_received_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.gc_current_block_received_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.gc_current_block_received_per_transaction")
-					validatedMetrics["newrelicoracledb.system.gc_current_block_received_per_transaction"] = true
+				case "oracledb.system.gc_current_block_received_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.gc_current_block_received_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.gc_current_block_received_per_transaction")
+					validatedMetrics["oracledb.system.gc_current_block_received_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "GC Current Block Received Per Txn", ms.At(i).Description())
@@ -5649,9 +5649,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.global_cache_average_cr_get_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.global_cache_average_cr_get_time"], "Found a duplicate in the metrics slice: newrelicoracledb.system.global_cache_average_cr_get_time")
-					validatedMetrics["newrelicoracledb.system.global_cache_average_cr_get_time"] = true
+				case "oracledb.system.global_cache_average_cr_get_time":
+					assert.False(t, validatedMetrics["oracledb.system.global_cache_average_cr_get_time"], "Found a duplicate in the metrics slice: oracledb.system.global_cache_average_cr_get_time")
+					validatedMetrics["oracledb.system.global_cache_average_cr_get_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global Cache Average CR Get Time", ms.At(i).Description())
@@ -5664,9 +5664,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.global_cache_average_current_get_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.global_cache_average_current_get_time"], "Found a duplicate in the metrics slice: newrelicoracledb.system.global_cache_average_current_get_time")
-					validatedMetrics["newrelicoracledb.system.global_cache_average_current_get_time"] = true
+				case "oracledb.system.global_cache_average_current_get_time":
+					assert.False(t, validatedMetrics["oracledb.system.global_cache_average_current_get_time"], "Found a duplicate in the metrics slice: oracledb.system.global_cache_average_current_get_time")
+					validatedMetrics["oracledb.system.global_cache_average_current_get_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global Cache Average Current Get Time", ms.At(i).Description())
@@ -5679,9 +5679,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.global_cache_blocks_corrupted":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.global_cache_blocks_corrupted"], "Found a duplicate in the metrics slice: newrelicoracledb.system.global_cache_blocks_corrupted")
-					validatedMetrics["newrelicoracledb.system.global_cache_blocks_corrupted"] = true
+				case "oracledb.system.global_cache_blocks_corrupted":
+					assert.False(t, validatedMetrics["oracledb.system.global_cache_blocks_corrupted"], "Found a duplicate in the metrics slice: oracledb.system.global_cache_blocks_corrupted")
+					validatedMetrics["oracledb.system.global_cache_blocks_corrupted"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global Cache Blocks Corrupted", ms.At(i).Description())
@@ -5694,9 +5694,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.global_cache_blocks_lost":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.global_cache_blocks_lost"], "Found a duplicate in the metrics slice: newrelicoracledb.system.global_cache_blocks_lost")
-					validatedMetrics["newrelicoracledb.system.global_cache_blocks_lost"] = true
+				case "oracledb.system.global_cache_blocks_lost":
+					assert.False(t, validatedMetrics["oracledb.system.global_cache_blocks_lost"], "Found a duplicate in the metrics slice: oracledb.system.global_cache_blocks_lost")
+					validatedMetrics["oracledb.system.global_cache_blocks_lost"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global Cache Blocks Lost", ms.At(i).Description())
@@ -5709,9 +5709,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.hard_parse_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.hard_parse_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.hard_parse_count_per_second")
-					validatedMetrics["newrelicoracledb.system.hard_parse_count_per_second"] = true
+				case "oracledb.system.hard_parse_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.hard_parse_count_per_second"], "Found a duplicate in the metrics slice: oracledb.system.hard_parse_count_per_second")
+					validatedMetrics["oracledb.system.hard_parse_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Hard Parse Count Per Sec", ms.At(i).Description())
@@ -5724,9 +5724,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.hard_parse_count_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.hard_parse_count_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.hard_parse_count_per_transaction")
-					validatedMetrics["newrelicoracledb.system.hard_parse_count_per_transaction"] = true
+				case "oracledb.system.hard_parse_count_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.hard_parse_count_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.hard_parse_count_per_transaction")
+					validatedMetrics["oracledb.system.hard_parse_count_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Hard Parse Count Per Txn", ms.At(i).Description())
@@ -5739,9 +5739,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.host_cpu_usage_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.host_cpu_usage_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.host_cpu_usage_per_second")
-					validatedMetrics["newrelicoracledb.system.host_cpu_usage_per_second"] = true
+				case "oracledb.system.host_cpu_usage_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.host_cpu_usage_per_second"], "Found a duplicate in the metrics slice: oracledb.system.host_cpu_usage_per_second")
+					validatedMetrics["oracledb.system.host_cpu_usage_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Host CPU Usage Per Sec", ms.At(i).Description())
@@ -5754,9 +5754,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.host_cpu_utilization":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.host_cpu_utilization"], "Found a duplicate in the metrics slice: newrelicoracledb.system.host_cpu_utilization")
-					validatedMetrics["newrelicoracledb.system.host_cpu_utilization"] = true
+				case "oracledb.system.host_cpu_utilization":
+					assert.False(t, validatedMetrics["oracledb.system.host_cpu_utilization"], "Found a duplicate in the metrics slice: oracledb.system.host_cpu_utilization")
+					validatedMetrics["oracledb.system.host_cpu_utilization"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Host CPU Utilization (%)", ms.At(i).Description())
@@ -5769,9 +5769,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.io_megabytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.io_megabytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.io_megabytes_per_second")
-					validatedMetrics["newrelicoracledb.system.io_megabytes_per_second"] = true
+				case "oracledb.system.io_megabytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.io_megabytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.io_megabytes_per_second")
+					validatedMetrics["oracledb.system.io_megabytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "I/O Megabytes per Second", ms.At(i).Description())
@@ -5784,9 +5784,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.io_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.io_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.io_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.io_requests_per_second"] = true
+				case "oracledb.system.io_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.io_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.io_requests_per_second")
+					validatedMetrics["oracledb.system.io_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "I/O Requests per Second", ms.At(i).Description())
@@ -5799,9 +5799,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.leaf_node_splits_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.leaf_node_splits_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.leaf_node_splits_per_second")
-					validatedMetrics["newrelicoracledb.system.leaf_node_splits_per_second"] = true
+				case "oracledb.system.leaf_node_splits_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.leaf_node_splits_per_second"], "Found a duplicate in the metrics slice: oracledb.system.leaf_node_splits_per_second")
+					validatedMetrics["oracledb.system.leaf_node_splits_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Leaf Node Splits Per Sec", ms.At(i).Description())
@@ -5814,9 +5814,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.leaf_node_splits_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.leaf_node_splits_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.leaf_node_splits_per_transaction")
-					validatedMetrics["newrelicoracledb.system.leaf_node_splits_per_transaction"] = true
+				case "oracledb.system.leaf_node_splits_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.leaf_node_splits_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.leaf_node_splits_per_transaction")
+					validatedMetrics["oracledb.system.leaf_node_splits_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Leaf Node Splits Per Txn", ms.At(i).Description())
@@ -5829,9 +5829,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.library_cache_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.library_cache_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.library_cache_hit_ratio")
-					validatedMetrics["newrelicoracledb.system.library_cache_hit_ratio"] = true
+				case "oracledb.system.library_cache_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.library_cache_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.system.library_cache_hit_ratio")
+					validatedMetrics["oracledb.system.library_cache_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Library Cache Hit Ratio", ms.At(i).Description())
@@ -5844,9 +5844,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.library_cache_miss_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.library_cache_miss_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.library_cache_miss_ratio")
-					validatedMetrics["newrelicoracledb.system.library_cache_miss_ratio"] = true
+				case "oracledb.system.library_cache_miss_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.library_cache_miss_ratio"], "Found a duplicate in the metrics slice: oracledb.system.library_cache_miss_ratio")
+					validatedMetrics["oracledb.system.library_cache_miss_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Library Cache Miss Ratio", ms.At(i).Description())
@@ -5859,9 +5859,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.logical_reads_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.logical_reads_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.logical_reads_per_second")
-					validatedMetrics["newrelicoracledb.system.logical_reads_per_second"] = true
+				case "oracledb.system.logical_reads_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.logical_reads_per_second"], "Found a duplicate in the metrics slice: oracledb.system.logical_reads_per_second")
+					validatedMetrics["oracledb.system.logical_reads_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logical Reads Per Sec", ms.At(i).Description())
@@ -5874,9 +5874,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.logical_reads_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.logical_reads_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.logical_reads_per_transaction")
-					validatedMetrics["newrelicoracledb.system.logical_reads_per_transaction"] = true
+				case "oracledb.system.logical_reads_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.logical_reads_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.logical_reads_per_transaction")
+					validatedMetrics["oracledb.system.logical_reads_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logical Reads Per Txn", ms.At(i).Description())
@@ -5889,9 +5889,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.logical_reads_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.logical_reads_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.logical_reads_per_user_call")
-					validatedMetrics["newrelicoracledb.system.logical_reads_per_user_call"] = true
+				case "oracledb.system.logical_reads_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.logical_reads_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.logical_reads_per_user_call")
+					validatedMetrics["oracledb.system.logical_reads_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logical Reads Per User Call", ms.At(i).Description())
@@ -5904,9 +5904,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.logons_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.logons_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.logons_per_second")
-					validatedMetrics["newrelicoracledb.system.logons_per_second"] = true
+				case "oracledb.system.logons_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.logons_per_second"], "Found a duplicate in the metrics slice: oracledb.system.logons_per_second")
+					validatedMetrics["oracledb.system.logons_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logons Per Sec", ms.At(i).Description())
@@ -5919,9 +5919,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.logons_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.logons_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.logons_per_transaction")
-					validatedMetrics["newrelicoracledb.system.logons_per_transaction"] = true
+				case "oracledb.system.logons_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.logons_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.logons_per_transaction")
+					validatedMetrics["oracledb.system.logons_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Logons Per Txn", ms.At(i).Description())
@@ -5934,9 +5934,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.long_table_scans_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.long_table_scans_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.long_table_scans_per_second")
-					validatedMetrics["newrelicoracledb.system.long_table_scans_per_second"] = true
+				case "oracledb.system.long_table_scans_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.long_table_scans_per_second"], "Found a duplicate in the metrics slice: oracledb.system.long_table_scans_per_second")
+					validatedMetrics["oracledb.system.long_table_scans_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Long Table Scans Per Sec", ms.At(i).Description())
@@ -5949,9 +5949,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.long_table_scans_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.long_table_scans_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.long_table_scans_per_transaction")
-					validatedMetrics["newrelicoracledb.system.long_table_scans_per_transaction"] = true
+				case "oracledb.system.long_table_scans_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.long_table_scans_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.long_table_scans_per_transaction")
+					validatedMetrics["oracledb.system.long_table_scans_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Long Table Scans Per Txn", ms.At(i).Description())
@@ -5964,9 +5964,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.memory_sorts_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.memory_sorts_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.memory_sorts_ratio")
-					validatedMetrics["newrelicoracledb.system.memory_sorts_ratio"] = true
+				case "oracledb.system.memory_sorts_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.memory_sorts_ratio"], "Found a duplicate in the metrics slice: oracledb.system.memory_sorts_ratio")
+					validatedMetrics["oracledb.system.memory_sorts_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Memory Sorts Ratio", ms.At(i).Description())
@@ -5979,9 +5979,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.network_traffic_volume_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.network_traffic_volume_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.network_traffic_volume_per_second")
-					validatedMetrics["newrelicoracledb.system.network_traffic_volume_per_second"] = true
+				case "oracledb.system.network_traffic_volume_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.network_traffic_volume_per_second"], "Found a duplicate in the metrics slice: oracledb.system.network_traffic_volume_per_second")
+					validatedMetrics["oracledb.system.network_traffic_volume_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Network Traffic Volume Per Sec", ms.At(i).Description())
@@ -5994,9 +5994,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.open_cursors_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.open_cursors_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.open_cursors_per_second")
-					validatedMetrics["newrelicoracledb.system.open_cursors_per_second"] = true
+				case "oracledb.system.open_cursors_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.open_cursors_per_second"], "Found a duplicate in the metrics slice: oracledb.system.open_cursors_per_second")
+					validatedMetrics["oracledb.system.open_cursors_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Open Cursors Per Sec", ms.At(i).Description())
@@ -6009,9 +6009,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.open_cursors_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.open_cursors_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.open_cursors_per_transaction")
-					validatedMetrics["newrelicoracledb.system.open_cursors_per_transaction"] = true
+				case "oracledb.system.open_cursors_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.open_cursors_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.open_cursors_per_transaction")
+					validatedMetrics["oracledb.system.open_cursors_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Open Cursors Per Txn", ms.At(i).Description())
@@ -6024,9 +6024,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.parse_failure_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.parse_failure_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.parse_failure_count_per_second")
-					validatedMetrics["newrelicoracledb.system.parse_failure_count_per_second"] = true
+				case "oracledb.system.parse_failure_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.parse_failure_count_per_second"], "Found a duplicate in the metrics slice: oracledb.system.parse_failure_count_per_second")
+					validatedMetrics["oracledb.system.parse_failure_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Parse Failure Count Per Sec", ms.At(i).Description())
@@ -6039,9 +6039,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.parse_failure_count_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.parse_failure_count_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.parse_failure_count_per_transaction")
-					validatedMetrics["newrelicoracledb.system.parse_failure_count_per_transaction"] = true
+				case "oracledb.system.parse_failure_count_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.parse_failure_count_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.parse_failure_count_per_transaction")
+					validatedMetrics["oracledb.system.parse_failure_count_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Parse Failure Count Per Txn", ms.At(i).Description())
@@ -6054,9 +6054,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.pga_cache_hit_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.pga_cache_hit_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.pga_cache_hit_percentage")
-					validatedMetrics["newrelicoracledb.system.pga_cache_hit_percentage"] = true
+				case "oracledb.system.pga_cache_hit_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.pga_cache_hit_percentage"], "Found a duplicate in the metrics slice: oracledb.system.pga_cache_hit_percentage")
+					validatedMetrics["oracledb.system.pga_cache_hit_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "PGA Cache Hit %", ms.At(i).Description())
@@ -6069,9 +6069,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_lobs_reads_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_lobs_reads_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_lobs_reads_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_lobs_reads_per_second"] = true
+				case "oracledb.system.physical_lobs_reads_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_lobs_reads_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_lobs_reads_per_second")
+					validatedMetrics["oracledb.system.physical_lobs_reads_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Direct Lobs Per Sec", ms.At(i).Description())
@@ -6084,9 +6084,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_lobs_reads_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_lobs_reads_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_lobs_reads_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_lobs_reads_per_transaction"] = true
+				case "oracledb.system.physical_lobs_reads_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_lobs_reads_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_lobs_reads_per_transaction")
+					validatedMetrics["oracledb.system.physical_lobs_reads_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Direct Lobs Per Txn", ms.At(i).Description())
@@ -6099,9 +6099,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_lobs_writes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_lobs_writes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_lobs_writes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_lobs_writes_per_second"] = true
+				case "oracledb.system.physical_lobs_writes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_lobs_writes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_lobs_writes_per_second")
+					validatedMetrics["oracledb.system.physical_lobs_writes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Direct Lobs Per Sec", ms.At(i).Description())
@@ -6114,9 +6114,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_lobs_writes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_lobs_writes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_lobs_writes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_lobs_writes_per_transaction"] = true
+				case "oracledb.system.physical_lobs_writes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_lobs_writes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_lobs_writes_per_transaction")
+					validatedMetrics["oracledb.system.physical_lobs_writes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Direct Lobs Per Txn", ms.At(i).Description())
@@ -6129,9 +6129,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_read_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_read_bytes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_read_bytes_per_second"] = true
+				case "oracledb.system.physical_read_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_read_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_read_bytes_per_second")
+					validatedMetrics["oracledb.system.physical_read_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Read Bytes Per Sec", ms.At(i).Description())
@@ -6144,9 +6144,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_read_io_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_read_io_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_read_io_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_read_io_requests_per_second"] = true
+				case "oracledb.system.physical_read_io_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_read_io_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_read_io_requests_per_second")
+					validatedMetrics["oracledb.system.physical_read_io_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Read IO Requests Per Sec", ms.At(i).Description())
@@ -6159,9 +6159,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_read_total_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_read_total_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_read_total_bytes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_read_total_bytes_per_second"] = true
+				case "oracledb.system.physical_read_total_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_read_total_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_read_total_bytes_per_second")
+					validatedMetrics["oracledb.system.physical_read_total_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Read Total Bytes Per Sec", ms.At(i).Description())
@@ -6174,9 +6174,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_read_total_io_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_read_total_io_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_read_total_io_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_read_total_io_requests_per_second"] = true
+				case "oracledb.system.physical_read_total_io_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_read_total_io_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_read_total_io_requests_per_second")
+					validatedMetrics["oracledb.system.physical_read_total_io_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Read Total IO Requests Per Sec", ms.At(i).Description())
@@ -6189,9 +6189,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_reads_direct_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_reads_direct_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_reads_direct_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_reads_direct_per_second"] = true
+				case "oracledb.system.physical_reads_direct_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_reads_direct_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_reads_direct_per_second")
+					validatedMetrics["oracledb.system.physical_reads_direct_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Direct Per Sec", ms.At(i).Description())
@@ -6204,9 +6204,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_reads_direct_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_reads_direct_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_reads_direct_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_reads_direct_per_transaction"] = true
+				case "oracledb.system.physical_reads_direct_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_reads_direct_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_reads_direct_per_transaction")
+					validatedMetrics["oracledb.system.physical_reads_direct_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Direct Per Txn", ms.At(i).Description())
@@ -6219,9 +6219,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_reads_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_reads_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_reads_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_reads_per_second"] = true
+				case "oracledb.system.physical_reads_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_reads_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_reads_per_second")
+					validatedMetrics["oracledb.system.physical_reads_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Per Sec", ms.At(i).Description())
@@ -6234,9 +6234,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_reads_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_reads_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_reads_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_reads_per_transaction"] = true
+				case "oracledb.system.physical_reads_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_reads_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_reads_per_transaction")
+					validatedMetrics["oracledb.system.physical_reads_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Reads Per Txn", ms.At(i).Description())
@@ -6249,9 +6249,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_write_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_write_bytes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_write_bytes_per_second"] = true
+				case "oracledb.system.physical_write_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_write_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_write_bytes_per_second")
+					validatedMetrics["oracledb.system.physical_write_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Write Bytes Per Sec", ms.At(i).Description())
@@ -6264,9 +6264,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_write_io_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_write_io_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_write_io_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_write_io_requests_per_second"] = true
+				case "oracledb.system.physical_write_io_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_write_io_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_write_io_requests_per_second")
+					validatedMetrics["oracledb.system.physical_write_io_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Write IO Requests Per Sec", ms.At(i).Description())
@@ -6279,9 +6279,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_write_total_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_write_total_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_write_total_bytes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_write_total_bytes_per_second"] = true
+				case "oracledb.system.physical_write_total_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_write_total_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_write_total_bytes_per_second")
+					validatedMetrics["oracledb.system.physical_write_total_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Write Total Bytes Per Sec", ms.At(i).Description())
@@ -6294,9 +6294,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_write_total_io_requests_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_write_total_io_requests_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_write_total_io_requests_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_write_total_io_requests_per_second"] = true
+				case "oracledb.system.physical_write_total_io_requests_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_write_total_io_requests_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_write_total_io_requests_per_second")
+					validatedMetrics["oracledb.system.physical_write_total_io_requests_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Write Total IO Requests Per Sec", ms.At(i).Description())
@@ -6309,9 +6309,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_writes_direct_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_writes_direct_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_writes_direct_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_writes_direct_per_second"] = true
+				case "oracledb.system.physical_writes_direct_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_writes_direct_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_writes_direct_per_second")
+					validatedMetrics["oracledb.system.physical_writes_direct_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Direct Per Sec", ms.At(i).Description())
@@ -6324,9 +6324,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_writes_direct_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_writes_direct_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_writes_direct_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_writes_direct_per_transaction"] = true
+				case "oracledb.system.physical_writes_direct_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_writes_direct_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_writes_direct_per_transaction")
+					validatedMetrics["oracledb.system.physical_writes_direct_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Direct Per Txn", ms.At(i).Description())
@@ -6339,9 +6339,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_writes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_writes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_writes_per_second")
-					validatedMetrics["newrelicoracledb.system.physical_writes_per_second"] = true
+				case "oracledb.system.physical_writes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.physical_writes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.physical_writes_per_second")
+					validatedMetrics["oracledb.system.physical_writes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Per Sec", ms.At(i).Description())
@@ -6354,9 +6354,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.physical_writes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.physical_writes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.physical_writes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.physical_writes_per_transaction"] = true
+				case "oracledb.system.physical_writes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.physical_writes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.physical_writes_per_transaction")
+					validatedMetrics["oracledb.system.physical_writes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Physical Writes Per Txn", ms.At(i).Description())
@@ -6369,9 +6369,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.process_limit_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.process_limit_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.process_limit_percentage")
-					validatedMetrics["newrelicoracledb.system.process_limit_percentage"] = true
+				case "oracledb.system.process_limit_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.process_limit_percentage"], "Found a duplicate in the metrics slice: oracledb.system.process_limit_percentage")
+					validatedMetrics["oracledb.system.process_limit_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Process Limit %", ms.At(i).Description())
@@ -6384,9 +6384,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.recursive_calls_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.recursive_calls_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.recursive_calls_per_second")
-					validatedMetrics["newrelicoracledb.system.recursive_calls_per_second"] = true
+				case "oracledb.system.recursive_calls_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.recursive_calls_per_second"], "Found a duplicate in the metrics slice: oracledb.system.recursive_calls_per_second")
+					validatedMetrics["oracledb.system.recursive_calls_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Recursive Calls Per Sec", ms.At(i).Description())
@@ -6399,9 +6399,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.recursive_calls_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.recursive_calls_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.recursive_calls_per_transaction")
-					validatedMetrics["newrelicoracledb.system.recursive_calls_per_transaction"] = true
+				case "oracledb.system.recursive_calls_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.recursive_calls_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.recursive_calls_per_transaction")
+					validatedMetrics["oracledb.system.recursive_calls_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Recursive Calls Per Txn", ms.At(i).Description())
@@ -6414,9 +6414,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.redo_allocation_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.redo_allocation_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.redo_allocation_hit_ratio")
-					validatedMetrics["newrelicoracledb.system.redo_allocation_hit_ratio"] = true
+				case "oracledb.system.redo_allocation_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.redo_allocation_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.system.redo_allocation_hit_ratio")
+					validatedMetrics["oracledb.system.redo_allocation_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo Allocation Hit Ratio", ms.At(i).Description())
@@ -6429,9 +6429,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.redo_generated_bytes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.redo_generated_bytes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.redo_generated_bytes_per_second")
-					validatedMetrics["newrelicoracledb.system.redo_generated_bytes_per_second"] = true
+				case "oracledb.system.redo_generated_bytes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.redo_generated_bytes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.redo_generated_bytes_per_second")
+					validatedMetrics["oracledb.system.redo_generated_bytes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo Generated Per Sec", ms.At(i).Description())
@@ -6444,9 +6444,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.redo_generated_bytes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.redo_generated_bytes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.redo_generated_bytes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.redo_generated_bytes_per_transaction"] = true
+				case "oracledb.system.redo_generated_bytes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.redo_generated_bytes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.redo_generated_bytes_per_transaction")
+					validatedMetrics["oracledb.system.redo_generated_bytes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo Generated Per Txn", ms.At(i).Description())
@@ -6459,9 +6459,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.redo_writes_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.redo_writes_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.redo_writes_per_second")
-					validatedMetrics["newrelicoracledb.system.redo_writes_per_second"] = true
+				case "oracledb.system.redo_writes_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.redo_writes_per_second"], "Found a duplicate in the metrics slice: oracledb.system.redo_writes_per_second")
+					validatedMetrics["oracledb.system.redo_writes_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo Writes Per Sec", ms.At(i).Description())
@@ -6474,9 +6474,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.redo_writes_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.redo_writes_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.redo_writes_per_transaction")
-					validatedMetrics["newrelicoracledb.system.redo_writes_per_transaction"] = true
+				case "oracledb.system.redo_writes_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.redo_writes_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.redo_writes_per_transaction")
+					validatedMetrics["oracledb.system.redo_writes_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Redo Writes Per Txn", ms.At(i).Description())
@@ -6489,9 +6489,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.response_time_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.response_time_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.response_time_per_transaction")
-					validatedMetrics["newrelicoracledb.system.response_time_per_transaction"] = true
+				case "oracledb.system.response_time_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.response_time_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.response_time_per_transaction")
+					validatedMetrics["oracledb.system.response_time_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Response Time Per Txn", ms.At(i).Description())
@@ -6504,9 +6504,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.row_cache_hit_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.row_cache_hit_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.row_cache_hit_ratio")
-					validatedMetrics["newrelicoracledb.system.row_cache_hit_ratio"] = true
+				case "oracledb.system.row_cache_hit_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.row_cache_hit_ratio"], "Found a duplicate in the metrics slice: oracledb.system.row_cache_hit_ratio")
+					validatedMetrics["oracledb.system.row_cache_hit_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Row Cache Hit Ratio", ms.At(i).Description())
@@ -6519,9 +6519,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.row_cache_miss_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.row_cache_miss_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.row_cache_miss_ratio")
-					validatedMetrics["newrelicoracledb.system.row_cache_miss_ratio"] = true
+				case "oracledb.system.row_cache_miss_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.row_cache_miss_ratio"], "Found a duplicate in the metrics slice: oracledb.system.row_cache_miss_ratio")
+					validatedMetrics["oracledb.system.row_cache_miss_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Row Cache Miss Ratio", ms.At(i).Description())
@@ -6534,9 +6534,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.rows_per_sort":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.rows_per_sort"], "Found a duplicate in the metrics slice: newrelicoracledb.system.rows_per_sort")
-					validatedMetrics["newrelicoracledb.system.rows_per_sort"] = true
+				case "oracledb.system.rows_per_sort":
+					assert.False(t, validatedMetrics["oracledb.system.rows_per_sort"], "Found a duplicate in the metrics slice: oracledb.system.rows_per_sort")
+					validatedMetrics["oracledb.system.rows_per_sort"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Rows Per Sort", ms.At(i).Description())
@@ -6549,9 +6549,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.session_count":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.session_count"], "Found a duplicate in the metrics slice: newrelicoracledb.system.session_count")
-					validatedMetrics["newrelicoracledb.system.session_count"] = true
+				case "oracledb.system.session_count":
+					assert.False(t, validatedMetrics["oracledb.system.session_count"], "Found a duplicate in the metrics slice: oracledb.system.session_count")
+					validatedMetrics["oracledb.system.session_count"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Session Count", ms.At(i).Description())
@@ -6564,9 +6564,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.session_limit_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.session_limit_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.session_limit_percentage")
-					validatedMetrics["newrelicoracledb.system.session_limit_percentage"] = true
+				case "oracledb.system.session_limit_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.session_limit_percentage"], "Found a duplicate in the metrics slice: oracledb.system.session_limit_percentage")
+					validatedMetrics["oracledb.system.session_limit_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Session Limit %", ms.At(i).Description())
@@ -6579,9 +6579,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.shared_pool_free_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.shared_pool_free_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.shared_pool_free_percentage")
-					validatedMetrics["newrelicoracledb.system.shared_pool_free_percentage"] = true
+				case "oracledb.system.shared_pool_free_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.shared_pool_free_percentage"], "Found a duplicate in the metrics slice: oracledb.system.shared_pool_free_percentage")
+					validatedMetrics["oracledb.system.shared_pool_free_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Shared Pool Free %", ms.At(i).Description())
@@ -6594,9 +6594,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.soft_parse_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.soft_parse_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.soft_parse_ratio")
-					validatedMetrics["newrelicoracledb.system.soft_parse_ratio"] = true
+				case "oracledb.system.soft_parse_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.soft_parse_ratio"], "Found a duplicate in the metrics slice: oracledb.system.soft_parse_ratio")
+					validatedMetrics["oracledb.system.soft_parse_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Soft Parse Ratio", ms.At(i).Description())
@@ -6609,9 +6609,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.sql_service_response_time":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.sql_service_response_time"], "Found a duplicate in the metrics slice: newrelicoracledb.system.sql_service_response_time")
-					validatedMetrics["newrelicoracledb.system.sql_service_response_time"] = true
+				case "oracledb.system.sql_service_response_time":
+					assert.False(t, validatedMetrics["oracledb.system.sql_service_response_time"], "Found a duplicate in the metrics slice: oracledb.system.sql_service_response_time")
+					validatedMetrics["oracledb.system.sql_service_response_time"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "SQL Service Response Time", ms.At(i).Description())
@@ -6624,9 +6624,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.streams_pool_usage_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.streams_pool_usage_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.streams_pool_usage_percentage")
-					validatedMetrics["newrelicoracledb.system.streams_pool_usage_percentage"] = true
+				case "oracledb.system.streams_pool_usage_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.streams_pool_usage_percentage"], "Found a duplicate in the metrics slice: oracledb.system.streams_pool_usage_percentage")
+					validatedMetrics["oracledb.system.streams_pool_usage_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Streams Pool Usage Percentage", ms.At(i).Description())
@@ -6639,9 +6639,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.temp_space_used":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.temp_space_used"], "Found a duplicate in the metrics slice: newrelicoracledb.system.temp_space_used")
-					validatedMetrics["newrelicoracledb.system.temp_space_used"] = true
+				case "oracledb.system.temp_space_used":
+					assert.False(t, validatedMetrics["oracledb.system.temp_space_used"], "Found a duplicate in the metrics slice: oracledb.system.temp_space_used")
+					validatedMetrics["oracledb.system.temp_space_used"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Temp Space Used", ms.At(i).Description())
@@ -6654,9 +6654,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_index_scans_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_index_scans_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_index_scans_per_second")
-					validatedMetrics["newrelicoracledb.system.total_index_scans_per_second"] = true
+				case "oracledb.system.total_index_scans_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.total_index_scans_per_second"], "Found a duplicate in the metrics slice: oracledb.system.total_index_scans_per_second")
+					validatedMetrics["oracledb.system.total_index_scans_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Index Scans Per Sec", ms.At(i).Description())
@@ -6669,9 +6669,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_index_scans_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_index_scans_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_index_scans_per_transaction")
-					validatedMetrics["newrelicoracledb.system.total_index_scans_per_transaction"] = true
+				case "oracledb.system.total_index_scans_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.total_index_scans_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.total_index_scans_per_transaction")
+					validatedMetrics["oracledb.system.total_index_scans_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Index Scans Per Txn", ms.At(i).Description())
@@ -6684,9 +6684,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_parse_count_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_parse_count_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_parse_count_per_second")
-					validatedMetrics["newrelicoracledb.system.total_parse_count_per_second"] = true
+				case "oracledb.system.total_parse_count_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.total_parse_count_per_second"], "Found a duplicate in the metrics slice: oracledb.system.total_parse_count_per_second")
+					validatedMetrics["oracledb.system.total_parse_count_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Parse Count Per Sec", ms.At(i).Description())
@@ -6699,9 +6699,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_parse_count_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_parse_count_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_parse_count_per_transaction")
-					validatedMetrics["newrelicoracledb.system.total_parse_count_per_transaction"] = true
+				case "oracledb.system.total_parse_count_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.total_parse_count_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.total_parse_count_per_transaction")
+					validatedMetrics["oracledb.system.total_parse_count_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Parse Count Per Txn", ms.At(i).Description())
@@ -6714,9 +6714,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_sorts_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_sorts_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_sorts_per_user_call")
-					validatedMetrics["newrelicoracledb.system.total_sorts_per_user_call"] = true
+				case "oracledb.system.total_sorts_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.total_sorts_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.total_sorts_per_user_call")
+					validatedMetrics["oracledb.system.total_sorts_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Sorts Per User Call", ms.At(i).Description())
@@ -6729,9 +6729,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_table_scans_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_table_scans_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_table_scans_per_second")
-					validatedMetrics["newrelicoracledb.system.total_table_scans_per_second"] = true
+				case "oracledb.system.total_table_scans_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.total_table_scans_per_second"], "Found a duplicate in the metrics slice: oracledb.system.total_table_scans_per_second")
+					validatedMetrics["oracledb.system.total_table_scans_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Table Scans Per Sec", ms.At(i).Description())
@@ -6744,9 +6744,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_table_scans_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_table_scans_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_table_scans_per_transaction")
-					validatedMetrics["newrelicoracledb.system.total_table_scans_per_transaction"] = true
+				case "oracledb.system.total_table_scans_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.total_table_scans_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.total_table_scans_per_transaction")
+					validatedMetrics["oracledb.system.total_table_scans_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Table Scans Per Txn", ms.At(i).Description())
@@ -6759,9 +6759,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.total_table_scans_per_user_call":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.total_table_scans_per_user_call"], "Found a duplicate in the metrics slice: newrelicoracledb.system.total_table_scans_per_user_call")
-					validatedMetrics["newrelicoracledb.system.total_table_scans_per_user_call"] = true
+				case "oracledb.system.total_table_scans_per_user_call":
+					assert.False(t, validatedMetrics["oracledb.system.total_table_scans_per_user_call"], "Found a duplicate in the metrics slice: oracledb.system.total_table_scans_per_user_call")
+					validatedMetrics["oracledb.system.total_table_scans_per_user_call"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total Table Scans Per User Call", ms.At(i).Description())
@@ -6774,9 +6774,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.transactions_per_logon":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.transactions_per_logon"], "Found a duplicate in the metrics slice: newrelicoracledb.system.transactions_per_logon")
-					validatedMetrics["newrelicoracledb.system.transactions_per_logon"] = true
+				case "oracledb.system.transactions_per_logon":
+					assert.False(t, validatedMetrics["oracledb.system.transactions_per_logon"], "Found a duplicate in the metrics slice: oracledb.system.transactions_per_logon")
+					validatedMetrics["oracledb.system.transactions_per_logon"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Txns Per Logon", ms.At(i).Description())
@@ -6789,9 +6789,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.transactions_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.transactions_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.transactions_per_second")
-					validatedMetrics["newrelicoracledb.system.transactions_per_second"] = true
+				case "oracledb.system.transactions_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.transactions_per_second"], "Found a duplicate in the metrics slice: oracledb.system.transactions_per_second")
+					validatedMetrics["oracledb.system.transactions_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Transaction Per Sec", ms.At(i).Description())
@@ -6804,9 +6804,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_calls_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_calls_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_calls_per_second")
-					validatedMetrics["newrelicoracledb.system.user_calls_per_second"] = true
+				case "oracledb.system.user_calls_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.user_calls_per_second"], "Found a duplicate in the metrics slice: oracledb.system.user_calls_per_second")
+					validatedMetrics["oracledb.system.user_calls_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Calls Per Sec", ms.At(i).Description())
@@ -6819,9 +6819,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_calls_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_calls_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_calls_per_transaction")
-					validatedMetrics["newrelicoracledb.system.user_calls_per_transaction"] = true
+				case "oracledb.system.user_calls_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.user_calls_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.user_calls_per_transaction")
+					validatedMetrics["oracledb.system.user_calls_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Calls Per Txn", ms.At(i).Description())
@@ -6834,9 +6834,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_calls_ratio":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_calls_ratio"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_calls_ratio")
-					validatedMetrics["newrelicoracledb.system.user_calls_ratio"] = true
+				case "oracledb.system.user_calls_ratio":
+					assert.False(t, validatedMetrics["oracledb.system.user_calls_ratio"], "Found a duplicate in the metrics slice: oracledb.system.user_calls_ratio")
+					validatedMetrics["oracledb.system.user_calls_ratio"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Calls Ratio", ms.At(i).Description())
@@ -6849,9 +6849,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_commits_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_commits_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_commits_per_second")
-					validatedMetrics["newrelicoracledb.system.user_commits_per_second"] = true
+				case "oracledb.system.user_commits_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.user_commits_per_second"], "Found a duplicate in the metrics slice: oracledb.system.user_commits_per_second")
+					validatedMetrics["oracledb.system.user_commits_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Commits Per Sec", ms.At(i).Description())
@@ -6864,9 +6864,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_commits_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_commits_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_commits_percentage")
-					validatedMetrics["newrelicoracledb.system.user_commits_percentage"] = true
+				case "oracledb.system.user_commits_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.user_commits_percentage"], "Found a duplicate in the metrics slice: oracledb.system.user_commits_percentage")
+					validatedMetrics["oracledb.system.user_commits_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Commits Percentage", ms.At(i).Description())
@@ -6879,9 +6879,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_limit_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_limit_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_limit_percentage")
-					validatedMetrics["newrelicoracledb.system.user_limit_percentage"] = true
+				case "oracledb.system.user_limit_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.user_limit_percentage"], "Found a duplicate in the metrics slice: oracledb.system.user_limit_percentage")
+					validatedMetrics["oracledb.system.user_limit_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Limit %", ms.At(i).Description())
@@ -6894,9 +6894,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_rollback_undo_records_applied_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_rollback_undo_records_applied_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_rollback_undo_records_applied_per_second")
-					validatedMetrics["newrelicoracledb.system.user_rollback_undo_records_applied_per_second"] = true
+				case "oracledb.system.user_rollback_undo_records_applied_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.user_rollback_undo_records_applied_per_second"], "Found a duplicate in the metrics slice: oracledb.system.user_rollback_undo_records_applied_per_second")
+					validatedMetrics["oracledb.system.user_rollback_undo_records_applied_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Rollback UndoRec Applied Per Sec", ms.At(i).Description())
@@ -6909,9 +6909,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction")
-					validatedMetrics["newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction"] = true
+				case "oracledb.system.user_rollback_undo_records_applied_per_transaction":
+					assert.False(t, validatedMetrics["oracledb.system.user_rollback_undo_records_applied_per_transaction"], "Found a duplicate in the metrics slice: oracledb.system.user_rollback_undo_records_applied_per_transaction")
+					validatedMetrics["oracledb.system.user_rollback_undo_records_applied_per_transaction"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Rollback Undo Records Applied Per Txn", ms.At(i).Description())
@@ -6924,9 +6924,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_rollbacks_per_second":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_rollbacks_per_second"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_rollbacks_per_second")
-					validatedMetrics["newrelicoracledb.system.user_rollbacks_per_second"] = true
+				case "oracledb.system.user_rollbacks_per_second":
+					assert.False(t, validatedMetrics["oracledb.system.user_rollbacks_per_second"], "Found a duplicate in the metrics slice: oracledb.system.user_rollbacks_per_second")
+					validatedMetrics["oracledb.system.user_rollbacks_per_second"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Rollbacks Per Sec", ms.At(i).Description())
@@ -6939,9 +6939,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.system.user_rollbacks_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.system.user_rollbacks_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.system.user_rollbacks_percentage")
-					validatedMetrics["newrelicoracledb.system.user_rollbacks_percentage"] = true
+				case "oracledb.system.user_rollbacks_percentage":
+					assert.False(t, validatedMetrics["oracledb.system.user_rollbacks_percentage"], "Found a duplicate in the metrics slice: oracledb.system.user_rollbacks_percentage")
+					validatedMetrics["oracledb.system.user_rollbacks_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "User Rollbacks Percentage", ms.At(i).Description())
@@ -6954,9 +6954,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("instance.id")
 					assert.True(t, ok)
 					assert.Equal(t, "instance.id-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.db_id":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.db_id"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.db_id")
-					validatedMetrics["newrelicoracledb.tablespace.db_id"] = true
+				case "oracledb.tablespace.db_id":
+					assert.False(t, validatedMetrics["oracledb.tablespace.db_id"], "Found a duplicate in the metrics slice: oracledb.tablespace.db_id")
+					validatedMetrics["oracledb.tablespace.db_id"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Database ID information for tablespace", ms.At(i).Description())
@@ -6972,9 +6972,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("db.id")
 					assert.True(t, ok)
 					assert.Equal(t, "db.id-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.global_name":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.global_name"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.global_name")
-					validatedMetrics["newrelicoracledb.tablespace.global_name"] = true
+				case "oracledb.tablespace.global_name":
+					assert.False(t, validatedMetrics["oracledb.tablespace.global_name"], "Found a duplicate in the metrics slice: oracledb.tablespace.global_name")
+					validatedMetrics["oracledb.tablespace.global_name"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Global name information for tablespace", ms.At(i).Description())
@@ -6990,9 +6990,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("global.name")
 					assert.True(t, ok)
 					assert.Equal(t, "global.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.is_offline":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.is_offline"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.is_offline")
-					validatedMetrics["newrelicoracledb.tablespace.is_offline"] = true
+				case "oracledb.tablespace.is_offline":
+					assert.False(t, validatedMetrics["oracledb.tablespace.is_offline"], "Found a duplicate in the metrics slice: oracledb.tablespace.is_offline")
+					validatedMetrics["oracledb.tablespace.is_offline"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Whether the tablespace is offline (1) or online (0)", ms.At(i).Description())
@@ -7005,9 +7005,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.offline_cdb_datafiles":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.offline_cdb_datafiles"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.offline_cdb_datafiles")
-					validatedMetrics["newrelicoracledb.tablespace.offline_cdb_datafiles"] = true
+				case "oracledb.tablespace.offline_cdb_datafiles":
+					assert.False(t, validatedMetrics["oracledb.tablespace.offline_cdb_datafiles"], "Found a duplicate in the metrics slice: oracledb.tablespace.offline_cdb_datafiles")
+					validatedMetrics["oracledb.tablespace.offline_cdb_datafiles"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Count of offline CDB datafiles by tablespace", ms.At(i).Description())
@@ -7020,9 +7020,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.offline_pdb_datafiles":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.offline_pdb_datafiles"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.offline_pdb_datafiles")
-					validatedMetrics["newrelicoracledb.tablespace.offline_pdb_datafiles"] = true
+				case "oracledb.tablespace.offline_pdb_datafiles":
+					assert.False(t, validatedMetrics["oracledb.tablespace.offline_pdb_datafiles"], "Found a duplicate in the metrics slice: oracledb.tablespace.offline_pdb_datafiles")
+					validatedMetrics["oracledb.tablespace.offline_pdb_datafiles"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Count of offline PDB datafiles by tablespace", ms.At(i).Description())
@@ -7035,9 +7035,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.pdb_non_write_mode":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.pdb_non_write_mode"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.pdb_non_write_mode")
-					validatedMetrics["newrelicoracledb.tablespace.pdb_non_write_mode"] = true
+				case "oracledb.tablespace.pdb_non_write_mode":
+					assert.False(t, validatedMetrics["oracledb.tablespace.pdb_non_write_mode"], "Found a duplicate in the metrics slice: oracledb.tablespace.pdb_non_write_mode")
+					validatedMetrics["oracledb.tablespace.pdb_non_write_mode"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Count of PDB datafiles in non-write mode by tablespace", ms.At(i).Description())
@@ -7050,9 +7050,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.space_consumed_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.space_consumed_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.space_consumed_bytes")
-					validatedMetrics["newrelicoracledb.tablespace.space_consumed_bytes"] = true
+				case "oracledb.tablespace.space_consumed_bytes":
+					assert.False(t, validatedMetrics["oracledb.tablespace.space_consumed_bytes"], "Found a duplicate in the metrics slice: oracledb.tablespace.space_consumed_bytes")
+					validatedMetrics["oracledb.tablespace.space_consumed_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total bytes consumed by the tablespace", ms.At(i).Description())
@@ -7065,9 +7065,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.space_reserved_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.space_reserved_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.space_reserved_bytes")
-					validatedMetrics["newrelicoracledb.tablespace.space_reserved_bytes"] = true
+				case "oracledb.tablespace.space_reserved_bytes":
+					assert.False(t, validatedMetrics["oracledb.tablespace.space_reserved_bytes"], "Found a duplicate in the metrics slice: oracledb.tablespace.space_reserved_bytes")
+					validatedMetrics["oracledb.tablespace.space_reserved_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total bytes reserved by the tablespace", ms.At(i).Description())
@@ -7080,9 +7080,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.space_used_percentage":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.space_used_percentage"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.space_used_percentage")
-					validatedMetrics["newrelicoracledb.tablespace.space_used_percentage"] = true
+				case "oracledb.tablespace.space_used_percentage":
+					assert.False(t, validatedMetrics["oracledb.tablespace.space_used_percentage"], "Found a duplicate in the metrics slice: oracledb.tablespace.space_used_percentage")
+					validatedMetrics["oracledb.tablespace.space_used_percentage"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Percentage of tablespace space currently used", ms.At(i).Description())
@@ -7095,9 +7095,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok := dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.total_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.total_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.total_bytes")
-					validatedMetrics["newrelicoracledb.tablespace.total_bytes"] = true
+				case "oracledb.tablespace.total_bytes":
+					assert.False(t, validatedMetrics["oracledb.tablespace.total_bytes"], "Found a duplicate in the metrics slice: oracledb.tablespace.total_bytes")
+					validatedMetrics["oracledb.tablespace.total_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Total bytes in tablespace", ms.At(i).Description())
@@ -7113,9 +7113,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.used_bytes":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.used_bytes"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.used_bytes")
-					validatedMetrics["newrelicoracledb.tablespace.used_bytes"] = true
+				case "oracledb.tablespace.used_bytes":
+					assert.False(t, validatedMetrics["oracledb.tablespace.used_bytes"], "Found a duplicate in the metrics slice: oracledb.tablespace.used_bytes")
+					validatedMetrics["oracledb.tablespace.used_bytes"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Used bytes in tablespace", ms.At(i).Description())
@@ -7131,9 +7131,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.tablespace.used_percent":
-					assert.False(t, validatedMetrics["newrelicoracledb.tablespace.used_percent"], "Found a duplicate in the metrics slice: newrelicoracledb.tablespace.used_percent")
-					validatedMetrics["newrelicoracledb.tablespace.used_percent"] = true
+				case "oracledb.tablespace.used_percent":
+					assert.False(t, validatedMetrics["oracledb.tablespace.used_percent"], "Found a duplicate in the metrics slice: oracledb.tablespace.used_percent")
+					validatedMetrics["oracledb.tablespace.used_percent"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Used percentage of tablespace", ms.At(i).Description())
@@ -7149,9 +7149,9 @@ func TestMetricsBuilder(t *testing.T) {
 					attrVal, ok = dp.Attributes().Get("tablespace.name")
 					assert.True(t, ok)
 					assert.Equal(t, "tablespace.name-val", attrVal.Str())
-				case "newrelicoracledb.wait_events.current_wait_time_ms":
-					assert.False(t, validatedMetrics["newrelicoracledb.wait_events.current_wait_time_ms"], "Found a duplicate in the metrics slice: newrelicoracledb.wait_events.current_wait_time_ms")
-					validatedMetrics["newrelicoracledb.wait_events.current_wait_time_ms"] = true
+				case "oracledb.wait_events.current_wait_time_ms":
+					assert.False(t, validatedMetrics["oracledb.wait_events.current_wait_time_ms"], "Found a duplicate in the metrics slice: oracledb.wait_events.current_wait_time_ms")
+					validatedMetrics["oracledb.wait_events.current_wait_time_ms"] = true
 					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
 					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
 					assert.Equal(t, "Current wait time in milliseconds for active wait events including blocking queries", ms.At(i).Description())

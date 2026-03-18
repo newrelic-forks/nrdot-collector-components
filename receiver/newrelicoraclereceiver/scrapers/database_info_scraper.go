@@ -59,7 +59,7 @@ func NewDatabaseInfoScraper(c client.OracleClient, mb *metadata.MetricsBuilder, 
 func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbDatabaseInfo.Enabled {
+	if !s.config.Metrics.OracledbDatabaseInfo.Enabled {
 		return errs
 	}
 
@@ -77,7 +77,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 	}
 
 	now := pcommon.NewTimestampFromTime(time.Now())
-	s.mb.RecordNewrelicoracledbDatabaseInfoDataPoint(
+	s.mb.RecordOracledbDatabaseInfoDataPoint(
 		now,
 		int64(1),
 		cachedInfo.Version,
@@ -92,7 +92,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbHostingInfo.Enabled {
+	if !s.config.Metrics.OracledbHostingInfo.Enabled {
 		return errs
 	}
 
@@ -110,7 +110,7 @@ func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 	}
 
 	now := pcommon.NewTimestampFromTime(time.Now())
-	s.mb.RecordNewrelicoracledbHostingInfoDataPoint(
+	s.mb.RecordOracledbHostingInfoDataPoint(
 		now,
 		int64(1),
 		cachedInfo.Architecture,
@@ -124,7 +124,7 @@ func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 func (s *DatabaseInfoScraper) ScrapeDatabaseRole(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbDatabaseRole.Enabled {
+	if !s.config.Metrics.OracledbDatabaseRole.Enabled {
 		return errs
 	}
 
@@ -156,7 +156,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseRole(ctx context.Context) []error {
 		}
 
 		now := pcommon.NewTimestampFromTime(time.Now())
-		s.mb.RecordNewrelicoracledbDatabaseRoleDataPoint(
+		s.mb.RecordOracledbDatabaseRoleDataPoint(
 			now,
 			int64(1),
 			roleStr,

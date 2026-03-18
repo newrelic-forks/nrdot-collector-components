@@ -11,7 +11,7 @@ import (
 )
 
 func (s *CoreScraper) scrapeLockedAccountsMetrics(ctx context.Context, now pcommon.Timestamp) []error {
-	if !s.config.Metrics.NewrelicoracledbLockedAccounts.Enabled {
+	if !s.config.Metrics.OracledbLockedAccounts.Enabled {
 		return nil
 	}
 
@@ -24,7 +24,7 @@ func (s *CoreScraper) scrapeLockedAccountsMetrics(ctx context.Context, now pcomm
 	metricCount := 0
 	for _, metric := range metrics {
 		instanceID := getInstanceIDString(metric.InstID)
-		s.mb.RecordNewrelicoracledbLockedAccountsDataPoint(now, metric.LockedAccounts, instanceID)
+		s.mb.RecordOracledbLockedAccountsDataPoint(now, metric.LockedAccounts, instanceID)
 		metricCount++
 	}
 
@@ -42,7 +42,7 @@ func (s *CoreScraper) scrapeGlobalNameInstanceMetrics(ctx context.Context, now p
 
 	metricCount := 0
 	for _, metric := range metrics {
-		s.mb.RecordNewrelicoracledbGlobalNameDataPoint(now, 1, metric.GlobalName)
+		s.mb.RecordOracledbGlobalNameDataPoint(now, 1, metric.GlobalName)
 		metricCount++
 	}
 
@@ -60,7 +60,7 @@ func (s *CoreScraper) scrapeDBIDInstanceMetrics(ctx context.Context, now pcommon
 
 	metricCount := 0
 	for _, metric := range metrics {
-		s.mb.RecordNewrelicoracledbDbIDDataPoint(now, 1, metric.DBID)
+		s.mb.RecordOracledbDbIDDataPoint(now, 1, metric.DBID)
 		metricCount++
 	}
 
@@ -79,7 +79,7 @@ func (s *CoreScraper) scrapeLongRunningQueriesMetrics(ctx context.Context, now p
 	metricCount := 0
 	for _, metric := range metrics {
 		instanceID := getInstanceIDString(metric.InstID)
-		s.mb.RecordNewrelicoracledbLongRunningQueriesDataPoint(now, metric.Total, instanceID)
+		s.mb.RecordOracledbLongRunningQueriesDataPoint(now, metric.Total, instanceID)
 		metricCount++
 	}
 

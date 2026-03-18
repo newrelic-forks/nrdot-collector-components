@@ -74,8 +74,8 @@ func TestSlowQueriesScraper_ScrapeWithValidData(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSlowQueriesExecutionCount.Enabled = true
-	config.Metrics.NewrelicoracledbSlowQueriesTotalElapsedTime.Enabled = true
+	config.Metrics.OracledbSlowQueriesExecutionCount.Enabled = true
+	config.Metrics.OracledbSlowQueriesTotalElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -166,8 +166,8 @@ func TestSlowQueriesScraper_RecordMetrics(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSlowQueriesExecutionCount.Enabled = true
-	config.Metrics.NewrelicoracledbSlowQueriesTotalElapsedTime.Enabled = true
+	config.Metrics.OracledbSlowQueriesExecutionCount.Enabled = true
+	config.Metrics.OracledbSlowQueriesTotalElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)

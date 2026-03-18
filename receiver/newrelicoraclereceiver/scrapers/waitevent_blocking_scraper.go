@@ -168,7 +168,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		_, normalisedBlockingSQLHash = commonutils.NormalizeSQLAndHash(rawFinalBlockerQueryText)
 	}
 
-	s.mb.RecordNewrelicoracledbWaitEventsCurrentWaitTimeMsDataPoint(
+	s.mb.RecordOracledbWaitEventsCurrentWaitTimeMsDataPoint(
 		now,
 		event.GetCurrentWaitMs(),
 		collectionTimestamp,
@@ -209,7 +209,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 	// schema_name and last_active_time are not available in V$SESSION;
 	// blocking hash/guid are not applicable for the active (victim) session.
 	if normalisedQueryText != "" {
-		s.mb.RecordNewrelicoracledbSlowQueriesQueryDetailsDataPoint(
+		s.mb.RecordOracledbSlowQueriesQueryDetailsDataPoint(
 			now,
 			1,
 			"OracleQueryDetails",
@@ -316,7 +316,7 @@ func (s *WaitEventBlockingScraper) recordFinalBlockerQueryDetails(now pcommon.Ti
 
 	nrBlockingServiceGUID := commonutils.ExtractNewRelicMetadata(rawFinalBlockerQueryText)
 
-	s.mb.RecordNewrelicoracledbSlowQueriesQueryDetailsDataPoint(
+	s.mb.RecordOracledbSlowQueriesQueryDetailsDataPoint(
 		now,
 		1,
 		"OracleQueryDetails",

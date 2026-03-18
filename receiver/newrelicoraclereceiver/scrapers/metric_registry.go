@@ -67,585 +67,585 @@ func (r *PdbMetricRegistry) RecordMetric(mb *metadata.MetricsBuilder, ts pcommon
 func (r *SystemMetricRegistry) registerAll() {
 	// Cache and performance ratios
 	r.recorders["Buffer Cache Hit Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBufferCacheHitRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBufferCacheHitRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Memory Sorts Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemMemorySortsRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemMemorySortsRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Redo Allocation Hit Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRedoAllocationHitRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRedoAllocationHitRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Cursor Cache Hit Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCursorCacheHitRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCursorCacheHitRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Soft Parse Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemSoftParseRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemSoftParseRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Calls Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserCallsRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserCallsRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Row Cache Hit Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRowCacheHitRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRowCacheHitRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Row Cache Miss Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRowCacheMissRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRowCacheMissRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Library Cache Hit Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLibraryCacheHitRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLibraryCacheHitRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Library Cache Miss Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLibraryCacheMissRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLibraryCacheMissRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Database Wait Time Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDatabaseWaitTimeRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDatabaseWaitTimeRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Database CPU Time Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDatabaseCPUTimeRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDatabaseCPUTimeRatioDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Execute Without Parse Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemExecuteWithoutParseRatioDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemExecuteWithoutParseRatioDataPoint(ts, value, instanceID)
 	}
 
 	// Transaction metrics
 	r.recorders["User Transaction Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTransactionsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTransactionsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Reads Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWritesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWritesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Reads Direct Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadsDirectPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadsDirectPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Direct Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWritesDirectPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWritesDirectPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Reads Direct Lobs Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalLobsReadsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalLobsReadsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Direct Lobs Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalLobsWritesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalLobsWritesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Redo Generated Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRedoGeneratedBytesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRedoGeneratedBytesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Logons Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLogonsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLogonsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Open Cursors Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemOpenCursorsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemOpenCursorsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Calls Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserCallsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserCallsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Recursive Calls Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRecursiveCallsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRecursiveCallsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Logical Reads Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLogicalReadsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLogicalReadsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Redo Writes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRedoWritesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRedoWritesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Long Table Scans Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLongTableScansPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLongTableScansPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Table Scans Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalTableScansPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalTableScansPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Full Index Scans Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemFullIndexScansPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemFullIndexScansPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Index Scans Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalIndexScansPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalIndexScansPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Parse Count Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalParseCountPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalParseCountPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Hard Parse Count Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemHardParseCountPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemHardParseCountPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Parse Failure Count Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemParseFailureCountPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemParseFailureCountPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Disk Sort Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDiskSortPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDiskSortPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Timeouts Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueTimeoutsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueTimeoutsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Waits Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueWaitsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueWaitsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Deadlocks Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueDeadlocksPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueDeadlocksPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Requests Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueRequestsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueRequestsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DB Block Gets Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockGetsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockGetsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Consistent Read Gets Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemConsistentReadGetsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemConsistentReadGetsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DB Block Changes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockChangesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockChangesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Consistent Read Changes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemConsistentReadChangesPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemConsistentReadChangesPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CPU Usage Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCPUUsagePerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCPUUsagePerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CR Blocks Created Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCrBlocksCreatedPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCrBlocksCreatedPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CR Undo Records Applied Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCrUndoRecordsAppliedPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCrUndoRecordsAppliedPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Rollback Undo Records Applied Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserRollbackUndoRecordsAppliedPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Leaf Node Splits Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLeafNodeSplitsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLeafNodeSplitsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Branch Node Splits Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBranchNodeSplitsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBranchNodeSplitsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["GC CR Block Received Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGcCrBlockReceivedPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGcCrBlockReceivedPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["GC Current Block Received Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGcCurrentBlockReceivedPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGcCurrentBlockReceivedPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Response Time Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemResponseTimePerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemResponseTimePerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Executions Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemExecutionsPerTransactionDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemExecutionsPerTransactionDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Txns Per Logon"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTransactionsPerLogonDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTransactionsPerLogonDataPoint(ts, value, instanceID)
 	}
 
 	// Per second metrics
 	r.recorders["Physical Reads Direct Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadsDirectPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadsDirectPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Direct Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWritesDirectPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWritesDirectPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Reads Direct Lobs Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalLobsReadsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalLobsReadsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Direct Lobs Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalLobsWritesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalLobsWritesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Redo Generated Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRedoGeneratedBytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRedoGeneratedBytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Open Cursors Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemOpenCursorsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemOpenCursorsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Commits Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserCommitsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserCommitsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Commits Percentage"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserCommitsPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserCommitsPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Rollbacks Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserRollbacksPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserRollbacksPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Rollbacks Percentage"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserRollbacksPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserRollbacksPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Calls Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserCallsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserCallsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Recursive Calls Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRecursiveCallsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRecursiveCallsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Logical Reads Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLogicalReadsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLogicalReadsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DBWR Checkpoints Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbwrCheckpointsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbwrCheckpointsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Background Checkpoints Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBackgroundCheckpointsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBackgroundCheckpointsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Redo Writes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRedoWritesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRedoWritesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Long Table Scans Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLongTableScansPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLongTableScansPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Table Scans Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalTableScansPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalTableScansPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Full Index Scans Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemFullIndexScansPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemFullIndexScansPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Index Scans Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalIndexScansPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalIndexScansPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Parse Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalParseCountPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalParseCountPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Hard Parse Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemHardParseCountPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemHardParseCountPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Parse Failure Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemParseFailureCountPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemParseFailureCountPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Disk Sort Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDiskSortPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDiskSortPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Timeouts Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueTimeoutsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueTimeoutsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Waits Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueWaitsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueWaitsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Deadlocks Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueDeadlocksPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueDeadlocksPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Enqueue Requests Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemEnqueueRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemEnqueueRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DB Block Gets Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockGetsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockGetsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Consistent Read Gets Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemConsistentReadGetsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemConsistentReadGetsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DB Block Changes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockChangesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockChangesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Consistent Read Changes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemConsistentReadChangesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemConsistentReadChangesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CPU Usage Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCPUUsagePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCPUUsagePerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CR Blocks Created Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCrBlocksCreatedPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCrBlocksCreatedPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["CR Undo Records Applied Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCrUndoRecordsAppliedPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCrUndoRecordsAppliedPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Rollback UndoRec Applied Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserRollbackUndoRecordsAppliedPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Leaf Node Splits Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLeafNodeSplitsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLeafNodeSplitsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Branch Node Splits Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBranchNodeSplitsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBranchNodeSplitsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Read Total IO Requests Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadTotalIoRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Read Total Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadTotalBytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadTotalBytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["GC CR Block Received Per Second"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGcCrBlockReceivedPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGcCrBlockReceivedPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["GC Current Block Received Per Second"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGcCurrentBlockReceivedPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGcCurrentBlockReceivedPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Write Total IO Requests Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWriteTotalIoRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Write Total Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWriteTotalBytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWriteTotalBytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Write IO Requests Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWriteIoRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWriteIoRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Database Time Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDatabaseTimePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDatabaseTimePerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Network Traffic Volume Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemNetworkTrafficVolumePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemNetworkTrafficVolumePerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Executions Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemExecutionsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemExecutionsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Logons Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLogonsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLogonsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Read Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Read IO Requests Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadIoRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadIoRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Reads Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalReadsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalReadsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Write Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Physical Writes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPhysicalWritesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPhysicalWritesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Background CPU Usage Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBackgroundCPUUsagePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBackgroundCPUUsagePerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Background Time Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemBackgroundTimePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemBackgroundTimePerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Host CPU Usage Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemHostCPUUsagePerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemHostCPUUsagePerSecondDataPoint(ts, value, instanceID)
 	}
 
 	// Single value metrics
 	r.recorders["Rows Per Sort"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemRowsPerSortDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemRowsPerSortDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Host CPU Utilization (%)"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemHostCPUUtilizationDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemHostCPUUtilizationDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Global Cache Average CR Get Time"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGlobalCacheAverageCrGetTimeDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGlobalCacheAverageCrGetTimeDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Global Cache Average Current Get Time"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGlobalCacheAverageCurrentGetTimeDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGlobalCacheAverageCurrentGetTimeDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Global Cache Blocks Corrupted"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGlobalCacheBlocksCorruptedDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGlobalCacheBlocksCorruptedDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Global Cache Blocks Lost"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemGlobalCacheBlocksLostDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemGlobalCacheBlocksLostDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Current Logons Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCurrentLogonsCountDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCurrentLogonsCountDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Current Open Cursors Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCurrentOpenCursorsCountDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCurrentOpenCursorsCountDataPoint(ts, value, instanceID)
 	}
 	r.recorders["User Limit %"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemUserLimitPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemUserLimitPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["SQL Service Response Time"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemSQLServiceResponseTimeDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemSQLServiceResponseTimeDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Shared Pool Free %"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemSharedPoolFreePercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemSharedPoolFreePercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["PGA Cache Hit %"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemPgaCacheHitPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemPgaCacheHitPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Process Limit %"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemProcessLimitPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemProcessLimitPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Session Limit %"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemSessionLimitPercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemSessionLimitPercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Temp Space Used"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTempSpaceUsedDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTempSpaceUsedDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Session Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemSessionCountDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemSessionCountDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Captured user calls"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCapturedUserCallsDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCapturedUserCallsDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Current OS Load"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemCurrentOsLoadDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemCurrentOsLoadDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Streams Pool Usage Percentage"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemStreamsPoolUsagePercentageDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemStreamsPoolUsagePercentageDataPoint(ts, value, instanceID)
 	}
 	r.recorders["I/O Megabytes per Second"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemIoMegabytesPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemIoMegabytesPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["I/O Requests per Second"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemIoRequestsPerSecondDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemIoRequestsPerSecondDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Average Active Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemAverageActiveSessionsDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemAverageActiveSessionsDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Active Serial Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemActiveSerialSessionsDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemActiveSerialSessionsDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Active Parallel Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemActiveParallelSessionsDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemActiveParallelSessionsDataPoint(ts, value, instanceID)
 	}
 
 	// Per user call metrics
 	r.recorders["DB Block Changes Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockChangesPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockChangesPerUserCallDataPoint(ts, value, instanceID)
 	}
 	r.recorders["DB Block Gets Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemDbBlockGetsPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemDbBlockGetsPerUserCallDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Executions Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemExecutionsPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemExecutionsPerUserCallDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Logical Reads Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemLogicalReadsPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemLogicalReadsPerUserCallDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Sorts Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalSortsPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalSortsPerUserCallDataPoint(ts, value, instanceID)
 	}
 	r.recorders["Total Table Scans Per User Call"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID string) {
-		mb.RecordNewrelicoracledbSystemTotalTableScansPerUserCallDataPoint(ts, value, instanceID)
+		mb.RecordOracledbSystemTotalTableScansPerUserCallDataPoint(ts, value, instanceID)
 	}
 }
 
 // registerAll registers all PDB metric recorder functions
 func (r *PdbMetricRegistry) registerAll() {
 	r.recorders["Active Parallel Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbActiveParallelSessionsDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbActiveParallelSessionsDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Active Serial Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbActiveSerialSessionsDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbActiveSerialSessionsDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Average Active Sessions"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbAverageActiveSessionsDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbAverageActiveSessionsDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Background CPU Usage Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbBackgroundCPUUsagePerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbBackgroundCPUUsagePerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Background Time Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbBackgroundTimePerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbBackgroundTimePerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["CPU Usage Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbCPUUsagePerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbCPUUsagePerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["CPU Usage Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbCPUUsagePerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbCPUUsagePerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Current Logons Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbCurrentLogonsDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbCurrentLogonsDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Current Open Cursors Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbCurrentOpenCursorsDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbCurrentOpenCursorsDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Database CPU Time Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbCPUTimeRatioDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbCPUTimeRatioDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Database Wait Time Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbWaitTimeRatioDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbWaitTimeRatioDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["DB Block Changes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbBlockChangesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbBlockChangesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["DB Block Changes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbBlockChangesPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbBlockChangesPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Executions Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbExecutionsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbExecutionsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Executions Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbExecutionsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbExecutionsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Hard Parse Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbHardParseCountPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbHardParseCountPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Hard Parse Count Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbHardParseCountPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbHardParseCountPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Logical Reads Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbLogicalReadsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbLogicalReadsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Logical Reads Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbLogicalReadsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbLogicalReadsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Logons Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbLogonsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbLogonsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Network Traffic Volume Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbNetworkTrafficBytePerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbNetworkTrafficBytePerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Open Cursors Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbOpenCursorsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbOpenCursorsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Open Cursors Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbOpenCursorsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbOpenCursorsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Parse Failure Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbParseFailureCountPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbParseFailureCountPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Read Total Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Reads Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbPhysicalReadsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbPhysicalReadsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Write Total Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Writes Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbPhysicalWritesPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbPhysicalWritesPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Redo Generated Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbRedoGeneratedBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbRedoGeneratedBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Redo Generated Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbRedoGeneratedBytesPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbRedoGeneratedBytesPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Response Time Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbResponseTimePerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbResponseTimePerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Session Count"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbSessionCountDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbSessionCountDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Soft Parse Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbSoftParseRatioDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbSoftParseRatioDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["SQL Service Response Time"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbSQLServiceResponseTimeDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbSQLServiceResponseTimeDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Total Parse Count Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbTotalParseCountPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbTotalParseCountPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Total Parse Count Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbTotalParseCountPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbTotalParseCountPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Calls Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserCallsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserCallsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Calls Per Txn"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserCallsPerTransactionDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserCallsPerTransactionDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Commits Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserCommitsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserCommitsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Commits Percentage"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserCommitsPercentageDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserCommitsPercentageDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Rollbacks Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserRollbacksPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserRollbacksPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Rollbacks Percentage"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbUserRollbacksPercentageDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbUserRollbacksPercentageDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["User Transaction Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbTransactionsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbTransactionsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Execute Without Parse Ratio"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbExecuteWithoutParseRatioDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbExecuteWithoutParseRatioDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Logons Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbLogonsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbLogonsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Read Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbDbPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbDbPhysicalReadBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Reads Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbDbPhysicalReadsPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbDbPhysicalReadsPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Write Bytes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbDbPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbDbPhysicalWriteBytesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 	r.recorders["Physical Writes Per Sec"] = func(mb *metadata.MetricsBuilder, ts pcommon.Timestamp, value float64, instanceID, pdbName string) {
-		mb.RecordNewrelicoracledbPdbDbPhysicalWritesPerSecondDataPoint(ts, value, instanceID, pdbName)
+		mb.RecordOracledbPdbDbPhysicalWritesPerSecondDataPoint(ts, value, instanceID, pdbName)
 	}
 }

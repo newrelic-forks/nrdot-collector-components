@@ -85,8 +85,8 @@ func (s *ChildCursorsScraper) recordChildCursorMetrics(now pcommon.Timestamp, cu
 	planHashValue := fmt.Sprintf("%d", cursor.GetPlanHashValue())
 	databaseName := cursor.GetDatabaseName()
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsElapsedTimeDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsElapsedTime.Enabled {
+		s.mb.RecordOracledbChildCursorsElapsedTimeDataPoint(
 			now,
 			cursor.GetElapsedTime(),
 			collectionTimestamp,
@@ -97,8 +97,8 @@ func (s *ChildCursorsScraper) recordChildCursorMetrics(now pcommon.Timestamp, cu
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsDetails.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsDetailsDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsDetails.Enabled {
+		s.mb.RecordOracledbChildCursorsDetailsDataPoint(
 			now,
 			1,
 			collectionTimestamp,
@@ -117,8 +117,8 @@ func (s *ChildCursorsScraper) recordChildCursorMetrics(now pcommon.Timestamp, cu
 }
 
 func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Timestamp, cursor *models.ChildCursor, collectionTimestamp, databaseName, sqlID string, childNumber int64, planHashValue string) {
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsCPUTimeDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsCPUTime.Enabled {
+		s.mb.RecordOracledbChildCursorsCPUTimeDataPoint(
 			now,
 			cursor.GetCPUTime(),
 			collectionTimestamp,
@@ -129,8 +129,8 @@ func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Times
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsUserIoWaitTime.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsUserIoWaitTimeDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsUserIoWaitTime.Enabled {
+		s.mb.RecordOracledbChildCursorsUserIoWaitTimeDataPoint(
 			now,
 			cursor.GetUserIOWaitTime(),
 			collectionTimestamp,
@@ -141,8 +141,8 @@ func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Times
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsExecutions.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsExecutionsDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsExecutions.Enabled {
+		s.mb.RecordOracledbChildCursorsExecutionsDataPoint(
 			now,
 			cursor.GetExecutions(),
 			collectionTimestamp,
@@ -153,8 +153,8 @@ func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Times
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsDiskReads.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsDiskReadsDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsDiskReads.Enabled {
+		s.mb.RecordOracledbChildCursorsDiskReadsDataPoint(
 			now,
 			cursor.GetDiskReads(),
 			collectionTimestamp,
@@ -165,8 +165,8 @@ func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Times
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsBufferGets.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsBufferGetsDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsBufferGets.Enabled {
+		s.mb.RecordOracledbChildCursorsBufferGetsDataPoint(
 			now,
 			cursor.GetBufferGets(),
 			collectionTimestamp,
@@ -177,8 +177,8 @@ func (s *ChildCursorsScraper) recordAdvancedChildCursorMetrics(now pcommon.Times
 		)
 	}
 
-	if s.metricsBuilderConfig.Metrics.NewrelicoracledbChildCursorsInvalidations.Enabled {
-		s.mb.RecordNewrelicoracledbChildCursorsInvalidationsDataPoint(
+	if s.metricsBuilderConfig.Metrics.OracledbChildCursorsInvalidations.Enabled {
+		s.mb.RecordOracledbChildCursorsInvalidationsDataPoint(
 			now,
 			cursor.GetInvalidations(),
 			collectionTimestamp,

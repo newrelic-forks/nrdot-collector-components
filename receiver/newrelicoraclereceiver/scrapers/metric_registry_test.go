@@ -25,7 +25,7 @@ func TestNewSystemMetricRegistry(t *testing.T) {
 func TestSystemMetricRegistry_RecordMetric_Success(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemBufferCacheHitRatio.Enabled = true
+	config.Metrics.OracledbSystemBufferCacheHitRatio.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -50,9 +50,9 @@ func TestSystemMetricRegistry_RecordMetric_UnknownMetric(t *testing.T) {
 func TestSystemMetricRegistry_RecordMultipleMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemBufferCacheHitRatio.Enabled = true
-	config.Metrics.NewrelicoracledbSystemMemorySortsRatio.Enabled = true
-	config.Metrics.NewrelicoracledbSystemRedoAllocationHitRatio.Enabled = true
+	config.Metrics.OracledbSystemBufferCacheHitRatio.Enabled = true
+	config.Metrics.OracledbSystemMemorySortsRatio.Enabled = true
+	config.Metrics.OracledbSystemRedoAllocationHitRatio.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -76,10 +76,10 @@ func TestSystemMetricRegistry_RecordMultipleMetrics(t *testing.T) {
 func TestSystemMetricRegistry_CacheRatioMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemCursorCacheHitRatio.Enabled = true
-	config.Metrics.NewrelicoracledbSystemSoftParseRatio.Enabled = true
-	config.Metrics.NewrelicoracledbSystemRowCacheHitRatio.Enabled = true
-	config.Metrics.NewrelicoracledbSystemLibraryCacheHitRatio.Enabled = true
+	config.Metrics.OracledbSystemCursorCacheHitRatio.Enabled = true
+	config.Metrics.OracledbSystemSoftParseRatio.Enabled = true
+	config.Metrics.OracledbSystemRowCacheHitRatio.Enabled = true
+	config.Metrics.OracledbSystemLibraryCacheHitRatio.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -101,9 +101,9 @@ func TestSystemMetricRegistry_CacheRatioMetrics(t *testing.T) {
 func TestSystemMetricRegistry_TransactionMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemTransactionsPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbSystemPhysicalReadsPerTransaction.Enabled = true
-	config.Metrics.NewrelicoracledbSystemPhysicalWritesPerTransaction.Enabled = true
+	config.Metrics.OracledbSystemTransactionsPerSecond.Enabled = true
+	config.Metrics.OracledbSystemPhysicalReadsPerTransaction.Enabled = true
+	config.Metrics.OracledbSystemPhysicalWritesPerTransaction.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -124,9 +124,9 @@ func TestSystemMetricRegistry_TransactionMetrics(t *testing.T) {
 func TestSystemMetricRegistry_PerSecondMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemPhysicalReadsDirectPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbSystemOpenCursorsPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbSystemUserCommitsPerSecond.Enabled = true
+	config.Metrics.OracledbSystemPhysicalReadsDirectPerSecond.Enabled = true
+	config.Metrics.OracledbSystemOpenCursorsPerSecond.Enabled = true
+	config.Metrics.OracledbSystemUserCommitsPerSecond.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -147,10 +147,10 @@ func TestSystemMetricRegistry_PerSecondMetrics(t *testing.T) {
 func TestSystemMetricRegistry_SingleValueMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemRowsPerSort.Enabled = true
-	config.Metrics.NewrelicoracledbSystemHostCPUUtilization.Enabled = true
-	config.Metrics.NewrelicoracledbSystemCurrentLogonsCount.Enabled = true
-	config.Metrics.NewrelicoracledbSystemSessionCount.Enabled = true
+	config.Metrics.OracledbSystemRowsPerSort.Enabled = true
+	config.Metrics.OracledbSystemHostCPUUtilization.Enabled = true
+	config.Metrics.OracledbSystemCurrentLogonsCount.Enabled = true
+	config.Metrics.OracledbSystemSessionCount.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -180,7 +180,7 @@ func TestNewPdbMetricRegistry(t *testing.T) {
 func TestPdbMetricRegistry_RecordMetric_Success(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbActiveParallelSessions.Enabled = true
+	config.Metrics.OracledbPdbActiveParallelSessions.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -205,9 +205,9 @@ func TestPdbMetricRegistry_RecordMetric_UnknownMetric(t *testing.T) {
 func TestPdbMetricRegistry_RecordMultipleMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbActiveParallelSessions.Enabled = true
-	config.Metrics.NewrelicoracledbPdbActiveSerialSessions.Enabled = true
-	config.Metrics.NewrelicoracledbPdbAverageActiveSessions.Enabled = true
+	config.Metrics.OracledbPdbActiveParallelSessions.Enabled = true
+	config.Metrics.OracledbPdbActiveSerialSessions.Enabled = true
+	config.Metrics.OracledbPdbAverageActiveSessions.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -231,9 +231,9 @@ func TestPdbMetricRegistry_RecordMultipleMetrics(t *testing.T) {
 func TestPdbMetricRegistry_CPUMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbBackgroundCPUUsagePerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbCPUUsagePerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbCPUUsagePerTransaction.Enabled = true
+	config.Metrics.OracledbPdbBackgroundCPUUsagePerSecond.Enabled = true
+	config.Metrics.OracledbPdbCPUUsagePerSecond.Enabled = true
+	config.Metrics.OracledbPdbCPUUsagePerTransaction.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -254,9 +254,9 @@ func TestPdbMetricRegistry_CPUMetrics(t *testing.T) {
 func TestPdbMetricRegistry_DatabaseMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbCPUTimeRatio.Enabled = true
-	config.Metrics.NewrelicoracledbPdbWaitTimeRatio.Enabled = true
-	config.Metrics.NewrelicoracledbPdbBlockChangesPerSecond.Enabled = true
+	config.Metrics.OracledbPdbCPUTimeRatio.Enabled = true
+	config.Metrics.OracledbPdbWaitTimeRatio.Enabled = true
+	config.Metrics.OracledbPdbBlockChangesPerSecond.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -277,9 +277,9 @@ func TestPdbMetricRegistry_DatabaseMetrics(t *testing.T) {
 func TestPdbMetricRegistry_TransactionMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbExecutionsPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbExecutionsPerTransaction.Enabled = true
-	config.Metrics.NewrelicoracledbPdbTransactionsPerSecond.Enabled = true
+	config.Metrics.OracledbPdbExecutionsPerSecond.Enabled = true
+	config.Metrics.OracledbPdbExecutionsPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbTransactionsPerSecond.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -300,9 +300,9 @@ func TestPdbMetricRegistry_TransactionMetrics(t *testing.T) {
 func TestPdbMetricRegistry_ParseMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbHardParseCountPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbHardParseCountPerTransaction.Enabled = true
-	config.Metrics.NewrelicoracledbPdbSoftParseRatio.Enabled = true
+	config.Metrics.OracledbPdbHardParseCountPerSecond.Enabled = true
+	config.Metrics.OracledbPdbHardParseCountPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbSoftParseRatio.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -323,10 +323,10 @@ func TestPdbMetricRegistry_ParseMetrics(t *testing.T) {
 func TestPdbMetricRegistry_IOMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbPhysicalReadBytesPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbPhysicalReadsPerTransaction.Enabled = true
-	config.Metrics.NewrelicoracledbPdbPhysicalWriteBytesPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbPhysicalWritesPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbPhysicalReadBytesPerSecond.Enabled = true
+	config.Metrics.OracledbPdbPhysicalReadsPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbPhysicalWriteBytesPerSecond.Enabled = true
+	config.Metrics.OracledbPdbPhysicalWritesPerTransaction.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -348,10 +348,10 @@ func TestPdbMetricRegistry_IOMetrics(t *testing.T) {
 func TestPdbMetricRegistry_UserMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbUserCommitsPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbUserCommitsPercentage.Enabled = true
-	config.Metrics.NewrelicoracledbPdbUserRollbacksPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbUserRollbacksPercentage.Enabled = true
+	config.Metrics.OracledbPdbUserCommitsPerSecond.Enabled = true
+	config.Metrics.OracledbPdbUserCommitsPercentage.Enabled = true
+	config.Metrics.OracledbPdbUserRollbacksPerSecond.Enabled = true
+	config.Metrics.OracledbPdbUserRollbacksPercentage.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -425,9 +425,9 @@ func TestSystemMetricRegistry_AllRegisteredMetrics(t *testing.T) {
 func TestSystemMetricRegistry_PerUserCallMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemDbBlockChangesPerUserCall.Enabled = true
-	config.Metrics.NewrelicoracledbSystemDbBlockGetsPerUserCall.Enabled = true
-	config.Metrics.NewrelicoracledbSystemExecutionsPerUserCall.Enabled = true
+	config.Metrics.OracledbSystemDbBlockChangesPerUserCall.Enabled = true
+	config.Metrics.OracledbSystemDbBlockGetsPerUserCall.Enabled = true
+	config.Metrics.OracledbSystemExecutionsPerUserCall.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -448,9 +448,9 @@ func TestSystemMetricRegistry_PerUserCallMetrics(t *testing.T) {
 func TestPdbMetricRegistry_SessionAndCursorMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbCurrentLogons.Enabled = true
-	config.Metrics.NewrelicoracledbPdbCurrentOpenCursors.Enabled = true
-	config.Metrics.NewrelicoracledbPdbSessionCount.Enabled = true
+	config.Metrics.OracledbPdbCurrentLogons.Enabled = true
+	config.Metrics.OracledbPdbCurrentOpenCursors.Enabled = true
+	config.Metrics.OracledbPdbSessionCount.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -471,10 +471,10 @@ func TestPdbMetricRegistry_SessionAndCursorMetrics(t *testing.T) {
 func TestSystemMetricRegistry_GlobalCacheMetrics(t *testing.T) {
 	registry := NewSystemMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSystemGlobalCacheAverageCrGetTime.Enabled = true
-	config.Metrics.NewrelicoracledbSystemGlobalCacheAverageCurrentGetTime.Enabled = true
-	config.Metrics.NewrelicoracledbSystemGlobalCacheBlocksCorrupted.Enabled = true
-	config.Metrics.NewrelicoracledbSystemGlobalCacheBlocksLost.Enabled = true
+	config.Metrics.OracledbSystemGlobalCacheAverageCrGetTime.Enabled = true
+	config.Metrics.OracledbSystemGlobalCacheAverageCurrentGetTime.Enabled = true
+	config.Metrics.OracledbSystemGlobalCacheBlocksCorrupted.Enabled = true
+	config.Metrics.OracledbSystemGlobalCacheBlocksLost.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -496,10 +496,10 @@ func TestSystemMetricRegistry_GlobalCacheMetrics(t *testing.T) {
 func TestPdbMetricRegistry_RedoAndLogMetrics(t *testing.T) {
 	registry := NewPdbMetricRegistry()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbPdbRedoGeneratedBytesPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbRedoGeneratedBytesPerTransaction.Enabled = true
-	config.Metrics.NewrelicoracledbPdbLogonsPerSecond.Enabled = true
-	config.Metrics.NewrelicoracledbPdbLogonsPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbRedoGeneratedBytesPerSecond.Enabled = true
+	config.Metrics.OracledbPdbRedoGeneratedBytesPerTransaction.Enabled = true
+	config.Metrics.OracledbPdbLogonsPerSecond.Enabled = true
+	config.Metrics.OracledbPdbLogonsPerTransaction.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 

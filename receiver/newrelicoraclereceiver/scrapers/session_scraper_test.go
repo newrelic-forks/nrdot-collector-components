@@ -107,28 +107,28 @@ func TestSessionScraper_MetricEnabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSessionsCount.Enabled = true
+	config.Metrics.OracledbSessionsCount.Enabled = true
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
 	scraper := NewSessionScraper(mockClient, mb, logger, config)
 
 	assert.NotNil(t, scraper)
-	assert.True(t, scraper.config.Metrics.NewrelicoracledbSessionsCount.Enabled)
+	assert.True(t, scraper.config.Metrics.OracledbSessionsCount.Enabled)
 }
 
 func TestSessionScraper_MetricDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSessionsCount.Enabled = false
+	config.Metrics.OracledbSessionsCount.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
 	scraper := NewSessionScraper(mockClient, mb, logger, config)
 
 	assert.NotNil(t, scraper)
-	assert.False(t, scraper.config.Metrics.NewrelicoracledbSessionsCount.Enabled)
+	assert.False(t, scraper.config.Metrics.OracledbSessionsCount.Enabled)
 }
 
 func TestSessionScraper_DifferentConfigs(t *testing.T) {
@@ -137,17 +137,17 @@ func TestSessionScraper_DifferentConfigs(t *testing.T) {
 	logger := zap.NewNop()
 
 	config1 := metadata.DefaultMetricsBuilderConfig()
-	config1.Metrics.NewrelicoracledbSessionsCount.Enabled = true
+	config1.Metrics.OracledbSessionsCount.Enabled = true
 	mb1 := metadata.NewMetricsBuilder(config1, settings)
 	scraper1 := NewSessionScraper(mockClient, mb1, logger, config1)
 
 	config2 := metadata.DefaultMetricsBuilderConfig()
-	config2.Metrics.NewrelicoracledbSessionsCount.Enabled = false
+	config2.Metrics.OracledbSessionsCount.Enabled = false
 	mb2 := metadata.NewMetricsBuilder(config2, settings)
 	scraper2 := NewSessionScraper(mockClient, mb2, logger, config2)
 
-	assert.True(t, scraper1.config.Metrics.NewrelicoracledbSessionsCount.Enabled)
-	assert.False(t, scraper2.config.Metrics.NewrelicoracledbSessionsCount.Enabled)
+	assert.True(t, scraper1.config.Metrics.OracledbSessionsCount.Enabled)
+	assert.False(t, scraper2.config.Metrics.OracledbSessionsCount.Enabled)
 }
 
 // Tests for ScrapeSessionCount
@@ -172,7 +172,7 @@ func TestScrapeSessionCount_MetricDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSessionsCount.Enabled = false
+	config.Metrics.OracledbSessionsCount.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 	scraper := NewSessionScraper(mockClient, mb, logger, config)

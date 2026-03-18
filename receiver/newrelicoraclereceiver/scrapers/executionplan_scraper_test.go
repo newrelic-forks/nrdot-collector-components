@@ -76,7 +76,7 @@ func TestScrapeExecutionPlans_Success(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -162,7 +162,7 @@ func TestScrapeExecutionPlans_MultipleIdentifiers(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -191,7 +191,7 @@ func TestScrapeExecutionPlans_InvalidSQLID(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -211,7 +211,7 @@ func TestBuildExecutionPlanMetrics_EventDisabled(_ *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = false
+	config.Metrics.OracledbExecutionPlan.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -228,7 +228,7 @@ func TestBuildExecutionPlanMetrics_AllFields(_ *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -266,7 +266,7 @@ func TestBuildExecutionPlanMetrics_NullFields(_ *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -300,7 +300,7 @@ func TestBuildExecutionPlanMetrics_EmptyStrings(_ *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -391,7 +391,7 @@ func TestScrapeExecutionPlans_PartialFailure(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -414,7 +414,7 @@ func TestBuildExecutionPlanMetrics_WithPredicates(_ *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -441,7 +441,7 @@ func TestScrapeExecutionPlans_CachedPlans(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = true
+	config.Metrics.OracledbExecutionPlan.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -473,7 +473,7 @@ func TestScrapeExecutionPlans_BuildMetricsError(t *testing.T) {
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
 	// Disable the metric to cause buildExecutionPlanMetrics to not record
-	config.Metrics.NewrelicoracledbExecutionPlan.Enabled = false
+	config.Metrics.OracledbExecutionPlan.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 

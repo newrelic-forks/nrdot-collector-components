@@ -121,7 +121,7 @@ func (s *ExecutionPlanScraper) ScrapeExecutionPlans(ctx context.Context, sqlIden
 
 // buildExecutionPlanMetrics converts an execution plan row to a metric data point with all attributes.
 func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPlanRow, queryTimestamp time.Time) {
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbExecutionPlan.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbExecutionPlan.Enabled {
 		return
 	}
 
@@ -236,7 +236,7 @@ func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPl
 		filterPredicates = commonutils.AnonymizeAndNormalize(row.FilterPredicates.String)
 	}
 
-	s.mb.RecordNewrelicoracledbExecutionPlanDataPoint(
+	s.mb.RecordOracledbExecutionPlanDataPoint(
 		pcommon.NewTimestampFromTime(queryTimestamp),
 		int64(1), // Value of 1 to indicate this execution plan step exists
 		"OracleExecutionPlan",
