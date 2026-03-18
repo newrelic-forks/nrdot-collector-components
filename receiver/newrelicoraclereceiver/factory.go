@@ -107,7 +107,7 @@ func createMetricsReceiverFunc(sqlOpenerFunc sqlOpenerFunc) receiver.CreateMetri
 			if err != nil {
 				return nil, fmt.Errorf("failed to create scraper for service %s: %w", svcName, err)
 			}
-			opts = append(opts, scraperhelper.AddScraper(metadata.Type, mp))
+			opts = append(opts, scraperhelper.AddMetricsScraper(metadata.Type, mp))
 		}
 
 		return scraperhelper.NewMetricsController(
