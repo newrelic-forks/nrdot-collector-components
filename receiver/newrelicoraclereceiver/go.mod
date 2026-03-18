@@ -1,4 +1,4 @@
-module github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver
+module github.com/newrelic/nrdot-collector-components/receiver/oraclereceiver
 
 go 1.25.0
 
