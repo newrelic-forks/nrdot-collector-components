@@ -443,11 +443,24 @@ define updatehelper
 	done
 endef
 
+.PHONY: update-golang
+update-golang:
+ifndef VERSION
+	$(error VERSION is required. Usage: make update-golang VERSION=1.24.11)
+endif
+	@./.github/workflows/scripts/update-golang.sh -v $(VERSION)
+
 .PHONY: update-otel
 update-otel:$(MULTIMOD)
 	# Make sure cmd/nrdotcol/go.mod and cmd/oteltestbedcol/go.mod are present
 	$(MAKE) gennrdotcol
 	$(MAKE) genoteltestbedcol
+	# Update Go version if provided
+ifdef GO_VERSION
+	@echo "Updating Go version to $(GO_VERSION)..."
+	$(MAKE) update-golang VERSION=$(GO_VERSION)
+	git add . && git commit -s -m "[chore] update golang to $(GO_VERSION)" --allow-empty || true
+endif
 	$(MULTIMOD) sync -s=true -o ../opentelemetry-collector -m stable --commit-hash "$(OTEL_STABLE_VERSION)"
 	git add . && git commit -s -m "[chore] multimod update stable modules" || true
 	$(MULTIMOD) sync -s=true -o ../opentelemetry-collector -m beta --commit-hash "$(OTEL_VERSION)"
@@ -680,6 +693,13 @@ clean:
 	find . -type f -name 'integration-coverage.html' -delete
 	@echo "Removing built binary files"
 	find . -type f -name 'builtunitetest.test' -delete
+
+.PHONY: clean-cols
+clean-cols:
+	@echo "Removing build artifacts from cmd/nrdotcol"
+	cd cmd/nrdotcol && git clean -fX
+	@echo "Removing build artifacts from cmd/oteltestbedcol"
+	cd cmd/oteltestbedcol && git clean -fX
 
 .PHONY: generate-gh-issue-templates
 generate-gh-issue-templates: $(GITHUBGEN)
