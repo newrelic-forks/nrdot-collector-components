@@ -39,7 +39,7 @@ component_management:
   - component_id: receiver_newrelicoracle
     name: receiver_newrelicoracle
     paths:
-    - receiver/newrelicoraclereceiver/**
+    - receiver/oracledbreceiver/**
   - component_id: receiver_nop
     name: receiver_nop
     paths:
