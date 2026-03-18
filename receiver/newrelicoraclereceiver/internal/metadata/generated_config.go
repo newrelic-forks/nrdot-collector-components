@@ -9,8 +9,7 @@ import (
 
 // MetricConfig provides common config for a particular metric.
 type MetricConfig struct {
-	Enabled bool `mapstructure:"enabled"`
-
+	Enabled          bool `mapstructure:"enabled"`
 	enabledSetByUser bool
 }
 
@@ -18,1338 +17,1340 @@ func (ms *MetricConfig) Unmarshal(parser *confmap.Conf) error {
 	if parser == nil {
 		return nil
 	}
+
 	err := parser.Unmarshal(ms)
 	if err != nil {
 		return err
 	}
+
 	ms.enabledSetByUser = parser.IsSet("enabled")
 	return nil
 }
 
-// MetricsConfig provides config for newrelicoracledb metrics.
+// MetricsConfig provides config for oracledb metrics.
 type MetricsConfig struct {
-	NewrelicoracledbAsmDiskgroupFreeMb                                 MetricConfig `mapstructure:"newrelicoracledb.asm.diskgroup.free_mb"`
-	NewrelicoracledbAsmDiskgroupOfflineDisks                           MetricConfig `mapstructure:"newrelicoracledb.asm.diskgroup.offline_disks"`
-	NewrelicoracledbAsmDiskgroupTotalMb                                MetricConfig `mapstructure:"newrelicoracledb.asm.diskgroup.total_mb"`
-	NewrelicoracledbChildCursorsBufferGets                             MetricConfig `mapstructure:"newrelicoracledb.child_cursors.buffer_gets"`
-	NewrelicoracledbChildCursorsCPUTime                                MetricConfig `mapstructure:"newrelicoracledb.child_cursors.cpu_time"`
-	NewrelicoracledbChildCursorsDetails                                MetricConfig `mapstructure:"newrelicoracledb.child_cursors.details"`
-	NewrelicoracledbChildCursorsDiskReads                              MetricConfig `mapstructure:"newrelicoracledb.child_cursors.disk_reads"`
-	NewrelicoracledbChildCursorsElapsedTime                            MetricConfig `mapstructure:"newrelicoracledb.child_cursors.elapsed_time"`
-	NewrelicoracledbChildCursorsExecutions                             MetricConfig `mapstructure:"newrelicoracledb.child_cursors.executions"`
-	NewrelicoracledbChildCursorsInvalidations                          MetricConfig `mapstructure:"newrelicoracledb.child_cursors.invalidations"`
-	NewrelicoracledbChildCursorsUserIoWaitTime                         MetricConfig `mapstructure:"newrelicoracledb.child_cursors.user_io_wait_time"`
-	NewrelicoracledbConnectionActiveSessions                           MetricConfig `mapstructure:"newrelicoracledb.connection.active_sessions"`
-	NewrelicoracledbConnectionBytesReceived                            MetricConfig `mapstructure:"newrelicoracledb.connection.bytes_received"`
-	NewrelicoracledbConnectionBytesSent                                MetricConfig `mapstructure:"newrelicoracledb.connection.bytes_sent"`
-	NewrelicoracledbConnectionCircuits                                 MetricConfig `mapstructure:"newrelicoracledb.connection.circuits"`
-	NewrelicoracledbConnectionDispatchers                              MetricConfig `mapstructure:"newrelicoracledb.connection.dispatchers"`
-	NewrelicoracledbConnectionExecuteCount                             MetricConfig `mapstructure:"newrelicoracledb.connection.execute_count"`
-	NewrelicoracledbConnectionInactiveSessions                         MetricConfig `mapstructure:"newrelicoracledb.connection.inactive_sessions"`
-	NewrelicoracledbConnectionLogonsCumulative                         MetricConfig `mapstructure:"newrelicoracledb.connection.logons_cumulative"`
-	NewrelicoracledbConnectionLogonsCurrent                            MetricConfig `mapstructure:"newrelicoracledb.connection.logons_current"`
-	NewrelicoracledbConnectionParseCountHard                           MetricConfig `mapstructure:"newrelicoracledb.connection.parse_count_hard"`
-	NewrelicoracledbConnectionParseCountTotal                          MetricConfig `mapstructure:"newrelicoracledb.connection.parse_count_total"`
-	NewrelicoracledbConnectionResourceCurrentUtilization               MetricConfig `mapstructure:"newrelicoracledb.connection.resource_current_utilization"`
-	NewrelicoracledbConnectionResourceLimit                            MetricConfig `mapstructure:"newrelicoracledb.connection.resource_limit"`
-	NewrelicoracledbConnectionResourceMaxUtilization                   MetricConfig `mapstructure:"newrelicoracledb.connection.resource_max_utilization"`
-	NewrelicoracledbConnectionSessionsByStatus                         MetricConfig `mapstructure:"newrelicoracledb.connection.sessions_by_status"`
-	NewrelicoracledbConnectionSessionsByType                           MetricConfig `mapstructure:"newrelicoracledb.connection.sessions_by_type"`
-	NewrelicoracledbConnectionSharedServers                            MetricConfig `mapstructure:"newrelicoracledb.connection.shared_servers"`
-	NewrelicoracledbConnectionSqlnetRoundtrips                         MetricConfig `mapstructure:"newrelicoracledb.connection.sqlnet_roundtrips"`
-	NewrelicoracledbConnectionTotalSessions                            MetricConfig `mapstructure:"newrelicoracledb.connection.total_sessions"`
-	NewrelicoracledbConnectionUserCommits                              MetricConfig `mapstructure:"newrelicoracledb.connection.user_commits"`
-	NewrelicoracledbConnectionUserRollbacks                            MetricConfig `mapstructure:"newrelicoracledb.connection.user_rollbacks"`
-	NewrelicoracledbContainerRestricted                                MetricConfig `mapstructure:"newrelicoracledb.container.restricted"`
-	NewrelicoracledbContainerStatus                                    MetricConfig `mapstructure:"newrelicoracledb.container.status"`
-	NewrelicoracledbDatabaseInfo                                       MetricConfig `mapstructure:"newrelicoracledb.database.info"`
-	NewrelicoracledbDatabaseRole                                       MetricConfig `mapstructure:"newrelicoracledb.database.role"`
-	NewrelicoracledbDatafileAutoextensible                             MetricConfig `mapstructure:"newrelicoracledb.datafile.autoextensible"`
-	NewrelicoracledbDatafileSizeBytes                                  MetricConfig `mapstructure:"newrelicoracledb.datafile.size_bytes"`
-	NewrelicoracledbDatafileUsedBytes                                  MetricConfig `mapstructure:"newrelicoracledb.datafile.used_bytes"`
-	NewrelicoracledbDbID                                               MetricConfig `mapstructure:"newrelicoracledb.db_id"`
-	NewrelicoracledbDiskBlocksRead                                     MetricConfig `mapstructure:"newrelicoracledb.disk.blocks_read"`
-	NewrelicoracledbDiskBlocksWritten                                  MetricConfig `mapstructure:"newrelicoracledb.disk.blocks_written"`
-	NewrelicoracledbDiskReadTimeMilliseconds                           MetricConfig `mapstructure:"newrelicoracledb.disk.read_time_milliseconds"`
-	NewrelicoracledbDiskReads                                          MetricConfig `mapstructure:"newrelicoracledb.disk.reads"`
-	NewrelicoracledbDiskWriteTimeMilliseconds                          MetricConfig `mapstructure:"newrelicoracledb.disk.write_time_milliseconds"`
-	NewrelicoracledbDiskWrites                                         MetricConfig `mapstructure:"newrelicoracledb.disk.writes"`
-	NewrelicoracledbExecutionPlan                                      MetricConfig `mapstructure:"newrelicoracledb.execution_plan"`
-	NewrelicoracledbGlobalName                                         MetricConfig `mapstructure:"newrelicoracledb.global_name"`
-	NewrelicoracledbHostingInfo                                        MetricConfig `mapstructure:"newrelicoracledb.hosting.info"`
-	NewrelicoracledbLockedAccounts                                     MetricConfig `mapstructure:"newrelicoracledb.locked_accounts"`
-	NewrelicoracledbLongRunningQueries                                 MetricConfig `mapstructure:"newrelicoracledb.long_running_queries"`
-	NewrelicoracledbMemoryPgaAllocatedBytes                            MetricConfig `mapstructure:"newrelicoracledb.memory.pga_allocated_bytes"`
-	NewrelicoracledbMemoryPgaFreeableBytes                             MetricConfig `mapstructure:"newrelicoracledb.memory.pga_freeable_bytes"`
-	NewrelicoracledbMemoryPgaInUseBytes                                MetricConfig `mapstructure:"newrelicoracledb.memory.pga_in_use_bytes"`
-	NewrelicoracledbMemoryPgaMaxSizeBytes                              MetricConfig `mapstructure:"newrelicoracledb.memory.pga_max_size_bytes"`
-	NewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes       MetricConfig `mapstructure:"newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes"`
-	NewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes           MetricConfig `mapstructure:"newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes"`
-	NewrelicoracledbMemorySgaUgaTotalBytes                             MetricConfig `mapstructure:"newrelicoracledb.memory.sga_uga_total_bytes"`
-	NewrelicoracledbPdbActiveParallelSessions                          MetricConfig `mapstructure:"newrelicoracledb.pdb.active_parallel_sessions"`
-	NewrelicoracledbPdbActiveSerialSessions                            MetricConfig `mapstructure:"newrelicoracledb.pdb.active_serial_sessions"`
-	NewrelicoracledbPdbAverageActiveSessions                           MetricConfig `mapstructure:"newrelicoracledb.pdb.average_active_sessions"`
-	NewrelicoracledbPdbBackgroundCPUUsagePerSecond                     MetricConfig `mapstructure:"newrelicoracledb.pdb.background_cpu_usage_per_second"`
-	NewrelicoracledbPdbBackgroundTimePerSecond                         MetricConfig `mapstructure:"newrelicoracledb.pdb.background_time_per_second"`
-	NewrelicoracledbPdbBlockChangesPerSecond                           MetricConfig `mapstructure:"newrelicoracledb.pdb.block_changes_per_second"`
-	NewrelicoracledbPdbBlockChangesPerTransaction                      MetricConfig `mapstructure:"newrelicoracledb.pdb.block_changes_per_transaction"`
-	NewrelicoracledbPdbCPUTimeRatio                                    MetricConfig `mapstructure:"newrelicoracledb.pdb.cpu_time_ratio"`
-	NewrelicoracledbPdbCPUUsagePerSecond                               MetricConfig `mapstructure:"newrelicoracledb.pdb.cpu_usage_per_second"`
-	NewrelicoracledbPdbCPUUsagePerTransaction                          MetricConfig `mapstructure:"newrelicoracledb.pdb.cpu_usage_per_transaction"`
-	NewrelicoracledbPdbCurrentLogons                                   MetricConfig `mapstructure:"newrelicoracledb.pdb.current_logons"`
-	NewrelicoracledbPdbCurrentOpenCursors                              MetricConfig `mapstructure:"newrelicoracledb.pdb.current_open_cursors"`
-	NewrelicoracledbPdbDbPhysicalReadBytesPerSecond                    MetricConfig `mapstructure:"newrelicoracledb.pdb.db_physical_read_bytes_per_second"`
-	NewrelicoracledbPdbDbPhysicalReadsPerSecond                        MetricConfig `mapstructure:"newrelicoracledb.pdb.db_physical_reads_per_second"`
-	NewrelicoracledbPdbDbPhysicalWriteBytesPerSecond                   MetricConfig `mapstructure:"newrelicoracledb.pdb.db_physical_write_bytes_per_second"`
-	NewrelicoracledbPdbDbPhysicalWritesPerSecond                       MetricConfig `mapstructure:"newrelicoracledb.pdb.db_physical_writes_per_second"`
-	NewrelicoracledbPdbExecuteWithoutParseRatio                        MetricConfig `mapstructure:"newrelicoracledb.pdb.execute_without_parse_ratio"`
-	NewrelicoracledbPdbExecutionsPerSecond                             MetricConfig `mapstructure:"newrelicoracledb.pdb.executions_per_second"`
-	NewrelicoracledbPdbExecutionsPerTransaction                        MetricConfig `mapstructure:"newrelicoracledb.pdb.executions_per_transaction"`
-	NewrelicoracledbPdbHardParseCountPerSecond                         MetricConfig `mapstructure:"newrelicoracledb.pdb.hard_parse_count_per_second"`
-	NewrelicoracledbPdbHardParseCountPerTransaction                    MetricConfig `mapstructure:"newrelicoracledb.pdb.hard_parse_count_per_transaction"`
-	NewrelicoracledbPdbLogicalReadsPerSecond                           MetricConfig `mapstructure:"newrelicoracledb.pdb.logical_reads_per_second"`
-	NewrelicoracledbPdbLogicalReadsPerTransaction                      MetricConfig `mapstructure:"newrelicoracledb.pdb.logical_reads_per_transaction"`
-	NewrelicoracledbPdbLogonsPerSecond                                 MetricConfig `mapstructure:"newrelicoracledb.pdb.logons_per_second"`
-	NewrelicoracledbPdbLogonsPerTransaction                            MetricConfig `mapstructure:"newrelicoracledb.pdb.logons_per_transaction"`
-	NewrelicoracledbPdbNetworkTrafficBytePerSecond                     MetricConfig `mapstructure:"newrelicoracledb.pdb.network_traffic_byte_per_second"`
-	NewrelicoracledbPdbOpenCursorsPerSecond                            MetricConfig `mapstructure:"newrelicoracledb.pdb.open_cursors_per_second"`
-	NewrelicoracledbPdbOpenCursorsPerTransaction                       MetricConfig `mapstructure:"newrelicoracledb.pdb.open_cursors_per_transaction"`
-	NewrelicoracledbPdbOpenMode                                        MetricConfig `mapstructure:"newrelicoracledb.pdb.open_mode"`
-	NewrelicoracledbPdbParseFailureCountPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.pdb.parse_failure_count_per_second"`
-	NewrelicoracledbPdbPhysicalReadBytesPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.pdb.physical_read_bytes_per_second"`
-	NewrelicoracledbPdbPhysicalReadsPerTransaction                     MetricConfig `mapstructure:"newrelicoracledb.pdb.physical_reads_per_transaction"`
-	NewrelicoracledbPdbPhysicalWriteBytesPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.pdb.physical_write_bytes_per_second"`
-	NewrelicoracledbPdbPhysicalWritesPerTransaction                    MetricConfig `mapstructure:"newrelicoracledb.pdb.physical_writes_per_transaction"`
-	NewrelicoracledbPdbRedoGeneratedBytesPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.pdb.redo_generated_bytes_per_second"`
-	NewrelicoracledbPdbRedoGeneratedBytesPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.pdb.redo_generated_bytes_per_transaction"`
-	NewrelicoracledbPdbResponseTimePerTransaction                      MetricConfig `mapstructure:"newrelicoracledb.pdb.response_time_per_transaction"`
-	NewrelicoracledbPdbSessionCount                                    MetricConfig `mapstructure:"newrelicoracledb.pdb.session_count"`
-	NewrelicoracledbPdbSoftParseRatio                                  MetricConfig `mapstructure:"newrelicoracledb.pdb.soft_parse_ratio"`
-	NewrelicoracledbPdbSQLServiceResponseTime                          MetricConfig `mapstructure:"newrelicoracledb.pdb.sql_service_response_time"`
-	NewrelicoracledbPdbTotalParseCountPerSecond                        MetricConfig `mapstructure:"newrelicoracledb.pdb.total_parse_count_per_second"`
-	NewrelicoracledbPdbTotalParseCountPerTransaction                   MetricConfig `mapstructure:"newrelicoracledb.pdb.total_parse_count_per_transaction"`
-	NewrelicoracledbPdbTotalSizeBytes                                  MetricConfig `mapstructure:"newrelicoracledb.pdb.total_size_bytes"`
-	NewrelicoracledbPdbTransactionsPerSecond                           MetricConfig `mapstructure:"newrelicoracledb.pdb.transactions_per_second"`
-	NewrelicoracledbPdbUserCallsPerSecond                              MetricConfig `mapstructure:"newrelicoracledb.pdb.user_calls_per_second"`
-	NewrelicoracledbPdbUserCallsPerTransaction                         MetricConfig `mapstructure:"newrelicoracledb.pdb.user_calls_per_transaction"`
-	NewrelicoracledbPdbUserCommitsPerSecond                            MetricConfig `mapstructure:"newrelicoracledb.pdb.user_commits_per_second"`
-	NewrelicoracledbPdbUserCommitsPercentage                           MetricConfig `mapstructure:"newrelicoracledb.pdb.user_commits_percentage"`
-	NewrelicoracledbPdbUserRollbacksPerSecond                          MetricConfig `mapstructure:"newrelicoracledb.pdb.user_rollbacks_per_second"`
-	NewrelicoracledbPdbUserRollbacksPercentage                         MetricConfig `mapstructure:"newrelicoracledb.pdb.user_rollbacks_percentage"`
-	NewrelicoracledbPdbWaitTimeRatio                                   MetricConfig `mapstructure:"newrelicoracledb.pdb.wait_time_ratio"`
-	NewrelicoracledbRacInstanceActiveState                             MetricConfig `mapstructure:"newrelicoracledb.rac.instance.active_state"`
-	NewrelicoracledbRacInstanceArchiverStarted                         MetricConfig `mapstructure:"newrelicoracledb.rac.instance.archiver_started"`
-	NewrelicoracledbRacInstanceDatabaseStatus                          MetricConfig `mapstructure:"newrelicoracledb.rac.instance.database_status"`
-	NewrelicoracledbRacInstanceLoginsAllowed                           MetricConfig `mapstructure:"newrelicoracledb.rac.instance.logins_allowed"`
-	NewrelicoracledbRacInstanceStatus                                  MetricConfig `mapstructure:"newrelicoracledb.rac.instance.status"`
-	NewrelicoracledbRacInstanceUptimeSeconds                           MetricConfig `mapstructure:"newrelicoracledb.rac.instance.uptime_seconds"`
-	NewrelicoracledbRacInstanceVersionInfo                             MetricConfig `mapstructure:"newrelicoracledb.rac.instance.version_info"`
-	NewrelicoracledbRacServiceBlockedStatus                            MetricConfig `mapstructure:"newrelicoracledb.rac.service.blocked_status"`
-	NewrelicoracledbRacServiceClbConfig                                MetricConfig `mapstructure:"newrelicoracledb.rac.service.clb_config"`
-	NewrelicoracledbRacServiceDrainTimeoutSeconds                      MetricConfig `mapstructure:"newrelicoracledb.rac.service.drain_timeout_seconds"`
-	NewrelicoracledbRacServiceFanEnabled                               MetricConfig `mapstructure:"newrelicoracledb.rac.service.fan_enabled"`
-	NewrelicoracledbRacServiceGoalConfig                               MetricConfig `mapstructure:"newrelicoracledb.rac.service.goal_config"`
-	NewrelicoracledbRacServiceInstanceID                               MetricConfig `mapstructure:"newrelicoracledb.rac.service.instance_id"`
-	NewrelicoracledbRacServiceNetworkConfig                            MetricConfig `mapstructure:"newrelicoracledb.rac.service.network_config"`
-	NewrelicoracledbRacServiceReplayTimeoutSeconds                     MetricConfig `mapstructure:"newrelicoracledb.rac.service.replay_timeout_seconds"`
-	NewrelicoracledbRacServiceTransactionGuardEnabled                  MetricConfig `mapstructure:"newrelicoracledb.rac.service.transaction_guard_enabled"`
-	NewrelicoracledbRacTotalWaits                                      MetricConfig `mapstructure:"newrelicoracledb.rac.total_waits"`
-	NewrelicoracledbRacWaitTime                                        MetricConfig `mapstructure:"newrelicoracledb.rac.wait_time"`
-	NewrelicoracledbRedoLogParallelWriteWaits                          MetricConfig `mapstructure:"newrelicoracledb.redo_log_parallel_write_waits"`
-	NewrelicoracledbRedoLogSwitchArchivingNeededWaits                  MetricConfig `mapstructure:"newrelicoracledb.redo_log_switch_archiving_needed_waits"`
-	NewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits             MetricConfig `mapstructure:"newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits"`
-	NewrelicoracledbRedoLogSwitchCompletionWaits                       MetricConfig `mapstructure:"newrelicoracledb.redo_log_switch_completion_waits"`
-	NewrelicoracledbRollbackSegmentsGets                               MetricConfig `mapstructure:"newrelicoracledb.rollback_segments_gets"`
-	NewrelicoracledbRollbackSegmentsWaitRatio                          MetricConfig `mapstructure:"newrelicoracledb.rollback_segments_wait_ratio"`
-	NewrelicoracledbRollbackSegmentsWaits                              MetricConfig `mapstructure:"newrelicoracledb.rollback_segments_waits"`
-	NewrelicoracledbServiceCount                                       MetricConfig `mapstructure:"newrelicoracledb.service.count"`
-	NewrelicoracledbServiceStatus                                      MetricConfig `mapstructure:"newrelicoracledb.service.status"`
-	NewrelicoracledbSessionsCount                                      MetricConfig `mapstructure:"newrelicoracledb.sessions.count"`
-	NewrelicoracledbSgaBufferBusyWaits                                 MetricConfig `mapstructure:"newrelicoracledb.sga_buffer_busy_waits"`
-	NewrelicoracledbSgaFixedSizeBytes                                  MetricConfig `mapstructure:"newrelicoracledb.sga_fixed_size_bytes"`
-	NewrelicoracledbSgaFreeBufferInspectedWaits                        MetricConfig `mapstructure:"newrelicoracledb.sga_free_buffer_inspected_waits"`
-	NewrelicoracledbSgaFreeBufferWaits                                 MetricConfig `mapstructure:"newrelicoracledb.sga_free_buffer_waits"`
-	NewrelicoracledbSgaHitRatio                                        MetricConfig `mapstructure:"newrelicoracledb.sga_hit_ratio"`
-	NewrelicoracledbSgaLogAllocationRetriesRatio                       MetricConfig `mapstructure:"newrelicoracledb.sga_log_allocation_retries_ratio"`
-	NewrelicoracledbSgaLogBufferRedoAllocationRetries                  MetricConfig `mapstructure:"newrelicoracledb.sga_log_buffer_redo_allocation_retries"`
-	NewrelicoracledbSgaLogBufferRedoEntries                            MetricConfig `mapstructure:"newrelicoracledb.sga_log_buffer_redo_entries"`
-	NewrelicoracledbSgaLogBufferSpaceWaits                             MetricConfig `mapstructure:"newrelicoracledb.sga_log_buffer_space_waits"`
-	NewrelicoracledbSgaRedoBuffersBytes                                MetricConfig `mapstructure:"newrelicoracledb.sga_redo_buffers_bytes"`
-	NewrelicoracledbSgaSharedPoolDictCacheMissRatio                    MetricConfig `mapstructure:"newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio"`
-	NewrelicoracledbSgaSharedPoolLibraryCacheHitRatio                  MetricConfig `mapstructure:"newrelicoracledb.sga_shared_pool_library_cache_hit_ratio"`
-	NewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio               MetricConfig `mapstructure:"newrelicoracledb.sga_shared_pool_library_cache_reload_ratio"`
-	NewrelicoracledbSlowQueriesExecutionCount                          MetricConfig `mapstructure:"newrelicoracledb.slow_queries.execution_count"`
-	NewrelicoracledbSlowQueriesIntervalAvgBufferGets                   MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_buffer_gets"`
-	NewrelicoracledbSlowQueriesIntervalAvgCPUTime                      MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_cpu_time"`
-	NewrelicoracledbSlowQueriesIntervalAvgDiskReads                    MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_disk_reads"`
-	NewrelicoracledbSlowQueriesIntervalAvgDiskWrites                   MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_disk_writes"`
-	NewrelicoracledbSlowQueriesIntervalAvgElapsedTime                  MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_elapsed_time"`
-	NewrelicoracledbSlowQueriesIntervalAvgRowsProcessed                MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_rows_processed"`
-	NewrelicoracledbSlowQueriesIntervalAvgWaitTime                     MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_avg_wait_time"`
-	NewrelicoracledbSlowQueriesIntervalBufferGets                      MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_buffer_gets"`
-	NewrelicoracledbSlowQueriesIntervalCPUTime                         MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_cpu_time"`
-	NewrelicoracledbSlowQueriesIntervalDiskReads                       MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_disk_reads"`
-	NewrelicoracledbSlowQueriesIntervalDiskWrites                      MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_disk_writes"`
-	NewrelicoracledbSlowQueriesIntervalElapsedTime                     MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_elapsed_time"`
-	NewrelicoracledbSlowQueriesIntervalExecutionCount                  MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_execution_count"`
-	NewrelicoracledbSlowQueriesIntervalRowsProcessed                   MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_rows_processed"`
-	NewrelicoracledbSlowQueriesIntervalWaitTime                        MetricConfig `mapstructure:"newrelicoracledb.slow_queries.interval_wait_time"`
-	NewrelicoracledbSlowQueriesQueryDetails                            MetricConfig `mapstructure:"newrelicoracledb.slow_queries.query_details"`
-	NewrelicoracledbSlowQueriesTotalCPUTime                            MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_cpu_time"`
-	NewrelicoracledbSlowQueriesTotalDiskReads                          MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_disk_reads"`
-	NewrelicoracledbSlowQueriesTotalDiskWrites                         MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_disk_writes"`
-	NewrelicoracledbSlowQueriesTotalElapsedTime                        MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_elapsed_time"`
-	NewrelicoracledbSlowQueriesTotalRowsExamined                       MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_rows_examined"`
-	NewrelicoracledbSlowQueriesTotalRowsReturned                       MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_rows_returned"`
-	NewrelicoracledbSlowQueriesTotalWaitTime                           MetricConfig `mapstructure:"newrelicoracledb.slow_queries.total_wait_time"`
-	NewrelicoracledbSortsDisk                                          MetricConfig `mapstructure:"newrelicoracledb.sorts_disk"`
-	NewrelicoracledbSortsMemory                                        MetricConfig `mapstructure:"newrelicoracledb.sorts_memory"`
-	NewrelicoracledbSystemActiveParallelSessions                       MetricConfig `mapstructure:"newrelicoracledb.system.active_parallel_sessions"`
-	NewrelicoracledbSystemActiveSerialSessions                         MetricConfig `mapstructure:"newrelicoracledb.system.active_serial_sessions"`
-	NewrelicoracledbSystemAverageActiveSessions                        MetricConfig `mapstructure:"newrelicoracledb.system.average_active_sessions"`
-	NewrelicoracledbSystemBackgroundCheckpointsPerSecond               MetricConfig `mapstructure:"newrelicoracledb.system.background_checkpoints_per_second"`
-	NewrelicoracledbSystemBackgroundCPUUsagePerSecond                  MetricConfig `mapstructure:"newrelicoracledb.system.background_cpu_usage_per_second"`
-	NewrelicoracledbSystemBackgroundTimePerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.background_time_per_second"`
-	NewrelicoracledbSystemBranchNodeSplitsPerSecond                    MetricConfig `mapstructure:"newrelicoracledb.system.branch_node_splits_per_second"`
-	NewrelicoracledbSystemBranchNodeSplitsPerTransaction               MetricConfig `mapstructure:"newrelicoracledb.system.branch_node_splits_per_transaction"`
-	NewrelicoracledbSystemBufferCacheHitRatio                          MetricConfig `mapstructure:"newrelicoracledb.system.buffer_cache_hit_ratio"`
-	NewrelicoracledbSystemCapturedUserCalls                            MetricConfig `mapstructure:"newrelicoracledb.system.captured_user_calls"`
-	NewrelicoracledbSystemConsistentReadChangesPerSecond               MetricConfig `mapstructure:"newrelicoracledb.system.consistent_read_changes_per_second"`
-	NewrelicoracledbSystemConsistentReadChangesPerTransaction          MetricConfig `mapstructure:"newrelicoracledb.system.consistent_read_changes_per_transaction"`
-	NewrelicoracledbSystemConsistentReadGetsPerSecond                  MetricConfig `mapstructure:"newrelicoracledb.system.consistent_read_gets_per_second"`
-	NewrelicoracledbSystemConsistentReadGetsPerTransaction             MetricConfig `mapstructure:"newrelicoracledb.system.consistent_read_gets_per_transaction"`
-	NewrelicoracledbSystemCPUUsagePerSecond                            MetricConfig `mapstructure:"newrelicoracledb.system.cpu_usage_per_second"`
-	NewrelicoracledbSystemCPUUsagePerTransaction                       MetricConfig `mapstructure:"newrelicoracledb.system.cpu_usage_per_transaction"`
-	NewrelicoracledbSystemCrBlocksCreatedPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.cr_blocks_created_per_second"`
-	NewrelicoracledbSystemCrBlocksCreatedPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.cr_blocks_created_per_transaction"`
-	NewrelicoracledbSystemCrUndoRecordsAppliedPerSecond                MetricConfig `mapstructure:"newrelicoracledb.system.cr_undo_records_applied_per_second"`
-	NewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction           MetricConfig `mapstructure:"newrelicoracledb.system.cr_undo_records_applied_per_transaction"`
-	NewrelicoracledbSystemCurrentLogonsCount                           MetricConfig `mapstructure:"newrelicoracledb.system.current_logons_count"`
-	NewrelicoracledbSystemCurrentOpenCursorsCount                      MetricConfig `mapstructure:"newrelicoracledb.system.current_open_cursors_count"`
-	NewrelicoracledbSystemCurrentOsLoad                                MetricConfig `mapstructure:"newrelicoracledb.system.current_os_load"`
-	NewrelicoracledbSystemCursorCacheHitRatio                          MetricConfig `mapstructure:"newrelicoracledb.system.cursor_cache_hit_ratio"`
-	NewrelicoracledbSystemDatabaseCPUTimeRatio                         MetricConfig `mapstructure:"newrelicoracledb.system.database_cpu_time_ratio"`
-	NewrelicoracledbSystemDatabaseTimePerSecond                        MetricConfig `mapstructure:"newrelicoracledb.system.database_time_per_second"`
-	NewrelicoracledbSystemDatabaseWaitTimeRatio                        MetricConfig `mapstructure:"newrelicoracledb.system.database_wait_time_ratio"`
-	NewrelicoracledbSystemDbBlockChangesPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.db_block_changes_per_second"`
-	NewrelicoracledbSystemDbBlockChangesPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.db_block_changes_per_transaction"`
-	NewrelicoracledbSystemDbBlockChangesPerUserCall                    MetricConfig `mapstructure:"newrelicoracledb.system.db_block_changes_per_user_call"`
-	NewrelicoracledbSystemDbBlockGetsPerSecond                         MetricConfig `mapstructure:"newrelicoracledb.system.db_block_gets_per_second"`
-	NewrelicoracledbSystemDbBlockGetsPerTransaction                    MetricConfig `mapstructure:"newrelicoracledb.system.db_block_gets_per_transaction"`
-	NewrelicoracledbSystemDbBlockGetsPerUserCall                       MetricConfig `mapstructure:"newrelicoracledb.system.db_block_gets_per_user_call"`
-	NewrelicoracledbSystemDbwrCheckpointsPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.dbwr_checkpoints_per_second"`
-	NewrelicoracledbSystemDiskSortPerSecond                            MetricConfig `mapstructure:"newrelicoracledb.system.disk_sort_per_second"`
-	NewrelicoracledbSystemDiskSortPerTransaction                       MetricConfig `mapstructure:"newrelicoracledb.system.disk_sort_per_transaction"`
-	NewrelicoracledbSystemEnqueueDeadlocksPerSecond                    MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_deadlocks_per_second"`
-	NewrelicoracledbSystemEnqueueDeadlocksPerTransaction               MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_deadlocks_per_transaction"`
-	NewrelicoracledbSystemEnqueueRequestsPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_requests_per_second"`
-	NewrelicoracledbSystemEnqueueRequestsPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_requests_per_transaction"`
-	NewrelicoracledbSystemEnqueueTimeoutsPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_timeouts_per_second"`
-	NewrelicoracledbSystemEnqueueTimeoutsPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_timeouts_per_transaction"`
-	NewrelicoracledbSystemEnqueueWaitsPerSecond                        MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_waits_per_second"`
-	NewrelicoracledbSystemEnqueueWaitsPerTransaction                   MetricConfig `mapstructure:"newrelicoracledb.system.enqueue_waits_per_transaction"`
-	NewrelicoracledbSystemExecuteWithoutParseRatio                     MetricConfig `mapstructure:"newrelicoracledb.system.execute_without_parse_ratio"`
-	NewrelicoracledbSystemExecutionsPerSecond                          MetricConfig `mapstructure:"newrelicoracledb.system.executions_per_second"`
-	NewrelicoracledbSystemExecutionsPerTransaction                     MetricConfig `mapstructure:"newrelicoracledb.system.executions_per_transaction"`
-	NewrelicoracledbSystemExecutionsPerUserCall                        MetricConfig `mapstructure:"newrelicoracledb.system.executions_per_user_call"`
-	NewrelicoracledbSystemFullIndexScansPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.full_index_scans_per_second"`
-	NewrelicoracledbSystemFullIndexScansPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.full_index_scans_per_transaction"`
-	NewrelicoracledbSystemGcCrBlockReceivedPerSecond                   MetricConfig `mapstructure:"newrelicoracledb.system.gc_cr_block_received_per_second"`
-	NewrelicoracledbSystemGcCrBlockReceivedPerTransaction              MetricConfig `mapstructure:"newrelicoracledb.system.gc_cr_block_received_per_transaction"`
-	NewrelicoracledbSystemGcCurrentBlockReceivedPerSecond              MetricConfig `mapstructure:"newrelicoracledb.system.gc_current_block_received_per_second"`
-	NewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction         MetricConfig `mapstructure:"newrelicoracledb.system.gc_current_block_received_per_transaction"`
-	NewrelicoracledbSystemGlobalCacheAverageCrGetTime                  MetricConfig `mapstructure:"newrelicoracledb.system.global_cache_average_cr_get_time"`
-	NewrelicoracledbSystemGlobalCacheAverageCurrentGetTime             MetricConfig `mapstructure:"newrelicoracledb.system.global_cache_average_current_get_time"`
-	NewrelicoracledbSystemGlobalCacheBlocksCorrupted                   MetricConfig `mapstructure:"newrelicoracledb.system.global_cache_blocks_corrupted"`
-	NewrelicoracledbSystemGlobalCacheBlocksLost                        MetricConfig `mapstructure:"newrelicoracledb.system.global_cache_blocks_lost"`
-	NewrelicoracledbSystemHardParseCountPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.hard_parse_count_per_second"`
-	NewrelicoracledbSystemHardParseCountPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.hard_parse_count_per_transaction"`
-	NewrelicoracledbSystemHostCPUUsagePerSecond                        MetricConfig `mapstructure:"newrelicoracledb.system.host_cpu_usage_per_second"`
-	NewrelicoracledbSystemHostCPUUtilization                           MetricConfig `mapstructure:"newrelicoracledb.system.host_cpu_utilization"`
-	NewrelicoracledbSystemIoMegabytesPerSecond                         MetricConfig `mapstructure:"newrelicoracledb.system.io_megabytes_per_second"`
-	NewrelicoracledbSystemIoRequestsPerSecond                          MetricConfig `mapstructure:"newrelicoracledb.system.io_requests_per_second"`
-	NewrelicoracledbSystemLeafNodeSplitsPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.leaf_node_splits_per_second"`
-	NewrelicoracledbSystemLeafNodeSplitsPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.leaf_node_splits_per_transaction"`
-	NewrelicoracledbSystemLibraryCacheHitRatio                         MetricConfig `mapstructure:"newrelicoracledb.system.library_cache_hit_ratio"`
-	NewrelicoracledbSystemLibraryCacheMissRatio                        MetricConfig `mapstructure:"newrelicoracledb.system.library_cache_miss_ratio"`
-	NewrelicoracledbSystemLogicalReadsPerSecond                        MetricConfig `mapstructure:"newrelicoracledb.system.logical_reads_per_second"`
-	NewrelicoracledbSystemLogicalReadsPerTransaction                   MetricConfig `mapstructure:"newrelicoracledb.system.logical_reads_per_transaction"`
-	NewrelicoracledbSystemLogicalReadsPerUserCall                      MetricConfig `mapstructure:"newrelicoracledb.system.logical_reads_per_user_call"`
-	NewrelicoracledbSystemLogonsPerSecond                              MetricConfig `mapstructure:"newrelicoracledb.system.logons_per_second"`
-	NewrelicoracledbSystemLogonsPerTransaction                         MetricConfig `mapstructure:"newrelicoracledb.system.logons_per_transaction"`
-	NewrelicoracledbSystemLongTableScansPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.long_table_scans_per_second"`
-	NewrelicoracledbSystemLongTableScansPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.long_table_scans_per_transaction"`
-	NewrelicoracledbSystemMemorySortsRatio                             MetricConfig `mapstructure:"newrelicoracledb.system.memory_sorts_ratio"`
-	NewrelicoracledbSystemNetworkTrafficVolumePerSecond                MetricConfig `mapstructure:"newrelicoracledb.system.network_traffic_volume_per_second"`
-	NewrelicoracledbSystemOpenCursorsPerSecond                         MetricConfig `mapstructure:"newrelicoracledb.system.open_cursors_per_second"`
-	NewrelicoracledbSystemOpenCursorsPerTransaction                    MetricConfig `mapstructure:"newrelicoracledb.system.open_cursors_per_transaction"`
-	NewrelicoracledbSystemParseFailureCountPerSecond                   MetricConfig `mapstructure:"newrelicoracledb.system.parse_failure_count_per_second"`
-	NewrelicoracledbSystemParseFailureCountPerTransaction              MetricConfig `mapstructure:"newrelicoracledb.system.parse_failure_count_per_transaction"`
-	NewrelicoracledbSystemPgaCacheHitPercentage                        MetricConfig `mapstructure:"newrelicoracledb.system.pga_cache_hit_percentage"`
-	NewrelicoracledbSystemPhysicalLobsReadsPerSecond                   MetricConfig `mapstructure:"newrelicoracledb.system.physical_lobs_reads_per_second"`
-	NewrelicoracledbSystemPhysicalLobsReadsPerTransaction              MetricConfig `mapstructure:"newrelicoracledb.system.physical_lobs_reads_per_transaction"`
-	NewrelicoracledbSystemPhysicalLobsWritesPerSecond                  MetricConfig `mapstructure:"newrelicoracledb.system.physical_lobs_writes_per_second"`
-	NewrelicoracledbSystemPhysicalLobsWritesPerTransaction             MetricConfig `mapstructure:"newrelicoracledb.system.physical_lobs_writes_per_transaction"`
-	NewrelicoracledbSystemPhysicalReadBytesPerSecond                   MetricConfig `mapstructure:"newrelicoracledb.system.physical_read_bytes_per_second"`
-	NewrelicoracledbSystemPhysicalReadIoRequestsPerSecond              MetricConfig `mapstructure:"newrelicoracledb.system.physical_read_io_requests_per_second"`
-	NewrelicoracledbSystemPhysicalReadTotalBytesPerSecond              MetricConfig `mapstructure:"newrelicoracledb.system.physical_read_total_bytes_per_second"`
-	NewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond         MetricConfig `mapstructure:"newrelicoracledb.system.physical_read_total_io_requests_per_second"`
-	NewrelicoracledbSystemPhysicalReadsDirectPerSecond                 MetricConfig `mapstructure:"newrelicoracledb.system.physical_reads_direct_per_second"`
-	NewrelicoracledbSystemPhysicalReadsDirectPerTransaction            MetricConfig `mapstructure:"newrelicoracledb.system.physical_reads_direct_per_transaction"`
-	NewrelicoracledbSystemPhysicalReadsPerSecond                       MetricConfig `mapstructure:"newrelicoracledb.system.physical_reads_per_second"`
-	NewrelicoracledbSystemPhysicalReadsPerTransaction                  MetricConfig `mapstructure:"newrelicoracledb.system.physical_reads_per_transaction"`
-	NewrelicoracledbSystemPhysicalWriteBytesPerSecond                  MetricConfig `mapstructure:"newrelicoracledb.system.physical_write_bytes_per_second"`
-	NewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond             MetricConfig `mapstructure:"newrelicoracledb.system.physical_write_io_requests_per_second"`
-	NewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond             MetricConfig `mapstructure:"newrelicoracledb.system.physical_write_total_bytes_per_second"`
-	NewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond        MetricConfig `mapstructure:"newrelicoracledb.system.physical_write_total_io_requests_per_second"`
-	NewrelicoracledbSystemPhysicalWritesDirectPerSecond                MetricConfig `mapstructure:"newrelicoracledb.system.physical_writes_direct_per_second"`
-	NewrelicoracledbSystemPhysicalWritesDirectPerTransaction           MetricConfig `mapstructure:"newrelicoracledb.system.physical_writes_direct_per_transaction"`
-	NewrelicoracledbSystemPhysicalWritesPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.physical_writes_per_second"`
-	NewrelicoracledbSystemPhysicalWritesPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.physical_writes_per_transaction"`
-	NewrelicoracledbSystemProcessLimitPercentage                       MetricConfig `mapstructure:"newrelicoracledb.system.process_limit_percentage"`
-	NewrelicoracledbSystemRecursiveCallsPerSecond                      MetricConfig `mapstructure:"newrelicoracledb.system.recursive_calls_per_second"`
-	NewrelicoracledbSystemRecursiveCallsPerTransaction                 MetricConfig `mapstructure:"newrelicoracledb.system.recursive_calls_per_transaction"`
-	NewrelicoracledbSystemRedoAllocationHitRatio                       MetricConfig `mapstructure:"newrelicoracledb.system.redo_allocation_hit_ratio"`
-	NewrelicoracledbSystemRedoGeneratedBytesPerSecond                  MetricConfig `mapstructure:"newrelicoracledb.system.redo_generated_bytes_per_second"`
-	NewrelicoracledbSystemRedoGeneratedBytesPerTransaction             MetricConfig `mapstructure:"newrelicoracledb.system.redo_generated_bytes_per_transaction"`
-	NewrelicoracledbSystemRedoWritesPerSecond                          MetricConfig `mapstructure:"newrelicoracledb.system.redo_writes_per_second"`
-	NewrelicoracledbSystemRedoWritesPerTransaction                     MetricConfig `mapstructure:"newrelicoracledb.system.redo_writes_per_transaction"`
-	NewrelicoracledbSystemResponseTimePerTransaction                   MetricConfig `mapstructure:"newrelicoracledb.system.response_time_per_transaction"`
-	NewrelicoracledbSystemRowCacheHitRatio                             MetricConfig `mapstructure:"newrelicoracledb.system.row_cache_hit_ratio"`
-	NewrelicoracledbSystemRowCacheMissRatio                            MetricConfig `mapstructure:"newrelicoracledb.system.row_cache_miss_ratio"`
-	NewrelicoracledbSystemRowsPerSort                                  MetricConfig `mapstructure:"newrelicoracledb.system.rows_per_sort"`
-	NewrelicoracledbSystemSessionCount                                 MetricConfig `mapstructure:"newrelicoracledb.system.session_count"`
-	NewrelicoracledbSystemSessionLimitPercentage                       MetricConfig `mapstructure:"newrelicoracledb.system.session_limit_percentage"`
-	NewrelicoracledbSystemSharedPoolFreePercentage                     MetricConfig `mapstructure:"newrelicoracledb.system.shared_pool_free_percentage"`
-	NewrelicoracledbSystemSoftParseRatio                               MetricConfig `mapstructure:"newrelicoracledb.system.soft_parse_ratio"`
-	NewrelicoracledbSystemSQLServiceResponseTime                       MetricConfig `mapstructure:"newrelicoracledb.system.sql_service_response_time"`
-	NewrelicoracledbSystemStreamsPoolUsagePercentage                   MetricConfig `mapstructure:"newrelicoracledb.system.streams_pool_usage_percentage"`
-	NewrelicoracledbSystemTempSpaceUsed                                MetricConfig `mapstructure:"newrelicoracledb.system.temp_space_used"`
-	NewrelicoracledbSystemTotalIndexScansPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.total_index_scans_per_second"`
-	NewrelicoracledbSystemTotalIndexScansPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.total_index_scans_per_transaction"`
-	NewrelicoracledbSystemTotalParseCountPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.total_parse_count_per_second"`
-	NewrelicoracledbSystemTotalParseCountPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.total_parse_count_per_transaction"`
-	NewrelicoracledbSystemTotalSortsPerUserCall                        MetricConfig `mapstructure:"newrelicoracledb.system.total_sorts_per_user_call"`
-	NewrelicoracledbSystemTotalTableScansPerSecond                     MetricConfig `mapstructure:"newrelicoracledb.system.total_table_scans_per_second"`
-	NewrelicoracledbSystemTotalTableScansPerTransaction                MetricConfig `mapstructure:"newrelicoracledb.system.total_table_scans_per_transaction"`
-	NewrelicoracledbSystemTotalTableScansPerUserCall                   MetricConfig `mapstructure:"newrelicoracledb.system.total_table_scans_per_user_call"`
-	NewrelicoracledbSystemTransactionsPerLogon                         MetricConfig `mapstructure:"newrelicoracledb.system.transactions_per_logon"`
-	NewrelicoracledbSystemTransactionsPerSecond                        MetricConfig `mapstructure:"newrelicoracledb.system.transactions_per_second"`
-	NewrelicoracledbSystemUserCallsPerSecond                           MetricConfig `mapstructure:"newrelicoracledb.system.user_calls_per_second"`
-	NewrelicoracledbSystemUserCallsPerTransaction                      MetricConfig `mapstructure:"newrelicoracledb.system.user_calls_per_transaction"`
-	NewrelicoracledbSystemUserCallsRatio                               MetricConfig `mapstructure:"newrelicoracledb.system.user_calls_ratio"`
-	NewrelicoracledbSystemUserCommitsPerSecond                         MetricConfig `mapstructure:"newrelicoracledb.system.user_commits_per_second"`
-	NewrelicoracledbSystemUserCommitsPercentage                        MetricConfig `mapstructure:"newrelicoracledb.system.user_commits_percentage"`
-	NewrelicoracledbSystemUserLimitPercentage                          MetricConfig `mapstructure:"newrelicoracledb.system.user_limit_percentage"`
-	NewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond      MetricConfig `mapstructure:"newrelicoracledb.system.user_rollback_undo_records_applied_per_second"`
-	NewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransaction MetricConfig `mapstructure:"newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction"`
-	NewrelicoracledbSystemUserRollbacksPerSecond                       MetricConfig `mapstructure:"newrelicoracledb.system.user_rollbacks_per_second"`
-	NewrelicoracledbSystemUserRollbacksPercentage                      MetricConfig `mapstructure:"newrelicoracledb.system.user_rollbacks_percentage"`
-	NewrelicoracledbTablespaceDbID                                     MetricConfig `mapstructure:"newrelicoracledb.tablespace.db_id"`
-	NewrelicoracledbTablespaceGlobalName                               MetricConfig `mapstructure:"newrelicoracledb.tablespace.global_name"`
-	NewrelicoracledbTablespaceIsOffline                                MetricConfig `mapstructure:"newrelicoracledb.tablespace.is_offline"`
-	NewrelicoracledbTablespaceOfflineCdbDatafiles                      MetricConfig `mapstructure:"newrelicoracledb.tablespace.offline_cdb_datafiles"`
-	NewrelicoracledbTablespaceOfflinePdbDatafiles                      MetricConfig `mapstructure:"newrelicoracledb.tablespace.offline_pdb_datafiles"`
-	NewrelicoracledbTablespacePdbNonWriteMode                          MetricConfig `mapstructure:"newrelicoracledb.tablespace.pdb_non_write_mode"`
-	NewrelicoracledbTablespaceSpaceConsumedBytes                       MetricConfig `mapstructure:"newrelicoracledb.tablespace.space_consumed_bytes"`
-	NewrelicoracledbTablespaceSpaceReservedBytes                       MetricConfig `mapstructure:"newrelicoracledb.tablespace.space_reserved_bytes"`
-	NewrelicoracledbTablespaceSpaceUsedPercentage                      MetricConfig `mapstructure:"newrelicoracledb.tablespace.space_used_percentage"`
-	NewrelicoracledbTablespaceTotalBytes                               MetricConfig `mapstructure:"newrelicoracledb.tablespace.total_bytes"`
-	NewrelicoracledbTablespaceUsedBytes                                MetricConfig `mapstructure:"newrelicoracledb.tablespace.used_bytes"`
-	NewrelicoracledbTablespaceUsedPercent                              MetricConfig `mapstructure:"newrelicoracledb.tablespace.used_percent"`
-	NewrelicoracledbWaitEventsCurrentWaitTimeMs                        MetricConfig `mapstructure:"newrelicoracledb.wait_events.current_wait_time_ms"`
+	OracledbAsmDiskgroupFreeMb                                 MetricConfig `mapstructure:"oracledb.asm.diskgroup.free_mb"`
+	OracledbAsmDiskgroupOfflineDisks                           MetricConfig `mapstructure:"oracledb.asm.diskgroup.offline_disks"`
+	OracledbAsmDiskgroupTotalMb                                MetricConfig `mapstructure:"oracledb.asm.diskgroup.total_mb"`
+	OracledbChildCursorsBufferGets                             MetricConfig `mapstructure:"oracledb.child_cursors.buffer_gets"`
+	OracledbChildCursorsCPUTime                                MetricConfig `mapstructure:"oracledb.child_cursors.cpu_time"`
+	OracledbChildCursorsDetails                                MetricConfig `mapstructure:"oracledb.child_cursors.details"`
+	OracledbChildCursorsDiskReads                              MetricConfig `mapstructure:"oracledb.child_cursors.disk_reads"`
+	OracledbChildCursorsElapsedTime                            MetricConfig `mapstructure:"oracledb.child_cursors.elapsed_time"`
+	OracledbChildCursorsExecutions                             MetricConfig `mapstructure:"oracledb.child_cursors.executions"`
+	OracledbChildCursorsInvalidations                          MetricConfig `mapstructure:"oracledb.child_cursors.invalidations"`
+	OracledbChildCursorsUserIoWaitTime                         MetricConfig `mapstructure:"oracledb.child_cursors.user_io_wait_time"`
+	OracledbConnectionActiveSessions                           MetricConfig `mapstructure:"oracledb.connection.active_sessions"`
+	OracledbConnectionBytesReceived                            MetricConfig `mapstructure:"oracledb.connection.bytes_received"`
+	OracledbConnectionBytesSent                                MetricConfig `mapstructure:"oracledb.connection.bytes_sent"`
+	OracledbConnectionCircuits                                 MetricConfig `mapstructure:"oracledb.connection.circuits"`
+	OracledbConnectionDispatchers                              MetricConfig `mapstructure:"oracledb.connection.dispatchers"`
+	OracledbConnectionExecuteCount                             MetricConfig `mapstructure:"oracledb.connection.execute_count"`
+	OracledbConnectionInactiveSessions                         MetricConfig `mapstructure:"oracledb.connection.inactive_sessions"`
+	OracledbConnectionLogonsCumulative                         MetricConfig `mapstructure:"oracledb.connection.logons_cumulative"`
+	OracledbConnectionLogonsCurrent                            MetricConfig `mapstructure:"oracledb.connection.logons_current"`
+	OracledbConnectionParseCountHard                           MetricConfig `mapstructure:"oracledb.connection.parse_count_hard"`
+	OracledbConnectionParseCountTotal                          MetricConfig `mapstructure:"oracledb.connection.parse_count_total"`
+	OracledbConnectionResourceCurrentUtilization               MetricConfig `mapstructure:"oracledb.connection.resource_current_utilization"`
+	OracledbConnectionResourceLimit                            MetricConfig `mapstructure:"oracledb.connection.resource_limit"`
+	OracledbConnectionResourceMaxUtilization                   MetricConfig `mapstructure:"oracledb.connection.resource_max_utilization"`
+	OracledbConnectionSessionsByStatus                         MetricConfig `mapstructure:"oracledb.connection.sessions_by_status"`
+	OracledbConnectionSessionsByType                           MetricConfig `mapstructure:"oracledb.connection.sessions_by_type"`
+	OracledbConnectionSharedServers                            MetricConfig `mapstructure:"oracledb.connection.shared_servers"`
+	OracledbConnectionSqlnetRoundtrips                         MetricConfig `mapstructure:"oracledb.connection.sqlnet_roundtrips"`
+	OracledbConnectionTotalSessions                            MetricConfig `mapstructure:"oracledb.connection.total_sessions"`
+	OracledbConnectionUserCommits                              MetricConfig `mapstructure:"oracledb.connection.user_commits"`
+	OracledbConnectionUserRollbacks                            MetricConfig `mapstructure:"oracledb.connection.user_rollbacks"`
+	OracledbContainerRestricted                                MetricConfig `mapstructure:"oracledb.container.restricted"`
+	OracledbContainerStatus                                    MetricConfig `mapstructure:"oracledb.container.status"`
+	OracledbDatabaseInfo                                       MetricConfig `mapstructure:"oracledb.database.info"`
+	OracledbDatabaseRole                                       MetricConfig `mapstructure:"oracledb.database.role"`
+	OracledbDatafileAutoextensible                             MetricConfig `mapstructure:"oracledb.datafile.autoextensible"`
+	OracledbDatafileSizeBytes                                  MetricConfig `mapstructure:"oracledb.datafile.size_bytes"`
+	OracledbDatafileUsedBytes                                  MetricConfig `mapstructure:"oracledb.datafile.used_bytes"`
+	OracledbDbID                                               MetricConfig `mapstructure:"oracledb.db_id"`
+	OracledbDiskBlocksRead                                     MetricConfig `mapstructure:"oracledb.disk.blocks_read"`
+	OracledbDiskBlocksWritten                                  MetricConfig `mapstructure:"oracledb.disk.blocks_written"`
+	OracledbDiskReadTimeMilliseconds                           MetricConfig `mapstructure:"oracledb.disk.read_time_milliseconds"`
+	OracledbDiskReads                                          MetricConfig `mapstructure:"oracledb.disk.reads"`
+	OracledbDiskWriteTimeMilliseconds                          MetricConfig `mapstructure:"oracledb.disk.write_time_milliseconds"`
+	OracledbDiskWrites                                         MetricConfig `mapstructure:"oracledb.disk.writes"`
+	OracledbExecutionPlan                                      MetricConfig `mapstructure:"oracledb.execution_plan"`
+	OracledbGlobalName                                         MetricConfig `mapstructure:"oracledb.global_name"`
+	OracledbHostingInfo                                        MetricConfig `mapstructure:"oracledb.hosting.info"`
+	OracledbLockedAccounts                                     MetricConfig `mapstructure:"oracledb.locked_accounts"`
+	OracledbLongRunningQueries                                 MetricConfig `mapstructure:"oracledb.long_running_queries"`
+	OracledbMemoryPgaAllocatedBytes                            MetricConfig `mapstructure:"oracledb.memory.pga_allocated_bytes"`
+	OracledbMemoryPgaFreeableBytes                             MetricConfig `mapstructure:"oracledb.memory.pga_freeable_bytes"`
+	OracledbMemoryPgaInUseBytes                                MetricConfig `mapstructure:"oracledb.memory.pga_in_use_bytes"`
+	OracledbMemoryPgaMaxSizeBytes                              MetricConfig `mapstructure:"oracledb.memory.pga_max_size_bytes"`
+	OracledbMemorySgaSharedPoolLibraryCacheSharableBytes       MetricConfig `mapstructure:"oracledb.memory.sga_shared_pool_library_cache_sharable_bytes"`
+	OracledbMemorySgaSharedPoolLibraryCacheUserBytes           MetricConfig `mapstructure:"oracledb.memory.sga_shared_pool_library_cache_user_bytes"`
+	OracledbMemorySgaUgaTotalBytes                             MetricConfig `mapstructure:"oracledb.memory.sga_uga_total_bytes"`
+	OracledbPdbActiveParallelSessions                          MetricConfig `mapstructure:"oracledb.pdb.active_parallel_sessions"`
+	OracledbPdbActiveSerialSessions                            MetricConfig `mapstructure:"oracledb.pdb.active_serial_sessions"`
+	OracledbPdbAverageActiveSessions                           MetricConfig `mapstructure:"oracledb.pdb.average_active_sessions"`
+	OracledbPdbBackgroundCPUUsagePerSecond                     MetricConfig `mapstructure:"oracledb.pdb.background_cpu_usage_per_second"`
+	OracledbPdbBackgroundTimePerSecond                         MetricConfig `mapstructure:"oracledb.pdb.background_time_per_second"`
+	OracledbPdbBlockChangesPerSecond                           MetricConfig `mapstructure:"oracledb.pdb.block_changes_per_second"`
+	OracledbPdbBlockChangesPerTransaction                      MetricConfig `mapstructure:"oracledb.pdb.block_changes_per_transaction"`
+	OracledbPdbCPUTimeRatio                                    MetricConfig `mapstructure:"oracledb.pdb.cpu_time_ratio"`
+	OracledbPdbCPUUsagePerSecond                               MetricConfig `mapstructure:"oracledb.pdb.cpu_usage_per_second"`
+	OracledbPdbCPUUsagePerTransaction                          MetricConfig `mapstructure:"oracledb.pdb.cpu_usage_per_transaction"`
+	OracledbPdbCurrentLogons                                   MetricConfig `mapstructure:"oracledb.pdb.current_logons"`
+	OracledbPdbCurrentOpenCursors                              MetricConfig `mapstructure:"oracledb.pdb.current_open_cursors"`
+	OracledbPdbDbPhysicalReadBytesPerSecond                    MetricConfig `mapstructure:"oracledb.pdb.db_physical_read_bytes_per_second"`
+	OracledbPdbDbPhysicalReadsPerSecond                        MetricConfig `mapstructure:"oracledb.pdb.db_physical_reads_per_second"`
+	OracledbPdbDbPhysicalWriteBytesPerSecond                   MetricConfig `mapstructure:"oracledb.pdb.db_physical_write_bytes_per_second"`
+	OracledbPdbDbPhysicalWritesPerSecond                       MetricConfig `mapstructure:"oracledb.pdb.db_physical_writes_per_second"`
+	OracledbPdbExecuteWithoutParseRatio                        MetricConfig `mapstructure:"oracledb.pdb.execute_without_parse_ratio"`
+	OracledbPdbExecutionsPerSecond                             MetricConfig `mapstructure:"oracledb.pdb.executions_per_second"`
+	OracledbPdbExecutionsPerTransaction                        MetricConfig `mapstructure:"oracledb.pdb.executions_per_transaction"`
+	OracledbPdbHardParseCountPerSecond                         MetricConfig `mapstructure:"oracledb.pdb.hard_parse_count_per_second"`
+	OracledbPdbHardParseCountPerTransaction                    MetricConfig `mapstructure:"oracledb.pdb.hard_parse_count_per_transaction"`
+	OracledbPdbLogicalReadsPerSecond                           MetricConfig `mapstructure:"oracledb.pdb.logical_reads_per_second"`
+	OracledbPdbLogicalReadsPerTransaction                      MetricConfig `mapstructure:"oracledb.pdb.logical_reads_per_transaction"`
+	OracledbPdbLogonsPerSecond                                 MetricConfig `mapstructure:"oracledb.pdb.logons_per_second"`
+	OracledbPdbLogonsPerTransaction                            MetricConfig `mapstructure:"oracledb.pdb.logons_per_transaction"`
+	OracledbPdbNetworkTrafficBytePerSecond                     MetricConfig `mapstructure:"oracledb.pdb.network_traffic_byte_per_second"`
+	OracledbPdbOpenCursorsPerSecond                            MetricConfig `mapstructure:"oracledb.pdb.open_cursors_per_second"`
+	OracledbPdbOpenCursorsPerTransaction                       MetricConfig `mapstructure:"oracledb.pdb.open_cursors_per_transaction"`
+	OracledbPdbOpenMode                                        MetricConfig `mapstructure:"oracledb.pdb.open_mode"`
+	OracledbPdbParseFailureCountPerSecond                      MetricConfig `mapstructure:"oracledb.pdb.parse_failure_count_per_second"`
+	OracledbPdbPhysicalReadBytesPerSecond                      MetricConfig `mapstructure:"oracledb.pdb.physical_read_bytes_per_second"`
+	OracledbPdbPhysicalReadsPerTransaction                     MetricConfig `mapstructure:"oracledb.pdb.physical_reads_per_transaction"`
+	OracledbPdbPhysicalWriteBytesPerSecond                     MetricConfig `mapstructure:"oracledb.pdb.physical_write_bytes_per_second"`
+	OracledbPdbPhysicalWritesPerTransaction                    MetricConfig `mapstructure:"oracledb.pdb.physical_writes_per_transaction"`
+	OracledbPdbRedoGeneratedBytesPerSecond                     MetricConfig `mapstructure:"oracledb.pdb.redo_generated_bytes_per_second"`
+	OracledbPdbRedoGeneratedBytesPerTransaction                MetricConfig `mapstructure:"oracledb.pdb.redo_generated_bytes_per_transaction"`
+	OracledbPdbResponseTimePerTransaction                      MetricConfig `mapstructure:"oracledb.pdb.response_time_per_transaction"`
+	OracledbPdbSessionCount                                    MetricConfig `mapstructure:"oracledb.pdb.session_count"`
+	OracledbPdbSoftParseRatio                                  MetricConfig `mapstructure:"oracledb.pdb.soft_parse_ratio"`
+	OracledbPdbSQLServiceResponseTime                          MetricConfig `mapstructure:"oracledb.pdb.sql_service_response_time"`
+	OracledbPdbTotalParseCountPerSecond                        MetricConfig `mapstructure:"oracledb.pdb.total_parse_count_per_second"`
+	OracledbPdbTotalParseCountPerTransaction                   MetricConfig `mapstructure:"oracledb.pdb.total_parse_count_per_transaction"`
+	OracledbPdbTotalSizeBytes                                  MetricConfig `mapstructure:"oracledb.pdb.total_size_bytes"`
+	OracledbPdbTransactionsPerSecond                           MetricConfig `mapstructure:"oracledb.pdb.transactions_per_second"`
+	OracledbPdbUserCallsPerSecond                              MetricConfig `mapstructure:"oracledb.pdb.user_calls_per_second"`
+	OracledbPdbUserCallsPerTransaction                         MetricConfig `mapstructure:"oracledb.pdb.user_calls_per_transaction"`
+	OracledbPdbUserCommitsPerSecond                            MetricConfig `mapstructure:"oracledb.pdb.user_commits_per_second"`
+	OracledbPdbUserCommitsPercentage                           MetricConfig `mapstructure:"oracledb.pdb.user_commits_percentage"`
+	OracledbPdbUserRollbacksPerSecond                          MetricConfig `mapstructure:"oracledb.pdb.user_rollbacks_per_second"`
+	OracledbPdbUserRollbacksPercentage                         MetricConfig `mapstructure:"oracledb.pdb.user_rollbacks_percentage"`
+	OracledbPdbWaitTimeRatio                                   MetricConfig `mapstructure:"oracledb.pdb.wait_time_ratio"`
+	OracledbRacInstanceActiveState                             MetricConfig `mapstructure:"oracledb.rac.instance.active_state"`
+	OracledbRacInstanceArchiverStarted                         MetricConfig `mapstructure:"oracledb.rac.instance.archiver_started"`
+	OracledbRacInstanceDatabaseStatus                          MetricConfig `mapstructure:"oracledb.rac.instance.database_status"`
+	OracledbRacInstanceLoginsAllowed                           MetricConfig `mapstructure:"oracledb.rac.instance.logins_allowed"`
+	OracledbRacInstanceStatus                                  MetricConfig `mapstructure:"oracledb.rac.instance.status"`
+	OracledbRacInstanceUptimeSeconds                           MetricConfig `mapstructure:"oracledb.rac.instance.uptime_seconds"`
+	OracledbRacInstanceVersionInfo                             MetricConfig `mapstructure:"oracledb.rac.instance.version_info"`
+	OracledbRacServiceBlockedStatus                            MetricConfig `mapstructure:"oracledb.rac.service.blocked_status"`
+	OracledbRacServiceClbConfig                                MetricConfig `mapstructure:"oracledb.rac.service.clb_config"`
+	OracledbRacServiceDrainTimeoutSeconds                      MetricConfig `mapstructure:"oracledb.rac.service.drain_timeout_seconds"`
+	OracledbRacServiceFanEnabled                               MetricConfig `mapstructure:"oracledb.rac.service.fan_enabled"`
+	OracledbRacServiceGoalConfig                               MetricConfig `mapstructure:"oracledb.rac.service.goal_config"`
+	OracledbRacServiceInstanceID                               MetricConfig `mapstructure:"oracledb.rac.service.instance_id"`
+	OracledbRacServiceNetworkConfig                            MetricConfig `mapstructure:"oracledb.rac.service.network_config"`
+	OracledbRacServiceReplayTimeoutSeconds                     MetricConfig `mapstructure:"oracledb.rac.service.replay_timeout_seconds"`
+	OracledbRacServiceTransactionGuardEnabled                  MetricConfig `mapstructure:"oracledb.rac.service.transaction_guard_enabled"`
+	OracledbRacTotalWaits                                      MetricConfig `mapstructure:"oracledb.rac.total_waits"`
+	OracledbRacWaitTime                                        MetricConfig `mapstructure:"oracledb.rac.wait_time"`
+	OracledbRedoLogParallelWriteWaits                          MetricConfig `mapstructure:"oracledb.redo_log_parallel_write_waits"`
+	OracledbRedoLogSwitchArchivingNeededWaits                  MetricConfig `mapstructure:"oracledb.redo_log_switch_archiving_needed_waits"`
+	OracledbRedoLogSwitchCheckpointIncompleteWaits             MetricConfig `mapstructure:"oracledb.redo_log_switch_checkpoint_incomplete_waits"`
+	OracledbRedoLogSwitchCompletionWaits                       MetricConfig `mapstructure:"oracledb.redo_log_switch_completion_waits"`
+	OracledbRollbackSegmentsGets                               MetricConfig `mapstructure:"oracledb.rollback_segments_gets"`
+	OracledbRollbackSegmentsWaitRatio                          MetricConfig `mapstructure:"oracledb.rollback_segments_wait_ratio"`
+	OracledbRollbackSegmentsWaits                              MetricConfig `mapstructure:"oracledb.rollback_segments_waits"`
+	OracledbServiceCount                                       MetricConfig `mapstructure:"oracledb.service.count"`
+	OracledbServiceStatus                                      MetricConfig `mapstructure:"oracledb.service.status"`
+	OracledbSessionsCount                                      MetricConfig `mapstructure:"oracledb.sessions.count"`
+	OracledbSgaBufferBusyWaits                                 MetricConfig `mapstructure:"oracledb.sga_buffer_busy_waits"`
+	OracledbSgaFixedSizeBytes                                  MetricConfig `mapstructure:"oracledb.sga_fixed_size_bytes"`
+	OracledbSgaFreeBufferInspectedWaits                        MetricConfig `mapstructure:"oracledb.sga_free_buffer_inspected_waits"`
+	OracledbSgaFreeBufferWaits                                 MetricConfig `mapstructure:"oracledb.sga_free_buffer_waits"`
+	OracledbSgaHitRatio                                        MetricConfig `mapstructure:"oracledb.sga_hit_ratio"`
+	OracledbSgaLogAllocationRetriesRatio                       MetricConfig `mapstructure:"oracledb.sga_log_allocation_retries_ratio"`
+	OracledbSgaLogBufferRedoAllocationRetries                  MetricConfig `mapstructure:"oracledb.sga_log_buffer_redo_allocation_retries"`
+	OracledbSgaLogBufferRedoEntries                            MetricConfig `mapstructure:"oracledb.sga_log_buffer_redo_entries"`
+	OracledbSgaLogBufferSpaceWaits                             MetricConfig `mapstructure:"oracledb.sga_log_buffer_space_waits"`
+	OracledbSgaRedoBuffersBytes                                MetricConfig `mapstructure:"oracledb.sga_redo_buffers_bytes"`
+	OracledbSgaSharedPoolDictCacheMissRatio                    MetricConfig `mapstructure:"oracledb.sga_shared_pool_dict_cache_miss_ratio"`
+	OracledbSgaSharedPoolLibraryCacheHitRatio                  MetricConfig `mapstructure:"oracledb.sga_shared_pool_library_cache_hit_ratio"`
+	OracledbSgaSharedPoolLibraryCacheReloadRatio               MetricConfig `mapstructure:"oracledb.sga_shared_pool_library_cache_reload_ratio"`
+	OracledbSlowQueriesExecutionCount                          MetricConfig `mapstructure:"oracledb.slow_queries.execution_count"`
+	OracledbSlowQueriesIntervalAvgBufferGets                   MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_buffer_gets"`
+	OracledbSlowQueriesIntervalAvgCPUTime                      MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_cpu_time"`
+	OracledbSlowQueriesIntervalAvgDiskReads                    MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_disk_reads"`
+	OracledbSlowQueriesIntervalAvgDiskWrites                   MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_disk_writes"`
+	OracledbSlowQueriesIntervalAvgElapsedTime                  MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_elapsed_time"`
+	OracledbSlowQueriesIntervalAvgRowsProcessed                MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_rows_processed"`
+	OracledbSlowQueriesIntervalAvgWaitTime                     MetricConfig `mapstructure:"oracledb.slow_queries.interval_avg_wait_time"`
+	OracledbSlowQueriesIntervalBufferGets                      MetricConfig `mapstructure:"oracledb.slow_queries.interval_buffer_gets"`
+	OracledbSlowQueriesIntervalCPUTime                         MetricConfig `mapstructure:"oracledb.slow_queries.interval_cpu_time"`
+	OracledbSlowQueriesIntervalDiskReads                       MetricConfig `mapstructure:"oracledb.slow_queries.interval_disk_reads"`
+	OracledbSlowQueriesIntervalDiskWrites                      MetricConfig `mapstructure:"oracledb.slow_queries.interval_disk_writes"`
+	OracledbSlowQueriesIntervalElapsedTime                     MetricConfig `mapstructure:"oracledb.slow_queries.interval_elapsed_time"`
+	OracledbSlowQueriesIntervalExecutionCount                  MetricConfig `mapstructure:"oracledb.slow_queries.interval_execution_count"`
+	OracledbSlowQueriesIntervalRowsProcessed                   MetricConfig `mapstructure:"oracledb.slow_queries.interval_rows_processed"`
+	OracledbSlowQueriesIntervalWaitTime                        MetricConfig `mapstructure:"oracledb.slow_queries.interval_wait_time"`
+	OracledbSlowQueriesQueryDetails                            MetricConfig `mapstructure:"oracledb.slow_queries.query_details"`
+	OracledbSlowQueriesTotalCPUTime                            MetricConfig `mapstructure:"oracledb.slow_queries.total_cpu_time"`
+	OracledbSlowQueriesTotalDiskReads                          MetricConfig `mapstructure:"oracledb.slow_queries.total_disk_reads"`
+	OracledbSlowQueriesTotalDiskWrites                         MetricConfig `mapstructure:"oracledb.slow_queries.total_disk_writes"`
+	OracledbSlowQueriesTotalElapsedTime                        MetricConfig `mapstructure:"oracledb.slow_queries.total_elapsed_time"`
+	OracledbSlowQueriesTotalRowsExamined                       MetricConfig `mapstructure:"oracledb.slow_queries.total_rows_examined"`
+	OracledbSlowQueriesTotalRowsReturned                       MetricConfig `mapstructure:"oracledb.slow_queries.total_rows_returned"`
+	OracledbSlowQueriesTotalWaitTime                           MetricConfig `mapstructure:"oracledb.slow_queries.total_wait_time"`
+	OracledbSortsDisk                                          MetricConfig `mapstructure:"oracledb.sorts_disk"`
+	OracledbSortsMemory                                        MetricConfig `mapstructure:"oracledb.sorts_memory"`
+	OracledbSystemActiveParallelSessions                       MetricConfig `mapstructure:"oracledb.system.active_parallel_sessions"`
+	OracledbSystemActiveSerialSessions                         MetricConfig `mapstructure:"oracledb.system.active_serial_sessions"`
+	OracledbSystemAverageActiveSessions                        MetricConfig `mapstructure:"oracledb.system.average_active_sessions"`
+	OracledbSystemBackgroundCheckpointsPerSecond               MetricConfig `mapstructure:"oracledb.system.background_checkpoints_per_second"`
+	OracledbSystemBackgroundCPUUsagePerSecond                  MetricConfig `mapstructure:"oracledb.system.background_cpu_usage_per_second"`
+	OracledbSystemBackgroundTimePerSecond                      MetricConfig `mapstructure:"oracledb.system.background_time_per_second"`
+	OracledbSystemBranchNodeSplitsPerSecond                    MetricConfig `mapstructure:"oracledb.system.branch_node_splits_per_second"`
+	OracledbSystemBranchNodeSplitsPerTransaction               MetricConfig `mapstructure:"oracledb.system.branch_node_splits_per_transaction"`
+	OracledbSystemBufferCacheHitRatio                          MetricConfig `mapstructure:"oracledb.system.buffer_cache_hit_ratio"`
+	OracledbSystemCapturedUserCalls                            MetricConfig `mapstructure:"oracledb.system.captured_user_calls"`
+	OracledbSystemConsistentReadChangesPerSecond               MetricConfig `mapstructure:"oracledb.system.consistent_read_changes_per_second"`
+	OracledbSystemConsistentReadChangesPerTransaction          MetricConfig `mapstructure:"oracledb.system.consistent_read_changes_per_transaction"`
+	OracledbSystemConsistentReadGetsPerSecond                  MetricConfig `mapstructure:"oracledb.system.consistent_read_gets_per_second"`
+	OracledbSystemConsistentReadGetsPerTransaction             MetricConfig `mapstructure:"oracledb.system.consistent_read_gets_per_transaction"`
+	OracledbSystemCPUUsagePerSecond                            MetricConfig `mapstructure:"oracledb.system.cpu_usage_per_second"`
+	OracledbSystemCPUUsagePerTransaction                       MetricConfig `mapstructure:"oracledb.system.cpu_usage_per_transaction"`
+	OracledbSystemCrBlocksCreatedPerSecond                     MetricConfig `mapstructure:"oracledb.system.cr_blocks_created_per_second"`
+	OracledbSystemCrBlocksCreatedPerTransaction                MetricConfig `mapstructure:"oracledb.system.cr_blocks_created_per_transaction"`
+	OracledbSystemCrUndoRecordsAppliedPerSecond                MetricConfig `mapstructure:"oracledb.system.cr_undo_records_applied_per_second"`
+	OracledbSystemCrUndoRecordsAppliedPerTransaction           MetricConfig `mapstructure:"oracledb.system.cr_undo_records_applied_per_transaction"`
+	OracledbSystemCurrentLogonsCount                           MetricConfig `mapstructure:"oracledb.system.current_logons_count"`
+	OracledbSystemCurrentOpenCursorsCount                      MetricConfig `mapstructure:"oracledb.system.current_open_cursors_count"`
+	OracledbSystemCurrentOsLoad                                MetricConfig `mapstructure:"oracledb.system.current_os_load"`
+	OracledbSystemCursorCacheHitRatio                          MetricConfig `mapstructure:"oracledb.system.cursor_cache_hit_ratio"`
+	OracledbSystemDatabaseCPUTimeRatio                         MetricConfig `mapstructure:"oracledb.system.database_cpu_time_ratio"`
+	OracledbSystemDatabaseTimePerSecond                        MetricConfig `mapstructure:"oracledb.system.database_time_per_second"`
+	OracledbSystemDatabaseWaitTimeRatio                        MetricConfig `mapstructure:"oracledb.system.database_wait_time_ratio"`
+	OracledbSystemDbBlockChangesPerSecond                      MetricConfig `mapstructure:"oracledb.system.db_block_changes_per_second"`
+	OracledbSystemDbBlockChangesPerTransaction                 MetricConfig `mapstructure:"oracledb.system.db_block_changes_per_transaction"`
+	OracledbSystemDbBlockChangesPerUserCall                    MetricConfig `mapstructure:"oracledb.system.db_block_changes_per_user_call"`
+	OracledbSystemDbBlockGetsPerSecond                         MetricConfig `mapstructure:"oracledb.system.db_block_gets_per_second"`
+	OracledbSystemDbBlockGetsPerTransaction                    MetricConfig `mapstructure:"oracledb.system.db_block_gets_per_transaction"`
+	OracledbSystemDbBlockGetsPerUserCall                       MetricConfig `mapstructure:"oracledb.system.db_block_gets_per_user_call"`
+	OracledbSystemDbwrCheckpointsPerSecond                     MetricConfig `mapstructure:"oracledb.system.dbwr_checkpoints_per_second"`
+	OracledbSystemDiskSortPerSecond                            MetricConfig `mapstructure:"oracledb.system.disk_sort_per_second"`
+	OracledbSystemDiskSortPerTransaction                       MetricConfig `mapstructure:"oracledb.system.disk_sort_per_transaction"`
+	OracledbSystemEnqueueDeadlocksPerSecond                    MetricConfig `mapstructure:"oracledb.system.enqueue_deadlocks_per_second"`
+	OracledbSystemEnqueueDeadlocksPerTransaction               MetricConfig `mapstructure:"oracledb.system.enqueue_deadlocks_per_transaction"`
+	OracledbSystemEnqueueRequestsPerSecond                     MetricConfig `mapstructure:"oracledb.system.enqueue_requests_per_second"`
+	OracledbSystemEnqueueRequestsPerTransaction                MetricConfig `mapstructure:"oracledb.system.enqueue_requests_per_transaction"`
+	OracledbSystemEnqueueTimeoutsPerSecond                     MetricConfig `mapstructure:"oracledb.system.enqueue_timeouts_per_second"`
+	OracledbSystemEnqueueTimeoutsPerTransaction                MetricConfig `mapstructure:"oracledb.system.enqueue_timeouts_per_transaction"`
+	OracledbSystemEnqueueWaitsPerSecond                        MetricConfig `mapstructure:"oracledb.system.enqueue_waits_per_second"`
+	OracledbSystemEnqueueWaitsPerTransaction                   MetricConfig `mapstructure:"oracledb.system.enqueue_waits_per_transaction"`
+	OracledbSystemExecuteWithoutParseRatio                     MetricConfig `mapstructure:"oracledb.system.execute_without_parse_ratio"`
+	OracledbSystemExecutionsPerSecond                          MetricConfig `mapstructure:"oracledb.system.executions_per_second"`
+	OracledbSystemExecutionsPerTransaction                     MetricConfig `mapstructure:"oracledb.system.executions_per_transaction"`
+	OracledbSystemExecutionsPerUserCall                        MetricConfig `mapstructure:"oracledb.system.executions_per_user_call"`
+	OracledbSystemFullIndexScansPerSecond                      MetricConfig `mapstructure:"oracledb.system.full_index_scans_per_second"`
+	OracledbSystemFullIndexScansPerTransaction                 MetricConfig `mapstructure:"oracledb.system.full_index_scans_per_transaction"`
+	OracledbSystemGcCrBlockReceivedPerSecond                   MetricConfig `mapstructure:"oracledb.system.gc_cr_block_received_per_second"`
+	OracledbSystemGcCrBlockReceivedPerTransaction              MetricConfig `mapstructure:"oracledb.system.gc_cr_block_received_per_transaction"`
+	OracledbSystemGcCurrentBlockReceivedPerSecond              MetricConfig `mapstructure:"oracledb.system.gc_current_block_received_per_second"`
+	OracledbSystemGcCurrentBlockReceivedPerTransaction         MetricConfig `mapstructure:"oracledb.system.gc_current_block_received_per_transaction"`
+	OracledbSystemGlobalCacheAverageCrGetTime                  MetricConfig `mapstructure:"oracledb.system.global_cache_average_cr_get_time"`
+	OracledbSystemGlobalCacheAverageCurrentGetTime             MetricConfig `mapstructure:"oracledb.system.global_cache_average_current_get_time"`
+	OracledbSystemGlobalCacheBlocksCorrupted                   MetricConfig `mapstructure:"oracledb.system.global_cache_blocks_corrupted"`
+	OracledbSystemGlobalCacheBlocksLost                        MetricConfig `mapstructure:"oracledb.system.global_cache_blocks_lost"`
+	OracledbSystemHardParseCountPerSecond                      MetricConfig `mapstructure:"oracledb.system.hard_parse_count_per_second"`
+	OracledbSystemHardParseCountPerTransaction                 MetricConfig `mapstructure:"oracledb.system.hard_parse_count_per_transaction"`
+	OracledbSystemHostCPUUsagePerSecond                        MetricConfig `mapstructure:"oracledb.system.host_cpu_usage_per_second"`
+	OracledbSystemHostCPUUtilization                           MetricConfig `mapstructure:"oracledb.system.host_cpu_utilization"`
+	OracledbSystemIoMegabytesPerSecond                         MetricConfig `mapstructure:"oracledb.system.io_megabytes_per_second"`
+	OracledbSystemIoRequestsPerSecond                          MetricConfig `mapstructure:"oracledb.system.io_requests_per_second"`
+	OracledbSystemLeafNodeSplitsPerSecond                      MetricConfig `mapstructure:"oracledb.system.leaf_node_splits_per_second"`
+	OracledbSystemLeafNodeSplitsPerTransaction                 MetricConfig `mapstructure:"oracledb.system.leaf_node_splits_per_transaction"`
+	OracledbSystemLibraryCacheHitRatio                         MetricConfig `mapstructure:"oracledb.system.library_cache_hit_ratio"`
+	OracledbSystemLibraryCacheMissRatio                        MetricConfig `mapstructure:"oracledb.system.library_cache_miss_ratio"`
+	OracledbSystemLogicalReadsPerSecond                        MetricConfig `mapstructure:"oracledb.system.logical_reads_per_second"`
+	OracledbSystemLogicalReadsPerTransaction                   MetricConfig `mapstructure:"oracledb.system.logical_reads_per_transaction"`
+	OracledbSystemLogicalReadsPerUserCall                      MetricConfig `mapstructure:"oracledb.system.logical_reads_per_user_call"`
+	OracledbSystemLogonsPerSecond                              MetricConfig `mapstructure:"oracledb.system.logons_per_second"`
+	OracledbSystemLogonsPerTransaction                         MetricConfig `mapstructure:"oracledb.system.logons_per_transaction"`
+	OracledbSystemLongTableScansPerSecond                      MetricConfig `mapstructure:"oracledb.system.long_table_scans_per_second"`
+	OracledbSystemLongTableScansPerTransaction                 MetricConfig `mapstructure:"oracledb.system.long_table_scans_per_transaction"`
+	OracledbSystemMemorySortsRatio                             MetricConfig `mapstructure:"oracledb.system.memory_sorts_ratio"`
+	OracledbSystemNetworkTrafficVolumePerSecond                MetricConfig `mapstructure:"oracledb.system.network_traffic_volume_per_second"`
+	OracledbSystemOpenCursorsPerSecond                         MetricConfig `mapstructure:"oracledb.system.open_cursors_per_second"`
+	OracledbSystemOpenCursorsPerTransaction                    MetricConfig `mapstructure:"oracledb.system.open_cursors_per_transaction"`
+	OracledbSystemParseFailureCountPerSecond                   MetricConfig `mapstructure:"oracledb.system.parse_failure_count_per_second"`
+	OracledbSystemParseFailureCountPerTransaction              MetricConfig `mapstructure:"oracledb.system.parse_failure_count_per_transaction"`
+	OracledbSystemPgaCacheHitPercentage                        MetricConfig `mapstructure:"oracledb.system.pga_cache_hit_percentage"`
+	OracledbSystemPhysicalLobsReadsPerSecond                   MetricConfig `mapstructure:"oracledb.system.physical_lobs_reads_per_second"`
+	OracledbSystemPhysicalLobsReadsPerTransaction              MetricConfig `mapstructure:"oracledb.system.physical_lobs_reads_per_transaction"`
+	OracledbSystemPhysicalLobsWritesPerSecond                  MetricConfig `mapstructure:"oracledb.system.physical_lobs_writes_per_second"`
+	OracledbSystemPhysicalLobsWritesPerTransaction             MetricConfig `mapstructure:"oracledb.system.physical_lobs_writes_per_transaction"`
+	OracledbSystemPhysicalReadBytesPerSecond                   MetricConfig `mapstructure:"oracledb.system.physical_read_bytes_per_second"`
+	OracledbSystemPhysicalReadIoRequestsPerSecond              MetricConfig `mapstructure:"oracledb.system.physical_read_io_requests_per_second"`
+	OracledbSystemPhysicalReadTotalBytesPerSecond              MetricConfig `mapstructure:"oracledb.system.physical_read_total_bytes_per_second"`
+	OracledbSystemPhysicalReadTotalIoRequestsPerSecond         MetricConfig `mapstructure:"oracledb.system.physical_read_total_io_requests_per_second"`
+	OracledbSystemPhysicalReadsDirectPerSecond                 MetricConfig `mapstructure:"oracledb.system.physical_reads_direct_per_second"`
+	OracledbSystemPhysicalReadsDirectPerTransaction            MetricConfig `mapstructure:"oracledb.system.physical_reads_direct_per_transaction"`
+	OracledbSystemPhysicalReadsPerSecond                       MetricConfig `mapstructure:"oracledb.system.physical_reads_per_second"`
+	OracledbSystemPhysicalReadsPerTransaction                  MetricConfig `mapstructure:"oracledb.system.physical_reads_per_transaction"`
+	OracledbSystemPhysicalWriteBytesPerSecond                  MetricConfig `mapstructure:"oracledb.system.physical_write_bytes_per_second"`
+	OracledbSystemPhysicalWriteIoRequestsPerSecond             MetricConfig `mapstructure:"oracledb.system.physical_write_io_requests_per_second"`
+	OracledbSystemPhysicalWriteTotalBytesPerSecond             MetricConfig `mapstructure:"oracledb.system.physical_write_total_bytes_per_second"`
+	OracledbSystemPhysicalWriteTotalIoRequestsPerSecond        MetricConfig `mapstructure:"oracledb.system.physical_write_total_io_requests_per_second"`
+	OracledbSystemPhysicalWritesDirectPerSecond                MetricConfig `mapstructure:"oracledb.system.physical_writes_direct_per_second"`
+	OracledbSystemPhysicalWritesDirectPerTransaction           MetricConfig `mapstructure:"oracledb.system.physical_writes_direct_per_transaction"`
+	OracledbSystemPhysicalWritesPerSecond                      MetricConfig `mapstructure:"oracledb.system.physical_writes_per_second"`
+	OracledbSystemPhysicalWritesPerTransaction                 MetricConfig `mapstructure:"oracledb.system.physical_writes_per_transaction"`
+	OracledbSystemProcessLimitPercentage                       MetricConfig `mapstructure:"oracledb.system.process_limit_percentage"`
+	OracledbSystemRecursiveCallsPerSecond                      MetricConfig `mapstructure:"oracledb.system.recursive_calls_per_second"`
+	OracledbSystemRecursiveCallsPerTransaction                 MetricConfig `mapstructure:"oracledb.system.recursive_calls_per_transaction"`
+	OracledbSystemRedoAllocationHitRatio                       MetricConfig `mapstructure:"oracledb.system.redo_allocation_hit_ratio"`
+	OracledbSystemRedoGeneratedBytesPerSecond                  MetricConfig `mapstructure:"oracledb.system.redo_generated_bytes_per_second"`
+	OracledbSystemRedoGeneratedBytesPerTransaction             MetricConfig `mapstructure:"oracledb.system.redo_generated_bytes_per_transaction"`
+	OracledbSystemRedoWritesPerSecond                          MetricConfig `mapstructure:"oracledb.system.redo_writes_per_second"`
+	OracledbSystemRedoWritesPerTransaction                     MetricConfig `mapstructure:"oracledb.system.redo_writes_per_transaction"`
+	OracledbSystemResponseTimePerTransaction                   MetricConfig `mapstructure:"oracledb.system.response_time_per_transaction"`
+	OracledbSystemRowCacheHitRatio                             MetricConfig `mapstructure:"oracledb.system.row_cache_hit_ratio"`
+	OracledbSystemRowCacheMissRatio                            MetricConfig `mapstructure:"oracledb.system.row_cache_miss_ratio"`
+	OracledbSystemRowsPerSort                                  MetricConfig `mapstructure:"oracledb.system.rows_per_sort"`
+	OracledbSystemSessionCount                                 MetricConfig `mapstructure:"oracledb.system.session_count"`
+	OracledbSystemSessionLimitPercentage                       MetricConfig `mapstructure:"oracledb.system.session_limit_percentage"`
+	OracledbSystemSharedPoolFreePercentage                     MetricConfig `mapstructure:"oracledb.system.shared_pool_free_percentage"`
+	OracledbSystemSoftParseRatio                               MetricConfig `mapstructure:"oracledb.system.soft_parse_ratio"`
+	OracledbSystemSQLServiceResponseTime                       MetricConfig `mapstructure:"oracledb.system.sql_service_response_time"`
+	OracledbSystemStreamsPoolUsagePercentage                   MetricConfig `mapstructure:"oracledb.system.streams_pool_usage_percentage"`
+	OracledbSystemTempSpaceUsed                                MetricConfig `mapstructure:"oracledb.system.temp_space_used"`
+	OracledbSystemTotalIndexScansPerSecond                     MetricConfig `mapstructure:"oracledb.system.total_index_scans_per_second"`
+	OracledbSystemTotalIndexScansPerTransaction                MetricConfig `mapstructure:"oracledb.system.total_index_scans_per_transaction"`
+	OracledbSystemTotalParseCountPerSecond                     MetricConfig `mapstructure:"oracledb.system.total_parse_count_per_second"`
+	OracledbSystemTotalParseCountPerTransaction                MetricConfig `mapstructure:"oracledb.system.total_parse_count_per_transaction"`
+	OracledbSystemTotalSortsPerUserCall                        MetricConfig `mapstructure:"oracledb.system.total_sorts_per_user_call"`
+	OracledbSystemTotalTableScansPerSecond                     MetricConfig `mapstructure:"oracledb.system.total_table_scans_per_second"`
+	OracledbSystemTotalTableScansPerTransaction                MetricConfig `mapstructure:"oracledb.system.total_table_scans_per_transaction"`
+	OracledbSystemTotalTableScansPerUserCall                   MetricConfig `mapstructure:"oracledb.system.total_table_scans_per_user_call"`
+	OracledbSystemTransactionsPerLogon                         MetricConfig `mapstructure:"oracledb.system.transactions_per_logon"`
+	OracledbSystemTransactionsPerSecond                        MetricConfig `mapstructure:"oracledb.system.transactions_per_second"`
+	OracledbSystemUserCallsPerSecond                           MetricConfig `mapstructure:"oracledb.system.user_calls_per_second"`
+	OracledbSystemUserCallsPerTransaction                      MetricConfig `mapstructure:"oracledb.system.user_calls_per_transaction"`
+	OracledbSystemUserCallsRatio                               MetricConfig `mapstructure:"oracledb.system.user_calls_ratio"`
+	OracledbSystemUserCommitsPerSecond                         MetricConfig `mapstructure:"oracledb.system.user_commits_per_second"`
+	OracledbSystemUserCommitsPercentage                        MetricConfig `mapstructure:"oracledb.system.user_commits_percentage"`
+	OracledbSystemUserLimitPercentage                          MetricConfig `mapstructure:"oracledb.system.user_limit_percentage"`
+	OracledbSystemUserRollbackUndoRecordsAppliedPerSecond      MetricConfig `mapstructure:"oracledb.system.user_rollback_undo_records_applied_per_second"`
+	OracledbSystemUserRollbackUndoRecordsAppliedPerTransaction MetricConfig `mapstructure:"oracledb.system.user_rollback_undo_records_applied_per_transaction"`
+	OracledbSystemUserRollbacksPerSecond                       MetricConfig `mapstructure:"oracledb.system.user_rollbacks_per_second"`
+	OracledbSystemUserRollbacksPercentage                      MetricConfig `mapstructure:"oracledb.system.user_rollbacks_percentage"`
+	OracledbTablespaceDbID                                     MetricConfig `mapstructure:"oracledb.tablespace.db_id"`
+	OracledbTablespaceGlobalName                               MetricConfig `mapstructure:"oracledb.tablespace.global_name"`
+	OracledbTablespaceIsOffline                                MetricConfig `mapstructure:"oracledb.tablespace.is_offline"`
+	OracledbTablespaceOfflineCdbDatafiles                      MetricConfig `mapstructure:"oracledb.tablespace.offline_cdb_datafiles"`
+	OracledbTablespaceOfflinePdbDatafiles                      MetricConfig `mapstructure:"oracledb.tablespace.offline_pdb_datafiles"`
+	OracledbTablespacePdbNonWriteMode                          MetricConfig `mapstructure:"oracledb.tablespace.pdb_non_write_mode"`
+	OracledbTablespaceSpaceConsumedBytes                       MetricConfig `mapstructure:"oracledb.tablespace.space_consumed_bytes"`
+	OracledbTablespaceSpaceReservedBytes                       MetricConfig `mapstructure:"oracledb.tablespace.space_reserved_bytes"`
+	OracledbTablespaceSpaceUsedPercentage                      MetricConfig `mapstructure:"oracledb.tablespace.space_used_percentage"`
+	OracledbTablespaceTotalBytes                               MetricConfig `mapstructure:"oracledb.tablespace.total_bytes"`
+	OracledbTablespaceUsedBytes                                MetricConfig `mapstructure:"oracledb.tablespace.used_bytes"`
+	OracledbTablespaceUsedPercent                              MetricConfig `mapstructure:"oracledb.tablespace.used_percent"`
+	OracledbWaitEventsCurrentWaitTimeMs                        MetricConfig `mapstructure:"oracledb.wait_events.current_wait_time_ms"`
 }
 
 func DefaultMetricsConfig() MetricsConfig {
 	return MetricsConfig{
-		NewrelicoracledbAsmDiskgroupFreeMb: MetricConfig{
+		OracledbAsmDiskgroupFreeMb: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbAsmDiskgroupOfflineDisks: MetricConfig{
+		OracledbAsmDiskgroupOfflineDisks: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbAsmDiskgroupTotalMb: MetricConfig{
+		OracledbAsmDiskgroupTotalMb: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsBufferGets: MetricConfig{
+		OracledbChildCursorsBufferGets: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsCPUTime: MetricConfig{
+		OracledbChildCursorsCPUTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsDetails: MetricConfig{
+		OracledbChildCursorsDetails: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsDiskReads: MetricConfig{
+		OracledbChildCursorsDiskReads: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsElapsedTime: MetricConfig{
+		OracledbChildCursorsElapsedTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsExecutions: MetricConfig{
+		OracledbChildCursorsExecutions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsInvalidations: MetricConfig{
+		OracledbChildCursorsInvalidations: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbChildCursorsUserIoWaitTime: MetricConfig{
+		OracledbChildCursorsUserIoWaitTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionActiveSessions: MetricConfig{
+		OracledbConnectionActiveSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionBytesReceived: MetricConfig{
+		OracledbConnectionBytesReceived: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionBytesSent: MetricConfig{
+		OracledbConnectionBytesSent: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionCircuits: MetricConfig{
+		OracledbConnectionCircuits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionDispatchers: MetricConfig{
+		OracledbConnectionDispatchers: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionExecuteCount: MetricConfig{
+		OracledbConnectionExecuteCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionInactiveSessions: MetricConfig{
+		OracledbConnectionInactiveSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionLogonsCumulative: MetricConfig{
+		OracledbConnectionLogonsCumulative: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionLogonsCurrent: MetricConfig{
+		OracledbConnectionLogonsCurrent: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionParseCountHard: MetricConfig{
+		OracledbConnectionParseCountHard: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionParseCountTotal: MetricConfig{
+		OracledbConnectionParseCountTotal: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionResourceCurrentUtilization: MetricConfig{
+		OracledbConnectionResourceCurrentUtilization: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionResourceLimit: MetricConfig{
+		OracledbConnectionResourceLimit: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionResourceMaxUtilization: MetricConfig{
+		OracledbConnectionResourceMaxUtilization: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionSessionsByStatus: MetricConfig{
+		OracledbConnectionSessionsByStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionSessionsByType: MetricConfig{
+		OracledbConnectionSessionsByType: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionSharedServers: MetricConfig{
+		OracledbConnectionSharedServers: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionSqlnetRoundtrips: MetricConfig{
+		OracledbConnectionSqlnetRoundtrips: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionTotalSessions: MetricConfig{
+		OracledbConnectionTotalSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionUserCommits: MetricConfig{
+		OracledbConnectionUserCommits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbConnectionUserRollbacks: MetricConfig{
+		OracledbConnectionUserRollbacks: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbContainerRestricted: MetricConfig{
+		OracledbContainerRestricted: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbContainerStatus: MetricConfig{
+		OracledbContainerStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDatabaseInfo: MetricConfig{
+		OracledbDatabaseInfo: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDatabaseRole: MetricConfig{
+		OracledbDatabaseRole: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDatafileAutoextensible: MetricConfig{
+		OracledbDatafileAutoextensible: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDatafileSizeBytes: MetricConfig{
+		OracledbDatafileSizeBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDatafileUsedBytes: MetricConfig{
+		OracledbDatafileUsedBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDbID: MetricConfig{
+		OracledbDbID: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskBlocksRead: MetricConfig{
+		OracledbDiskBlocksRead: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskBlocksWritten: MetricConfig{
+		OracledbDiskBlocksWritten: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskReadTimeMilliseconds: MetricConfig{
+		OracledbDiskReadTimeMilliseconds: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskReads: MetricConfig{
+		OracledbDiskReads: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskWriteTimeMilliseconds: MetricConfig{
+		OracledbDiskWriteTimeMilliseconds: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbDiskWrites: MetricConfig{
+		OracledbDiskWrites: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbExecutionPlan: MetricConfig{
+		OracledbExecutionPlan: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbGlobalName: MetricConfig{
+		OracledbGlobalName: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbHostingInfo: MetricConfig{
+		OracledbHostingInfo: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbLockedAccounts: MetricConfig{
+		OracledbLockedAccounts: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbLongRunningQueries: MetricConfig{
+		OracledbLongRunningQueries: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemoryPgaAllocatedBytes: MetricConfig{
+		OracledbMemoryPgaAllocatedBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemoryPgaFreeableBytes: MetricConfig{
+		OracledbMemoryPgaFreeableBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemoryPgaInUseBytes: MetricConfig{
+		OracledbMemoryPgaInUseBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemoryPgaMaxSizeBytes: MetricConfig{
+		OracledbMemoryPgaMaxSizeBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemorySgaSharedPoolLibraryCacheSharableBytes: MetricConfig{
+		OracledbMemorySgaSharedPoolLibraryCacheSharableBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemorySgaSharedPoolLibraryCacheUserBytes: MetricConfig{
+		OracledbMemorySgaSharedPoolLibraryCacheUserBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbMemorySgaUgaTotalBytes: MetricConfig{
+		OracledbMemorySgaUgaTotalBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbActiveParallelSessions: MetricConfig{
+		OracledbPdbActiveParallelSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbActiveSerialSessions: MetricConfig{
+		OracledbPdbActiveSerialSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbAverageActiveSessions: MetricConfig{
+		OracledbPdbAverageActiveSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbBackgroundCPUUsagePerSecond: MetricConfig{
+		OracledbPdbBackgroundCPUUsagePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbBackgroundTimePerSecond: MetricConfig{
+		OracledbPdbBackgroundTimePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbBlockChangesPerSecond: MetricConfig{
+		OracledbPdbBlockChangesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbBlockChangesPerTransaction: MetricConfig{
+		OracledbPdbBlockChangesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbCPUTimeRatio: MetricConfig{
+		OracledbPdbCPUTimeRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbCPUUsagePerSecond: MetricConfig{
+		OracledbPdbCPUUsagePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbCPUUsagePerTransaction: MetricConfig{
+		OracledbPdbCPUUsagePerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbCurrentLogons: MetricConfig{
+		OracledbPdbCurrentLogons: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbCurrentOpenCursors: MetricConfig{
+		OracledbPdbCurrentOpenCursors: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbDbPhysicalReadBytesPerSecond: MetricConfig{
+		OracledbPdbDbPhysicalReadBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbDbPhysicalReadsPerSecond: MetricConfig{
+		OracledbPdbDbPhysicalReadsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbDbPhysicalWriteBytesPerSecond: MetricConfig{
+		OracledbPdbDbPhysicalWriteBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbDbPhysicalWritesPerSecond: MetricConfig{
+		OracledbPdbDbPhysicalWritesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbExecuteWithoutParseRatio: MetricConfig{
+		OracledbPdbExecuteWithoutParseRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbExecutionsPerSecond: MetricConfig{
+		OracledbPdbExecutionsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbExecutionsPerTransaction: MetricConfig{
+		OracledbPdbExecutionsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbHardParseCountPerSecond: MetricConfig{
+		OracledbPdbHardParseCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbHardParseCountPerTransaction: MetricConfig{
+		OracledbPdbHardParseCountPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbLogicalReadsPerSecond: MetricConfig{
+		OracledbPdbLogicalReadsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbLogicalReadsPerTransaction: MetricConfig{
+		OracledbPdbLogicalReadsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbLogonsPerSecond: MetricConfig{
+		OracledbPdbLogonsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbLogonsPerTransaction: MetricConfig{
+		OracledbPdbLogonsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbNetworkTrafficBytePerSecond: MetricConfig{
+		OracledbPdbNetworkTrafficBytePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbOpenCursorsPerSecond: MetricConfig{
+		OracledbPdbOpenCursorsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbOpenCursorsPerTransaction: MetricConfig{
+		OracledbPdbOpenCursorsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbOpenMode: MetricConfig{
+		OracledbPdbOpenMode: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbParseFailureCountPerSecond: MetricConfig{
+		OracledbPdbParseFailureCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbPhysicalReadBytesPerSecond: MetricConfig{
+		OracledbPdbPhysicalReadBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbPhysicalReadsPerTransaction: MetricConfig{
+		OracledbPdbPhysicalReadsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbPhysicalWriteBytesPerSecond: MetricConfig{
+		OracledbPdbPhysicalWriteBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbPhysicalWritesPerTransaction: MetricConfig{
+		OracledbPdbPhysicalWritesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbRedoGeneratedBytesPerSecond: MetricConfig{
+		OracledbPdbRedoGeneratedBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbRedoGeneratedBytesPerTransaction: MetricConfig{
+		OracledbPdbRedoGeneratedBytesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbResponseTimePerTransaction: MetricConfig{
+		OracledbPdbResponseTimePerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbSessionCount: MetricConfig{
+		OracledbPdbSessionCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbSoftParseRatio: MetricConfig{
+		OracledbPdbSoftParseRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbSQLServiceResponseTime: MetricConfig{
+		OracledbPdbSQLServiceResponseTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbTotalParseCountPerSecond: MetricConfig{
+		OracledbPdbTotalParseCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbTotalParseCountPerTransaction: MetricConfig{
+		OracledbPdbTotalParseCountPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbTotalSizeBytes: MetricConfig{
+		OracledbPdbTotalSizeBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbTransactionsPerSecond: MetricConfig{
+		OracledbPdbTransactionsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserCallsPerSecond: MetricConfig{
+		OracledbPdbUserCallsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserCallsPerTransaction: MetricConfig{
+		OracledbPdbUserCallsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserCommitsPerSecond: MetricConfig{
+		OracledbPdbUserCommitsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserCommitsPercentage: MetricConfig{
+		OracledbPdbUserCommitsPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserRollbacksPerSecond: MetricConfig{
+		OracledbPdbUserRollbacksPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbUserRollbacksPercentage: MetricConfig{
+		OracledbPdbUserRollbacksPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbPdbWaitTimeRatio: MetricConfig{
+		OracledbPdbWaitTimeRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceActiveState: MetricConfig{
+		OracledbRacInstanceActiveState: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceArchiverStarted: MetricConfig{
+		OracledbRacInstanceArchiverStarted: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceDatabaseStatus: MetricConfig{
+		OracledbRacInstanceDatabaseStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceLoginsAllowed: MetricConfig{
+		OracledbRacInstanceLoginsAllowed: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceStatus: MetricConfig{
+		OracledbRacInstanceStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceUptimeSeconds: MetricConfig{
+		OracledbRacInstanceUptimeSeconds: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacInstanceVersionInfo: MetricConfig{
+		OracledbRacInstanceVersionInfo: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceBlockedStatus: MetricConfig{
+		OracledbRacServiceBlockedStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceClbConfig: MetricConfig{
+		OracledbRacServiceClbConfig: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceDrainTimeoutSeconds: MetricConfig{
+		OracledbRacServiceDrainTimeoutSeconds: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceFanEnabled: MetricConfig{
+		OracledbRacServiceFanEnabled: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceGoalConfig: MetricConfig{
+		OracledbRacServiceGoalConfig: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceInstanceID: MetricConfig{
+		OracledbRacServiceInstanceID: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceNetworkConfig: MetricConfig{
+		OracledbRacServiceNetworkConfig: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceReplayTimeoutSeconds: MetricConfig{
+		OracledbRacServiceReplayTimeoutSeconds: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacServiceTransactionGuardEnabled: MetricConfig{
+		OracledbRacServiceTransactionGuardEnabled: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacTotalWaits: MetricConfig{
+		OracledbRacTotalWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRacWaitTime: MetricConfig{
+		OracledbRacWaitTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRedoLogParallelWriteWaits: MetricConfig{
+		OracledbRedoLogParallelWriteWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRedoLogSwitchArchivingNeededWaits: MetricConfig{
+		OracledbRedoLogSwitchArchivingNeededWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRedoLogSwitchCheckpointIncompleteWaits: MetricConfig{
+		OracledbRedoLogSwitchCheckpointIncompleteWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRedoLogSwitchCompletionWaits: MetricConfig{
+		OracledbRedoLogSwitchCompletionWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRollbackSegmentsGets: MetricConfig{
+		OracledbRollbackSegmentsGets: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRollbackSegmentsWaitRatio: MetricConfig{
+		OracledbRollbackSegmentsWaitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbRollbackSegmentsWaits: MetricConfig{
+		OracledbRollbackSegmentsWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbServiceCount: MetricConfig{
+		OracledbServiceCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbServiceStatus: MetricConfig{
+		OracledbServiceStatus: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSessionsCount: MetricConfig{
+		OracledbSessionsCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaBufferBusyWaits: MetricConfig{
+		OracledbSgaBufferBusyWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaFixedSizeBytes: MetricConfig{
+		OracledbSgaFixedSizeBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaFreeBufferInspectedWaits: MetricConfig{
+		OracledbSgaFreeBufferInspectedWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaFreeBufferWaits: MetricConfig{
+		OracledbSgaFreeBufferWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaHitRatio: MetricConfig{
+		OracledbSgaHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaLogAllocationRetriesRatio: MetricConfig{
+		OracledbSgaLogAllocationRetriesRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaLogBufferRedoAllocationRetries: MetricConfig{
+		OracledbSgaLogBufferRedoAllocationRetries: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaLogBufferRedoEntries: MetricConfig{
+		OracledbSgaLogBufferRedoEntries: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaLogBufferSpaceWaits: MetricConfig{
+		OracledbSgaLogBufferSpaceWaits: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaRedoBuffersBytes: MetricConfig{
+		OracledbSgaRedoBuffersBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaSharedPoolDictCacheMissRatio: MetricConfig{
+		OracledbSgaSharedPoolDictCacheMissRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaSharedPoolLibraryCacheHitRatio: MetricConfig{
+		OracledbSgaSharedPoolLibraryCacheHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSgaSharedPoolLibraryCacheReloadRatio: MetricConfig{
+		OracledbSgaSharedPoolLibraryCacheReloadRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesExecutionCount: MetricConfig{
+		OracledbSlowQueriesExecutionCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgBufferGets: MetricConfig{
+		OracledbSlowQueriesIntervalAvgBufferGets: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgCPUTime: MetricConfig{
+		OracledbSlowQueriesIntervalAvgCPUTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgDiskReads: MetricConfig{
+		OracledbSlowQueriesIntervalAvgDiskReads: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgDiskWrites: MetricConfig{
+		OracledbSlowQueriesIntervalAvgDiskWrites: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgElapsedTime: MetricConfig{
+		OracledbSlowQueriesIntervalAvgElapsedTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgRowsProcessed: MetricConfig{
+		OracledbSlowQueriesIntervalAvgRowsProcessed: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalAvgWaitTime: MetricConfig{
+		OracledbSlowQueriesIntervalAvgWaitTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalBufferGets: MetricConfig{
+		OracledbSlowQueriesIntervalBufferGets: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalCPUTime: MetricConfig{
+		OracledbSlowQueriesIntervalCPUTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalDiskReads: MetricConfig{
+		OracledbSlowQueriesIntervalDiskReads: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalDiskWrites: MetricConfig{
+		OracledbSlowQueriesIntervalDiskWrites: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalElapsedTime: MetricConfig{
+		OracledbSlowQueriesIntervalElapsedTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalExecutionCount: MetricConfig{
+		OracledbSlowQueriesIntervalExecutionCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalRowsProcessed: MetricConfig{
+		OracledbSlowQueriesIntervalRowsProcessed: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesIntervalWaitTime: MetricConfig{
+		OracledbSlowQueriesIntervalWaitTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesQueryDetails: MetricConfig{
+		OracledbSlowQueriesQueryDetails: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalCPUTime: MetricConfig{
+		OracledbSlowQueriesTotalCPUTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalDiskReads: MetricConfig{
+		OracledbSlowQueriesTotalDiskReads: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalDiskWrites: MetricConfig{
+		OracledbSlowQueriesTotalDiskWrites: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalElapsedTime: MetricConfig{
+		OracledbSlowQueriesTotalElapsedTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalRowsExamined: MetricConfig{
+		OracledbSlowQueriesTotalRowsExamined: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalRowsReturned: MetricConfig{
+		OracledbSlowQueriesTotalRowsReturned: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSlowQueriesTotalWaitTime: MetricConfig{
+		OracledbSlowQueriesTotalWaitTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSortsDisk: MetricConfig{
+		OracledbSortsDisk: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSortsMemory: MetricConfig{
+		OracledbSortsMemory: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemActiveParallelSessions: MetricConfig{
+		OracledbSystemActiveParallelSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemActiveSerialSessions: MetricConfig{
+		OracledbSystemActiveSerialSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemAverageActiveSessions: MetricConfig{
+		OracledbSystemAverageActiveSessions: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBackgroundCheckpointsPerSecond: MetricConfig{
+		OracledbSystemBackgroundCheckpointsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBackgroundCPUUsagePerSecond: MetricConfig{
+		OracledbSystemBackgroundCPUUsagePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBackgroundTimePerSecond: MetricConfig{
+		OracledbSystemBackgroundTimePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBranchNodeSplitsPerSecond: MetricConfig{
+		OracledbSystemBranchNodeSplitsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBranchNodeSplitsPerTransaction: MetricConfig{
+		OracledbSystemBranchNodeSplitsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemBufferCacheHitRatio: MetricConfig{
+		OracledbSystemBufferCacheHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCapturedUserCalls: MetricConfig{
+		OracledbSystemCapturedUserCalls: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemConsistentReadChangesPerSecond: MetricConfig{
+		OracledbSystemConsistentReadChangesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemConsistentReadChangesPerTransaction: MetricConfig{
+		OracledbSystemConsistentReadChangesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemConsistentReadGetsPerSecond: MetricConfig{
+		OracledbSystemConsistentReadGetsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemConsistentReadGetsPerTransaction: MetricConfig{
+		OracledbSystemConsistentReadGetsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCPUUsagePerSecond: MetricConfig{
+		OracledbSystemCPUUsagePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCPUUsagePerTransaction: MetricConfig{
+		OracledbSystemCPUUsagePerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCrBlocksCreatedPerSecond: MetricConfig{
+		OracledbSystemCrBlocksCreatedPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCrBlocksCreatedPerTransaction: MetricConfig{
+		OracledbSystemCrBlocksCreatedPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCrUndoRecordsAppliedPerSecond: MetricConfig{
+		OracledbSystemCrUndoRecordsAppliedPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCrUndoRecordsAppliedPerTransaction: MetricConfig{
+		OracledbSystemCrUndoRecordsAppliedPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCurrentLogonsCount: MetricConfig{
+		OracledbSystemCurrentLogonsCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCurrentOpenCursorsCount: MetricConfig{
+		OracledbSystemCurrentOpenCursorsCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCurrentOsLoad: MetricConfig{
+		OracledbSystemCurrentOsLoad: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemCursorCacheHitRatio: MetricConfig{
+		OracledbSystemCursorCacheHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDatabaseCPUTimeRatio: MetricConfig{
+		OracledbSystemDatabaseCPUTimeRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDatabaseTimePerSecond: MetricConfig{
+		OracledbSystemDatabaseTimePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDatabaseWaitTimeRatio: MetricConfig{
+		OracledbSystemDatabaseWaitTimeRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockChangesPerSecond: MetricConfig{
+		OracledbSystemDbBlockChangesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockChangesPerTransaction: MetricConfig{
+		OracledbSystemDbBlockChangesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockChangesPerUserCall: MetricConfig{
+		OracledbSystemDbBlockChangesPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockGetsPerSecond: MetricConfig{
+		OracledbSystemDbBlockGetsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockGetsPerTransaction: MetricConfig{
+		OracledbSystemDbBlockGetsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbBlockGetsPerUserCall: MetricConfig{
+		OracledbSystemDbBlockGetsPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDbwrCheckpointsPerSecond: MetricConfig{
+		OracledbSystemDbwrCheckpointsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDiskSortPerSecond: MetricConfig{
+		OracledbSystemDiskSortPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemDiskSortPerTransaction: MetricConfig{
+		OracledbSystemDiskSortPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueDeadlocksPerSecond: MetricConfig{
+		OracledbSystemEnqueueDeadlocksPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueDeadlocksPerTransaction: MetricConfig{
+		OracledbSystemEnqueueDeadlocksPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueRequestsPerSecond: MetricConfig{
+		OracledbSystemEnqueueRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueRequestsPerTransaction: MetricConfig{
+		OracledbSystemEnqueueRequestsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueTimeoutsPerSecond: MetricConfig{
+		OracledbSystemEnqueueTimeoutsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueTimeoutsPerTransaction: MetricConfig{
+		OracledbSystemEnqueueTimeoutsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueWaitsPerSecond: MetricConfig{
+		OracledbSystemEnqueueWaitsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemEnqueueWaitsPerTransaction: MetricConfig{
+		OracledbSystemEnqueueWaitsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemExecuteWithoutParseRatio: MetricConfig{
+		OracledbSystemExecuteWithoutParseRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemExecutionsPerSecond: MetricConfig{
+		OracledbSystemExecutionsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemExecutionsPerTransaction: MetricConfig{
+		OracledbSystemExecutionsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemExecutionsPerUserCall: MetricConfig{
+		OracledbSystemExecutionsPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemFullIndexScansPerSecond: MetricConfig{
+		OracledbSystemFullIndexScansPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemFullIndexScansPerTransaction: MetricConfig{
+		OracledbSystemFullIndexScansPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGcCrBlockReceivedPerSecond: MetricConfig{
+		OracledbSystemGcCrBlockReceivedPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGcCrBlockReceivedPerTransaction: MetricConfig{
+		OracledbSystemGcCrBlockReceivedPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGcCurrentBlockReceivedPerSecond: MetricConfig{
+		OracledbSystemGcCurrentBlockReceivedPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGcCurrentBlockReceivedPerTransaction: MetricConfig{
+		OracledbSystemGcCurrentBlockReceivedPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGlobalCacheAverageCrGetTime: MetricConfig{
+		OracledbSystemGlobalCacheAverageCrGetTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGlobalCacheAverageCurrentGetTime: MetricConfig{
+		OracledbSystemGlobalCacheAverageCurrentGetTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGlobalCacheBlocksCorrupted: MetricConfig{
+		OracledbSystemGlobalCacheBlocksCorrupted: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemGlobalCacheBlocksLost: MetricConfig{
+		OracledbSystemGlobalCacheBlocksLost: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemHardParseCountPerSecond: MetricConfig{
+		OracledbSystemHardParseCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemHardParseCountPerTransaction: MetricConfig{
+		OracledbSystemHardParseCountPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemHostCPUUsagePerSecond: MetricConfig{
+		OracledbSystemHostCPUUsagePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemHostCPUUtilization: MetricConfig{
+		OracledbSystemHostCPUUtilization: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemIoMegabytesPerSecond: MetricConfig{
+		OracledbSystemIoMegabytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemIoRequestsPerSecond: MetricConfig{
+		OracledbSystemIoRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLeafNodeSplitsPerSecond: MetricConfig{
+		OracledbSystemLeafNodeSplitsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLeafNodeSplitsPerTransaction: MetricConfig{
+		OracledbSystemLeafNodeSplitsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLibraryCacheHitRatio: MetricConfig{
+		OracledbSystemLibraryCacheHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLibraryCacheMissRatio: MetricConfig{
+		OracledbSystemLibraryCacheMissRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLogicalReadsPerSecond: MetricConfig{
+		OracledbSystemLogicalReadsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLogicalReadsPerTransaction: MetricConfig{
+		OracledbSystemLogicalReadsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLogicalReadsPerUserCall: MetricConfig{
+		OracledbSystemLogicalReadsPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLogonsPerSecond: MetricConfig{
+		OracledbSystemLogonsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLogonsPerTransaction: MetricConfig{
+		OracledbSystemLogonsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLongTableScansPerSecond: MetricConfig{
+		OracledbSystemLongTableScansPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemLongTableScansPerTransaction: MetricConfig{
+		OracledbSystemLongTableScansPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemMemorySortsRatio: MetricConfig{
+		OracledbSystemMemorySortsRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemNetworkTrafficVolumePerSecond: MetricConfig{
+		OracledbSystemNetworkTrafficVolumePerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemOpenCursorsPerSecond: MetricConfig{
+		OracledbSystemOpenCursorsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemOpenCursorsPerTransaction: MetricConfig{
+		OracledbSystemOpenCursorsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemParseFailureCountPerSecond: MetricConfig{
+		OracledbSystemParseFailureCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemParseFailureCountPerTransaction: MetricConfig{
+		OracledbSystemParseFailureCountPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPgaCacheHitPercentage: MetricConfig{
+		OracledbSystemPgaCacheHitPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalLobsReadsPerSecond: MetricConfig{
+		OracledbSystemPhysicalLobsReadsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalLobsReadsPerTransaction: MetricConfig{
+		OracledbSystemPhysicalLobsReadsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalLobsWritesPerSecond: MetricConfig{
+		OracledbSystemPhysicalLobsWritesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalLobsWritesPerTransaction: MetricConfig{
+		OracledbSystemPhysicalLobsWritesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadBytesPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadIoRequestsPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadIoRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadTotalBytesPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadTotalBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadTotalIoRequestsPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadTotalIoRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadsDirectPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadsDirectPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadsDirectPerTransaction: MetricConfig{
+		OracledbSystemPhysicalReadsDirectPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadsPerSecond: MetricConfig{
+		OracledbSystemPhysicalReadsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalReadsPerTransaction: MetricConfig{
+		OracledbSystemPhysicalReadsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWriteBytesPerSecond: MetricConfig{
+		OracledbSystemPhysicalWriteBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWriteIoRequestsPerSecond: MetricConfig{
+		OracledbSystemPhysicalWriteIoRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWriteTotalBytesPerSecond: MetricConfig{
+		OracledbSystemPhysicalWriteTotalBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWriteTotalIoRequestsPerSecond: MetricConfig{
+		OracledbSystemPhysicalWriteTotalIoRequestsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWritesDirectPerSecond: MetricConfig{
+		OracledbSystemPhysicalWritesDirectPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWritesDirectPerTransaction: MetricConfig{
+		OracledbSystemPhysicalWritesDirectPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWritesPerSecond: MetricConfig{
+		OracledbSystemPhysicalWritesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemPhysicalWritesPerTransaction: MetricConfig{
+		OracledbSystemPhysicalWritesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemProcessLimitPercentage: MetricConfig{
+		OracledbSystemProcessLimitPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRecursiveCallsPerSecond: MetricConfig{
+		OracledbSystemRecursiveCallsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRecursiveCallsPerTransaction: MetricConfig{
+		OracledbSystemRecursiveCallsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRedoAllocationHitRatio: MetricConfig{
+		OracledbSystemRedoAllocationHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRedoGeneratedBytesPerSecond: MetricConfig{
+		OracledbSystemRedoGeneratedBytesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRedoGeneratedBytesPerTransaction: MetricConfig{
+		OracledbSystemRedoGeneratedBytesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRedoWritesPerSecond: MetricConfig{
+		OracledbSystemRedoWritesPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRedoWritesPerTransaction: MetricConfig{
+		OracledbSystemRedoWritesPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemResponseTimePerTransaction: MetricConfig{
+		OracledbSystemResponseTimePerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRowCacheHitRatio: MetricConfig{
+		OracledbSystemRowCacheHitRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRowCacheMissRatio: MetricConfig{
+		OracledbSystemRowCacheMissRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemRowsPerSort: MetricConfig{
+		OracledbSystemRowsPerSort: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemSessionCount: MetricConfig{
+		OracledbSystemSessionCount: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemSessionLimitPercentage: MetricConfig{
+		OracledbSystemSessionLimitPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemSharedPoolFreePercentage: MetricConfig{
+		OracledbSystemSharedPoolFreePercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemSoftParseRatio: MetricConfig{
+		OracledbSystemSoftParseRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemSQLServiceResponseTime: MetricConfig{
+		OracledbSystemSQLServiceResponseTime: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemStreamsPoolUsagePercentage: MetricConfig{
+		OracledbSystemStreamsPoolUsagePercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTempSpaceUsed: MetricConfig{
+		OracledbSystemTempSpaceUsed: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalIndexScansPerSecond: MetricConfig{
+		OracledbSystemTotalIndexScansPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalIndexScansPerTransaction: MetricConfig{
+		OracledbSystemTotalIndexScansPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalParseCountPerSecond: MetricConfig{
+		OracledbSystemTotalParseCountPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalParseCountPerTransaction: MetricConfig{
+		OracledbSystemTotalParseCountPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalSortsPerUserCall: MetricConfig{
+		OracledbSystemTotalSortsPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalTableScansPerSecond: MetricConfig{
+		OracledbSystemTotalTableScansPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalTableScansPerTransaction: MetricConfig{
+		OracledbSystemTotalTableScansPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTotalTableScansPerUserCall: MetricConfig{
+		OracledbSystemTotalTableScansPerUserCall: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTransactionsPerLogon: MetricConfig{
+		OracledbSystemTransactionsPerLogon: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemTransactionsPerSecond: MetricConfig{
+		OracledbSystemTransactionsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserCallsPerSecond: MetricConfig{
+		OracledbSystemUserCallsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserCallsPerTransaction: MetricConfig{
+		OracledbSystemUserCallsPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserCallsRatio: MetricConfig{
+		OracledbSystemUserCallsRatio: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserCommitsPerSecond: MetricConfig{
+		OracledbSystemUserCommitsPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserCommitsPercentage: MetricConfig{
+		OracledbSystemUserCommitsPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserLimitPercentage: MetricConfig{
+		OracledbSystemUserLimitPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerSecond: MetricConfig{
+		OracledbSystemUserRollbackUndoRecordsAppliedPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserRollbackUndoRecordsAppliedPerTransaction: MetricConfig{
+		OracledbSystemUserRollbackUndoRecordsAppliedPerTransaction: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserRollbacksPerSecond: MetricConfig{
+		OracledbSystemUserRollbacksPerSecond: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbSystemUserRollbacksPercentage: MetricConfig{
+		OracledbSystemUserRollbacksPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceDbID: MetricConfig{
+		OracledbTablespaceDbID: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceGlobalName: MetricConfig{
+		OracledbTablespaceGlobalName: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceIsOffline: MetricConfig{
+		OracledbTablespaceIsOffline: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceOfflineCdbDatafiles: MetricConfig{
+		OracledbTablespaceOfflineCdbDatafiles: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceOfflinePdbDatafiles: MetricConfig{
+		OracledbTablespaceOfflinePdbDatafiles: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespacePdbNonWriteMode: MetricConfig{
+		OracledbTablespacePdbNonWriteMode: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceSpaceConsumedBytes: MetricConfig{
+		OracledbTablespaceSpaceConsumedBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceSpaceReservedBytes: MetricConfig{
+		OracledbTablespaceSpaceReservedBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceSpaceUsedPercentage: MetricConfig{
+		OracledbTablespaceSpaceUsedPercentage: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceTotalBytes: MetricConfig{
+		OracledbTablespaceTotalBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceUsedBytes: MetricConfig{
+		OracledbTablespaceUsedBytes: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbTablespaceUsedPercent: MetricConfig{
+		OracledbTablespaceUsedPercent: MetricConfig{
 			Enabled: true,
 		},
-		NewrelicoracledbWaitEventsCurrentWaitTimeMs: MetricConfig{
+		OracledbWaitEventsCurrentWaitTimeMs: MetricConfig{
 			Enabled: true,
 		},
 	}
@@ -1381,7 +1382,7 @@ func (rac *ResourceAttributeConfig) Unmarshal(parser *confmap.Conf) error {
 	return nil
 }
 
-// ResourceAttributesConfig provides config for newrelicoracledb resource attributes.
+// ResourceAttributesConfig provides config for oracledb resource attributes.
 type ResourceAttributesConfig struct {
 	HostAddress ResourceAttributeConfig `mapstructure:"host.address"`
 	HostPort    ResourceAttributeConfig `mapstructure:"host.port"`
@@ -1402,7 +1403,7 @@ func DefaultResourceAttributesConfig() ResourceAttributesConfig {
 	}
 }
 
-// MetricsBuilderConfig is a configuration for newrelicoracledb metrics builder.
+// MetricsBuilderConfig is a configuration for oracledb metrics builder.
 type MetricsBuilderConfig struct {
 	Metrics            MetricsConfig            `mapstructure:"metrics"`
 	ResourceAttributes ResourceAttributesConfig `mapstructure:"resource_attributes"`

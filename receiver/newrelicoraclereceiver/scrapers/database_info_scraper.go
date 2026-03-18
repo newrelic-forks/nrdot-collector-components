@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -10,11 +10,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // DatabaseInfoScraper collects Oracle database version and hosting environment info
@@ -58,7 +59,7 @@ func NewDatabaseInfoScraper(c client.OracleClient, mb *metadata.MetricsBuilder, 
 func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbDatabaseInfo.Enabled {
+	if !s.config.Metrics.OracledbDatabaseInfo.Enabled {
 		return errs
 	}
 
@@ -76,7 +77,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 	}
 
 	now := pcommon.NewTimestampFromTime(time.Now())
-	s.mb.RecordNewrelicoracledbDatabaseInfoDataPoint(
+	s.mb.RecordOracledbDatabaseInfoDataPoint(
 		now,
 		int64(1),
 		cachedInfo.Version,
@@ -91,7 +92,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseInfo(ctx context.Context) []error {
 func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbHostingInfo.Enabled {
+	if !s.config.Metrics.OracledbHostingInfo.Enabled {
 		return errs
 	}
 
@@ -109,7 +110,7 @@ func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 	}
 
 	now := pcommon.NewTimestampFromTime(time.Now())
-	s.mb.RecordNewrelicoracledbHostingInfoDataPoint(
+	s.mb.RecordOracledbHostingInfoDataPoint(
 		now,
 		int64(1),
 		cachedInfo.Architecture,
@@ -123,7 +124,7 @@ func (s *DatabaseInfoScraper) ScrapeHostingInfo(ctx context.Context) []error {
 func (s *DatabaseInfoScraper) ScrapeDatabaseRole(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbDatabaseRole.Enabled {
+	if !s.config.Metrics.OracledbDatabaseRole.Enabled {
 		return errs
 	}
 
@@ -155,7 +156,7 @@ func (s *DatabaseInfoScraper) ScrapeDatabaseRole(ctx context.Context) []error {
 		}
 
 		now := pcommon.NewTimestampFromTime(time.Now())
-		s.mb.RecordNewrelicoracledbDatabaseRoleDataPoint(
+		s.mb.RecordOracledbDatabaseRoleDataPoint(
 			now,
 			int64(1),
 			roleStr,

@@ -128,7 +128,7 @@ This receiver collects comprehensive Oracle database metrics across multiple cat
 
 ```yaml
 receivers:
-  newrelicoracledb:
+  oracledb:
     endpoint: "hostname:1521"
     username: "oracle_user"
     password: "oracle_password"
@@ -140,7 +140,7 @@ receivers:
 
 ```yaml
 receivers:
-  newrelicoracledb:
+  oracledb:
     endpoint: "hostname:1521"
     username: "oracle_user"
     password: "oracle_password"
@@ -357,48 +357,48 @@ GRANT SELECT ON SYS.V_$SYSSTAT TO <YOUR_DB_USERNAME>;
 This receiver emits 100+ metrics across multiple categories. Key metrics include:
 
 ### Connection Metrics
-- `newrelicoracledb.connection.total_sessions`
-- `newrelicoracledb.connection.active_sessions`
-- `newrelicoracledb.connection.sessions_by_status`
+- `oracledb.connection.total_sessions`
+- `oracledb.connection.active_sessions`
+- `oracledb.connection.sessions_by_status`
 
 ### Memory Metrics
-- `newrelicoracledb.memory.pga_in_use_bytes`
-- `newrelicoracledb.memory.pga_allocated_bytes`
-- `newrelicoracledb.memory.sga_uga_total_bytes`
+- `oracledb.memory.pga_in_use_bytes`
+- `oracledb.memory.pga_allocated_bytes`
+- `oracledb.memory.sga_uga_total_bytes`
 
 ### Disk I/O Metrics
-- `newrelicoracledb.disk.reads`
-- `newrelicoracledb.disk.writes`
-- `newrelicoracledb.disk.blocks_read`
+- `oracledb.disk.reads`
+- `oracledb.disk.writes`
+- `oracledb.disk.blocks_read`
 
 ### Performance Metrics
-- `newrelicoracledb.system.transactions_per_second`
-- `newrelicoracledb.system.executions_per_second`
-- `newrelicoracledb.system.cpu_usage_per_second`
+- `oracledb.system.transactions_per_second`
+- `oracledb.system.executions_per_second`
+- `oracledb.system.cpu_usage_per_second`
 
 ### Query Performance
-- `newrelicoracledb.slow_queries.avg_elapsed_time`
-- `newrelicoracledb.slow_queries.execution_count`
-- `newrelicoracledb.execution_plan` (with detailed plan steps)
-- `newrelicoracledb.child_cursors.cpu_time`
+- `oracledb.slow_queries.avg_elapsed_time`
+- `oracledb.slow_queries.execution_count`
+- `oracledb.execution_plan` (with detailed plan steps)
+- `oracledb.child_cursors.cpu_time`
 
 ### Wait Events & Blocking
-- `newrelicoracledb.wait_events.current_wait_time_ms`
-- `newrelicoracledb.blocking_queries.wait_time_ms`
+- `oracledb.wait_events.current_wait_time_ms`
+- `oracledb.blocking_queries.wait_time_ms`
 
 ### Tablespace Metrics
-- `newrelicoracledb.tablespace.space_used_percentage`
-- `newrelicoracledb.tablespace.space_consumed_bytes`
+- `oracledb.tablespace.space_used_percentage`
+- `oracledb.tablespace.space_consumed_bytes`
 
 ### PDB Metrics (12c+)
-- `newrelicoracledb.pdb.cpu_usage_per_second`
-- `newrelicoracledb.pdb.transactions_per_second`
-- `newrelicoracledb.pdb.session_count`
+- `oracledb.pdb.cpu_usage_per_second`
+- `oracledb.pdb.transactions_per_second`
+- `oracledb.pdb.session_count`
 
 ### RAC Metrics
-- `newrelicoracledb.rac.instance.status`
-- `newrelicoracledb.rac.wait_time`
-- `newrelicoracledb.asm.diskgroup.total_mb`
+- `oracledb.rac.instance.status`
+- `oracledb.rac.wait_time`
+- `oracledb.asm.diskgroup.total_mb`
 
 For a complete list of metrics, see [metadata.yaml](metadata.yaml).
 
@@ -421,7 +421,7 @@ receivers:
   # ============================================
   # Receiver 1: CDB Infrastructure Monitoring
   # ============================================
-  newrelicoracledb/cdb:
+  oracledb/cdb:
     endpoint: "oraclehost:1521"
     username: "c##monitor"
     password: "${env:ORACLE_PASSWORD}"
@@ -437,7 +437,7 @@ receivers:
   # ============================================
   # Receiver 2: PDB Application Monitoring
   # ============================================
-  newrelicoracledb/pdbs:
+  oracledb/pdbs:
     endpoint: "oraclehost:1521"
     username: "monitor"
     password: "${env:ORACLE_PASSWORD}"
@@ -469,8 +469,8 @@ processors:
       include:
         match_type: strict
         metric_names:
-          - newrelicoracledb.execution_plan
-          - newrelicoracledb.slow_queries.query_details
+          - oracledb.execution_plan
+          - oracledb.slow_queries.query_details
 
   # Filter to exclude execution plan and query details metrics (from main metrics pipeline)
   filter/exec_plan_and_query_details_exclude:
@@ -478,8 +478,8 @@ processors:
       exclude:
         match_type: strict
         metric_names:
-          - newrelicoracledb.execution_plan
-          - newrelicoracledb.slow_queries.query_details
+          - oracledb.execution_plan
+          - oracledb.slow_queries.query_details
 
 connectors:
   # Convert metrics to logs for execution plans and query details
@@ -500,18 +500,18 @@ service:
   pipelines:
     # Main metrics pipeline - send all metrics EXCEPT execution plan and query details
     metrics:
-      receivers: [newrelicoracledb/cdb, newrelicoracledb/pdbs]
+      receivers: [oracledb/cdb, oracledb/pdbs]
       processors: [transform/clear_metadata, filter/exec_plan_and_query_details_exclude]
       exporters: [otlp]
 
     # Metrics to logs pipeline - convert execution plan and query details metrics to logs
     metrics/exec_plan_and_query_details_to_logs:
-      receivers: [newrelicoracledb/cdb, newrelicoracledb/pdbs]
+      receivers: [oracledb/cdb, oracledb/pdbs]
       processors: [filter/exec_plan_and_query_details_include]
       exporters: [metricsaslogs]
 
     # Logs pipeline - receive converted metrics as logs
-    logs/newrelicoracledb:
+    logs/oracledb:
       receivers: [metricsaslogs]
       exporters: [otlp]
 
@@ -584,7 +584,7 @@ exporters:
 service:
   pipelines:
     metrics:
-      receivers: [newrelicoracledb/cdb]
+      receivers: [oracledb/cdb]
       exporters: [debug]  # Use debug exporter instead of or alongside OTLP
 ```
 
@@ -631,7 +631,7 @@ When `enable_interval_based_averaging: true`:
 - Tracks previous scrape values
 - Calculates delta metrics showing changes since last collection
 - Provides real-time visibility into query performance changes
-- Example: `newrelicoracledb.slow_queries.interval_execution_count` shows new executions since last scrape
+- Example: `oracledb.slow_queries.interval_execution_count` shows new executions since last scrape
 
 ### PDB Services Configuration
 

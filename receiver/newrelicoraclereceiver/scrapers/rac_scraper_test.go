@@ -10,12 +10,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewRacScraper(t *testing.T) {
@@ -109,9 +110,9 @@ func TestRacScraper_MetricConfiguration(t *testing.T) {
 
 	t.Run("custom_config", func(t *testing.T) {
 		customConfig := metadata.DefaultMetricsBuilderConfig()
-		customConfig.Metrics.NewrelicoracledbAsmDiskgroupTotalMb.Enabled = false
+		customConfig.Metrics.OracledbAsmDiskgroupTotalMb.Enabled = false
 		scraper := NewRacScraper(mockClient, mb, logger, customConfig)
-		assert.False(t, scraper.metricsBuilderConfig.Metrics.NewrelicoracledbAsmDiskgroupTotalMb.Enabled)
+		assert.False(t, scraper.metricsBuilderConfig.Metrics.OracledbAsmDiskgroupTotalMb.Enabled)
 	})
 }
 
@@ -476,9 +477,9 @@ func TestScrapeASMDiskGroups_MetricsDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbAsmDiskgroupTotalMb.Enabled = false
-	config.Metrics.NewrelicoracledbAsmDiskgroupFreeMb.Enabled = false
-	config.Metrics.NewrelicoracledbAsmDiskgroupOfflineDisks.Enabled = false
+	config.Metrics.OracledbAsmDiskgroupTotalMb.Enabled = false
+	config.Metrics.OracledbAsmDiskgroupFreeMb.Enabled = false
+	config.Metrics.OracledbAsmDiskgroupOfflineDisks.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 	scraper := NewRacScraper(mockClient, mb, logger, config)
@@ -555,8 +556,8 @@ func TestScrapeClusterWaitEvents_MetricsDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbRacWaitTime.Enabled = false
-	config.Metrics.NewrelicoracledbRacTotalWaits.Enabled = false
+	config.Metrics.OracledbRacWaitTime.Enabled = false
+	config.Metrics.OracledbRacTotalWaits.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 	scraper := NewRacScraper(mockClient, mb, logger, config)
@@ -640,13 +641,13 @@ func TestScrapeInstanceStatus_MetricsDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbRacInstanceStatus.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceUptimeSeconds.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceDatabaseStatus.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceActiveState.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceLoginsAllowed.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceArchiverStarted.Enabled = false
-	config.Metrics.NewrelicoracledbRacInstanceVersionInfo.Enabled = false
+	config.Metrics.OracledbRacInstanceStatus.Enabled = false
+	config.Metrics.OracledbRacInstanceUptimeSeconds.Enabled = false
+	config.Metrics.OracledbRacInstanceDatabaseStatus.Enabled = false
+	config.Metrics.OracledbRacInstanceActiveState.Enabled = false
+	config.Metrics.OracledbRacInstanceLoginsAllowed.Enabled = false
+	config.Metrics.OracledbRacInstanceArchiverStarted.Enabled = false
+	config.Metrics.OracledbRacInstanceVersionInfo.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 	scraper := NewRacScraper(mockClient, mb, logger, config)
@@ -727,9 +728,9 @@ func TestScrapeActiveServices_MetricsDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbRacServiceInstanceID.Enabled = false
-	config.Metrics.NewrelicoracledbRacServiceNetworkConfig.Enabled = false
-	config.Metrics.NewrelicoracledbRacServiceClbConfig.Enabled = false
+	config.Metrics.OracledbRacServiceInstanceID.Enabled = false
+	config.Metrics.OracledbRacServiceNetworkConfig.Enabled = false
+	config.Metrics.OracledbRacServiceClbConfig.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 	scraper := NewRacScraper(mockClient, mb, logger, config)

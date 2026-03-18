@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -10,12 +10,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/errors"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/errors"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 type TablespaceScraper struct {
@@ -93,25 +94,25 @@ func (s *TablespaceScraper) scrapeTablespaceUsageMetrics(ctx context.Context, no
 
 // isAnyTablespaceMetricEnabled checks if any tablespace usage metric is enabled
 func (s *TablespaceScraper) isAnyTablespaceMetricEnabled() bool {
-	return s.config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled ||
-		s.config.Metrics.NewrelicoracledbTablespaceSpaceReservedBytes.Enabled ||
-		s.config.Metrics.NewrelicoracledbTablespaceSpaceUsedPercentage.Enabled ||
-		s.config.Metrics.NewrelicoracledbTablespaceIsOffline.Enabled
+	return s.config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled ||
+		s.config.Metrics.OracledbTablespaceSpaceReservedBytes.Enabled ||
+		s.config.Metrics.OracledbTablespaceSpaceUsedPercentage.Enabled ||
+		s.config.Metrics.OracledbTablespaceIsOffline.Enabled
 }
 
 func (s *TablespaceScraper) processTablespaceUsage(tablespaces []models.TablespaceUsage, now pcommon.Timestamp, metricCount *int) []error {
 	for _, ts := range tablespaces {
-		if s.config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled {
-			s.mb.RecordNewrelicoracledbTablespaceSpaceConsumedBytesDataPoint(now, int64(ts.Used), ts.TablespaceName)
+		if s.config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled {
+			s.mb.RecordOracledbTablespaceSpaceConsumedBytesDataPoint(now, int64(ts.Used), ts.TablespaceName)
 		}
-		if s.config.Metrics.NewrelicoracledbTablespaceSpaceReservedBytes.Enabled {
-			s.mb.RecordNewrelicoracledbTablespaceSpaceReservedBytesDataPoint(now, int64(ts.Size), ts.TablespaceName)
+		if s.config.Metrics.OracledbTablespaceSpaceReservedBytes.Enabled {
+			s.mb.RecordOracledbTablespaceSpaceReservedBytesDataPoint(now, int64(ts.Size), ts.TablespaceName)
 		}
-		if s.config.Metrics.NewrelicoracledbTablespaceSpaceUsedPercentage.Enabled {
-			s.mb.RecordNewrelicoracledbTablespaceSpaceUsedPercentageDataPoint(now, int64(ts.UsedPercent), ts.TablespaceName)
+		if s.config.Metrics.OracledbTablespaceSpaceUsedPercentage.Enabled {
+			s.mb.RecordOracledbTablespaceSpaceUsedPercentageDataPoint(now, int64(ts.UsedPercent), ts.TablespaceName)
 		}
-		if s.config.Metrics.NewrelicoracledbTablespaceIsOffline.Enabled {
-			s.mb.RecordNewrelicoracledbTablespaceIsOfflineDataPoint(now, int64(ts.Offline), ts.TablespaceName)
+		if s.config.Metrics.OracledbTablespaceIsOffline.Enabled {
+			s.mb.RecordOracledbTablespaceIsOfflineDataPoint(now, int64(ts.Offline), ts.TablespaceName)
 		}
 
 		*metricCount++
@@ -121,7 +122,7 @@ func (s *TablespaceScraper) processTablespaceUsage(tablespaces []models.Tablespa
 }
 
 func (s *TablespaceScraper) scrapeGlobalNameTablespaceMetrics(ctx context.Context, now pcommon.Timestamp, metricCount *int) []error {
-	if !s.config.Metrics.NewrelicoracledbTablespaceGlobalName.Enabled {
+	if !s.config.Metrics.OracledbTablespaceGlobalName.Enabled {
 		return nil
 	}
 
@@ -131,7 +132,7 @@ func (s *TablespaceScraper) scrapeGlobalNameTablespaceMetrics(ctx context.Contex
 	}
 
 	for _, ts := range tablespaces {
-		s.mb.RecordNewrelicoracledbTablespaceGlobalNameDataPoint(now, 1, ts.TablespaceName, ts.GlobalName)
+		s.mb.RecordOracledbTablespaceGlobalNameDataPoint(now, 1, ts.TablespaceName, ts.GlobalName)
 		*metricCount++
 	}
 
@@ -139,7 +140,7 @@ func (s *TablespaceScraper) scrapeGlobalNameTablespaceMetrics(ctx context.Contex
 }
 
 func (s *TablespaceScraper) scrapeDBIDTablespaceMetrics(ctx context.Context, now pcommon.Timestamp, metricCount *int) []error {
-	if !s.config.Metrics.NewrelicoracledbTablespaceDbID.Enabled {
+	if !s.config.Metrics.OracledbTablespaceDbID.Enabled {
 		return nil
 	}
 
@@ -149,7 +150,7 @@ func (s *TablespaceScraper) scrapeDBIDTablespaceMetrics(ctx context.Context, now
 	}
 
 	for _, ts := range tablespaces {
-		s.mb.RecordNewrelicoracledbTablespaceDbIDDataPoint(now, ts.DBID, ts.TablespaceName, strconv.FormatInt(ts.DBID, 10))
+		s.mb.RecordOracledbTablespaceDbIDDataPoint(now, ts.DBID, ts.TablespaceName, strconv.FormatInt(ts.DBID, 10))
 		*metricCount++
 	}
 
@@ -157,7 +158,7 @@ func (s *TablespaceScraper) scrapeDBIDTablespaceMetrics(ctx context.Context, now
 }
 
 func (s *TablespaceScraper) scrapeCDBDatafilesOfflineTablespaceMetrics(ctx context.Context, now pcommon.Timestamp, metricCount *int) []error {
-	if !s.config.Metrics.NewrelicoracledbTablespaceOfflineCdbDatafiles.Enabled {
+	if !s.config.Metrics.OracledbTablespaceOfflineCdbDatafiles.Enabled {
 		return nil
 	}
 
@@ -167,7 +168,7 @@ func (s *TablespaceScraper) scrapeCDBDatafilesOfflineTablespaceMetrics(ctx conte
 	}
 
 	for _, ts := range tablespaces {
-		s.mb.RecordNewrelicoracledbTablespaceOfflineCdbDatafilesDataPoint(now, ts.OfflineCount, ts.TablespaceName)
+		s.mb.RecordOracledbTablespaceOfflineCdbDatafilesDataPoint(now, ts.OfflineCount, ts.TablespaceName)
 		*metricCount++
 	}
 
@@ -175,7 +176,7 @@ func (s *TablespaceScraper) scrapeCDBDatafilesOfflineTablespaceMetrics(ctx conte
 }
 
 func (s *TablespaceScraper) scrapePDBDatafilesOfflineTablespaceMetrics(ctx context.Context, now pcommon.Timestamp, metricCount *int) []error {
-	if !s.config.Metrics.NewrelicoracledbTablespaceOfflinePdbDatafiles.Enabled {
+	if !s.config.Metrics.OracledbTablespaceOfflinePdbDatafiles.Enabled {
 		return nil
 	}
 
@@ -196,7 +197,7 @@ func (s *TablespaceScraper) scrapePDBDatafilesOfflineTablespaceMetrics(ctx conte
 	}
 
 	for _, ts := range tablespaces {
-		s.mb.RecordNewrelicoracledbTablespaceOfflinePdbDatafilesDataPoint(now, ts.OfflineCount, ts.TablespaceName)
+		s.mb.RecordOracledbTablespaceOfflinePdbDatafilesDataPoint(now, ts.OfflineCount, ts.TablespaceName)
 		*metricCount++
 	}
 
@@ -204,7 +205,7 @@ func (s *TablespaceScraper) scrapePDBDatafilesOfflineTablespaceMetrics(ctx conte
 }
 
 func (s *TablespaceScraper) scrapePDBNonWriteTablespaceMetrics(ctx context.Context, now pcommon.Timestamp, metricCount *int) []error {
-	if !s.config.Metrics.NewrelicoracledbTablespacePdbNonWriteMode.Enabled {
+	if !s.config.Metrics.OracledbTablespacePdbNonWriteMode.Enabled {
 		return nil
 	}
 
@@ -225,7 +226,7 @@ func (s *TablespaceScraper) scrapePDBNonWriteTablespaceMetrics(ctx context.Conte
 	}
 
 	for _, ts := range tablespaces {
-		s.mb.RecordNewrelicoracledbTablespacePdbNonWriteModeDataPoint(now, ts.NonWriteCount, ts.TablespaceName)
+		s.mb.RecordOracledbTablespacePdbNonWriteModeDataPoint(now, ts.NonWriteCount, ts.TablespaceName)
 		*metricCount++
 	}
 

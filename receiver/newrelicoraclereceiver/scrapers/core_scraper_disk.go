@@ -1,15 +1,16 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // diskIOMetricRecorder defines a metric recorder for disk I/O metrics
@@ -23,68 +24,68 @@ type diskIOMetricRecorder struct {
 var diskIOMetricRegistry = []diskIOMetricRecorder{
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskReads.Enabled
+			return cfg.Metrics.OracledbDiskReads.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.PhysicalReads
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskReadsDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskReadsDataPoint(now, value, instanceID)
 		},
 	},
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskWrites.Enabled
+			return cfg.Metrics.OracledbDiskWrites.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.PhysicalWrites
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskWritesDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskWritesDataPoint(now, value, instanceID)
 		},
 	},
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskBlocksRead.Enabled
+			return cfg.Metrics.OracledbDiskBlocksRead.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.PhysicalBlockReads
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskBlocksReadDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskBlocksReadDataPoint(now, value, instanceID)
 		},
 	},
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled
+			return cfg.Metrics.OracledbDiskBlocksWritten.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.PhysicalBlockWrites
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskBlocksWrittenDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskBlocksWrittenDataPoint(now, value, instanceID)
 		},
 	},
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled
+			return cfg.Metrics.OracledbDiskReadTimeMilliseconds.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.ReadTime
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskReadTimeMillisecondsDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskReadTimeMillisecondsDataPoint(now, value, instanceID)
 		},
 	},
 	{
 		isEnabled: func(cfg metadata.MetricsBuilderConfig) bool {
-			return cfg.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled
+			return cfg.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled
 		},
 		getValue: func(m *models.DiskIOMetrics) int64 {
 			return m.WriteTime
 		},
 		record: func(s *CoreScraper, now pcommon.Timestamp, value int64, instanceID string) {
-			s.mb.RecordNewrelicoracledbDiskWriteTimeMillisecondsDataPoint(now, value, instanceID)
+			s.mb.RecordOracledbDiskWriteTimeMillisecondsDataPoint(now, value, instanceID)
 		},
 	},
 }

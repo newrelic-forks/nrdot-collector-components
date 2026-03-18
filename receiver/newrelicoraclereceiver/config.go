@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package newrelicoraclereceiver // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver"
+package newrelicoraclereceiver // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver"
 
 import (
 	"errors"
@@ -13,10 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/queries"
 	"go.opentelemetry.io/collector/scraper/scraperhelper"
 	"go.uber.org/multierr"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/queries"
 )
 
 const (
@@ -106,7 +107,7 @@ type Config struct {
 
 	// PDB Services Configuration
 	// - Empty or nil: Collect only the configured service (from 'service' field)
-	// - ["ALL"]: Query database and collect all available PDB services 
+	// - ["ALL"]: Query database and collect all available PDB services
 	// - ["pdb1", "pdb2"]: Use the specified service names directly
 	PdbServices []string `mapstructure:"pdb_services"`
 

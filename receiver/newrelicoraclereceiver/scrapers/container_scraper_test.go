@@ -9,14 +9,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewContainerScraper_ValidInputs(t *testing.T) {
@@ -820,8 +821,8 @@ func TestScrapeContainerStatus_EdgeCases(t *testing.T) {
 
 		settings := receivertest.NewNopSettings(metadata.Type)
 		config := metadata.DefaultMetricsBuilderConfig()
-		config.Metrics.NewrelicoracledbContainerStatus.Enabled = false
-		config.Metrics.NewrelicoracledbContainerRestricted.Enabled = false
+		config.Metrics.OracledbContainerStatus.Enabled = false
+		config.Metrics.OracledbContainerRestricted.Enabled = false
 		mb := metadata.NewMetricsBuilder(config, settings)
 		logger := zap.NewNop()
 
@@ -915,7 +916,7 @@ func TestScrapePDBStatus_EdgeCases(t *testing.T) {
 
 		settings := receivertest.NewNopSettings(metadata.Type)
 		config := metadata.DefaultMetricsBuilderConfig()
-		// The actual metric names are NewrelicoracledbPdbOpenMode and NewrelicoracledbPdbTotalSizeBytes
+		// The actual metric names are OracledbPdbOpenMode and OracledbPdbTotalSizeBytes
 		mb := metadata.NewMetricsBuilder(config, settings)
 		logger := zap.NewNop()
 
@@ -1048,7 +1049,7 @@ func TestScrapeCDBTablespaceUsage_EdgeCases(t *testing.T) {
 
 		settings := receivertest.NewNopSettings(metadata.Type)
 		config := metadata.DefaultMetricsBuilderConfig()
-		// The actual metric names use Newrelicoracledb prefix without Cdb in the middle
+		// The actual metric names use Oracledb prefix without Cdb in the middle
 		mb := metadata.NewMetricsBuilder(config, settings)
 		logger := zap.NewNop()
 
@@ -1110,7 +1111,7 @@ func TestScrapeCDBDataFiles_EdgeCases(t *testing.T) {
 
 		settings := receivertest.NewNopSettings(metadata.Type)
 		config := metadata.DefaultMetricsBuilderConfig()
-		// The actual metric names use Newrelicoracledb prefix without Cdb in the middle
+		// The actual metric names use Oracledb prefix without Cdb in the middle
 		mb := metadata.NewMetricsBuilder(config, settings)
 		logger := zap.NewNop()
 
@@ -1175,7 +1176,7 @@ func TestScrapeCDBServices_EdgeCases(t *testing.T) {
 
 		settings := receivertest.NewNopSettings(metadata.Type)
 		config := metadata.DefaultMetricsBuilderConfig()
-		// The actual metric names use Newrelicoracledb prefix without Cdb in the middle
+		// The actual metric names use Oracledb prefix without Cdb in the middle
 		mb := metadata.NewMetricsBuilder(config, settings)
 		logger := zap.NewNop()
 

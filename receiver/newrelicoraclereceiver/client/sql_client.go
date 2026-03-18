@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package client // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
+package client // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
 
 import (
 	"context"
@@ -9,8 +9,8 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/queries"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/queries"
 )
 
 // SQLClient is the production implementation that executes real SQL queries.
@@ -188,7 +188,6 @@ func (c *SQLClient) QuerySpecificChildCursor(ctx context.Context, sqlID string, 
 	return nil, nil
 }
 
-
 // scanWaitEvents executes the given SQL and scans each row into a WaitEventWithBlocking.
 // It is the shared scan helper used by both sequential calls inside QueryWaitEventsWithBlocking.
 func (c *SQLClient) scanWaitEvents(ctx context.Context, query string) ([]models.WaitEventWithBlocking, error) {
@@ -245,6 +244,7 @@ func (c *SQLClient) scanWaitEvents(ctx context.Context, query string) ([]models.
 
 	return results, rows.Err()
 }
+
 func (c *SQLClient) QueryWaitEventsWithBlocking(ctx context.Context, countThreshold int, slowQueryIDs []string) ([]models.WaitEventWithBlocking, error) {
 	var results []models.WaitEventWithBlocking
 	var capturedSQLIDs []string

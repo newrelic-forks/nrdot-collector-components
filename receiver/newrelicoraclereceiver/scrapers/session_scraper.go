@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -9,11 +9,12 @@ import (
 	"errors"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	internalerrors "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/errors"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	internalerrors "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/errors"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
 )
 
 type SessionScraper struct {
@@ -35,7 +36,7 @@ func NewSessionScraper(c client.OracleClient, mb *metadata.MetricsBuilder, logge
 func (s *SessionScraper) ScrapeSessionCount(ctx context.Context) []error {
 	var errs []error
 
-	if !s.config.Metrics.NewrelicoracledbSessionsCount.Enabled {
+	if !s.config.Metrics.OracledbSessionsCount.Enabled {
 		return errs
 	}
 
@@ -62,7 +63,7 @@ func (s *SessionScraper) ScrapeSessionCount(ctx context.Context) []error {
 	}
 
 	if count != nil {
-		s.mb.RecordNewrelicoracledbSessionsCountDataPoint(now, count.Count)
+		s.mb.RecordOracledbSessionsCountDataPoint(now, count.Count)
 
 		s.logger.Debug("Session count scrape completed")
 	}

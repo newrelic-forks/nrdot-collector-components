@@ -8,13 +8,14 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewSlowQueriesScraper(t *testing.T) {
@@ -73,8 +74,8 @@ func TestSlowQueriesScraper_ScrapeWithValidData(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSlowQueriesExecutionCount.Enabled = true
-	config.Metrics.NewrelicoracledbSlowQueriesTotalElapsedTime.Enabled = true
+	config.Metrics.OracledbSlowQueriesExecutionCount.Enabled = true
+	config.Metrics.OracledbSlowQueriesTotalElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -165,8 +166,8 @@ func TestSlowQueriesScraper_RecordMetrics(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbSlowQueriesExecutionCount.Enabled = true
-	config.Metrics.NewrelicoracledbSlowQueriesTotalElapsedTime.Enabled = true
+	config.Metrics.OracledbSlowQueriesExecutionCount.Enabled = true
+	config.Metrics.OracledbSlowQueriesTotalElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)

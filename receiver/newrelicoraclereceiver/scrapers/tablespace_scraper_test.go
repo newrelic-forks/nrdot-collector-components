@@ -9,13 +9,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewTablespaceScraper(t *testing.T) {
@@ -215,10 +216,10 @@ func TestTablespaceScraper_IsAnyTablespaceMetricEnabled_AllDisabled(t *testing.T
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceSpaceReservedBytes.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceSpaceUsedPercentage.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceIsOffline.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceReservedBytes.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceUsedPercentage.Enabled = false
+	config.Metrics.OracledbTablespaceIsOffline.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -231,7 +232,7 @@ func TestTablespaceScraper_IsAnyTablespaceMetricEnabled_OneEnabled(t *testing.T)
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled = true
+	config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled = true
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -492,10 +493,10 @@ func TestProcessTablespaceUsage_AllMetricsEnabled(t *testing.T) {
 func TestProcessTablespaceUsage_SelectiveMetrics(t *testing.T) {
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled = true
-	config.Metrics.NewrelicoracledbTablespaceSpaceReservedBytes.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceSpaceUsedPercentage.Enabled = true
-	config.Metrics.NewrelicoracledbTablespaceIsOffline.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled = true
+	config.Metrics.OracledbTablespaceSpaceReservedBytes.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceUsedPercentage.Enabled = true
+	config.Metrics.OracledbTablespaceIsOffline.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -612,10 +613,10 @@ func TestScrapeTablespaceUsageMetrics_MetricsDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceSpaceConsumedBytes.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceSpaceReservedBytes.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceSpaceUsedPercentage.Enabled = false
-	config.Metrics.NewrelicoracledbTablespaceIsOffline.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceConsumedBytes.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceReservedBytes.Enabled = false
+	config.Metrics.OracledbTablespaceSpaceUsedPercentage.Enabled = false
+	config.Metrics.OracledbTablespaceIsOffline.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -681,7 +682,7 @@ func TestScrapeGlobalNameTablespaceMetrics_Disabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceGlobalName.Enabled = false
+	config.Metrics.OracledbTablespaceGlobalName.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -747,7 +748,7 @@ func TestScrapeDBIDTablespaceMetrics_Disabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceDbID.Enabled = false
+	config.Metrics.OracledbTablespaceDbID.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -813,7 +814,7 @@ func TestScrapeCDBDatafilesOfflineTablespaceMetrics_Disabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceOfflineCdbDatafiles.Enabled = false
+	config.Metrics.OracledbTablespaceOfflineCdbDatafiles.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -928,7 +929,7 @@ func TestScrapePDBDatafilesOfflineTablespaceMetrics_Disabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespaceOfflinePdbDatafiles.Enabled = false
+	config.Metrics.OracledbTablespaceOfflinePdbDatafiles.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 
@@ -1045,7 +1046,7 @@ func TestScrapePDBNonWriteTablespaceMetrics_Disabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	settings := receivertest.NewNopSettings(metadata.Type)
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbTablespacePdbNonWriteMode.Enabled = false
+	config.Metrics.OracledbTablespacePdbNonWriteMode.Enabled = false
 	mb := metadata.NewMetricsBuilder(config, settings)
 	logger := zap.NewNop()
 

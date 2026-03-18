@@ -10,14 +10,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewChildCursorsScraper(t *testing.T) {
@@ -60,14 +61,14 @@ func TestChildCursorsScraper_ScrapeWithValidData(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsUserIoWaitTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsExecutions.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsBufferGets.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsInvalidations.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsDetails.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = true
+	config.Metrics.OracledbChildCursorsUserIoWaitTime.Enabled = true
+	config.Metrics.OracledbChildCursorsExecutions.Enabled = true
+	config.Metrics.OracledbChildCursorsDiskReads.Enabled = true
+	config.Metrics.OracledbChildCursorsBufferGets.Enabled = true
+	config.Metrics.OracledbChildCursorsInvalidations.Enabled = true
+	config.Metrics.OracledbChildCursorsDetails.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -117,8 +118,8 @@ func TestChildCursorsScraper_ScrapeWithMultipleIdentifiers(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -192,7 +193,7 @@ func TestChildCursorsScraper_ScrapeWithPartialErrors(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 	scraper := NewChildCursorsScraper(mockClient, mb, zap.NewNop(), config, true)
@@ -224,7 +225,7 @@ func TestChildCursorsScraper_ScrapeWithInvalidIdentifier(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 	scraper := NewChildCursorsScraper(mockClient, mb, zap.NewNop(), config, true)
@@ -263,14 +264,14 @@ func TestChildCursorsScraper_RecordMetricsAllEnabled(t *testing.T) {
 
 	config := metadata.DefaultMetricsBuilderConfig()
 	// Enable all metrics
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsUserIoWaitTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsExecutions.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsBufferGets.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsInvalidations.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsDetails.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = true
+	config.Metrics.OracledbChildCursorsUserIoWaitTime.Enabled = true
+	config.Metrics.OracledbChildCursorsExecutions.Enabled = true
+	config.Metrics.OracledbChildCursorsDiskReads.Enabled = true
+	config.Metrics.OracledbChildCursorsBufferGets.Enabled = true
+	config.Metrics.OracledbChildCursorsInvalidations.Enabled = true
+	config.Metrics.OracledbChildCursorsDetails.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -304,14 +305,14 @@ func TestChildCursorsScraper_RecordMetricsAllDisabled(t *testing.T) {
 
 	config := metadata.DefaultMetricsBuilderConfig()
 	// Disable all metrics
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsUserIoWaitTime.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsExecutions.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsDiskReads.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsBufferGets.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsInvalidations.Enabled = false
-	config.Metrics.NewrelicoracledbChildCursorsDetails.Enabled = false
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = false
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = false
+	config.Metrics.OracledbChildCursorsUserIoWaitTime.Enabled = false
+	config.Metrics.OracledbChildCursorsExecutions.Enabled = false
+	config.Metrics.OracledbChildCursorsDiskReads.Enabled = false
+	config.Metrics.OracledbChildCursorsBufferGets.Enabled = false
+	config.Metrics.OracledbChildCursorsInvalidations.Enabled = false
+	config.Metrics.OracledbChildCursorsDetails.Enabled = false
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -350,9 +351,9 @@ func TestChildCursorsScraper_RecordMetricsWithNullValues(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsBufferGets.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = true
+	config.Metrics.OracledbChildCursorsBufferGets.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
@@ -374,8 +375,8 @@ func TestChildCursorsScraper_RecordChildCursorMetrics(t *testing.T) {
 	mockClient := client.NewMockClient()
 	now := time.Now()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbChildCursorsCPUTime.Enabled = true
-	config.Metrics.NewrelicoracledbChildCursorsElapsedTime.Enabled = true
+	config.Metrics.OracledbChildCursorsCPUTime.Enabled = true
+	config.Metrics.OracledbChildCursorsElapsedTime.Enabled = true
 
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)

@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright New Relic, Inc. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 set -e
 
 VERSION=''
@@ -45,3 +48,4 @@ done <<< "$GO_MOD_FILES"
 echo ""
 echo "✓ Successfully bumped golang version to $VERSION"
 echo ""
+	

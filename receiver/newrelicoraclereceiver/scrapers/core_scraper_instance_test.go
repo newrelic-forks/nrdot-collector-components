@@ -8,20 +8,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestScrapeLockedAccountsMetrics_Disabled(t *testing.T) {
 	mockClient := client.NewMockClient()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbLockedAccounts.Enabled = false
+	config.Metrics.OracledbLockedAccounts.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -50,7 +51,7 @@ func TestScrapeLockedAccountsMetrics_Success(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbLockedAccounts.Enabled = true
+	config.Metrics.OracledbLockedAccounts.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -70,7 +71,7 @@ func TestScrapeLockedAccountsMetrics_QueryError(t *testing.T) {
 	mockClient.QueryErr = errors.New("database connection failed")
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbLockedAccounts.Enabled = true
+	config.Metrics.OracledbLockedAccounts.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -92,7 +93,7 @@ func TestScrapeLockedAccountsMetrics_EmptyResult(t *testing.T) {
 	mockClient.LockedAccountsList = []models.LockedAccountsMetric{}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbLockedAccounts.Enabled = true
+	config.Metrics.OracledbLockedAccounts.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -117,7 +118,7 @@ func TestScrapeLockedAccountsMetrics_ZeroAccounts(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbLockedAccounts.Enabled = true
+	config.Metrics.OracledbLockedAccounts.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 

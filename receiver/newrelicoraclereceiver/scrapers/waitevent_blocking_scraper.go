@@ -1,19 +1,20 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
 	"errors"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	commonutils "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/common-utils"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	commonutils "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // WaitEventBlockingScraper collects both Oracle wait events and blocking query metrics
@@ -167,7 +168,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 		_, normalisedBlockingSQLHash = commonutils.NormalizeSQLAndHash(rawFinalBlockerQueryText)
 	}
 
-	s.mb.RecordNewrelicoracledbWaitEventsCurrentWaitTimeMsDataPoint(
+	s.mb.RecordOracledbWaitEventsCurrentWaitTimeMsDataPoint(
 		now,
 		event.GetCurrentWaitMs(),
 		collectionTimestamp,
@@ -208,7 +209,7 @@ func (s *WaitEventBlockingScraper) recordWaitEventMetrics(now pcommon.Timestamp,
 	// schema_name and last_active_time are not available in V$SESSION;
 	// blocking hash/guid are not applicable for the active (victim) session.
 	if normalisedQueryText != "" {
-		s.mb.RecordNewrelicoracledbSlowQueriesQueryDetailsDataPoint(
+		s.mb.RecordOracledbSlowQueriesQueryDetailsDataPoint(
 			now,
 			1,
 			"OracleQueryDetails",
@@ -315,7 +316,7 @@ func (s *WaitEventBlockingScraper) recordFinalBlockerQueryDetails(now pcommon.Ti
 
 	nrBlockingServiceGUID := commonutils.ExtractNewRelicMetadata(rawFinalBlockerQueryText)
 
-	s.mb.RecordNewrelicoracledbSlowQueriesQueryDetailsDataPoint(
+	s.mb.RecordOracledbSlowQueriesQueryDetailsDataPoint(
 		now,
 		1,
 		"OracleQueryDetails",

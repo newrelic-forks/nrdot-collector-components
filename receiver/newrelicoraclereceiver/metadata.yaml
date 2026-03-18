@@ -1,4 +1,4 @@
-type: newrelicoracledb
+type: oracledb
 
 status:
   class: receiver
@@ -339,22 +339,20 @@ attributes:
     description: Type of the database object being waited on (TABLE, INDEX, etc.)
     type: string
 metrics:
-  newrelicoracledb.asm.diskgroup.free_mb:
+  oracledb.asm.diskgroup.free_mb:
     description: Available free space in the ASM disk group in MB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "MB"
     attributes:
       - diskgroup.name
 
-  newrelicoracledb.asm.diskgroup.offline_disks:
+  oracledb.asm.diskgroup.offline_disks:
     description: Number of offline disks in the ASM disk group
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{disks}"
@@ -362,11 +360,10 @@ metrics:
       - diskgroup.name
 
   # RAC-specific metrics for Feature 2: Cluster Wait Events
-  newrelicoracledb.asm.diskgroup.total_mb:
+  oracledb.asm.diskgroup.total_mb:
     description: Total capacity of the ASM disk group in MB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "MB"
@@ -374,11 +371,10 @@ metrics:
       - diskgroup.name
 
   # Database Version and Configuration Information
-  newrelicoracledb.child_cursors.buffer_gets:
+  oracledb.child_cursors.buffer_gets:
     description: Average number of buffer gets per execution for this child cursor
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{gets}"
@@ -389,11 +385,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.cpu_time:
+  oracledb.child_cursors.cpu_time:
     description: Average CPU time per execution for this child cursor (in milliseconds)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -404,11 +399,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.details:
+  oracledb.child_cursors.details:
     description: Child cursor details including load times
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{count}"
@@ -421,11 +415,10 @@ metrics:
       - first_load_time
       - last_load_time
 
-  newrelicoracledb.child_cursors.disk_reads:
+  oracledb.child_cursors.disk_reads:
     description: Average number of disk reads per execution for this child cursor
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{reads}"
@@ -436,11 +429,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.elapsed_time:
+  oracledb.child_cursors.elapsed_time:
     description: Average elapsed time per execution for this child cursor (in milliseconds)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -451,11 +443,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.executions:
+  oracledb.child_cursors.executions:
     description: Total number of executions of this child cursor
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{executions}"
@@ -466,11 +457,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.invalidations:
+  oracledb.child_cursors.invalidations:
     description: Number of times this child cursor was invalidated
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{invalidations}"
@@ -481,11 +471,10 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.child_cursors.user_io_wait_time:
+  oracledb.child_cursors.user_io_wait_time:
     description: Average user I/O wait time per execution for this child cursor (in milliseconds)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -496,21 +485,19 @@ metrics:
       - child_number
       - plan_hash_value
 
-  newrelicoracledb.connection.active_sessions:
+  oracledb.connection.active_sessions:
     description: Number of active Oracle database sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{sessions}"
     attributes:
 
-  newrelicoracledb.connection.bytes_received:
+  oracledb.connection.bytes_received:
     description: Bytes received via SQL*Net from client
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -519,11 +506,10 @@ metrics:
     attributes:
 
   # RAC-specific metrics for Feature 1: ASM Monitoring
-  newrelicoracledb.connection.bytes_sent:
+  oracledb.connection.bytes_sent:
     description: Bytes sent via SQL*Net to client
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -532,32 +518,29 @@ metrics:
     attributes:
 
   # Container/CDB/PDB Status Metrics
-  newrelicoracledb.connection.circuits:
+  oracledb.connection.circuits:
     description: Number of active circuits
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{circuits}"
     attributes:
 
   # Resource Limits
-  newrelicoracledb.connection.dispatchers:
+  oracledb.connection.dispatchers:
     description: Number of dispatchers
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{dispatchers}"
     attributes:
 
-  newrelicoracledb.connection.execute_count:
+  oracledb.connection.execute_count:
     description: Number of SQL executions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -565,21 +548,19 @@ metrics:
     unit: "{executions}"
     attributes:
 
-  newrelicoracledb.connection.inactive_sessions:
+  oracledb.connection.inactive_sessions:
     description: Number of inactive Oracle database sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{sessions}"
     attributes:
 
-  newrelicoracledb.connection.logons_cumulative:
+  oracledb.connection.logons_cumulative:
     description: Cumulative number of logons since instance startup
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -587,22 +568,20 @@ metrics:
     unit: "{logons}"
     attributes:
 
-  newrelicoracledb.connection.logons_current:
+  oracledb.connection.logons_current:
     description: Current number of active logons
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{logons}"
     attributes:
 
   # Connection Pool Metrics
-  newrelicoracledb.connection.parse_count_hard:
+  oracledb.connection.parse_count_hard:
     description: Number of hard parse calls
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -610,11 +589,10 @@ metrics:
     unit: "{parses}"
     attributes:
 
-  newrelicoracledb.connection.parse_count_total:
+  oracledb.connection.parse_count_total:
     description: Total number of parse calls
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -622,22 +600,20 @@ metrics:
     unit: "{parses}"
     attributes:
 
-  newrelicoracledb.connection.resource_current_utilization:
+  oracledb.connection.resource_current_utilization:
     description: Current utilization of Oracle resources
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{resources}"
     attributes:
       - resource.name
 
-  newrelicoracledb.connection.resource_limit:
+  oracledb.connection.resource_limit:
     description: Limit value for Oracle resources
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{resources}"
@@ -645,33 +621,30 @@ metrics:
       - resource.name
 
   # Connection Quality Metrics
-  newrelicoracledb.connection.resource_max_utilization:
+  oracledb.connection.resource_max_utilization:
     description: Maximum utilization of Oracle resources since startup
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{resources}"
     attributes:
       - resource.name
 
-  newrelicoracledb.connection.sessions_by_status:
+  oracledb.connection.sessions_by_status:
     description: Number of sessions grouped by status
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{sessions}"
     attributes:
       - session.status
 
-  newrelicoracledb.connection.sessions_by_type:
+  oracledb.connection.sessions_by_type:
     description: Number of sessions grouped by type
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{sessions}"
@@ -679,21 +652,19 @@ metrics:
       - session.type
 
   # Logon Statistics
-  newrelicoracledb.connection.shared_servers:
+  oracledb.connection.shared_servers:
     description: Number of shared servers
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{servers}"
     attributes:
 
-  newrelicoracledb.connection.sqlnet_roundtrips:
+  oracledb.connection.sqlnet_roundtrips:
     description: Number of SQL*Net roundtrips to/from client
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -701,21 +672,19 @@ metrics:
     unit: "{roundtrips}"
     attributes:
 
-  newrelicoracledb.connection.total_sessions:
+  oracledb.connection.total_sessions:
     description: Total number of Oracle database sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{sessions}"
     attributes:
 
-  newrelicoracledb.connection.user_commits:
+  oracledb.connection.user_commits:
     description: Number of user commits
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -723,11 +692,10 @@ metrics:
     unit: "{commits}"
     attributes:
 
-  newrelicoracledb.connection.user_rollbacks:
+  oracledb.connection.user_rollbacks:
     description: Number of user rollbacks
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     sum:
       aggregation_temporality: cumulative
       monotonic: true
@@ -735,11 +703,10 @@ metrics:
     unit: "{rollbacks}"
     attributes:
 
-  newrelicoracledb.container.restricted:
+  oracledb.container.restricted:
     description: Oracle container restricted status (1=YES, 0=NO)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -748,11 +715,10 @@ metrics:
       - container.name
       - restricted.status
 
-  newrelicoracledb.container.status:
+  oracledb.container.status:
     description: Oracle container status (1=READ WRITE, 0=other)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -761,12 +727,11 @@ metrics:
       - container.name
       - open.mode
 
-  newrelicoracledb.database.info:
+  oracledb.database.info:
     description: Database version and configuration information
     extended_documentation: Provides database version, edition, and configuration details following OpenTelemetry semantic conventions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -777,12 +742,11 @@ metrics:
       - db.compatible
 
   # Database Hosting and Platform Information
-  newrelicoracledb.database.role:
+  oracledb.database.role:
     description: Database role and Data Guard configuration
     extended_documentation: Provides information about the database role (PRIMARY, PHYSICAL STANDBY, LOGICAL STANDBY, SNAPSHOT STANDBY), open mode, and protection mode for Oracle Data Guard configurations
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -792,11 +756,10 @@ metrics:
       - db.protection_mode
       - db.protection_level
 
-  newrelicoracledb.datafile.autoextensible:
+  oracledb.datafile.autoextensible:
     description: Data file autoextensible status (1=YES, 0=NO)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -807,11 +770,10 @@ metrics:
       - container.status
 
   # Service metrics
-  newrelicoracledb.datafile.size_bytes:
+  oracledb.datafile.size_bytes:
     description: Size of data file in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: By
@@ -820,11 +782,10 @@ metrics:
       - tablespace.name
       - file.name
 
-  newrelicoracledb.datafile.used_bytes:
+  oracledb.datafile.used_bytes:
     description: Used bytes in data file
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: By
@@ -833,88 +794,80 @@ metrics:
       - tablespace.name
       - file.name
 
-  newrelicoracledb.db_id:
+  oracledb.db_id:
     description: Oracle database ID information
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - db.id
 
-  newrelicoracledb.disk.blocks_read:
+  oracledb.disk.blocks_read:
     description: Number of physical blocks read from disk
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.disk.blocks_written:
+  oracledb.disk.blocks_written:
     description: Number of physical blocks written to disk
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.disk.read_time_milliseconds:
+  oracledb.disk.read_time_milliseconds:
     description: Time spent reading from disk in milliseconds
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.disk.reads:
+  oracledb.disk.reads:
     description: Number of physical disk reads
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.disk.write_time_milliseconds:
+  oracledb.disk.write_time_milliseconds:
     description: Time spent writing to disk in milliseconds
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.disk.writes:
+  oracledb.disk.writes:
     description: Number of physical disk writes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.execution_plan:
+  oracledb.execution_plan:
     description: Oracle SQL execution plan details including operation costs, cardinality, and resource estimates
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -943,23 +896,21 @@ metrics:
       - time
       - filter_predicates
 
-  newrelicoracledb.global_name:
+  oracledb.global_name:
     description: Oracle database global name information
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - global.name
 
-  newrelicoracledb.hosting.info:
+  oracledb.hosting.info:
     description: Database hosting and platform information
     extended_documentation: Provides information about the host architecture and operating system platform
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -968,110 +919,100 @@ metrics:
       - platform.name
 
   # Database Role and Protection Information
-  newrelicoracledb.locked_accounts:
+  oracledb.locked_accounts:
     description: Count of locked user accounts in the database
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.long_running_queries:
+  oracledb.long_running_queries:
     description: Number of long running queries (active sessions running for more than 60 seconds)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.pga_allocated_bytes:
+  oracledb.memory.pga_allocated_bytes:
     description: Total PGA memory allocated in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.pga_freeable_bytes:
+  oracledb.memory.pga_freeable_bytes:
     description: Total freeable PGA memory in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.pga_in_use_bytes:
+  oracledb.memory.pga_in_use_bytes:
     description: Total PGA memory currently in use in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.pga_max_size_bytes:
+  oracledb.memory.pga_max_size_bytes:
     description: Global memory bound for PGA in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.sga_shared_pool_library_cache_sharable_bytes:
+  oracledb.memory.sga_shared_pool_library_cache_sharable_bytes:
     description: SGA shared pool library cache sharable memory in bytes for statements with more than 5 executions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.sga_shared_pool_library_cache_user_bytes:
+  oracledb.memory.sga_shared_pool_library_cache_user_bytes:
     description: SGA shared pool library cache shareable memory per user in bytes (250 * users_opening)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.memory.sga_uga_total_bytes:
+  oracledb.memory.sga_uga_total_bytes:
     description: Total SGA UGA memory in bytes (session uga memory max)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.pdb.active_parallel_sessions:
+  oracledb.pdb.active_parallel_sessions:
     description: Number of active parallel sessions in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1079,11 +1020,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.active_serial_sessions:
+  oracledb.pdb.active_serial_sessions:
     description: Number of active serial sessions in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1091,11 +1031,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.average_active_sessions:
+  oracledb.pdb.average_active_sessions:
     description: Average number of active sessions in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1103,11 +1042,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.background_cpu_usage_per_second:
+  oracledb.pdb.background_cpu_usage_per_second:
     description: Background CPU usage per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1115,11 +1053,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.background_time_per_second:
+  oracledb.pdb.background_time_per_second:
     description: Background time per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1127,11 +1064,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.block_changes_per_second:
+  oracledb.pdb.block_changes_per_second:
     description: DB block changes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1139,11 +1075,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.block_changes_per_transaction:
+  oracledb.pdb.block_changes_per_transaction:
     description: DB block changes per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1151,11 +1086,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.cpu_time_ratio:
+  oracledb.pdb.cpu_time_ratio:
     description: Database CPU time ratio in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1163,11 +1097,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.cpu_usage_per_second:
+  oracledb.pdb.cpu_usage_per_second:
     description: CPU usage per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1175,11 +1108,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.cpu_usage_per_transaction:
+  oracledb.pdb.cpu_usage_per_transaction:
     description: CPU usage per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1187,11 +1119,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.current_logons:
+  oracledb.pdb.current_logons:
     description: Current number of logons in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1199,11 +1130,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.current_open_cursors:
+  oracledb.pdb.current_open_cursors:
     description: Current number of open cursors in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1211,11 +1141,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.db_physical_read_bytes_per_second:
+  oracledb.pdb.db_physical_read_bytes_per_second:
     description: Physical read bytes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1223,11 +1152,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.db_physical_reads_per_second:
+  oracledb.pdb.db_physical_reads_per_second:
     description: Physical reads per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1235,11 +1163,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.db_physical_write_bytes_per_second:
+  oracledb.pdb.db_physical_write_bytes_per_second:
     description: Physical write bytes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1247,11 +1174,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.db_physical_writes_per_second:
+  oracledb.pdb.db_physical_writes_per_second:
     description: Physical writes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1260,11 +1186,10 @@ metrics:
       - database_name
 
   # System metrics from gv$sysmetric
-  newrelicoracledb.pdb.execute_without_parse_ratio:
+  oracledb.pdb.execute_without_parse_ratio:
     description: Execute without parse ratio in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1272,11 +1197,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.executions_per_second:
+  oracledb.pdb.executions_per_second:
     description: Executions per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1284,11 +1208,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.executions_per_transaction:
+  oracledb.pdb.executions_per_transaction:
     description: Executions per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1296,11 +1219,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.hard_parse_count_per_second:
+  oracledb.pdb.hard_parse_count_per_second:
     description: Hard parse count per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1308,11 +1230,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.hard_parse_count_per_transaction:
+  oracledb.pdb.hard_parse_count_per_transaction:
     description: Hard parse count per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1320,11 +1241,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.logical_reads_per_second:
+  oracledb.pdb.logical_reads_per_second:
     description: Logical reads per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1332,11 +1252,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.logical_reads_per_transaction:
+  oracledb.pdb.logical_reads_per_transaction:
     description: Logical reads per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1344,11 +1263,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.logons_per_second:
+  oracledb.pdb.logons_per_second:
     description: Logons per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1356,11 +1274,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.logons_per_transaction:
+  oracledb.pdb.logons_per_transaction:
     description: Logons per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1368,11 +1285,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.network_traffic_byte_per_second:
+  oracledb.pdb.network_traffic_byte_per_second:
     description: Network traffic volume per second in bytes in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1380,11 +1296,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.open_cursors_per_second:
+  oracledb.pdb.open_cursors_per_second:
     description: Open cursors per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1392,11 +1307,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.open_cursors_per_transaction:
+  oracledb.pdb.open_cursors_per_transaction:
     description: Open cursors per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1404,11 +1318,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.open_mode:
+  oracledb.pdb.open_mode:
     description: Oracle PDB open mode (1=READ WRITE, 0=other)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1417,11 +1330,10 @@ metrics:
       - database_name
       - open.mode
 
-  newrelicoracledb.pdb.parse_failure_count_per_second:
+  oracledb.pdb.parse_failure_count_per_second:
     description: Parse failure count per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1429,11 +1341,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.physical_read_bytes_per_second:
+  oracledb.pdb.physical_read_bytes_per_second:
     description: Physical read total bytes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1441,11 +1352,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.physical_reads_per_transaction:
+  oracledb.pdb.physical_reads_per_transaction:
     description: Physical reads per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1453,11 +1363,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.physical_write_bytes_per_second:
+  oracledb.pdb.physical_write_bytes_per_second:
     description: Physical write total bytes per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1465,11 +1374,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.physical_writes_per_transaction:
+  oracledb.pdb.physical_writes_per_transaction:
     description: Physical writes per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1477,11 +1385,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.redo_generated_bytes_per_second:
+  oracledb.pdb.redo_generated_bytes_per_second:
     description: Redo generated per second in bytes in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1489,11 +1396,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.redo_generated_bytes_per_transaction:
+  oracledb.pdb.redo_generated_bytes_per_transaction:
     description: Redo generated per transaction in bytes in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
@@ -1501,11 +1407,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.response_time_per_transaction:
+  oracledb.pdb.response_time_per_transaction:
     description: Response time per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
@@ -1513,11 +1418,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.session_count:
+  oracledb.pdb.session_count:
     description: Session count in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1525,11 +1429,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.soft_parse_ratio:
+  oracledb.pdb.soft_parse_ratio:
     description: Soft parse ratio in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1537,11 +1440,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.sql_service_response_time:
+  oracledb.pdb.sql_service_response_time:
     description: SQL service response time in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
@@ -1549,11 +1451,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.total_parse_count_per_second:
+  oracledb.pdb.total_parse_count_per_second:
     description: Total parse count per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1561,11 +1462,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.total_parse_count_per_transaction:
+  oracledb.pdb.total_parse_count_per_transaction:
     description: Total parse count per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1573,11 +1473,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.total_size_bytes:
+  oracledb.pdb.total_size_bytes:
     description: Total size of PDB in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: By
@@ -1586,11 +1485,10 @@ metrics:
       - database_name
 
   # Tablespace metrics with container awareness
-  newrelicoracledb.pdb.transactions_per_second:
+  oracledb.pdb.transactions_per_second:
     description: User transactions per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1598,11 +1496,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_calls_per_second:
+  oracledb.pdb.user_calls_per_second:
     description: User calls per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1610,11 +1507,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_calls_per_transaction:
+  oracledb.pdb.user_calls_per_transaction:
     description: User calls per transaction in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1622,11 +1518,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_commits_per_second:
+  oracledb.pdb.user_commits_per_second:
     description: User commits per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1634,11 +1529,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_commits_percentage:
+  oracledb.pdb.user_commits_percentage:
     description: User commits percentage in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1646,11 +1540,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_rollbacks_per_second:
+  oracledb.pdb.user_rollbacks_per_second:
     description: User rollbacks per second in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1658,11 +1551,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.user_rollbacks_percentage:
+  oracledb.pdb.user_rollbacks_percentage:
     description: User rollbacks percentage in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1670,11 +1562,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.pdb.wait_time_ratio:
+  oracledb.pdb.wait_time_ratio:
     description: Database wait time ratio in PDB
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1682,11 +1573,10 @@ metrics:
       - instance.id
       - database_name
 
-  newrelicoracledb.rac.instance.active_state:
+  oracledb.rac.instance.active_state:
     description: Instance active state indicator (1=NORMAL, 0=other)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1696,11 +1586,10 @@ metrics:
       - host.name.rac
       - active.state
 
-  newrelicoracledb.rac.instance.archiver_started:
+  oracledb.rac.instance.archiver_started:
     description: Archiver status indicator (1=STARTED, 0=STOPPED)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1715,11 +1604,10 @@ metrics:
   # These columns are not consistently available across Oracle versions (12c/19c/21c)
 
   # Oracle Database Version Metric
-  newrelicoracledb.rac.instance.database_status:
+  oracledb.rac.instance.database_status:
     description: Database status indicator (1=ACTIVE, 0=other)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1729,11 +1617,10 @@ metrics:
       - host.name.rac
       - database.status
 
-  newrelicoracledb.rac.instance.logins_allowed:
+  oracledb.rac.instance.logins_allowed:
     description: Instance login status indicator (1=ALLOWED, 0=RESTRICTED)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1743,11 +1630,10 @@ metrics:
       - host.name.rac
       - logins.status
 
-  newrelicoracledb.rac.instance.status:
+  oracledb.rac.instance.status:
     description: RAC instance status (1=OPEN, 0=other)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1758,11 +1644,10 @@ metrics:
       - instance.status
 
   # RAC-specific metrics for Feature 3B: Service Failover
-  newrelicoracledb.rac.instance.uptime_seconds:
+  oracledb.rac.instance.uptime_seconds:
     description: Instance uptime in seconds since startup
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "s"
@@ -1771,11 +1656,10 @@ metrics:
       - rac.instance.name
       - host.name.rac
 
-  newrelicoracledb.rac.instance.version_info:
+  oracledb.rac.instance.version_info:
     description: Oracle database version information (always 1, version in attributes)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1785,66 +1669,60 @@ metrics:
       - oracle.version
 
   # Enhanced Service Configuration Metrics
-  newrelicoracledb.rac.service.blocked_status:
+  oracledb.rac.service.blocked_status:
     description: Service blocked indicator (1=blocked, 0=not blocked)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - service.blocked
 
-  newrelicoracledb.rac.service.clb_config:
+  oracledb.rac.service.clb_config:
     description: Connection load balancing configuration (always 1, config in attributes)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - clb.goal
 
-  newrelicoracledb.rac.service.drain_timeout_seconds:
+  oracledb.rac.service.drain_timeout_seconds:
     description: Session drain timeout in seconds before service stop
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "s"
     attributes:
       - service.drain_timeout
 
-  newrelicoracledb.rac.service.fan_enabled:
+  oracledb.rac.service.fan_enabled:
     description: Fast Application Notification (FAN) enabled indicator (1=enabled, 0=disabled)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - service.fan_enabled
 
-  newrelicoracledb.rac.service.goal_config:
+  oracledb.rac.service.goal_config:
     description: Service goal configuration (always 1, goal in attributes)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - service.goal
 
-  newrelicoracledb.rac.service.instance_id:
+  oracledb.rac.service.instance_id:
     description: Instance ID where the service is currently running
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -1852,11 +1730,10 @@ metrics:
       - instance.id
 
   # Additional RAC Instance Health Metrics
-  newrelicoracledb.rac.service.network_config:
+  oracledb.rac.service.network_config:
     description: Service network configuration (always 1, config in attributes)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -1867,33 +1744,30 @@ metrics:
   # FAILOVER_RETRIES and FAILOVER_DELAY columns do not exist in GV$ACTIVE_SERVICES
   # in Oracle 12c/19c/21c - these were causing ORA-00904 errors
 
-  newrelicoracledb.rac.service.replay_timeout_seconds:
+  oracledb.rac.service.replay_timeout_seconds:
     description: Application Continuity replay initiation timeout in seconds
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "s"
     attributes:
       - service.replay_timeout
 
-  newrelicoracledb.rac.service.transaction_guard_enabled:
+  oracledb.rac.service.transaction_guard_enabled:
     description: Transaction Guard enabled indicator (1=enabled, 0=disabled)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - service.transaction_guard
 
-  newrelicoracledb.rac.total_waits:
+  oracledb.rac.total_waits:
     description: Total number of cluster wait events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{waits}"
@@ -1902,11 +1776,10 @@ metrics:
       - wait.event
 
   # RAC-specific metrics for Feature 3A: Instance Status
-  newrelicoracledb.rac.wait_time:
+  oracledb.rac.wait_time:
     description: Rate of cluster wait time in microseconds per second
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "us/s"
@@ -1914,263 +1787,239 @@ metrics:
       - instance.id
       - wait.event
 
-  newrelicoracledb.redo_log_parallel_write_waits:
+  oracledb.redo_log_parallel_write_waits:
     description: Number of waits for log file parallel write events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.redo_log_switch_archiving_needed_waits:
+  oracledb.redo_log_switch_archiving_needed_waits:
     description: Number of waits for log file switch (archiving needed) events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.redo_log_switch_checkpoint_incomplete_waits:
+  oracledb.redo_log_switch_checkpoint_incomplete_waits:
     description: Number of waits for log file switch (checkpoint incomplete) events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.redo_log_switch_completion_waits:
+  oracledb.redo_log_switch_completion_waits:
     description: Number of waits for log file switch completion events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.rollback_segments_gets:
+  oracledb.rollback_segments_gets:
     description: Number of gets on rollback segments
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.rollback_segments_wait_ratio:
+  oracledb.rollback_segments_wait_ratio:
     description: Rollback segments wait ratio (waits/gets)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.rollback_segments_waits:
+  oracledb.rollback_segments_waits:
     description: Number of waits on rollback segments
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.service.count:
+  oracledb.service.count:
     description: Count of services per container
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{services}"
     attributes:
       - con.id
 
-  newrelicoracledb.service.status:
+  oracledb.service.status:
     description: Oracle service status (1=active, 0=inactive)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - con.id
 
-  newrelicoracledb.sessions.count:
+  oracledb.sessions.count:
     description: Total number of active Oracle database sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{sessions}"
     attributes:
 
-  newrelicoracledb.sga_buffer_busy_waits:
+  oracledb.sga_buffer_busy_waits:
     description: Number of buffer busy waits events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_fixed_size_bytes:
+  oracledb.sga_fixed_size_bytes:
     description: SGA fixed size memory in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_free_buffer_inspected_waits:
+  oracledb.sga_free_buffer_inspected_waits:
     description: Number of free buffer inspected waits events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_free_buffer_waits:
+  oracledb.sga_free_buffer_waits:
     description: Number of free buffer waits events
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_hit_ratio:
+  oracledb.sga_hit_ratio:
     description: SGA hit ratio (session logical reads minus physical reads / session logical reads)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_log_allocation_retries_ratio:
+  oracledb.sga_log_allocation_retries_ratio:
     description: SGA log allocation retries ratio (redo buffer allocation retries / redo entries)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_log_buffer_redo_allocation_retries:
+  oracledb.sga_log_buffer_redo_allocation_retries:
     description: Number of redo buffer allocation retries from sysstat
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_log_buffer_redo_entries:
+  oracledb.sga_log_buffer_redo_entries:
     description: Number of redo entries from sysstat
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_log_buffer_space_waits:
+  oracledb.sga_log_buffer_space_waits:
     description: Number of sessions waiting for log buffer space
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_redo_buffers_bytes:
+  oracledb.sga_redo_buffers_bytes:
     description: SGA redo buffers memory in bytes
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_shared_pool_dict_cache_miss_ratio:
+  oracledb.sga_shared_pool_dict_cache_miss_ratio:
     description: SGA shared pool dictionary cache miss ratio (getmisses/gets)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_shared_pool_library_cache_hit_ratio:
+  oracledb.sga_shared_pool_library_cache_hit_ratio:
     description: SGA shared pool library cache hit ratio for SQL AREA namespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sga_shared_pool_library_cache_reload_ratio:
+  oracledb.sga_shared_pool_library_cache_reload_ratio:
     description: SGA shared pool library cache reload ratio (reloads/pins)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.slow_queries.execution_count:
+  oracledb.slow_queries.execution_count:
     description: Number of executions for slow queries
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{executions}"
@@ -2182,11 +2031,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_buffer_gets:
+  oracledb.slow_queries.interval_avg_buffer_gets:
     description: Average buffer gets (logical reads) per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{gets}"
@@ -2198,11 +2046,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_cpu_time:
+  oracledb.slow_queries.interval_avg_cpu_time:
     description: Average CPU time per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2214,11 +2061,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_disk_reads:
+  oracledb.slow_queries.interval_avg_disk_reads:
     description: Average disk reads per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{reads}"
@@ -2230,11 +2076,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_disk_writes:
+  oracledb.slow_queries.interval_avg_disk_writes:
     description: Average direct writes per execution in the last polling interval - writes bypassing buffer cache (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{writes}"
@@ -2246,11 +2091,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_elapsed_time:
+  oracledb.slow_queries.interval_avg_elapsed_time:
     description: Average elapsed time per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2262,11 +2106,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_avg_rows_processed:
+  oracledb.slow_queries.interval_avg_rows_processed:
     description: Average rows processed (returned) per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{rows}"
@@ -2280,11 +2123,10 @@ metrics:
 
   # Interval total (non-averaged) delta metrics - showing TOTAL activity in the last polling interval
   # These metrics show aggregate delta values without per-execution averaging
-  newrelicoracledb.slow_queries.interval_avg_wait_time:
+  oracledb.slow_queries.interval_avg_wait_time:
     description: Average wait time per execution in the last polling interval (delta metric)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2296,11 +2138,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_buffer_gets:
+  oracledb.slow_queries.interval_buffer_gets:
     description: Total buffer gets (logical reads) in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{gets}"
@@ -2312,11 +2153,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_cpu_time:
+  oracledb.slow_queries.interval_cpu_time:
     description: Total CPU time in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2328,11 +2168,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_disk_reads:
+  oracledb.slow_queries.interval_disk_reads:
     description: Total disk reads in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{reads}"
@@ -2344,11 +2183,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_disk_writes:
+  oracledb.slow_queries.interval_disk_writes:
     description: Total direct writes in the last polling interval - writes bypassing buffer cache (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{writes}"
@@ -2360,11 +2198,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_elapsed_time:
+  oracledb.slow_queries.interval_elapsed_time:
     description: Total elapsed time in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2376,11 +2213,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_execution_count:
+  oracledb.slow_queries.interval_execution_count:
     description: Number of new executions since last scrape (delta metric). On first scrape or after cache reset, represents all executions since plan cache load.
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{executions}"
@@ -2392,11 +2228,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.interval_rows_processed:
+  oracledb.slow_queries.interval_rows_processed:
     description: Total rows processed (returned) in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{rows}"
@@ -2409,11 +2244,10 @@ metrics:
       - nr_service_guid
 
   # Child Cursor Metrics (from V$SQL) - Average values per execution
-  newrelicoracledb.slow_queries.interval_wait_time:
+  oracledb.slow_queries.interval_wait_time:
     description: Total wait time in the last polling interval (delta metric, not averaged)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2425,11 +2259,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.query_details:
+  oracledb.slow_queries.query_details:
     description: Slow Query Details
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "{count}"
@@ -2449,11 +2282,10 @@ metrics:
 
   # Interval-based (delta) metrics - showing what happened in the LAST polling interval
   # These metrics provide real-time visibility into query performance changes
-  newrelicoracledb.slow_queries.total_cpu_time:
+  oracledb.slow_queries.total_cpu_time:
     description: Total cumulative CPU time for slow queries (raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2465,11 +2297,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_disk_reads:
+  oracledb.slow_queries.total_disk_reads:
     description: Total cumulative disk reads for slow queries (raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{reads}"
@@ -2481,11 +2312,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_disk_writes:
+  oracledb.slow_queries.total_disk_writes:
     description: Total cumulative direct writes for slow queries - writes bypassing buffer cache (raw value from V$SQLAREA DIRECT_WRITES)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{writes}"
@@ -2497,11 +2327,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_elapsed_time:
+  oracledb.slow_queries.total_elapsed_time:
     description: Total cumulative elapsed time for slow queries (raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2513,11 +2342,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_rows_examined:
+  oracledb.slow_queries.total_rows_examined:
     description: Total cumulative rows examined for slow queries (buffer gets/logical reads, raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{rows}"
@@ -2529,11 +2357,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_rows_returned:
+  oracledb.slow_queries.total_rows_returned:
     description: Total cumulative rows returned for slow queries (rows processed, raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "{rows}"
@@ -2545,11 +2372,10 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.slow_queries.total_wait_time:
+  oracledb.slow_queries.total_wait_time:
     description: Total cumulative wait time for slow queries (elapsed_time - cpu_time, raw value from V$SQLAREA)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms
@@ -2561,1133 +2387,1030 @@ metrics:
       - normalised_sql_hash
       - nr_service_guid
 
-  newrelicoracledb.sorts_disk:
+  oracledb.sorts_disk:
     description: Number of sorts performed on disk from sysstat
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.sorts_memory:
+  oracledb.sorts_memory:
     description: Number of sorts performed in memory from sysstat
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.active_parallel_sessions:
+  oracledb.system.active_parallel_sessions:
     description: Active Parallel Sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.active_serial_sessions:
+  oracledb.system.active_serial_sessions:
     description: Active Serial Sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.average_active_sessions:
+  oracledb.system.average_active_sessions:
     description: Average Active Sessions
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.background_checkpoints_per_second:
+  oracledb.system.background_checkpoints_per_second:
     description: Background Checkpoints Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.background_cpu_usage_per_second:
+  oracledb.system.background_cpu_usage_per_second:
     description: Background CPU Usage Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.background_time_per_second:
+  oracledb.system.background_time_per_second:
     description: Background Time Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.branch_node_splits_per_second:
+  oracledb.system.branch_node_splits_per_second:
     description: Branch Node Splits Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.branch_node_splits_per_transaction:
+  oracledb.system.branch_node_splits_per_transaction:
     description: Branch Node Splits Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.buffer_cache_hit_ratio:
+  oracledb.system.buffer_cache_hit_ratio:
     description: Buffer Cache Hit Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.captured_user_calls:
+  oracledb.system.captured_user_calls:
     description: Captured user calls
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.consistent_read_changes_per_second:
+  oracledb.system.consistent_read_changes_per_second:
     description: Consistent Read Changes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.consistent_read_changes_per_transaction:
+  oracledb.system.consistent_read_changes_per_transaction:
     description: Consistent Read Changes Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.consistent_read_gets_per_second:
+  oracledb.system.consistent_read_gets_per_second:
     description: Consistent Read Gets Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.consistent_read_gets_per_transaction:
+  oracledb.system.consistent_read_gets_per_transaction:
     description: Consistent Read Gets Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cpu_usage_per_second:
+  oracledb.system.cpu_usage_per_second:
     description: CPU Usage Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cpu_usage_per_transaction:
+  oracledb.system.cpu_usage_per_transaction:
     description: CPU Usage Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cr_blocks_created_per_second:
+  oracledb.system.cr_blocks_created_per_second:
     description: CR Blocks Created Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cr_blocks_created_per_transaction:
+  oracledb.system.cr_blocks_created_per_transaction:
     description: CR Blocks Created Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cr_undo_records_applied_per_second:
+  oracledb.system.cr_undo_records_applied_per_second:
     description: CR Undo Records Applied Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cr_undo_records_applied_per_transaction:
+  oracledb.system.cr_undo_records_applied_per_transaction:
     description: CR Undo Records Applied Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.current_logons_count:
+  oracledb.system.current_logons_count:
     description: Current Logons Count
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.current_open_cursors_count:
+  oracledb.system.current_open_cursors_count:
     description: Current Open Cursors Count
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.current_os_load:
+  oracledb.system.current_os_load:
     description: Current OS Load
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.cursor_cache_hit_ratio:
+  oracledb.system.cursor_cache_hit_ratio:
     description: Cursor Cache Hit Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.database_cpu_time_ratio:
+  oracledb.system.database_cpu_time_ratio:
     description: Database CPU Time Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.database_time_per_second:
+  oracledb.system.database_time_per_second:
     description: Database Time Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.database_wait_time_ratio:
+  oracledb.system.database_wait_time_ratio:
     description: Database Wait Time Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_changes_per_second:
+  oracledb.system.db_block_changes_per_second:
     description: DB Block Changes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_changes_per_transaction:
+  oracledb.system.db_block_changes_per_transaction:
     description: DB Block Changes Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_changes_per_user_call:
+  oracledb.system.db_block_changes_per_user_call:
     description: DB Block Changes Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_gets_per_second:
+  oracledb.system.db_block_gets_per_second:
     description: DB Block Gets Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_gets_per_transaction:
+  oracledb.system.db_block_gets_per_transaction:
     description: DB Block Gets Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.db_block_gets_per_user_call:
+  oracledb.system.db_block_gets_per_user_call:
     description: DB Block Gets Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.dbwr_checkpoints_per_second:
+  oracledb.system.dbwr_checkpoints_per_second:
     description: DBWR Checkpoints Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.disk_sort_per_second:
+  oracledb.system.disk_sort_per_second:
     description: Disk Sort Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.disk_sort_per_transaction:
+  oracledb.system.disk_sort_per_transaction:
     description: Disk Sort Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_deadlocks_per_second:
+  oracledb.system.enqueue_deadlocks_per_second:
     description: Enqueue Deadlocks Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_deadlocks_per_transaction:
+  oracledb.system.enqueue_deadlocks_per_transaction:
     description: Enqueue Deadlocks Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_requests_per_second:
+  oracledb.system.enqueue_requests_per_second:
     description: Enqueue Requests Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_requests_per_transaction:
+  oracledb.system.enqueue_requests_per_transaction:
     description: Enqueue Requests Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_timeouts_per_second:
+  oracledb.system.enqueue_timeouts_per_second:
     description: Enqueue Timeouts Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_timeouts_per_transaction:
+  oracledb.system.enqueue_timeouts_per_transaction:
     description: Enqueue Timeouts Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_waits_per_second:
+  oracledb.system.enqueue_waits_per_second:
     description: Enqueue Waits Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.enqueue_waits_per_transaction:
+  oracledb.system.enqueue_waits_per_transaction:
     description: Enqueue Waits Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.execute_without_parse_ratio:
+  oracledb.system.execute_without_parse_ratio:
     description: Execute Without Parse Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.executions_per_second:
+  oracledb.system.executions_per_second:
     description: Executions Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.executions_per_transaction:
+  oracledb.system.executions_per_transaction:
     description: Executions Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.executions_per_user_call:
+  oracledb.system.executions_per_user_call:
     description: Executions Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.full_index_scans_per_second:
+  oracledb.system.full_index_scans_per_second:
     description: Full Index Scans Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.full_index_scans_per_transaction:
+  oracledb.system.full_index_scans_per_transaction:
     description: Full Index Scans Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.gc_cr_block_received_per_second:
+  oracledb.system.gc_cr_block_received_per_second:
     description: GC CR Block Received Per Second
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.gc_cr_block_received_per_transaction:
+  oracledb.system.gc_cr_block_received_per_transaction:
     description: GC CR Block Received Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.gc_current_block_received_per_second:
+  oracledb.system.gc_current_block_received_per_second:
     description: GC Current Block Received Per Second
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.gc_current_block_received_per_transaction:
+  oracledb.system.gc_current_block_received_per_transaction:
     description: GC Current Block Received Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.global_cache_average_cr_get_time:
+  oracledb.system.global_cache_average_cr_get_time:
     description: Global Cache Average CR Get Time
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.global_cache_average_current_get_time:
+  oracledb.system.global_cache_average_current_get_time:
     description: Global Cache Average Current Get Time
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.global_cache_blocks_corrupted:
+  oracledb.system.global_cache_blocks_corrupted:
     description: Global Cache Blocks Corrupted
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.global_cache_blocks_lost:
+  oracledb.system.global_cache_blocks_lost:
     description: Global Cache Blocks Lost
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.hard_parse_count_per_second:
+  oracledb.system.hard_parse_count_per_second:
     description: Hard Parse Count Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.hard_parse_count_per_transaction:
+  oracledb.system.hard_parse_count_per_transaction:
     description: Hard Parse Count Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.host_cpu_usage_per_second:
+  oracledb.system.host_cpu_usage_per_second:
     description: Host CPU Usage Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.host_cpu_utilization:
+  oracledb.system.host_cpu_utilization:
     description: Host CPU Utilization (%)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.io_megabytes_per_second:
+  oracledb.system.io_megabytes_per_second:
     description: I/O Megabytes per Second
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "MBy/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.io_requests_per_second:
+  oracledb.system.io_requests_per_second:
     description: I/O Requests per Second
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.leaf_node_splits_per_second:
+  oracledb.system.leaf_node_splits_per_second:
     description: Leaf Node Splits Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.leaf_node_splits_per_transaction:
+  oracledb.system.leaf_node_splits_per_transaction:
     description: Leaf Node Splits Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.library_cache_hit_ratio:
+  oracledb.system.library_cache_hit_ratio:
     description: Library Cache Hit Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.library_cache_miss_ratio:
+  oracledb.system.library_cache_miss_ratio:
     description: Library Cache Miss Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.logical_reads_per_second:
+  oracledb.system.logical_reads_per_second:
     description: Logical Reads Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.logical_reads_per_transaction:
+  oracledb.system.logical_reads_per_transaction:
     description: Logical Reads Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.logical_reads_per_user_call:
+  oracledb.system.logical_reads_per_user_call:
     description: Logical Reads Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.logons_per_second:
+  oracledb.system.logons_per_second:
     description: Logons Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.logons_per_transaction:
+  oracledb.system.logons_per_transaction:
     description: Logons Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.long_table_scans_per_second:
+  oracledb.system.long_table_scans_per_second:
     description: Long Table Scans Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.long_table_scans_per_transaction:
+  oracledb.system.long_table_scans_per_transaction:
     description: Long Table Scans Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.memory_sorts_ratio:
+  oracledb.system.memory_sorts_ratio:
     description: Memory Sorts Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.network_traffic_volume_per_second:
+  oracledb.system.network_traffic_volume_per_second:
     description: Network Traffic Volume Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.open_cursors_per_second:
+  oracledb.system.open_cursors_per_second:
     description: Open Cursors Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.open_cursors_per_transaction:
+  oracledb.system.open_cursors_per_transaction:
     description: Open Cursors Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.parse_failure_count_per_second:
+  oracledb.system.parse_failure_count_per_second:
     description: Parse Failure Count Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.parse_failure_count_per_transaction:
+  oracledb.system.parse_failure_count_per_transaction:
     description: Parse Failure Count Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.pga_cache_hit_percentage:
+  oracledb.system.pga_cache_hit_percentage:
     description: PGA Cache Hit %
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_lobs_reads_per_second:
+  oracledb.system.physical_lobs_reads_per_second:
     description: Physical Reads Direct Lobs Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_lobs_reads_per_transaction:
+  oracledb.system.physical_lobs_reads_per_transaction:
     description: Physical Reads Direct Lobs Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_lobs_writes_per_second:
+  oracledb.system.physical_lobs_writes_per_second:
     description: Physical Writes Direct Lobs Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_lobs_writes_per_transaction:
+  oracledb.system.physical_lobs_writes_per_transaction:
     description: Physical Writes Direct Lobs Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_read_bytes_per_second:
+  oracledb.system.physical_read_bytes_per_second:
     description: Physical Read Bytes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_read_io_requests_per_second:
+  oracledb.system.physical_read_io_requests_per_second:
     description: Physical Read IO Requests Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_read_total_bytes_per_second:
+  oracledb.system.physical_read_total_bytes_per_second:
     description: Physical Read Total Bytes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_read_total_io_requests_per_second:
+  oracledb.system.physical_read_total_io_requests_per_second:
     description: Physical Read Total IO Requests Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_reads_direct_per_second:
+  oracledb.system.physical_reads_direct_per_second:
     description: Physical Reads Direct Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_reads_direct_per_transaction:
+  oracledb.system.physical_reads_direct_per_transaction:
     description: Physical Reads Direct Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_reads_per_second:
+  oracledb.system.physical_reads_per_second:
     description: Physical Reads Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_reads_per_transaction:
+  oracledb.system.physical_reads_per_transaction:
     description: Physical Reads Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_write_bytes_per_second:
+  oracledb.system.physical_write_bytes_per_second:
     description: Physical Write Bytes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_write_io_requests_per_second:
+  oracledb.system.physical_write_io_requests_per_second:
     description: Physical Write IO Requests Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_write_total_bytes_per_second:
+  oracledb.system.physical_write_total_bytes_per_second:
     description: Physical Write Total Bytes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_write_total_io_requests_per_second:
+  oracledb.system.physical_write_total_io_requests_per_second:
     description: Physical Write Total IO Requests Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_writes_direct_per_second:
+  oracledb.system.physical_writes_direct_per_second:
     description: Physical Writes Direct Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_writes_direct_per_transaction:
+  oracledb.system.physical_writes_direct_per_transaction:
     description: Physical Writes Direct Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.physical_writes_per_second:
+  oracledb.system.physical_writes_per_second:
     description: Physical Writes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
@@ -3695,451 +3418,410 @@ metrics:
       - instance.id
 
   # Core Connection Metrics
-  newrelicoracledb.system.physical_writes_per_transaction:
+  oracledb.system.physical_writes_per_transaction:
     description: Physical Writes Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.process_limit_percentage:
+  oracledb.system.process_limit_percentage:
     description: Process Limit %
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.recursive_calls_per_second:
+  oracledb.system.recursive_calls_per_second:
     description: Recursive Calls Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.recursive_calls_per_transaction:
+  oracledb.system.recursive_calls_per_transaction:
     description: Recursive Calls Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.redo_allocation_hit_ratio:
+  oracledb.system.redo_allocation_hit_ratio:
     description: Redo Allocation Hit Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.redo_generated_bytes_per_second:
+  oracledb.system.redo_generated_bytes_per_second:
     description: Redo Generated Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By/s"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.redo_generated_bytes_per_transaction:
+  oracledb.system.redo_generated_bytes_per_transaction:
     description: Redo Generated Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.redo_writes_per_second:
+  oracledb.system.redo_writes_per_second:
     description: Redo Writes Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.redo_writes_per_transaction:
+  oracledb.system.redo_writes_per_transaction:
     description: Redo Writes Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.response_time_per_transaction:
+  oracledb.system.response_time_per_transaction:
     description: Response Time Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.row_cache_hit_ratio:
+  oracledb.system.row_cache_hit_ratio:
     description: Row Cache Hit Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.row_cache_miss_ratio:
+  oracledb.system.row_cache_miss_ratio:
     description: Row Cache Miss Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.rows_per_sort:
+  oracledb.system.rows_per_sort:
     description: Rows Per Sort
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.session_count:
+  oracledb.system.session_count:
     description: Session Count
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.session_limit_percentage:
+  oracledb.system.session_limit_percentage:
     description: Session Limit %
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.shared_pool_free_percentage:
+  oracledb.system.shared_pool_free_percentage:
     description: Shared Pool Free %
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.soft_parse_ratio:
+  oracledb.system.soft_parse_ratio:
     description: Soft Parse Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.sql_service_response_time:
+  oracledb.system.sql_service_response_time:
     description: SQL Service Response Time
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "ms"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.streams_pool_usage_percentage:
+  oracledb.system.streams_pool_usage_percentage:
     description: Streams Pool Usage Percentage
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.temp_space_used:
+  oracledb.system.temp_space_used:
     description: Temp Space Used
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "By"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_index_scans_per_second:
+  oracledb.system.total_index_scans_per_second:
     description: Total Index Scans Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_index_scans_per_transaction:
+  oracledb.system.total_index_scans_per_transaction:
     description: Total Index Scans Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_parse_count_per_second:
+  oracledb.system.total_parse_count_per_second:
     description: Total Parse Count Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_parse_count_per_transaction:
+  oracledb.system.total_parse_count_per_transaction:
     description: Total Parse Count Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_sorts_per_user_call:
+  oracledb.system.total_sorts_per_user_call:
     description: Total Sorts Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_table_scans_per_second:
+  oracledb.system.total_table_scans_per_second:
     description: Total Table Scans Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_table_scans_per_transaction:
+  oracledb.system.total_table_scans_per_transaction:
     description: Total Table Scans Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.total_table_scans_per_user_call:
+  oracledb.system.total_table_scans_per_user_call:
     description: Total Table Scans Per User Call
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.transactions_per_logon:
+  oracledb.system.transactions_per_logon:
     description: Txns Per Logon
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.transactions_per_second:
+  oracledb.system.transactions_per_second:
     description: User Transaction Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_calls_per_second:
+  oracledb.system.user_calls_per_second:
     description: User Calls Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_calls_per_transaction:
+  oracledb.system.user_calls_per_transaction:
     description: User Calls Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_calls_ratio:
+  oracledb.system.user_calls_ratio:
     description: User Calls Ratio
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_commits_per_second:
+  oracledb.system.user_commits_per_second:
     description: User Commits Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_commits_percentage:
+  oracledb.system.user_commits_percentage:
     description: User Commits Percentage
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_limit_percentage:
+  oracledb.system.user_limit_percentage:
     description: User Limit %
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_rollback_undo_records_applied_per_second:
+  oracledb.system.user_rollback_undo_records_applied_per_second:
     description: User Rollback UndoRec Applied Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_rollback_undo_records_applied_per_transaction:
+  oracledb.system.user_rollback_undo_records_applied_per_transaction:
     description: User Rollback Undo Records Applied Per Txn
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_rollbacks_per_second:
+  oracledb.system.user_rollbacks_per_second:
     description: User Rollbacks Per Sec
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "1"
     attributes:
       - instance.id
 
-  newrelicoracledb.system.user_rollbacks_percentage:
+  oracledb.system.user_rollbacks_percentage:
     description: User Rollbacks Percentage
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
     attributes:
       - instance.id
 
-  newrelicoracledb.tablespace.db_id:
+  oracledb.tablespace.db_id:
     description: Database ID information for tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -4147,11 +3829,10 @@ metrics:
       - tablespace.name
       - db.id
 
-  newrelicoracledb.tablespace.global_name:
+  oracledb.tablespace.global_name:
     description: Global name information for tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
@@ -4159,88 +3840,80 @@ metrics:
       - tablespace.name
       - global.name
 
-  newrelicoracledb.tablespace.is_offline:
+  oracledb.tablespace.is_offline:
     description: Whether the tablespace is offline (1) or online (0)
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.offline_cdb_datafiles:
+  oracledb.tablespace.offline_cdb_datafiles:
     description: Count of offline CDB datafiles by tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.offline_pdb_datafiles:
+  oracledb.tablespace.offline_pdb_datafiles:
     description: Count of offline PDB datafiles by tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.pdb_non_write_mode:
+  oracledb.tablespace.pdb_non_write_mode:
     description: Count of PDB datafiles in non-write mode by tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "1"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.space_consumed_bytes:
+  oracledb.tablespace.space_consumed_bytes:
     description: Total bytes consumed by the tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.space_reserved_bytes:
+  oracledb.tablespace.space_reserved_bytes:
     description: Total bytes reserved by the tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "By"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.space_used_percentage:
+  oracledb.tablespace.space_used_percentage:
     description: Percentage of tablespace space currently used
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: "%"
     attributes:
       - tablespace.name
 
-  newrelicoracledb.tablespace.total_bytes:
+  oracledb.tablespace.total_bytes:
     description: Total bytes in tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: By
@@ -4248,11 +3921,10 @@ metrics:
       - con.id
       - tablespace.name
 
-  newrelicoracledb.tablespace.used_bytes:
+  oracledb.tablespace.used_bytes:
     description: Used bytes in tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: int
     unit: By
@@ -4260,11 +3932,10 @@ metrics:
       - con.id
       - tablespace.name
 
-  newrelicoracledb.tablespace.used_percent:
+  oracledb.tablespace.used_percent:
     description: Used percentage of tablespace
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: "%"
@@ -4273,7 +3944,7 @@ metrics:
       - tablespace.name
 
   # Data file metrics
-  newrelicoracledb.wait_events.current_wait_time_ms:
+  oracledb.wait_events.current_wait_time_ms:
     description: Current wait time in milliseconds for active wait events including blocking queries
     extended_documentation: |
       Captures how long active sessions have been waiting on various database resources in high precision milliseconds.
@@ -4283,8 +3954,7 @@ metrics:
       Only emitted for active sessions with non-idle waits (status='ACTIVE', wait_class<>'Idle', state='WAITING', wait_time_micro>0).
       Source: WAIT_TIME_MICRO / 1000 (rounded to 2 decimal places).
     enabled: true
-    stability:
-      level: alpha
+    stability: alpha
     gauge:
       value_type: double
     unit: ms

@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package scrapers // import "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/scrapers"
+package scrapers // import "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/scrapers"
 
 import (
 	"context"
@@ -11,12 +11,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	commonutils "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/common-utils"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	commonutils "github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/common-utils"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // planHashCacheEntry stores when a plan hash value was last scraped
@@ -120,7 +121,7 @@ func (s *ExecutionPlanScraper) ScrapeExecutionPlans(ctx context.Context, sqlIden
 
 // buildExecutionPlanMetrics converts an execution plan row to a metric data point with all attributes.
 func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPlanRow, queryTimestamp time.Time) {
-	if !s.metricsBuilderConfig.Metrics.NewrelicoracledbExecutionPlan.Enabled {
+	if !s.metricsBuilderConfig.Metrics.OracledbExecutionPlan.Enabled {
 		return
 	}
 
@@ -235,7 +236,7 @@ func (s *ExecutionPlanScraper) buildExecutionPlanMetrics(row *models.ExecutionPl
 		filterPredicates = commonutils.AnonymizeAndNormalize(row.FilterPredicates.String)
 	}
 
-	s.mb.RecordNewrelicoracledbExecutionPlanDataPoint(
+	s.mb.RecordOracledbExecutionPlanDataPoint(
 		pcommon.NewTimestampFromTime(queryTimestamp),
 		int64(1), // Value of 1 to indicate this execution plan step exists
 		"OracleExecutionPlan",

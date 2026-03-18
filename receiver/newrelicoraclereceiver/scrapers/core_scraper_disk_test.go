@@ -8,14 +8,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 // Test constructor validation
@@ -83,12 +84,12 @@ func TestNewCoreScraper_EmptyInstanceName(t *testing.T) {
 func TestScrapeReadWriteMetrics_AllMetricsDisabled(t *testing.T) {
 	mockClient := client.NewMockClient()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = false
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = false
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = false
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = false
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = false
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = false
+	config.Metrics.OracledbDiskReads.Enabled = false
+	config.Metrics.OracledbDiskWrites.Enabled = false
+	config.Metrics.OracledbDiskBlocksRead.Enabled = false
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = false
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = false
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -128,12 +129,12 @@ func TestScrapeReadWriteMetrics_Success_AllMetricsEnabled(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = true
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = true
+	config.Metrics.OracledbDiskBlocksRead.Enabled = true
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = true
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -164,12 +165,12 @@ func TestScrapeReadWriteMetrics_Success_PartialMetricsEnabled(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = false
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = false
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = false
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = false
+	config.Metrics.OracledbDiskBlocksRead.Enabled = true
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = false
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -190,7 +191,7 @@ func TestScrapeReadWriteMetrics_QueryError(t *testing.T) {
 	mockClient.QueryErr = errors.New("database connection failed")
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -213,8 +214,8 @@ func TestScrapeReadWriteMetrics_EmptyResultSet(t *testing.T) {
 	mockClient.DiskIOMetricsList = []models.DiskIOMetrics{}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -245,7 +246,7 @@ func TestScrapeReadWriteMetrics_StringInstanceID(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -276,7 +277,7 @@ func TestScrapeReadWriteMetrics_NilInstanceID(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -307,12 +308,12 @@ func TestScrapeReadWriteMetrics_ZeroValues(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = true
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = true
+	config.Metrics.OracledbDiskBlocksRead.Enabled = true
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = true
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -343,12 +344,12 @@ func TestScrapeReadWriteMetrics_LargeValues(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = true
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = true
+	config.Metrics.OracledbDiskBlocksRead.Enabled = true
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = true
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -397,12 +398,12 @@ func TestScrapeReadWriteMetrics_MultipleInstances(t *testing.T) {
 	}
 
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDiskReads.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWrites.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksRead.Enabled = true
-	config.Metrics.NewrelicoracledbDiskBlocksWritten.Enabled = true
-	config.Metrics.NewrelicoracledbDiskReadTimeMilliseconds.Enabled = true
-	config.Metrics.NewrelicoracledbDiskWriteTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskReads.Enabled = true
+	config.Metrics.OracledbDiskWrites.Enabled = true
+	config.Metrics.OracledbDiskBlocksRead.Enabled = true
+	config.Metrics.OracledbDiskBlocksWritten.Enabled = true
+	config.Metrics.OracledbDiskReadTimeMilliseconds.Enabled = true
+	config.Metrics.OracledbDiskWriteTimeMilliseconds.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 

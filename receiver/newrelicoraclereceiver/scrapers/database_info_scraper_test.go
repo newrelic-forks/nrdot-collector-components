@@ -8,12 +8,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/client"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/internal/metadata"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/receiver/newrelicoraclereceiver/models"
 	"github.com/stretchr/testify/assert"
 	"go.opentelemetry.io/collector/receiver/receivertest"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/client"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/internal/metadata"
+	"github.com/newrelic/nrdot-collector-components/receiver/newrelicoraclereceiver/models"
 )
 
 func TestNewDatabaseInfoScraper(t *testing.T) {
@@ -104,7 +105,7 @@ func TestScrapeDatabaseInfo_MetricDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseInfo.Enabled = false
+	config.Metrics.OracledbDatabaseInfo.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -119,7 +120,7 @@ func TestScrapeHostingInfo_MetricDisabled(t *testing.T) {
 	mockClient := &client.MockClient{}
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbHostingInfo.Enabled = false
+	config.Metrics.OracledbHostingInfo.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -161,7 +162,7 @@ func TestScrapeDatabaseInfo_Success(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseInfo.Enabled = true
+	config.Metrics.OracledbDatabaseInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -181,7 +182,7 @@ func TestScrapeDatabaseInfo_QueryError(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseInfo.Enabled = true
+	config.Metrics.OracledbDatabaseInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -198,7 +199,7 @@ func TestScrapeDatabaseInfo_EmptyMetrics(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseInfo.Enabled = true
+	config.Metrics.OracledbDatabaseInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -217,7 +218,7 @@ func TestScrapeDatabaseInfo_UsesCachedData(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseInfo.Enabled = true
+	config.Metrics.OracledbDatabaseInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -251,7 +252,7 @@ func TestScrapeHostingInfo_Success(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbHostingInfo.Enabled = true
+	config.Metrics.OracledbHostingInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -269,7 +270,7 @@ func TestScrapeHostingInfo_QueryError(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbHostingInfo.Enabled = true
+	config.Metrics.OracledbHostingInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -288,7 +289,7 @@ func TestScrapeHostingInfo_UsesCachedData(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbHostingInfo.Enabled = true
+	config.Metrics.OracledbHostingInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -316,7 +317,7 @@ func TestScrapeDatabaseRole_Success(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseRole.Enabled = true
+	config.Metrics.OracledbDatabaseRole.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -331,7 +332,7 @@ func TestScrapeDatabaseRole_MetricDisabled(t *testing.T) {
 	mockClient := client.NewMockClient()
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseRole.Enabled = false
+	config.Metrics.OracledbDatabaseRole.Enabled = false
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -348,7 +349,7 @@ func TestScrapeDatabaseRole_QueryError(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseRole.Enabled = true
+	config.Metrics.OracledbDatabaseRole.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -370,7 +371,7 @@ func TestScrapeDatabaseRole_NullValues(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseRole.Enabled = true
+	config.Metrics.OracledbDatabaseRole.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -392,7 +393,7 @@ func TestScrapeDatabaseRole_StandbyRole(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbDatabaseRole.Enabled = true
+	config.Metrics.OracledbDatabaseRole.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
@@ -521,7 +522,7 @@ func TestScrapeHostingInfo_EmptyCache(t *testing.T) {
 
 	logger := zap.NewNop()
 	config := metadata.DefaultMetricsBuilderConfig()
-	config.Metrics.NewrelicoracledbHostingInfo.Enabled = true
+	config.Metrics.OracledbHostingInfo.Enabled = true
 	settings := receivertest.NewNopSettings(metadata.Type)
 	mb := metadata.NewMetricsBuilder(config, settings)
 
