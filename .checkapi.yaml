@@ -1,6 +1,6 @@
 ignored_paths:
   - cmd/codecovgen
-  - receiver/newrelicoraclereceiver
+  - receiver/oracledbreceiver
 allowed_functions:
   - name: NewFactory
     classes:
