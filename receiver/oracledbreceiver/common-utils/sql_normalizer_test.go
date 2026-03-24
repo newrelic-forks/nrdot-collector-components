@@ -325,6 +325,50 @@ func TestExtractNewRelicMetadata(t *testing.T) {
 	}
 }
 
+func TestWhitespaceAroundPunctuationNormalization(t *testing.T) {
+	// Test that queries from Oracle v$sql (with extra spaces) produce the same hash as APM agent queries
+	tests := []struct {
+		name     string
+		input    string
+		expected string
+	}{
+		{
+			name:     "Spaces around commas - typical v$sql formatting",
+			input:    "SELECT * FROM users WHERE id IN (? , ? , ?)",
+			expected: "SELECT * FROM USERS WHERE ID IN (?)",
+		},
+		{
+			name:     "Space after opening paren",
+			input:    "SELECT * FROM users WHERE id = ( ?)",
+			expected: "SELECT * FROM USERS WHERE ID = (?)",
+		},
+		{
+			name:     "Space before closing paren",
+			input:    "SELECT * FROM users WHERE id = (? )",
+			expected: "SELECT * FROM USERS WHERE ID = (?)",
+		},
+		{
+			name:     "Multiple spaces around punctuation",
+			input:    "INSERT INTO items ( id , name , price ) VALUES ( ? , ? , ? )",
+			expected: "INSERT INTO ITEMS (ID, NAME, PRICE) VALUES (?, ?, ?)",
+		},
+		{
+			name:     "Real INSERT query from v$sql vs APM agent",
+			input:    "INSERT INTO ORDER_ITEMS (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, SUBTOTAL) VALUES (ORDER_ITEM_SEQ.NEXTVAL, ? , ? , ? , ? , ? )",
+			expected: "INSERT INTO ORDER_ITEMS (ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE, SUBTOTAL) VALUES (ORDER_ITEM_SEQ.NEXTVAL, ?, ?, ?, ?, ?)",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := NormalizeSQL(tt.input)
+			if result != tt.expected {
+				t.Errorf("NormalizeSQL(%q) = %q; want %q", tt.input, result, tt.expected)
+			}
+		})
+	}
+}
+
 func TestOracleSpecificNormalization(t *testing.T) {
 	// Test Oracle-specific scenarios
 	tests := []struct {

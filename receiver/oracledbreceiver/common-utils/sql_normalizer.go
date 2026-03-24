@@ -504,6 +504,27 @@ func skipToEndOfLine(state *sqlNormalizerState) {
 }
 
 func processWhitespace(result *strings.Builder, state *sqlNormalizerState) {
+	// Skip whitespace entirely if it would appear before certain punctuation
+	// This handles Oracle v$sql formatting like "? , ?" → "?, ?"
+	if state.hasNext() {
+		next := state.peek()
+		if next == ',' || next == ')' || next == ';' {
+			state.advance()
+			return
+		}
+	}
+
+	// Skip whitespace after opening paren: "( ?" → "(?"
+	if result.Len() > 0 {
+		resultStr := result.String()
+		lastChar := resultStr[len(resultStr)-1]
+		if lastChar == '(' {
+			state.advance()
+			return
+		}
+	}
+
+	// Normal whitespace handling: collapse multiple spaces into one
 	if !state.lastWasWhitespace && result.Len() > 0 {
 		result.WriteByte(' ')
 		state.lastWasWhitespace = true
