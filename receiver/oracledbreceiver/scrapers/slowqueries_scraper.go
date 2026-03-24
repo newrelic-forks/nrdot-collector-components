@@ -176,18 +176,20 @@ func (s *SlowQueriesScraper) ScrapeSlowQueries(ctx context.Context) ([]models.SQ
 		// Generate normalised SQL hash from sql_fulltext using New Relic Java agent normalization logic
 		// The anonymized query text is derived from the normalized SQL (for attribute display)
 		var queryHash, qText, nrServiceGUID string
-		if slowQuery.QueryText.Valid && slowQuery.QueryText.String != "" {
-			// Extract nrServiceGUID from query comment
-			nrServiceGUID = commonutils.ExtractNewRelicMetadata(slowQuery.QueryText.String)
-
-			// Generate normalized SQL and hash
-			normalizedSQL, hash := commonutils.NormalizeSQLAndHash(slowQuery.QueryText.String)
-			queryHash = hash
-			qText = normalizedSQL
+		if !slowQuery.QueryText.Valid && slowQuery.QueryText.String == "" {
+			s.logger.Debug("Normalizing SQL text for query", zap.String("sql_id", qID), zap.String("original_sql", slowQuery.QueryText.String))
+			continue
 		}
+		// Extract nrServiceGUID from query comment
+		nrServiceGUID = commonutils.ExtractNewRelicMetadata(slowQuery.QueryText.String)
+
+		// Generate normalized SQL and hash
+		normalizedSQL, hash := commonutils.NormalizeSQLAndHash(slowQuery.QueryText.String)
+		queryHash = hash
+		qText = normalizedSQL
 
 		if err := s.recordMetrics(now, slowQuery, collectionTimestamp, dbName, qID, qText, userName, schName, lastActiveTime, queryHash, nrServiceGUID); err != nil {
-			s.logger.Warn("Failed to record metrics for slow query",
+			s.logger.Debug("Failed to record metrics for slow query",
 				zap.String("sql_id", qID),
 				zap.Error(err))
 			scrapeErrors = append(scrapeErrors, err)
