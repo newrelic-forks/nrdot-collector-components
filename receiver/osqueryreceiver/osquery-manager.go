@@ -27,6 +27,7 @@ type osQueryManager struct {
 	executor executor.Runner
 }
 
+//nolint:unparam
 func (m *osQueryManager) registerCollections(config *Config) error {
 	// Build query tasks from predefined collections
 	for _, collectionName := range config.Collections {
@@ -47,7 +48,6 @@ func (m *osQueryManager) registerCollections(config *Config) error {
 		coll := collection.NewCustom(fmt.Sprintf("custom_%d", i), query)
 		m.executor.Register(coll)
 	}
-
 	return nil
 }
 

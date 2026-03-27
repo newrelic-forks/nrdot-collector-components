@@ -7,8 +7,6 @@ import (
 	"time"
 )
 
-type queryResult map[string]any
-
 type queryExecution struct {
 	Query         string
 	ExecutedAt    time.Time

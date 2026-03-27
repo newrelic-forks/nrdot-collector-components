@@ -20,13 +20,6 @@ type osqueryReceiver struct {
 	config       *Config
 }
 
-// queryResponse contains the execution results
-type queryResponse struct {
-	RawResults []map[string]any // Raw results from osquery
-	Structured any              // Structured results if schema was used, nil otherwise
-	Error      error
-}
-
 func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 	o.host = host
 	ctx, o.cancel = context.WithCancel(ctx)
