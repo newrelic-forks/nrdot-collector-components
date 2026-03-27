@@ -1,4 +1,7 @@
-package cache
+// Copyright New Relic, Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
+package cache // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/cache"
 
 import (
 	"sync"
@@ -7,32 +10,32 @@ import (
 	"go.uber.org/zap"
 )
 
-type CacheManager struct {
-	cache      map[string]CachedResult
+type cacheManager struct {
+	cache      map[string]cachedResult
 	cacheMutex sync.RWMutex
 	logger     *zap.Logger
 }
 
-type CachedResult struct {
+type cachedResult struct {
 	Data     any
 	CachedAt time.Time
 	TTL      time.Duration
 	IsValid  bool
 }
 
-func NewCacheManager(logger *zap.Logger) CacheManager {
-	return CacheManager{
-		cache:  make(map[string]CachedResult),
+func newCacheManager(logger *zap.Logger) cacheManager {
+	return cacheManager{
+		cache:  make(map[string]cachedResult),
 		logger: logger,
 	}
 }
 
 // UpdateCache stores collection results in cache
-func (m *CacheManager) UpdateCache(collectionName string, data any) {
+func (m *cacheManager) UpdateCache(collectionName string, data any) {
 	m.cacheMutex.Lock()
 	defer m.cacheMutex.Unlock()
 
-	m.cache[collectionName] = CachedResult{
+	m.cache[collectionName] = cachedResult{
 		Data:     data,
 		CachedAt: time.Now(),
 		TTL:      5 * time.Minute, // Configurable TTL
@@ -43,7 +46,7 @@ func (m *CacheManager) UpdateCache(collectionName string, data any) {
 }
 
 // GetCachedResult retrieves cached collection result if valid
-func (m *CacheManager) GetCachedResult(collectionName string) (any, bool) {
+func (m *cacheManager) GetCachedResult(collectionName string) (any, bool) {
 	m.cacheMutex.RLock()
 	defer m.cacheMutex.RUnlock()
 
@@ -60,7 +63,7 @@ func (m *CacheManager) GetCachedResult(collectionName string) (any, bool) {
 	return cached.Data, true
 }
 
-func (m *CacheManager) InvalidateCache(collectionName string) {
+func (m *cacheManager) InvalidateCache(collectionName string) {
 	m.cacheMutex.Lock()
 	defer m.cacheMutex.Unlock()
 
@@ -71,7 +74,7 @@ func (m *CacheManager) InvalidateCache(collectionName string) {
 	}
 }
 
-func (m *CacheManager) GetCacheSize() int {
+func (m *cacheManager) GetCacheSize() int {
 	m.cacheMutex.RLock()
 	defer m.cacheMutex.RUnlock()
 	return len(m.cache)

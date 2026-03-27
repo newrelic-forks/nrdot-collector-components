@@ -1,9 +1,10 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package osqueryreceiver
+package osqueryreceiver // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver"
 
 import (
+	"errors"
 	"fmt"
 
 	"go.opentelemetry.io/collector/component"
@@ -44,7 +45,7 @@ func createDefaultConfig() component.Config {
 
 func (c *Config) Validate() error {
 	if len(c.CustomQueries) == 0 && len(c.Collections) == 0 {
-		return fmt.Errorf("either custom_queries or collections must be specified")
+		return errors.New("either custom_queries or collections must be specified")
 	}
 
 	for _, collection := range c.Collections {

@@ -1,3 +1,6 @@
+// Copyright New Relic, Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
 package util
 
 import (
@@ -26,7 +29,7 @@ func TestContains(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(tt *testing.T) {
-			result := Contains(tc.slice, tc.item)
+			result := contains(tc.slice, tc.item)
 			assert.Equal(tt, tc.expected, result)
 		})
 	}
@@ -52,7 +55,7 @@ func TestGetString(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(tt *testing.T) {
-			result := GetString(tc.obj, tc.item)
+			result := getString(tc.obj, tc.item)
 			assert.Equal(tt, tc.expected, result)
 		})
 	}
@@ -88,7 +91,7 @@ func TestGetInt(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(tt *testing.T) {
-			result := GetInt(tc.obj, tc.item)
+			result := getInt(tc.obj, tc.item)
 			assert.Equal(tt, tc.expected, result)
 		})
 	}
@@ -129,7 +132,7 @@ func TestGetInt64(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(tt *testing.T) {
-			result := GetInt64(tc.obj, tc.item)
+			result := getInt64(tc.obj, tc.item)
 			assert.Equal(tt, tc.expected, result)
 		})
 	}

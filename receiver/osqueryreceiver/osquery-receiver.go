@@ -1,13 +1,12 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package osqueryreceiver
+package osqueryreceiver // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver"
 
 import (
 	"context"
 	"time"
 
-	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/executor"
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/consumer"
 	"go.uber.org/zap"
@@ -21,10 +20,10 @@ type osqueryReceiver struct {
 	config       *Config
 }
 
-// QueryResponse contains the execution results
-type QueryResponse struct {
-	RawResults []executor.QueryResult // Raw results from osquery
-	Structured any   // Structured results if schema was used, nil otherwise
+// queryResponse contains the execution results
+type queryResponse struct {
+	RawResults []map[string]any // Raw results from osquery
+	Structured any              // Structured results if schema was used, nil otherwise
 	Error      error
 }
 
@@ -34,7 +33,7 @@ func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 
 	interval, _ := time.ParseDuration(o.config.CollectionInterval)
 
-	osQueryManager, err := NewOSQueryManager(o.config, o.logger)
+	osQueryManager, err := newOSQueryManager(o.config, o.logger)
 	if err != nil {
 		return err
 	}
@@ -47,7 +46,9 @@ func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 			select {
 			case <-ticker.C:
 				o.logger.Info("Starting collection")
-				osQueryManager.collect(o.nextConsumer)
+				if err := osQueryManager.collect(o.nextConsumer); err != nil {
+					o.logger.Error("Collection failed", zap.Error(err))
+				}
 			case <-ctx.Done():
 				o.logger.Info("Shutting down osquery receiver collection")
 				return
@@ -58,7 +59,7 @@ func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 	return nil
 }
 
-func (o osqueryReceiver) Shutdown(ctx context.Context) error {
+func (o osqueryReceiver) Shutdown(_ context.Context) error {
 	if o.cancel != nil {
 		o.cancel()
 	}

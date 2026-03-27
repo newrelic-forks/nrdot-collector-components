@@ -1,3 +1,6 @@
+// Copyright New Relic, Inc. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
 package osqueryreceiver
 
 import (
@@ -7,7 +10,6 @@ import (
 )
 
 func TestOSQueryManagerInitialization(t *testing.T) {
-
 	tests := map[string]struct {
 		config                 *Config
 		expectedNumCollections int
@@ -55,17 +57,17 @@ func TestOSQueryManagerInitialization(t *testing.T) {
 
 	for name, tc := range tests {
 		t.Run(name, func(tt *testing.T) {
-			manager, err := NewOSQueryManager(tc.config, zap.NewNop())
+			manager, err := newOSQueryManager(tc.config, zap.NewNop())
 			if err != nil {
-				tt.Fatalf("Failed to initialize OSQueryManager: %v", err)
+				tt.Fatalf("Failed to initialize osQueryManager: %v", err)
 			}
 
 			if manager.extensionsSocket != tc.config.ExtensionsSocket {
 				tt.Errorf("Expected extensions socket %s, got %s", tc.config.ExtensionsSocket, manager.extensionsSocket)
 			}
 
-			if len(manager.executor.Collections) != tc.expectedNumCollections {
-				tt.Errorf("Expected %d collections, got %d", tc.expectedNumCollections, len(manager.executor.Collections))
+			if manager.executor.CollectionCount() != tc.expectedNumCollections {
+				tt.Errorf("Expected %d collections, got %d", tc.expectedNumCollections, manager.executor.CollectionCount())
 			}
 		})
 	}
@@ -81,9 +83,9 @@ func TestOSQueryManagerInitialization(t *testing.T) {
 // 		},
 // 	}
 
-// 	manager, err := NewOSQueryManager(config, zap.NewNop())
+// 	manager, err := newOSQueryManager(config, zap.NewNop())
 // 	if err != nil {
-// 		t.Fatalf("Failed to initialize OSQueryManager: %v", err)
+// 		t.Fatalf("Failed to initialize osQueryManager: %v", err)
 // 	}
 
 // 	// Since we cannot run actual osquery commands in tests, we will just ensure that

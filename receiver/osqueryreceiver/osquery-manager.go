@@ -1,7 +1,7 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package osqueryreceiver
+package osqueryreceiver // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver"
 
 import (
 	"context"
@@ -9,60 +9,56 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/cache"
-	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/collection"
-	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/executor"
 	"go.opentelemetry.io/collector/consumer"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/pdata/plog"
 	"go.uber.org/zap"
+
+	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/internal/collection"
+	"github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/internal/executor"
 )
 
-type OSQueryManager struct {
+type osQueryManager struct {
 	// configurations
 	extensionsSocket string
 	logger           *zap.Logger
 
 	// Executor to run queries for all the collections
-	executor *executor.CollectionExecutor
-
-	// cache to store previous results if needed
-	cache cache.CacheManager
+	executor executor.Runner
 }
 
-func (m *OSQueryManager) RegisterCollections(config *Config) error {
+func (m *osQueryManager) registerCollections(config *Config) error {
 	// Build query tasks from predefined collections
 	for _, collectionName := range config.Collections {
-		collection, err := collection.GetCollection(collectionName)
+		coll, err := collection.New(collectionName)
 		if err != nil {
 			m.logger.Warn("Failed to get collection", zap.String("collection", collectionName), zap.Error(err))
 			continue
 		}
-		if collection == nil {
+		if coll == nil {
 			m.logger.Warn("Skipping unknown collection", zap.String("collection", collectionName))
 			continue
 		}
-		m.executor.Collections = append(m.executor.Collections, collection)
+		m.executor.Register(coll)
 	}
 
 	// Build query tasks from custom queries
 	for i, query := range config.CustomQueries {
-		collection := collection.GetCustomCollection(fmt.Sprintf("custom_%d", i), query)
-		m.executor.Collections = append(m.executor.Collections, collection)
+		coll := collection.NewCustom(fmt.Sprintf("custom_%d", i), query)
+		m.executor.Register(coll)
 	}
 
 	return nil
 }
 
-func NewOSQueryManager(config *Config, logger *zap.Logger) (*OSQueryManager, error) {
-	manager := &OSQueryManager{
+func newOSQueryManager(config *Config, logger *zap.Logger) (*osQueryManager, error) {
+	manager := &osQueryManager{
 		extensionsSocket: config.ExtensionsSocket,
 		logger:           logger,
-		cache:            cache.NewCacheManager(logger),
-		executor:         executor.NewCollectionExecutor(logger, []collection.ICollection{}, config.TmpDir),
+		executor:         executor.New(logger, config.TmpDir),
 	}
 
-	if err := manager.RegisterCollections(config); err != nil {
+	if err := manager.registerCollections(config); err != nil {
 		logger.Error("Failed to register collections", zap.Error(err))
 		return nil, err
 	}
@@ -70,14 +66,13 @@ func NewOSQueryManager(config *Config, logger *zap.Logger) (*OSQueryManager, err
 	return manager, nil
 }
 
-func (m *OSQueryManager) collect(nextConsumer consumer.Logs) error {
+func (m *osQueryManager) collect(nextConsumer consumer.Logs) error {
 	results := m.executor.ExecuteAll()
-	m.sendToConsumer(context.Background(), results, nextConsumer)
-	return nil
+	return m.sendToConsumer(context.Background(), results, nextConsumer)
 }
 
 // sendToConsumer converts query execution results to OTel logs and sends to consumer
-func (m *OSQueryManager) sendToConsumer(ctx context.Context, results map[string]executor.QueryExecution, nextConsumer consumer.Logs) error {
+func (m *osQueryManager) sendToConsumer(ctx context.Context, results map[string]executor.CollectionResult, nextConsumer consumer.Logs) error {
 	for collectionName, execution := range results {
 		// Skip if there was an error executing the query
 		if execution.Error != nil {

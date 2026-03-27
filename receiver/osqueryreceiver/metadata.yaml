@@ -1,9 +1,10 @@
 type: osqueryreceiver
+github_project: newrelic/nrdot-collector-components
 
 status:
   class: receiver
   stability:
     alpha: [logs]
-  distributions: []
+  distributions: [nrdot]
   codeowners:
-    active: [rohanyadav]
+    active: [rajrohanyadav]

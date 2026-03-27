@@ -1,4 +1,9 @@
-// Copyright New Relic, Inc. All rights reserved.
+// Copyright The OpenTelemetry Authors
+// Modifications copyright New Relic, Inc.
+//
+// Modifications can be found at the following URL:
+// https://github.com/newrelic/nrdot-collector-components/commits/main/factory.go?since=2025-11-26
+//
 // SPDX-License-Identifier: Apache-2.0
 
 package osqueryreceiver // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver"
@@ -11,9 +16,7 @@ import (
 	"go.opentelemetry.io/collector/receiver"
 )
 
-var (
-	typeStr = component.MustNewType("osqueryreceiver")
-)
+var typeStr = component.MustNewType("osqueryreceiver")
 
 func createLogsReceiver(_ context.Context, params receiver.Settings, baseCfg component.Config, consumer consumer.Logs) (receiver.Logs, error) {
 	logger := params.Logger

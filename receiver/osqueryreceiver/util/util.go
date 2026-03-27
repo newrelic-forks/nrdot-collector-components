@@ -1,11 +1,11 @@
 // Copyright New Relic, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 
-package util
+package util // import "github.com/newrelic/nrdot-collector-components/receiver/osqueryreceiver/util"
 
 import "strconv"
 
-func Contains[T comparable](slice []T, item T) bool {
+func contains[T comparable](slice []T, item T) bool {
 	for _, i := range slice {
 		if i == item {
 			return true
@@ -14,14 +14,14 @@ func Contains[T comparable](slice []T, item T) bool {
 	return false
 }
 
-func GetString(resultMap map[string]any, key string) string {
+func getString(resultMap map[string]any, key string) string {
 	if val, ok := resultMap[key].(string); ok {
 		return val
 	}
 	return ""
 }
 
-func GetInt(resultMap map[string]any, key string) int {
+func getInt(resultMap map[string]any, key string) int {
 	switch val := resultMap[key].(type) {
 	case float64:
 		return int(val)
@@ -35,7 +35,7 @@ func GetInt(resultMap map[string]any, key string) int {
 	return 0
 }
 
-func GetInt64(resultMap map[string]any, key string) int64 {
+func getInt64(resultMap map[string]any, key string) int64 {
 	switch val := resultMap[key].(type) {
 	case float64:
 		return int64(val)

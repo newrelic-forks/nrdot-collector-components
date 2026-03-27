@@ -1,4 +1,1 @@
-test:
-	go test -race -cover ./...
-
-.PHONY: test
+include ../../Makefile.Common
