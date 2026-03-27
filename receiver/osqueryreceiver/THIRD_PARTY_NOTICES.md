@@ -36,7 +36,31 @@ Distributed under the following license(s):
 
 
 
+## [go.opentelemetry.io/collector/component/componenttest](https://go.opentelemetry.io/collector/component/componenttest)
+
+Distributed under the following license(s):
+
+* Apache-2.0
+
+
+
+## [go.opentelemetry.io/collector/confmap](https://go.opentelemetry.io/collector/confmap)
+
+Distributed under the following license(s):
+
+* Apache-2.0
+
+
+
 ## [go.opentelemetry.io/collector/consumer](https://go.opentelemetry.io/collector/consumer)
+
+Distributed under the following license(s):
+
+* Apache-2.0
+
+
+
+## [go.opentelemetry.io/collector/consumer/consumertest](https://go.opentelemetry.io/collector/consumer/consumertest)
 
 Distributed under the following license(s):
 
@@ -57,6 +81,22 @@ Distributed under the following license(s):
 Distributed under the following license(s):
 
 * Apache-2.0
+
+
+
+## [go.opentelemetry.io/collector/receiver/receivertest](https://go.opentelemetry.io/collector/receiver/receivertest)
+
+Distributed under the following license(s):
+
+* Apache-2.0
+
+
+
+## [go.uber.org/goleak](https://go.uber.org/goleak)
+
+Distributed under the following license(s):
+
+* MIT
 
 
 
