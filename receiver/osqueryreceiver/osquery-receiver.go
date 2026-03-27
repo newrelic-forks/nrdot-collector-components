@@ -20,7 +20,7 @@ type osqueryReceiver struct {
 	config       *Config
 }
 
-func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
+func (o *osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 	o.host = host
 	ctx, o.cancel = context.WithCancel(ctx)
 
@@ -52,7 +52,7 @@ func (o osqueryReceiver) Start(ctx context.Context, host component.Host) error {
 	return nil
 }
 
-func (o osqueryReceiver) Shutdown(_ context.Context) error {
+func (o *osqueryReceiver) Shutdown(_ context.Context) error {
 	if o.cancel != nil {
 		o.cancel()
 	}
