@@ -40,6 +40,10 @@ component_management:
     name: receiver_nop
     paths:
     - receiver/nopreceiver/**
+  - component_id: receiver_osquery
+    name: receiver_osquery
+    paths:
+    - receiver/osqueryreceiver/**
   - component_id: testbed
     name: testbed
     paths:
