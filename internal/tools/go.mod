@@ -7,7 +7,7 @@ require (
 	github.com/client9/misspell v0.3.4
 	github.com/cloudflare/circl v1.6.3
 	github.com/daixiang0/gci v0.13.7
-	github.com/go-git/go-git/v5 v5.16.5
+	github.com/go-git/go-git/v5 v5.17.1
 	github.com/golangci/golangci-lint/v2 v2.1.6
 	github.com/google/addlicense v1.2.0
 	github.com/jcchavezs/porto v0.6.0
@@ -99,7 +99,7 @@ require (
 	github.com/ghostiam/protogetter v0.3.15 // indirect
 	github.com/go-critic/go-critic v0.13.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
-	github.com/go-git/go-billy/v5 v5.6.2 // indirect
+	github.com/go-git/go-billy/v5 v5.8.0 // indirect
 	github.com/go-json-experiment/json v0.0.0-20250813233538-9b1f9ea2e11b // indirect
 	github.com/go-toolsmith/astcast v1.1.0 // indirect
 	github.com/go-toolsmith/astcopy v1.1.0 // indirect
