@@ -8,18 +8,7 @@ import (
 	"strings"
 )
 
-// GetSlowQueriesSQL returns SQL for slow queries with configurable time window
-// Returns total_elapsed_time_ms for delta calculation in addition to avg_elapsed_time_ms
-//
-// IMPORTANT: TOP N filtering and threshold filtering are applied in Go code AFTER delta calculation
-// This ensures we get enough candidates for interval-based (delta) averaging
-//
-// Parameters:
-// - intervalSeconds: Time window to fetch queries (e.g., 60 = last 60 seconds)
-//
-// Note: This function signature previously accepted responseTimeThreshold and rowLimit parameters,
-// but those are no longer used in the SQL query. Filtering and TOP N selection are now done in Go
-// after delta calculation for accurate results.
+
 func GetSlowQueriesSQL(intervalSeconds int) string {
 	return fmt.Sprintf(`
 		SELECT
